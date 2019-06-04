@@ -179,7 +179,7 @@
   <jsp:include page="../template/mainFooter.jsp"/>
 </body>
 <!-- quickBar -->
-<script type="text/javascript" src="../js/user/quickBar.js"></script>  
+<script type="text/javascript" src="../js/quickBar.js"></script>  
 <!-- footer -->
 <script type="text/javascript" src="../js/mainFooter.js"></script>
 <!-- idFound -->

@@ -24,6 +24,8 @@
 <link rel="stylesheet" href="../css/slick.css"/>
 <link rel="stylesheet" href="../css/slick-theme.css" />
 <link rel="stylesheet" href="../css/mainFooter.css"/>
+<!-- 최근 본 상품 -->
+<link rel="stylesheet" href="../css/quickBar.css"/>
 
 </head>
 <body>
@@ -31,7 +33,7 @@
 <jsp:include page="../template/header.jsp"/>
 
 </header>
-
+<jsp:include page="../template/quickBar.jsp"/>
 <jsp:include page="../template/top_ads.jsp"/>
 <jsp:include page="../template/newArrivals.jsp"/>
 
@@ -74,6 +76,8 @@
 <script type="text/javascript" src="../js/newArrivals.js"></script>
 <!-- best & new -->
 
+<!-- 최근본 상품 -->
+<script type="text/javascript" src="../js/quickBar.js"></script>  
 
 <script type="text/javascript" src="../js/theme.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>

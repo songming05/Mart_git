@@ -6,25 +6,25 @@
                 <ul class="guide-link-list">
                     <li>
                         <a href="/abc/customer/faqList?parentDepth=0011">
-                            <div class="ico-box"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/new-m-guide-link-list-img-01.gif" alt=""></div>
+                            <div class="ico-box"><img src="../image/mainFooter/mob.gif" alt=""></div>
                             <span class="txt">모바일 이용 안내</span>
                         </a>
                     </li>
                     <li>
                         <a href="/abc/customer/faqList?parentDepth=0009">
-                            <div class="ico-box"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/new-m-guide-link-list-img-02.gif" alt=""></div>
+                            <div class="ico-box"><img src="../image/mainFooter/membership.gif" alt=""></div>
                             <span class="txt">멤버쉽 혜택 안내</span>
                         </a>
                     </li>
                     <li>
                         <a href="/abc/customer/faqList?parentDepth=0004">
-                            <div class="ico-box"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/new-m-guide-link-list-img-03.gif" alt=""></div>
+                            <div class="ico-box"><img src="../image/mainFooter/faqAS.gif" alt=""></div>
                             <span class="txt">FAQ AS 안내</span>
                         </a>
                     </li>
                     <li>
                         <a href="/abc/etc/digitalGiftCard">
-                            <div class="ico-box"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/new-m-guide-link-list-img-04.gif" alt=""></div>
+                            <div class="ico-box"><img src="../image/mainFooter/digital.gif" alt=""></div>
                             <span class="txt">디지털 상품권 구매</span>
                         </a>
                     </li>
