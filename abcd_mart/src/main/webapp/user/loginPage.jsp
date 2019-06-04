@@ -15,6 +15,11 @@
 <link rel="stylesheet" href="../css/header.css"/>
 <link rel="stylesheet" href="../css/mainFooter.css"/>
 
+<!-- quickBar -->
+<link rel="stylesheet" href="../css/quickBar.css"/>	
+<!-- footer-->
+<link rel="stylesheet" href="../css/mainFooter.css"/> 
+
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css" />
 <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.min.js' /></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.0.min.js"></script>
@@ -25,6 +30,10 @@
 <jsp:include page="../template/header.jsp"/>
 
 </header>
+
+<jsp:include page="../template/quickBarOther.jsp"/>
+
+
 <br>
 
 <div class="container_wrap">
@@ -83,8 +92,8 @@
                                 </article>
                                 <article class="loss_member_add bor-dash">
                                     <span class="fs12">아이디/비밀번호를 잊으셨나요?</span>&nbsp;&nbsp;
-                                    <a href="https://www.abcmart.co.kr/abc/user/findUserIdForm" class="loginBtn_Type1 sub_type1 fs11">아이디 찾기</a>
-                                    <a href="https://www.abcmart.co.kr/abc/user/findPasswordForm" class="loginBtn_Type2 sub_type1 fs11">비밀번호 찾기</a>
+                                    <a href="./idFound.jsp" class="loginBtn_Type1 sub_type1 fs11">아이디 찾기</a>
+                                    <a href="" class="loginBtn_Type2 sub_type1 fs11">비밀번호 찾기</a>
                                 </article>
                             </div>
                         </form>
@@ -168,6 +177,7 @@
 </footer>
 </body>
 <script type="text/javascript" src='../js/user/userLoginJs.js'/></script>
+<script type="text/javascript" src="../js/user/quickBar.js"></script>
 
 <script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript" src="../js/mainFooter.js"></script>
