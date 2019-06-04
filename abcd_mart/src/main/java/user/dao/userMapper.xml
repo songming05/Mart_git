@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="userSQL">
+
+	<select id="checkUserId" parameterType="String" resultType="user">
+		select * from userinfo where id=#{id}
+	</select>
+	<select id="checkUserEmail" parameterType="String" resultType="user">
+		select * from userinfo where email=#{email}
+	</select>
+
+	<insert id="signUp" parameterType="map">
+		insert 
+			into userinfo 
+		values 
+			(seq_userinfo.nextval,
+			#{id},
+			#{password},
+			#{name},
+			#{email},
+			#{phone},
+			#{birthday},
+			#{post_number, jdbcType=VARCHAR},
+			#{address, jdbcType=VARCHAR},
+			sysdate)
+	</insert>
+	
+	<select id="getUserInfo" parameterType="map" resultType="user">
+		select * from userinfo where id=#{id}
+	</select>
+	
+	
+	<select id="login" parameterType="map" resultType="user">
+		select 
+			* 
+		from 
+			userinfo 
+		where 
+			id=#{id} and password=#{password}
+	</select>
+
+</mapper>

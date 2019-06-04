@@ -1,0 +1,112 @@
+body { min-width: 1100px; height: 100%; }
+li { list-style-type: none; }
+button { cursor: pointer; outline: 0; }
+
+.shoppingBasket_div { width: 1100px; margin: 0 auto; }
+.shoppingBasket_title { text-align: center; font-size: 36px; font-weight: bold; }
+
+.shoppingBasket_section { height: 100vh; }
+.shoppingBasket_ul { height: 65px; width: 900px; margin: 0 auto; margin-top: 30px;}
+.shoppingBasket_ul li { display: inline; float: left; }
+
+.shoppingBasket_ul em { font-size: 18px; font-weight: bold; font-family: Verdana, sans-serif, Helvetica, sans-serif; }
+.shoppingBasket_ul hr { border: 0.5px solid lightgray; padding: 0; margin: 0; }
+.shoppingBasket_li_level01_td { width: 200px; padding-left: 10px; font-weight: bold; font-family: Verdana, sans-serif, Helvetica, sans-serif; }
+.shoppingBasket_li_level02_td { width: 200px; padding-left: 10px; font-weight: bold; font-family: Verdana, sans-serif, Helvetica, sans-serif; color: lightgray; }
+.shoppingBasket_li_level03_td { width: 200px; padding-left: 10px; font-weight: bold; font-family: Verdana, sans-serif, Helvetica, sans-serif; color: lightgray; }
+
+.shoppingBasket_box { margin: 30px 0px; padding: 40px 30px; border: 1px solid black; font-weight: bold; font-size: 14px; }
+.shoppingBasket_box font { color: red; }
+
+.shoppingBasket_box_Non-login_loginButton { margin-left: 180px; color: #fff !important; border: 1px solid #bfbfbf; background: #bfbfbf; line-height: 30px; width: 130px; height: 34px; outline: 0; cursor: pointer; }
+.shoppingBasket_box_Non-login_signupButton { color: #fff !important; border: 1px solid #bfbfbf; background: #ff0000; line-height: 30px; width: 130px; height: 34px; outline: 0; cursor: pointer; }
+
+.shoppingBasket_box_login_image { width: 50px; height: 50px; margin-right: 20px; display: inline-block; vertical-align: top; }
+.shoppingBasket_box_login_div { display: inline-block; }
+.shoppingBasket_box_login_p1 { padding: 0px; margin: 0px 0px 5px 0px; }
+.shoppingBasket_box_login_p2 { padding: 5px 450px 0px 0px; margin: 5px 0px 0px 0px; border-top: 1px dashed #dbdbdb; float: left; }
+.shoppingBasket_box_login_ul { padding: 5px 0px 0px 0px; margin: 5px 0px 0px 0px; border-top: 1px dashed #dbdbdb; float: left; }
+.shoppingBasket_box_login li { display: inline; }
+.shoppingBasket_box_login_li1 { margin-right: 20px; }
+
+.shoppingBasket_basketlist { display: block; border-top: 1px solid black; margin: 60px 0px; padding-top: 10px; }
+.shoppingBasket_basketlist_image { margin: 80px 515px 10px 500px; }
+.shoppingBasket_basketlist p { margin: 0px; padding: 0px; text-align: center; font-size: 14px; }
+
+.shoppingBasket_basketlist_table { width: 100%; table-layout: fixed; border-spacing: 0; font-size: 9pt; }
+.shoppingBasket_basketlist_table th { padding: 10px 15px; font-size: 8pt; font-weight: normal; line-height: 1.5; color: #666666; text-align: center; border-bottom: 1px solid #dbdbdb; border-top: 1px solid #dbdbdb; }
+.shoppingBasket_basketlist_table td { padding: 20px 15px; text-align: center; height: 80px; line-height: 1.5; border-bottom: 1px solid #dbdbdb; }
+.shoppingBasket_basketlist_table .shoes_price { font-weight: bold; font-size: 10pt; }
+
+.shoesImage_div { float: left; margin: 0px 30px 0px 50px; }
+.shoesImage_div img { vertical-align: middle; }
+
+.shoesInfo_div { margin-left: 100px; padding-top: 10px; font-size: 8pt; color: #666666; font-weight: normal; text-align: left; }
+.shoesInfo_div span { width: 180px; height: 16px; display: block; }
+.shoes_name { font-weight: bold; font-family: "tahoma", Dotum, Gulim, Verdana, sans-serif, Helvetica, sans-serif; }
+.shoesInfo_div em { font-size: 9pt; font-weight: normal; font-style: normal; }
+.shoes_optionBtn { width: 65px; height: 20px; background-color: #bfbfbf; color: white; font-size: 9pt; font-weight: normal; outline: none; border: 1px solid white; position: relative; left: 60px; bottom: 16px; }
+
+.shoesQty_div { position: relative; text-align: center; width: 75px; }
+.shoesQty_div button { padding: 0px; margin: 0px; border: 0 none; position: absolute; }
+.qtyText { text-align: center; font-size: 8pt; font-weight: bold; color: #7b7b7b; border: 1px solid #dbdbdb; border-right: white; }
+.qtyDown { top: 12px; }
+.qtyButton { background-color: #bfbfbf; color: white; font-size: 8pt; font-weight: normal; outline: none; border: 1px solid #bfbfbf; }
+
+.saving_div p { font-size: 7pt; !important; }
+.saving_div_price { font-weight: bold; }
+.saving_div_point { font-weight: normal; }
+
+.choice_div button { width: 65px; height: 20px; font-size: 9pt; font-weight: normal; outline: none; margin-bottom: 2px;}
+.choice_div_buynow { background-color: red; border: 1px solid red; color: white; }
+.choice_div_wishlist { background-color: white; border: 1px solid red; color: red; }
+.choice_div_delete { background-color: #fff; border: 1px solid #bfbfbf; }
+
+.delete_checkbox { margin-left: 19px; margin-top: 10px; }
+.delete_button { background-color: white; border: 1px solid #bfbfbf; font-weight: bold; font-size: 8pt; }
+
+.total_price_div { margin-top: 30px; display: inline-block; border: 1px solid black; font-weight: bold; }
+.total_price_div div { float: left; width: 273px; height: 147px; }
+.total_price_box1 { border-right: 1px solid lightgray; }
+.total_price_box2 { border-right: 1px solid lightgray; }
+.total_price_box3 { border-right: 1px solid lightgray; }
+.total_price_div dl { margin: 0px; padding: 30px 30px 0px 30px; float: left; vertical-align: middle; width: 270px; }
+.total_price_div dt { float: left; font-size: 9pt; font-weight: bold; padding-top: 15px; }
+.total_price_div dd { float: right; margin: 0px; padding: 0px; text-align: left; }
+.total_price_div span { font-size: 22pt; }
+.total_price_div img { position: absolute; }
+.total_price_box1 img { position: relative; right: -46px; }
+.total_price_box2 img { position: relative; right: -46px; }
+.total_price_box3 img { position: relative; right: -46px; }
+
+.warning_image_div { margin-top: 30px; }
+
+.bottom_menu { margin-top: 50px; text-align: center; }
+.bottom_menu button { height: 48px; padding: 0px 20px; }
+.continue { font-size: 20px; font-weight: bold; color: #666; border: 1px solid #8b8b8b; background: #fff; }
+.select_order { font-size: 20px; font-weight: bold; color: #e50015; border: 1px solid #e50015; background: #fff; }
+.all_order { font-size: 20px; font-weight: bold; color: #ffffff; border: 1px solid #e50015; background: #e50015; }
+
+.shoppingBasket_viewList_ul { margin: 0px; padding: 0px; font-size: 14px; font-weight: bold; }
+.shoppingBasket_viewList_li { width: 270px; border: 1px solid black; border-bottom: white; padding: 10px 30px; text-align: center; }
+.shoppingBasket_viewList p { border-top: 1px solid black; text-align: center; font-size: 14px; margin: 0px; padding: 80px 0px; } */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

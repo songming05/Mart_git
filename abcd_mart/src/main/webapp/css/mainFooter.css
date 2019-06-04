@@ -1,0 +1,459 @@
+@charset "UTF-8";
+/* 공지사항, 동영상부분*/
+.new-main-etc-notice{
+	font-family: Verdana, "Malgun Gothic", "맑은고딕", sans-serif;
+	width: 1100px;
+    margin: 0 auto;
+    padding-top: 54px;
+    font-size: 11px;
+    color: #7b7b7b;
+}
+.etc-box-left{
+	float: left;
+    width: 665px;
+    height: 228.48px;
+}
+.guide-link-list{
+	width: 665px;
+	height: 153px;
+}
+.guide-link-list li {
+    float: left;
+    text-align: center;
+    margin-right: 15px;
+}
+.ico-box{
+	width: 155px;
+    height: 130px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.ico-box img {
+	height: auto;
+    vertical-align: middle;
+    border: 0;
+}
+.guide-link-list li a {
+	color: #7b7b7b;
+}
+.guide-link-list li a .txt {
+    display: block;
+    font-weight: bold;
+    font-size: 13px;
+    color: #333;
+    margin-top: 6px;
+}
+.notic-simple-box js-verti-slide {
+	width:665px;
+    height: 53px;
+    border: 1px solid #e5e5e5;
+    margin-top: 20px;
+    padding: 0 15px;
+}
+.notic-simple-in-pd{
+	position: relative;
+}
+.notic-simple-in-pd strong{
+	float: left;
+    line-height: 53px;
+}
+.new-main-etc-notice .etc-box-left .notic-simple-box{
+	height: 57px;
+    border: 1px solid #e5e5e5;
+    margin-top: 20px;
+    padding: 0 15px;
+}
+.new-main-etc-notice .etc-box-left .notic-simple-box .notic-simple-in-pd .tt{
+	float: left;
+    line-height: 53px;
+}
+.new-main-etc-notice .etc-box-left .notic-simple-box .notic-simple-in-pd .tt i{
+	width: 36px;
+    height: 36px;
+    background-image: url("../image/mainFooter/m-notic-simple-icon.png");
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+#footerNotice{
+	font-size: 16px;
+    color: #333;
+    display: inline-block;
+    vertical-align: middle;
+}
+.list-hidden-div{
+	line-height: 1.4em; 
+    height:50px	;
+    overflow: hidden;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 100%;
+    padding-left: 156px;
+    box-sizing: border-box;
+    z-index: 1
+    display: block;
+    list-style: none;
+    border-collapse: collapse;
+	border-spacing: 0;
+}
+blockquote, q {
+				quotes: none;
+			}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+.new-main-etc-notice .etc-box-left .notic-simple-box .notic-simple-in-pd .list-hidden-div .listFooter li {
+    padding-left: 7px;
+}
+.new-main-etc-notice .etc-box-left .notic-simple-box .notic-simple-in-pd .quick-link-go:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #ccc;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    z-index: 1;
+}
+
+.new-main-etc-notice .etc-box-left .notic-simple-box .notic-simple-in-pd .list-hidden-div .listFooter li:after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 1px;
+    background-color: #333;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: 0.5px;
+}
+.new-main-etc-notice .etc-box-left .notic-simple-box .notic-simple-in-pd .quick-link-go:after{
+    content: "";
+    display: block;
+    width: 2px;
+    height: 100%;
+    background: #ccc;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -1px;
+    z-index: 1;
+}
+.new-main-etc-notice .etc-box-left .notic-simple-box .notic-simple-in-pd .list-hidden-div .listFooter li a {
+    font-size: 12px;
+    color: #333;
+}
+.new-main-etc-notice .etc-box-left .notic-simple-box .notic-simple-in-pd .list-hidden-div .listFooter li a:hover { text-decoration: underline; }
+.new-main-etc-notice .etc-box-left .notic-simple-box .notic-simple-in-pd .quick-link-go {
+    position: absolute;
+    top: 18px;
+    right: 14px;
+    width: 17px;
+    height: 17px;
+    z-index: 1;
+}
+.etc-movie-area{
+	    float: right;
+}
+.pop_wrap{
+	border: 1px solid #6c6c6c;
+    color: #3b3b3b;
+	background-color: #fff;
+    display: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 600;
+} 
+.pop_header{
+	width:1000px;
+	background-color: #f5ca01;
+    position: relative;
+    text-align: center;
+    padding: 14px 50px 18px;
+}
+.pop_header h2{
+	font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #000000;
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.abc-cap-movie-box{
+	position: relative;
+    width: 409px;
+    height: 230px;
+    z-index: 1;
+    overflow: hidden;
+}  
+.movie-start-btn{
+	position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 82px;
+    height: 82px;
+    background-image: url("../image/mainFooter/movie-start-btn.png");
+}  
+.new-main-etc-notice:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.new-main-etc-notice .etc-box-left .guide-link-list li:last-child {
+    margin-right: 0;
+}
+.blind { border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important; overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important; }
+.listFooter{
+	position:relative; width:100%; height:auto;
+}
+.listFooter li{
+	width:100%; height:50px; line-height:50px;
+}
+
+
+/*동영상*/
+#layer {display:none; position:absolute; top:3900px; left:40%; width:1041px; height:684px; margin:-188px 0 0 -300px; padding:0px;  z-index:21;}
+#layer #player {display:block;}
+#layer .inner {position:relative;}
+#layer .inner .close {
+	position: absolute;
+    top: 19px;
+    right: 65px;
+    display: block;
+    width: 28px;
+    height: 28px;
+    background-image: url(../image/mainFooter/xIcon.PNG);
+    text-indent: -999em;
+    background-size: 26px 23px;
+        opacity: 1;
+    }
+.dim {display:none; position:fixed; _position:absolute; top:0;left:0; background:#000; width:100%; height:100%; filter:Alpha(opacity=40); opacity:0.4; -moz-opacity:0.4; z-index:20;}
+
+/*개인정보 처리 방침 밑에부분*/
+.foot_wrap {
+	display: block;
+    padding-bottom: 60px;
+    border-top: 1px solid #dbdbdb;
+    margin: 0;
+    padding: 0;
+    font-size: 11px;
+    position: relative;
+    min-width: 1100px;
+    height: 365px;
+    color: #7b7b7b;
+    font-family: Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif;
+     margin-top: 60px;
+}	
+.container_layout {
+    width: 1100px;
+    margin: auto;
+}
+.foot_bar_area {
+	padding: 15px 0;
+}
+.foot_bar_area clearfix{
+	padding: 15px 0;
+}
+.fmenu {
+	float: left;
+}
+ul.fmenu  {
+	list-style: none;
+}
+ol.fmenu  {
+	list-style: none;
+}
+.foot_bar_area .fmenu li:first-child {
+    margin-left: 0;
+}
+.foot_bar_area .fmenu li {
+    float: left;
+    margin-left: 24px;
+}
+.foot_bar_area .fmenu li a {
+    color: #3b3b3b;
+}
+.fl-r {
+    float: right;
+}
+.mr40 {
+    margin-right: 40px;
+}
+.fl-l {
+    float: left;
+}
+.fc_type6 {
+    color: #3b3b3b;
+}
+.tit_type3 {
+    font-family: "tahoma", Dotum, Gulim, Verdana, sans-serif, Helvetica, sans-serif;
+}
+.bold {
+    font-weight: bold !important;
+}
+.foot_bar_area .brand_site_area h2 {
+    font-family: "tahoma", Dotum, Gulim, Verdana, sans-serif, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    width: 80px;
+    padding-left: 2px;
+    color: #ffffff;
+    background: url(//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png) -146px -88px no-repeat;
+}
+.foot_bar_area .brand_site_area li {
+    float: left;
+    padding: 0 8px 0 0;
+}
+.foot_bar_area .brand_site_area li a {
+    font-family: "tahoma", Dotum, Gulim, Verdana, sans-serif, Helvetica, sans-serif;
+    color: #666666;
+}
+.foot_bar_area .brand_site_area li:before {
+    display: inline-block;
+    width: 1px;
+    height: 8px;
+    margin-right: 8px;
+    content: '';
+    vertical-align: middle;
+    background: #dbdbdb;
+}
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix:before, .clearfix:after {
+    display: table;
+    overflow: hidden;
+    content: "";
+}
+h2.fl-l {
+	margin-top: 2px; 
+    margin-bottom: 0px;
+}
+.info_abc_wrap .address_area {
+    height: 200px;
+    padding-right: 30px;
+    border-right: 1px solid #f2f2f2;
+    line-height: 1.8;
+}
+.footerImg{
+	height: auto;
+    vertical-align: middle;
+    border: 0;
+}
+.mt15 {
+    margin-top: 15px;
+}
+
+.btn_sType10 {
+    display: inline-block;
+    padding: 2px 6px;
+    color: #666666;
+    text-align: center;
+ 	box-sizing:content-box;
+}
+.info_abc_wrap .address_area a {
+    background: none;
+    border: 1px solid #bfbfbf;
+    line-height: 1;
+    height: 12px;
+}
+.info_abc_wrap .address_area a:after {
+    display: inline-block;
+    content: '';
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    border-top: 2px solid transparent;
+    border-top: 0.2rem solid transparent;
+    border-bottom: 2px solid transparent;
+    border-bottom: 0.2rem solid transparent;
+    border-left: 2px solid #8b8b8b;
+    border-left: 0.2rem solid #8b8b8b;
+    margin-left: 5px;
+}
+.info_abc_wrap .address_area .copyright {
+    font-family: "tahoma", Dotum, Gulim, Verdana, sans-serif, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #a4a4a4;
+}
+.info_abc_wrap .customer_abc_area {
+    height: 230px;
+    padding: 0 28px;
+    border-right: 1px solid #f2f2f2;
+    margin: 0;
+}
+.positR {
+    position: relative;
+}
+.tit_type1 {
+    font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #000000;
+}
+.fs16 {
+    font-size: 16px !important;
+}
+.info_abc_wrap .customer_abc_area .ico_arrow {
+    position: absolute;
+    top: 3px;
+    left: 120px;
+    
+}
+a.ico_arrow link{
+	text-decoration: underline;
+    color: #7b7b7b;
+    
+}
+a.ico_arrow{
+	display: inline-block;
+}
+.info_abc_wrap .customer_abc_area .tel_number {
+    font-family: Verdana, sans-serif, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
+    color: #000000;
+}
+.info_abc_wrap {
+    margin-top: 30px;
+}
+.ico_arrow:after {
+    display: inline-block;
+    width: 8px;
+    height: 12px;
+    content: '';
+    vertical-align: middle;
+    background: url(//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png) -135px -1px no-repeat;
+}
+.footerEmail{
+	display: inline-block;
+    color: #7b7b7b;
+}
+.info_abc_wrap .customer_abc_area ul {
+    margin-top: 40px;
+}
+.info_abc_wrap .customer_abc_area ul li {
+    float: left;
+}
+.mt20 {
+    margin-top: 20px !important;
+}
+h2.tit_type1{
+	margin-top: 0px;
+    margin-bottom: 0px;
+} 

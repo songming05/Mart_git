@@ -1,0 +1,352 @@
+@charset "UTF-8";
+
+/*달력아이콘ui*/
+img.ui-datepicker-trigger {
+   margin-left:5px; vertical-align:middle; cursor:pointer;
+}
+
+/*밑줄빼기*/
+a{text-decoration:none;}
+
+/*호버처리*/
+#menu_Home:hover{
+	font-weight:bold;
+	color:: #333;
+	text-decoration:none;
+}
+
+#menu_Product:hover{
+	font-weight:bold;
+	color:: #333;
+	text-decoration:none;
+}
+
+#menu_Order:hover{
+	font-weight:bold;
+	color:: #333;
+	text-decoration:none;	
+}
+
+#menu_Product:hover{
+	font-weight:bold;
+	color:: #333;
+	text-decoration:none;
+}
+
+#menu_Member:hover{
+	font-weight:bold;
+	color:: #333;
+	text-decoration:none;
+}
+
+#menu_Manage:hover{
+	font-weight:bold;
+	color:: #333;
+	text-decoration:none;
+}
+
+#menu_Promotion:hover{
+	font-weight:bold;
+	color:: #333;
+	text-decoration:none;
+}
+
+#menu_Stats:hover{
+	font-weight:bold;
+	color:: #333;
+	text-decoration:none;
+}
+
+
+#lMenu_applyPdt:hover{
+	font-weight:bold;
+	color:: #333;
+	text-decoration:none;
+}
+
+#lMenu_applyImg:hover{
+	font-weight:bold;
+	color:: #333;
+	text-decoration:none;
+}
+
+#menu_Order:hover{
+	font-weight:bold;
+	color:: #333;
+	text-decoration:none;	
+}
+
+
+
+#lMenu_orderForm:hover{
+	font-weight:bold;
+	color:: #333;
+	text-decoration:none;	
+}
+
+
+
+
+
+
+
+.mtm5 { margin-top : -5px;}
+.mtm10 { margin-top : -10px;}
+.mtm40 { margin-top : -40px;}
+
+.mlm40 { margin-left : -40px;}
+.mlm10 { margin-left : -10px;}
+.mlm20 { margin-left : -20px;}
+.ml20 { margin-left : 20px;}
+.ml40 { margin-left : 40px;}
+
+.mr40 { margin-right : 40px;}
+
+.pt30 { padding-top : 30px;}
+
+.mainMenu li{ list-style: none; display:inline; }
+
+/*폰트*/
+.sub_type1 { 
+	font-family: Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; 
+	font-size:11px; 
+	color:#ffffff; 
+}
+
+.sub_type2 { 
+	font-family: Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; 
+	font-size:11px; 
+	color:#ffffff; 
+}
+
+.tit_type1 { 
+	font-family: Verdana, Dotum, Gulim, "tahoma", sans-serif, Helvetica, sans-serif; 
+	font-size:14px;
+}
+
+
+/*버튼*/
+.Btn_Type1 {
+    font-family: Malgun Gothic, '맑은고딕', Helvetica, AppleSDGothicNeo, sans-serif;
+    display: inline-block;
+    padding: 2px 6px;
+    padding: 3px 6px 1px \0/IE89;
+    color: #332430;
+    border: 1px solid #332430;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+
+.Btn_Type2 {
+    font-family: Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif;
+    display: inline-block;
+    padding: 3px 6px;
+    padding: 3px 6px 1px \0/IE89;
+    color: #ffffff !important;
+    border: 1px solid #f3646a;
+    background: #f3646a;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.mainMenu_Btn {
+    font-family: Malgun Gothic, '맑은고딕', Helvetica, AppleSDGothicNeo, sans-serif;
+    display: inline-block;
+    width:70px;
+    height:30px;
+	padding-left: 30px;
+    padding: 14px 15px;
+    text-align: center;
+    padding-top: 21px;
+    color: #4f0007;
+    background: #fff;
+    cursor: pointer;
+    font-size: 14px;
+}
+ 
+.btn-default {
+    color: #fff;
+    background-color: #4d4d4d;
+    border-color: #ffffff;
+}
+ 
+ 
+/*상품등록 테이블*/
+.basicTable td{
+	border-bottom : 1px solid #eaeaea;
+	background : #fff;
+	padding-left: 30px;
+} 
+ 
+.basicTable th{
+	padding-left: 30px;
+	border-bottom : 1px solid #eaeaea;
+	background : #f3f3f3;
+	color : #555;
+}
+
+.basicTable2 td{
+	border-bottom : 1px solid #eaeaea;
+	border-left: 1px solid #f2f2f2;
+	background : #fff;
+	border-left:1px solid #e3e3e3;
+} 
+
+.basicTable2 th{
+	text-align:center;
+	border-bottom : 1px solid #eaeaea;
+	border-left: 1px solid #e3e3e3;
+	background : #f3f3f3;
+	color : #555;
+}
+
+ 
+/*왼쪽메뉴*/
+#left .left_Layout{
+	margin-top : 50px;
+	width:100%;
+	height:300px;
+	background-color:#ffffff;
+}
+
+#left li{
+	list-style: none;
+}
+
+#lMenu_product ul{
+    padding-inline-start: 0px !important;
+}
+
+.leftMenu_Btn0{
+	display: inline-block;
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    padding: 20px 1px;
+    color: #333333 !important;
+    cursor: pointer;
+    text-align: center;
+    font-size: 13px;
+    border-top : 1px solid #eaeaea;
+    border-bottom : 1px solid #eaeaea;
+    background-color: #ffffff;
+
+}
+
+.leftMenu_Btn{
+	display: inline-block;
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    padding: 20px 1px;
+    color: #333333 !important;
+    cursor: pointer;
+    text-align: center;
+    font-size: 13px;
+    border-bottom : 1px solid #eaeaea;
+}
+
+
+#lMenu_applyPdt{
+	/* 1px solid blue;*/
+}
+
+/*메인메뉴*/
+.main_Layout{
+	margin: 20px 40px 20px 40px;
+	width:900px;
+	height:600px;
+	
+	align:center;
+	background-color: #f3f4f8;
+}
+
+
+/*상단바*/
+.content_layout{
+	padding-left:30px;
+	padding-top:10px;
+	height:30px;
+	background-color:#332430;
+	
+} 
+ 
+
+.topMenu .content_layout .menu_right{
+	margin-top : -7px;
+	float: right;
+	padding-right:30px;
+}
+
+.topMenu .content_layout .welcome { 
+	position: relative; 
+	float: left; margin: 0px 0px 0px 10px; padding: 0; list-style: none; 
+}
+
+
+.menuLogo{
+	margin-left:40px;
+	margin-top:20px;
+
+}
+
+.mainMenu ul{
+	position: relative; 
+	float: left; margin: 0; padding: 0; list-style: none; 
+	margin-top: 10px;
+}
+ 
+ 
+/*레이아웃*/
+body {
+	font-family: Malgun Gothic, '맑은고딕', Helvetica, AppleSDGothicNeo, sans-serif;
+    margin: 0px; 
+    min-width:900px;
+    height:100%;
+}
+#layout_Box {
+    position: relative;
+    height: auto;
+    margin: auto; 
+    background-color: #F90;
+}
+#top {
+    background-color: #ffffff;
+    height: 100px;
+    position: relative;
+}
+#left {
+    background-color: #ffffff;
+    float: left;
+    height: 700px;
+    width: 15%;
+    position: relative;
+}
+#main {
+    
+    float: left;
+    height: 700px;
+    width: 85%;
+    position: relative;
+    background-color: #f3f4f8;
+}
+#bottom {
+    background-color: #C0F;
+    width:100%;
+    height: 70px;
+    position: relative;
+    clear: both; 
+    float: left; 
+}
+
+
+/******상품등록*****/
+.applyFormPdt tbody{
+	font-size:9pt;
+	color:#1c1c1c;
+}
+
+
+
