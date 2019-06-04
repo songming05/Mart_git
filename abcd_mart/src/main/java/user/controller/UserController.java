@@ -105,4 +105,8 @@ public class UserController {
 		return "/main/index";
 	}
 
+	@RequestMapping(value="/idFound", method = RequestMethod.GET)
+	public String idFound() {
+		return "/user/idFound";
+	}
 }

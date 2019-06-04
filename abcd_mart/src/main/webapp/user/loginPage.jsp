@@ -92,7 +92,7 @@
                                 </article>
                                 <article class="loss_member_add bor-dash">
                                     <span class="fs12">아이디/비밀번호를 잊으셨나요?</span>&nbsp;&nbsp;
-                                    <a href="./idFound.jsp" class="loginBtn_Type1 sub_type1 fs11">아이디 찾기</a>
+                                    <a href="/user/idFound" class="loginBtn_Type1 sub_type1 fs11">아이디 찾기</a>
                                     <a href="" class="loginBtn_Type2 sub_type1 fs11">비밀번호 찾기</a>
                                 </article>
                             </div>
@@ -177,7 +177,7 @@
 </footer>
 </body>
 <script type="text/javascript" src='../js/user/userLoginJs.js'/></script>
-<script type="text/javascript" src="../js/user/quickBar.js"></script>
+<script type="text/javascript" src="../js/quickBar.js"></script>
 
 <script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript" src="../js/mainFooter.js"></script>
