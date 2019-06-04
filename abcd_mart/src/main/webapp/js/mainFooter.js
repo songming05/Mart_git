@@ -27,9 +27,11 @@ $(function(){
   
 	$('.movie-start-btn').on('click', function(){ //레이어 열때
 		var path = $(this).attr('href');
+		$("#layer").css("left","50%");
 		$('.cont').html(embed);
 		$(path).show();
 		$('.dim').show();
+		
 	})
   
 	$('.close').on('click', function(){ //레이어 닫을때

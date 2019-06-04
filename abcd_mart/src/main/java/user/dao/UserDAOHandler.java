@@ -41,5 +41,10 @@ public class UserDAOHandler implements UserDAO {
 		return sqlSession.selectOne("userSQL.getUserInfo", map);
 	}
 
+	@Override
+	public UserDTO idFound(Map<String, String> map) {
+		return sqlSession.selectOne("userSQL.idFound", map);
+	}
+
 	
 }

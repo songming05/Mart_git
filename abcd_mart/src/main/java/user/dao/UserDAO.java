@@ -14,5 +14,7 @@ public interface UserDAO {
 	UserDTO getUserInfo(Map<String, String> map);
 
 	UserDTO checkUserEmail(String email);
+	
+	UserDTO idFound(Map<String, String> map);
 
 }

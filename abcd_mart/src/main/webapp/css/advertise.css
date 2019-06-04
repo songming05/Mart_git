@@ -128,7 +128,7 @@ all and (min-width: 768px) and (-webkit-transform-3d) {
       transform: translate3d(0, 0, 0);
       left: 0;
    }
-}
+} 
 
 @media all and (min-width: 992px) {
    .carousel-showmanymoveone .carousel-inner > .active.left,
@@ -176,3 +176,17 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 #bootCar{
   	padding-left: 0px;
   }
+.container{
+	min-width: 1170px;
+    min-height: 160px;
+    margin-top: 57px;
+}
+#bottom_ads{
+	height:80px;
+	margin-top: 80px;
+	margin-left: 15px;
+}
+#sizeModify{
+	width: 1903px;
+	height: 400px;
+}

@@ -40,5 +40,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where 
 			id=#{id} and password=#{password}
 	</select>
+	
+	<select id="idFound" parameterType="map" resultType="user">
+		select * from userinfo where name=#{name} and email=#{email} 
+	</select>
 
 </mapper>

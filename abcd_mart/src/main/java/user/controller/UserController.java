@@ -69,7 +69,7 @@ public class UserController {
 	@RequestMapping(value = "/signUp", method = RequestMethod.POST)
 	@ResponseBody
 	public String signUp(@RequestParam Map<String,String> map) {
-		//암호화 진행하면 된다
+		//�븫�샇�솕 吏꾪뻾�븯硫� �맂�떎
 		String EncodedPassword = passwordEncoder.encode(map.get("password"));
 		map.remove("password");
 		map.put("password", EncodedPassword);
@@ -105,8 +105,19 @@ public class UserController {
 		return "/main/index";
 	}
 
-	@RequestMapping(value="/idFound", method = RequestMethod.GET)
-	public String idFound() {
-		return "/user/idFound";
+	@RequestMapping(value ="/idFound", method = RequestMethod.POST)
+	@ResponseBody
+	public String idFind(@RequestParam Map<String,String> map, HttpSession session) {
+		UserDTO userDTO= userDAO.idFound(map);
+		String result="";
+		
+		if(userDTO==null)
+			result ="nopass";
+		else {
+			session.setAttribute("findName", userDTO.getName());
+			session.setAttribute("findEmail", userDTO.getEmail());
+			result ="pass";
+		}
+		return result;
 	}
 }

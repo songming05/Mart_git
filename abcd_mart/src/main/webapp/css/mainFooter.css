@@ -222,8 +222,17 @@ q:before, q:after {
 
 
 /*동영상*/
-#layer {display:none; position:absolute; top:3900px; left:40%; width:1041px; height:684px; margin:-188px 0 0 -300px; padding:0px;  z-index:21;}
-#layer #player {display:block;}
+#layer {
+	margin-top: -314px;
+	margin-left: -507px;
+	height:684px; 
+	width:1041px;	
+	position: fixed;
+	top: 50%;
+    left: -200%;
+    z-index: 600;
+	}
+#layer #player {display:block;  }
 #layer .inner {position:relative;}
 #layer .inner .close {
 	position: absolute;
