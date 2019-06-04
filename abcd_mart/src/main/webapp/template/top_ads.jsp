@@ -11,7 +11,7 @@
 			<li data-target="#carousel-a" data-slide-to="5"></li>
 		</ol>
 	
-		<ul class="carousel-inner" id="sizeModify" >	
+		<ul class="carousel-inner" id="sizeModify" style="height: 400px;">	
 			<li class="item active" style="background: rgb(0, 160, 217);">
 				<a onclick="location.href='../advertisement/mainAd1.jsp'" >
 					<img src="../image/advertisement/main_advertise_Lsize_img1.jpg" >
