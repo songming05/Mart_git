@@ -1,0 +1,204 @@
+@charset "UTF-8";
+
+#quickbar {
+	top:680px;
+	 font-size: 11px;
+	 font-family: Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    width: 80px;
+    margin-left: 582px;
+    background: #fff;
+}
+
+#quickbarOther {
+	top: 240px;
+	font-size: 11px;
+	font-family: Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif;
+    position: absolute;
+    z-index: 201;
+    left: 50%;
+    width: 80px;
+    margin-left: 582px;
+    background: #fff;
+}
+
+.quickbar_area {
+    height: 345px;
+    border: 1px solid #bfbfbf;
+    background: #fff;
+}
+.quickbar_area .quick_product {
+    position: relative;
+    height: 315px;
+    padding: 20px 0;
+    display: block;
+    box-sizing: border-box;
+}
+.quickbar_area .quick_product .quick_list_header {
+    line-height: 1.7;
+    text-align: center;
+    color: #3b3b3b;
+}
+.quickbar_area .quick_product .quick_list_header em {
+    font-weight: bold;
+    color: #e50015;
+}
+.quickbar_area .quick_product .quick_list {
+    overflow: hidden;
+    height: 200px;
+    margin: 28px 0;
+}
+.align-center {
+    text-align: center !important;
+}
+.align-center a{
+	display: inline-block;
+    color: #7b7b7b;
+    text-decoration: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+}
+.add_quick_menu li:first-child {
+    border-top: 0;
+}
+.add_quick_menu2 li:first-child {
+    border-top: 0;
+}
+.add_quick_menu li a {
+    width: 100%;
+    padding: 6px 0;
+    text-align: center;
+    color: #3b3b3b;
+    display: inline-block;
+    text-decoration: none;
+    outline: none;
+    margin: 0;
+    list-style: none;
+}
+.add_quick_menu2 li a {
+    width: 100%;
+    padding: 6px 0;
+    text-align: center;
+    color: #3b3b3b;
+    display: inline-block;
+    text-decoration: none;
+    outline: none;
+    margin: 0;
+    list-style: none;
+}
+.add_quick_menu li {
+    border-top: 1px solid #f2f2f2;
+}
+.add_quick_menu2 li {
+    border-top: 1px solid #f2f2f2;
+}
+.ico_quick2:before {
+    width: 27px;
+    height: 16px;
+    margin-right: 4px;
+    background-image: url("../image/quickBar/couponIcon.png");
+}
+.ico_quick5:before {
+    width: 27px;
+    height: 16px;
+    margin-right: 4px;
+    background-image: url("../image/quickBar/couponIcon.png");
+}
+*:before, *:after {
+    box-sizing: border-box;
+}
+.add_quick_menu li a.ico_quick4 span {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+.add_quick_menu2 li a.ico_quick4 span {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+.add_quick_menu li a.ico_quick6 span {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+.add_quick_menu2 li a.ico_quick6 span {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+.add_quick_menu .ico_quick3 {
+    font-weight: bold;
+    width: 100%;
+    padding: 7px 0;
+    text-align: center;
+        text-decoration: none;
+    color: #ffffff;
+    background: #000;
+}
+.add_quick_menu2 .ico_quick3 {
+    font-weight: bold;
+    width: 100%;
+    padding: 7px 0;
+    text-align: center;
+        text-decoration: none;
+    color: #ffffff;
+    background: #000;
+}
+.ico_quick3:after {
+    display: inline-block;
+    width: 10px;
+    height: 12px;
+    content: '';
+    vertical-align: middle;
+    background-image: url("../image/quickBar/upArrow.png");
+    margin-left: 4px;
+}
+
+.mouseControll{
+	width: 16px;
+    height: 19px;
+    margin-right: 4px;
+	display: inline-block;
+    content: '';
+    vertical-align: middle;
+    color:black;
+    box-sizing: border-box;
+    background-image: url("../image/quickBar/abcZone.png");
+}
+.mouseControll3{
+	width: 16px;
+    height: 19px;
+    margin-right: 4px;
+	display: inline-block;
+    content: '';
+    vertical-align: middle;
+    color:black;
+    box-sizing: border-box;
+    background-image: url("../image/quickBar/abcZone.png");
+}
+.mouseControll2{
+	width: 27px;
+    height: 16px;
+    margin-right: 4px;
+    display: inline-block;
+    content: '';
+    color:black;
+    vertical-align: middle;
+    box-sizing: border-box;
+    background-image: url("../image/quickBar/couponIcon.png");
+}
+.mouseControll4{
+	width: 27px;
+    height: 16px;
+    margin-right: 4px;
+    display: inline-block;
+    content: '';
+    color:black;
+    vertical-align: middle;
+    box-sizing: border-box;
+    background-image: url("../image/quickBar/couponIcon.png");
+}

@@ -7,7 +7,7 @@
 <title>아이디 찾기</title>
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/header.css"/>
-<link rel="stylesheet" href="../css/idFound.css"/>
+<link rel="stylesheet" href="../css/user/idFound.css"/>
 
 <!-- quickBar -->
 <link rel="stylesheet" href="../css/quickBar.css"/>	
@@ -183,7 +183,7 @@
 <!-- footer -->
 <script type="text/javascript" src="../js/mainFooter.js"></script>
 <!-- idFound -->
-<script type="text/javascript" src="../js/idFound.js"></script>
+<script type="text/javascript" src="../js/user/idFound.js"></script>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.0.min.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
