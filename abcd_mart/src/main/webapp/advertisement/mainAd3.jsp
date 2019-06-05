@@ -119,19 +119,19 @@
     <li>
         
 
-<div class="model_img_box" mode="2">
+<div class="model_img_box" id="model_img_box1"  mode="2">
     
     <img src="http://image.abcmart.co.kr/nexti/images/title/1958/0068095_title.jpg" alt="2 STRAP SANDAL" onerror="imageError(this)">
         <a href="/abc/product/detail?prdtCode=0068095" class="over_link" style="display: none;"></a>
-        <div class="over_view" style="display: none;">
-            <!-- <ul>
+        <div class="over_view" id="over_view1" style="display: none"  >
+             <ul>
                 
                         <li class="view"><a onclick="openLayerProductDetail('0068095','')">view</a></li>
                         <li class="cart"><a onclick="openLayerProductOption('0068095')">cart</a></li>		            
 		            
                 <li class="newpage"><a href="javascript://" onclick="viewProductDetail('0068095', '');">newpage</a></li>
                 <li class="favorit"><a href="javascript://" onclick="saveWishProduct('0068095');">favorit</a></li>
-            </ul> -->
+            </ul> 
         </div>
     
 </div>
@@ -164,19 +164,19 @@
     <li>
         
 
-<div class="model_img_box" mode="2">
+<div class="model_img_box" id="model_img_box2"  mode="2">
     
     <img src="http://image.abcmart.co.kr/nexti/images/title/1401/0068096_title.jpg" alt="2 STRAP SANDAL" onerror="imageError(this)">
         <a href="/abc/product/detail?prdtCode=0068096" class="over_link" style="display: none;"></a>
-        <div class="over_view" style="display: none;">
-        <!--     <ul>
+        <div class="over_view" id="over_view2" style="display: none"  >
+           <ul>
                 
                         <li class="view"><a onclick="openLayerProductDetail('0068096','')">view</a></li>
                         <li class="cart"><a onclick="openLayerProductOption('0068096')">cart</a></li>		            
 		            
                 <li class="newpage"><a href="javascript://" onclick="viewProductDetail('0068096', '');">newpage</a></li>
                 <li class="favorit"><a href="javascript://" onclick="saveWishProduct('0068096');">favorit</a></li>
-            </ul> -->
+            </ul> 
         </div>
     
 </div>
@@ -209,19 +209,19 @@
     <li>
         
 
-<div class="model_img_box" mode="1">
+<div class="model_img_box" id="model_img_box3"  mode="1">
     
     <img src="http://image.abcmart.co.kr/nexti/images/list/1577/0068094_list.jpg" alt="PAD SANDAL" onerror="imageError(this)">
         <a href="/abc/product/detail?prdtCode=0068094" class="over_link"></a>
-        <div class="over_view">
-            <!-- <ul>
+        <div class="over_view" id="over_view3" style="display: none"  >
+             <ul>
                 
                         <li class="view"><a onclick="openLayerProductDetail('0068094','')">view</a></li>
                         <li class="cart"><a onclick="openLayerProductOption('0068094')">cart</a></li>		            
 		            
                 <li class="newpage"><a href="javascript://" onclick="viewProductDetail('0068094', '');">newpage</a></li>
                 <li class="favorit"><a href="javascript://" onclick="saveWishProduct('0068094');">favorit</a></li>
-            </ul> -->
+            </ul> 
         </div>
     
 </div>
@@ -250,19 +250,19 @@
     <li>
         
 
-<div class="model_img_box" mode="1">
+<div class="model_img_box" id="model_img_box4"  mode="1">
     
     <img src="http://image.abcmart.co.kr/nexti/images/list/1062/0068091_list.jpg" alt="PAD SANDAL" onerror="imageError(this)">
         <a href="/abc/product/detail?prdtCode=0068091" class="over_link" style="display: none;"></a>
-        <div class="over_view" style="display: none;">
-           <!--  <ul>
+        <div class="over_view"  id="over_view4" style="display: none"  >
+            <ul>
                 
                         <li class="view"><a onclick="openLayerProductDetail('0068091','')">view</a></li>
                         <li class="cart"><a onclick="openLayerProductOption('0068091')">cart</a></li>		            
 		            
                 <li class="newpage"><a href="javascript://" onclick="viewProductDetail('0068091', '');">newpage</a></li>
                 <li class="favorit"><a href="javascript://" onclick="saveWishProduct('0068091');">favorit</a></li>
-            </ul> -->
+            </ul> 
         </div>
     
 </div>
@@ -291,19 +291,19 @@
     <li>
         
 
-<div class="model_img_box" mode="1">
+<div class="model_img_box" id="model_img_box5"  mode="1">
     
     <img src="http://image.abcmart.co.kr/nexti/images/list/1072/0068093_list.jpg" alt="PAD SANDAL" onerror="imageError(this)">
         <a href="/abc/product/detail?prdtCode=0068093" class="over_link" style="display: none;"></a>
-        <div class="over_view" style="display: none;">
-           <!--  <ul>
+        <div class="over_view"  id="over_view5" style="display: none"  >
+            <ul>
                 
                         <li class="view"><a onclick="openLayerProductDetail('0068093','')">view</a></li>
                         <li class="cart"><a onclick="openLayerProductOption('0068093')">cart</a></li>		            
 		            
                 <li class="newpage"><a href="javascript://" onclick="viewProductDetail('0068093', '');">newpage</a></li>
                 <li class="favorit"><a href="javascript://" onclick="saveWishProduct('0068093');">favorit</a></li>
-            </ul> -->
+            </ul> 
         </div>
     
 </div>
@@ -341,19 +341,19 @@
     <li>
         
 
-<div class="model_img_box" mode="1">
+<div class="model_img_box" id="model_img_box6"  mode="1">
     
     <img src="http://image.abcmart.co.kr/nexti/images/list/1557/0068090_list.jpg" alt="PAD SANDAL" onerror="imageError(this)">
         <a href="/abc/product/detail?prdtCode=0068090" class="over_link"></a>
-        <div class="over_view">
-         <!--    <ul>
+        <div class="over_view" id="over_view6" style="display: none"  >
+           <ul>
                 
                         <li class="view"><a onclick="openLayerProductDetail('0068090','')">view</a></li>
                         <li class="cart"><a onclick="openLayerProductOption('0068090')">cart</a></li>		            
 		            
                 <li class="newpage"><a href="javascript://" onclick="viewProductDetail('0068090', '');">newpage</a></li>
                 <li class="favorit"><a href="javascript://" onclick="saveWishProduct('0068090');">favorit</a></li>
-            </ul> -->
+            </ul> 
         </div>
     
 </div>
@@ -382,19 +382,19 @@
     <li>
         
 
-<div class="model_img_box" mode="1">
+<div class="model_img_box" id="model_img_box7"  mode="1">
     
     <img src="http://image.abcmart.co.kr/nexti/images/list/1743/0068089_list.jpg" alt="PAD SANDAL" onerror="imageError(this)">
         <a href="/abc/product/detail?prdtCode=0068089" class="over_link"></a>
-        <div class="over_view">
-            <!-- <ul>
+        <div class="over_view" id="over_view7" style="display: none"  >
+           <ul>
                 
                         <li class="view"><a onclick="openLayerProductDetail('0068089','')">view</a></li>
                         <li class="cart"><a onclick="openLayerProductOption('0068089')">cart</a></li>		            
 		            
                 <li class="newpage"><a href="javascript://" onclick="viewProductDetail('0068089', '');">newpage</a></li>
                 <li class="favorit"><a href="javascript://" onclick="saveWishProduct('0068089');">favorit</a></li>
-            </ul> -->
+            </ul>
         </div>
     
 </div>
@@ -423,19 +423,19 @@
     <li>
         
 
-<div class="model_img_box" mode="1">
+<div class="model_img_box" id="model_img_box8"  mode="1">
     
     <img src="http://image.abcmart.co.kr/nexti/images/list/1567/0068092_list.jpg" alt="PAD SANDAL" onerror="imageError(this)">
         <a href="/abc/product/detail?prdtCode=0068092" class="over_link"></a>
-        <div class="over_view">
-         <!--    <ul>
+        <div class="over_view" id="over_view8" style="display: none"  >
+           <ul>
                 
                         <li class="view"><a onclick="openLayerProductDetail('0068092','')">view</a></li>
                         <li class="cart"><a onclick="openLayerProductOption('0068092')">cart</a></li>		            
 		            
                 <li class="newpage"><a href="javascript://" onclick="viewProductDetail('0068092', '');">newpage</a></li>
                 <li class="favorit"><a href="javascript://" onclick="saveWishProduct('0068092');">favorit</a></li>
-            </ul> -->
+            </ul> 
         </div>
     
 </div>
@@ -464,19 +464,19 @@
     <li>
         
 
-<div class="model_img_box" mode="1">
+<div class="model_img_box"  id="model_img_box9"mode="1">
     
     <img src="http://image.abcmart.co.kr/nexti/images/list/1942/0069382_list.jpg" alt="ANNIE 5" onerror="imageError(this)">
         <a href="/abc/product/detail?prdtCode=0069382" class="over_link" style="display: none;"></a>
-        <div class="over_view" style="display: none;">
-          <!--   <ul>
+        <div class="over_view" id="over_view9" style="display: none"  >
+           <ul>
                 
                         <li class="view"><a onclick="openLayerProductDetail('0069382','')">view</a></li>
                         <li class="cart"><a onclick="openLayerProductOption('0069382')">cart</a></li>		            
 		            
                 <li class="newpage"><a href="javascript://" onclick="viewProductDetail('0069382', '');">newpage</a></li>
                 <li class="favorit"><a href="javascript://" onclick="saveWishProduct('0069382');">favorit</a></li>
-            </ul> -->
+            </ul> 
         </div>
     
 </div>
@@ -505,19 +505,19 @@
     <li>
         
 
-<div class="model_img_box" mode="1">
+<div class="model_img_box" id="model_img_box10" mode="1">
     
     <img src="http://image.abcmart.co.kr/nexti/images/list/1447/0069381_list.jpg" alt="ANNIE 5" onerror="imageError(this)">
         <a href="/abc/product/detail?prdtCode=0069381" class="over_link" style="display: none;"></a>
-        <div class="over_view" style="display: none;">
-           <!--  <ul>
+        <div class="over_view" id="over_view10" style="display: none"  >
+           <ul>
                 
                         <li class="view"><a onclick="openLayerProductDetail('0069381','')">view</a></li>
                         <li class="cart"><a onclick="openLayerProductOption('0069381')">cart</a></li>		            
 		            
                 <li class="newpage"><a href="javascript://" onclick="viewProductDetail('0069381', '');">newpage</a></li>
                 <li class="favorit"><a href="javascript://" onclick="saveWishProduct('0069381');">favorit</a></li>
-            </ul> -->
+            </ul>
         </div>
     
 </div>
@@ -546,19 +546,19 @@
     <li>
         
 
-<div class="model_img_box" mode="1">
+<div class="model_img_box" id="model_img_box11"  mode="1">
     
     <img src="http://image.abcmart.co.kr/nexti/images/list/1952/0069380_list.jpg" alt="BRONWYN 5" onerror="imageError(this)">
         <a href="/abc/product/detail?prdtCode=0069380" class="over_link"></a>
-        <div class="over_view">
-         <!--    <ul>
+        <div class="over_view" id="over_view11" style="display: none"  >
+           <ul>
                 
                         <li class="view"><a onclick="openLayerProductDetail('0069380','')">view</a></li>
                         <li class="cart"><a onclick="openLayerProductOption('0069380')">cart</a></li>		            
 		            
                 <li class="newpage"><a href="javascript://" onclick="viewProductDetail('0069380', '');">newpage</a></li>
                 <li class="favorit"><a href="javascript://" onclick="saveWishProduct('0069380');">favorit</a></li>
-            </ul> -->
+            </ul> 
         </div>
     
 </div>
@@ -587,19 +587,19 @@
     <li>
         
 
-<div class="model_img_box" mode="1">
+<div class="model_img_box" id="model_img_box12"  mode="1">
     
     <img src="http://image.abcmart.co.kr/nexti/images/list/1766/0069379_list.jpg" alt="BRONWYN 5" onerror="imageError(this)">
         <a href="/abc/product/detail?prdtCode=0069379" class="over_link"></a>
-        <div class="over_view">
-          <!--   <ul>
+        <div class="over_view" id="over_view12" style="display: none"  >
+            <ul>
                 
                         <li class="view"><a onclick="openLayerProductDetail('0069379','')">view</a></li>
                         <li class="cart"><a onclick="openLayerProductOption('0069379')">cart</a></li>		            
 		            
                 <li class="newpage"><a href="javascript://" onclick="viewProductDetail('0069379', '');">newpage</a></li>
                 <li class="favorit"><a href="javascript://" onclick="saveWishProduct('0069379');">favorit</a></li>
-            </ul> -->
+            </ul>
         </div>
     
 </div>
@@ -644,5 +644,6 @@
 <script type="text/javascript" src="../js/mainFooter.js"></script> 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.0.min.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/adPage.js"></script>
 </html>
         
