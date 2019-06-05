@@ -86,6 +86,10 @@
     height: 40px;
     overflow: hidden;
 }
+.exhibit_tab .column_tab.type2.on {
+    height: auto;
+    overflow: visible;
+}
 .column_tab:before, .column_tab:after {
     display: table;
     overflow: hidden;
