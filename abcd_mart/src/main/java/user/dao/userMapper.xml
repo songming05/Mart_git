@@ -41,8 +41,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			id=#{id} and password=#{password}
 	</select>
 	
-	<select id="idFound" parameterType="map" resultType="user">
-		select * from userinfo where name=#{name} and email=#{email} 
+	<select id="getIdByEmail" parameterType="map" resultType="String">
+		select 
+			id
+		from 
+			userinfo 
+		where 
+			name=#{name} and email=#{email} 
 	</select>
+	
+	<select id="getJoinDate" parameterType="String" resultType="String">
+		select join_date from userinfo where id=#{id}
+	</select>
+	
+	<select id="getInfoByEmail" parameterType="map" resultType="user">
+		select id, join_date from userinfo where name=#{name} and email=#{email} 
+	</select>
+	
 
 </mapper>
