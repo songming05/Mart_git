@@ -93,7 +93,7 @@
                                 <article class="loss_member_add bor-dash">
                                     <span class="fs12">아이디/비밀번호를 잊으셨나요?</span>&nbsp;&nbsp;
 
-                                    <a href="./idFound" class="loginBtn_Type1 sub_type1 fs11">아이디 찾기</a>
+                                    <a onclick="location.href='/abcd_mart/user/idFounds'" class="loginBtn_Type1 sub_type1 fs11">아이디 찾기</a>
                                     <a href="" class="loginBtn_Type2 sub_type1 fs11">비밀번호 찾기</a>
                                 </article>
                             </div>
