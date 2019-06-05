@@ -1,5 +1,6 @@
 package user.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -105,20 +106,27 @@ public class UserController {
 		return "/main/index";
 	}
 
-	@RequestMapping(value ="/idFound", method = RequestMethod.POST)
+	@RequestMapping(value ="/idFound", method = RequestMethod.GET)
+	public String idFind() {
+		return "/user/idFound";
+	}
+	
+	@RequestMapping(value ="/findMyId", method = RequestMethod.POST)
 	@ResponseBody
-	public String idFind(@RequestParam Map<String,String> map, HttpSession session) {
-		UserDTO userDTO= userDAO.idFound(map);
-		String result="";
-		
-		if(userDTO==null)
-			result ="nopass";
-		else {
-			session.setAttribute("findName", userDTO.getName());
-			session.setAttribute("findEmail", userDTO.getEmail());
-			result ="pass";
+	public String findMyId(@RequestParam Map<String,String> map) {
+		String way = map.get("way");
+		if(way.equals("email")) {
+			UserDTO userDTO = userDAO.getInfoByEmail(map);
+			String userId = userDAO.getIdByEmail(map);
+			String userJoinDate = userDAO.getJoinDate(userId);
+			System.out.println(userId);
+			System.out.println(userJoinDate);
+			System.out.println(userDTO.getId()+userDTO.getJoin_date());
+		} else if(way.equals("phone")) {
+			
 		}
-		return result;
+		
+		return "";		
 	}
 	
 }
