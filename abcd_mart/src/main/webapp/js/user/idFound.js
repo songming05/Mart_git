@@ -65,44 +65,28 @@ function autoCode(){
 	
 	
 
-//확인 클릭
-/*function idFound(){
-	if($('#idUserName').val()==''){
+//확인하기 클릭
+function findIdEmail(){
+	var way ='email';
+	var userName = $('#userNameEmail');
+	//var userNamePhone = $('#userNamePhone');
+	var email1 =$('#userMailAddress1');
+	var email2 =$('#userMailAddress2');
+	if(userName.val()==''){
 		swal("이름을 입력해주세요");
-	}else if($('#userMailAddress1').val()=='') {
+	}else if(email1.val()==''||email2.val()=='') {
 		swal("이메일 주소를 입력해주세요");
-	}else if($('#userMailAddress2').val()=='') {
-		swal("이메일 주소를 입력해주세요");
-	}
-	else if($('#오토코드').val()=='') {
-		swal("인증코드를 입력해 주세요");
 	}else {
-		//이동
 		$.ajax({
 			type: 'POST',
-			url: '/abcd_mart/user/checkUserId',
-			data: {'id':$('#userId').val()},
-			dataType: 'text',
-			success: function(data) {
-				if(data=='not_exist'){
-					swal('존재하지 않는 아이디 입니다.');
-				} else {
-					$.ajax({
-						type: 'POST',
-						url: '/abcd_mart/user/login',
-						data: {'id':$('#userId').val(),
-								'password':$('#userPwd').val()},
-						dataType: 'text',
-						success: function(data) {
-							if(data=='loginOk'){
-								location.href = "/abcd_mart/main/index";
-							} else if(data=='loginFail'){
-								swal('아이디 또는 비밀번호가 틀렸습니다.');
-							}
-						}
-					});
-				}
-			}
-		});		
+			url: '/abcd_mart/user/findMyId',
+			data: {'way': way,//DB column
+					'name': userName.val(),
+					'email': email1.val()+'@'+email2.val()},
+			dataType:'text',
+			success: function(userId) {
+				console.log(userId);
+			}			
+		});	
 	}
-}*/
+}
