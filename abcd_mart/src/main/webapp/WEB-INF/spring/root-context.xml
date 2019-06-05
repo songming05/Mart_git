@@ -24,6 +24,7 @@
 	<context:component-scan base-package="center.bean"/>
 	<context:component-scan base-package="center.dao"/>
 	
+	
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 	
 	<!-- Transaction -->
