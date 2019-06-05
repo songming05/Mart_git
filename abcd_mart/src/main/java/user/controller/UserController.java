@@ -121,9 +121,4 @@ public class UserController {
 		return result;
 	}
 	
-	@RequestMapping(value = "/idFounds", method = RequestMethod.GET)
-	public String idFounds(HttpSession session) {
-		session.invalidate();
-		return "/user/idFound";
-	}
 }
