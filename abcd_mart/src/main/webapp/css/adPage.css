@@ -157,11 +157,12 @@
     right: 10px;
     width: 67px;
     height: 21px;
-    background: url(//image.abcmart.co.kr/nexti/images/abcmart_new/btn_view.png) 0 0 no-repeat;
+    background-image: url("../image/advertisement/plusShow.PNG");
     white-space: nowrap;
     overflow: hidden;
     text-indent: -5000em;
     text-align: left;
+    margin-bottom: 0px;
 }
 .btn_view{
 	display: inline-block;
@@ -275,8 +276,12 @@
 	    margin-bottom: 1900px;
 }
 #mainImg5{
-	    margin-bottom: 2500px;
+	    margin-bottom: 2600px;
 }
+#mainImg6{
+		margin-bottom: 1300px;
+}
+
 .exhibit_section {
     background: #fafafa;
     border-top: 1px solid #dbdbdb;

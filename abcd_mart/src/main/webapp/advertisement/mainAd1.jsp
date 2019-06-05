@@ -32,7 +32,7 @@
             <!-- page_location -->
             <section class="page_location">
                 <ul>
-                    <li><a href="/abc/main">홈</a></li>
+                    <li><a href="../main/index.jsp">홈</a></li>
                     
                         <li><span>기획전/이벤트</span></li>
                         <li><span>기획전</span></li>
@@ -44,18 +44,18 @@
                 <h2 class="sub_tit">기획전</h2>
             
                 <div class="positR exhibit_tab">
-                    <ul class="column_tab type2">
+                    <ul class="column_tab type2" id="column_tab">
                         
-                            <li><a href="/abc/planDisp/detail?plndpId=004880">2019 상반기 베스트 아이템</a></li>
+                            <li><a href="./mainAd2.jsp">2019 상반기 베스트 아이템</a></li>
                             
                             
-                            <li class="current"><a href="/abc/planDisp/detail?plndpId=004869">여름나기 기획전!</a></li>
+                            <li class="current"><a href="./mainAd1.jsp">여름나기 기획전!</a></li>
                             
                             
-                            <li><a href="/abc/planDisp/detail?plndpId=004848">썸머슈즈 이벤트</a></li>
+                            <li><a href="./mainAd6.jsp">썸머슈즈 이벤트</a></li>
                             
                             
-                            <li><a href="/abc/planDisp/detail?plndpId=004823">호킨스 쿨앤라이트 썸머샌들</a></li>
+                            <li><a href="./mainAd3.jsp">호킨스 쿨앤라이트 썸머샌들</a></li>
                             
                             
                             <li><a href="/abc/planDisp/detail?plndpId=004785">그랜드스테이지 프리미엄 신발</a></li>
@@ -84,7 +84,7 @@
                             
                     </ul>
                     
-                        <a href="javascript://" class="btn_view">더보기</a>
+                        <a class="btn_view">더보기</a>
                     
                 </div>
             
@@ -95,17 +95,11 @@
                             2019.05.31 ~ 2019.06.30
                         </p>
                     
-                    <ul class="sns_group pt0 mr10">
-                        <li><a href="javascript://" onclick="shareKakaoStory(&quot;/abc/planDisp/detail?plndpId=004869&quot;, &quot;03&quot;, &quot;&quot;);" class="sns_01">카카오</a></li>
-                        <li><a href="javascript://" onclick="shareFacebook(&quot;/abc/planDisp/detail?plndpId=004869&quot;, &quot;03&quot;, &quot;&quot;);" class="sns_02">페이스북</a></li>
-                        <li><a href="javascript://" onclick="shareTwitter(&quot;/abc/planDisp/detail?plndpId=004869&quot;, &quot;여름나기 기획전!&quot;, &quot;03&quot;, &quot;&quot;);" class="sns_03">트위터</a></li>
-                        <li><a href="javascript://" onclick="sharePinterest(&quot;/abc/planDisp/detail?plndpId=004869&quot;, &quot;&quot;, &quot;여름나기 기획전!&quot;, &quot;03&quot;, &quot;&quot;);" class="sns_04">핀터리스트</a></li>
-                        <li><a href="javascript:copyUrl();" class="sns_05">URL</a></li>
-                    </ul>
+                    
                 </header>
             
             <div id="planDispDetailContent">
-                <p></p><p><img alt="1100.jpg" src="http://image.abcmart.co.kr/nexti/images/abcmart/client/1224/20190530112726743.jpg" style="width:100%;" usemap="#1100.jpg"><map name="1100.jpg"><area alt="" coords="13,508,382,870" href="#SPORTS" onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="404,509,740,866" href="#CORK" onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="771,511,1091,865" href="#EVA" onfocus="this.blur()" shape="rect" target=""></map></p>
+                <p></p><p><img alt="1100.jpg" src="../image/advertisement/main1_main.jpg" style="width:100%;" usemap="#1100.jpg"><map name="1100.jpg"><area alt="" coords="13,508,382,870" href="#SPORTS" onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="404,509,740,866" href="#CORK" onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="771,511,1091,865" href="#EVA" onfocus="this.blur()" shape="rect" target=""></map></p>
 <p></p>
             </div>
             
@@ -139,8 +133,8 @@
 
 <div class="model_img_box" id="model_img_box1" mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/title/1460/0070834_title.jpg" alt="SD3205EBB" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0070834" class="over_link" style="display: none;"></a>
+    <img src="../image/advertisement/main1_1.jpg" alt="SD3205EBB" onerror="imageError(this)">
+        <a href="" class="over_link" style="display: none;"></a>
         <div class="over_view" id="over_view1"  style="display: none;">
              <ul>
                 
@@ -167,9 +161,22 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0070834"></ul>
+        <div class="size_view_box" id="size_view_box1">
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list" id="size_list1" prdtcode="0070834">
+
+
+
+<li class="grid-box"><span class="grid-2">220</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">290</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -180,8 +187,8 @@
 
 <div class="model_img_box" id="model_img_box2" mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/title/1982/0067780_title.jpg" alt="HIELO" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0067780" class="over_link" style="display: none;"></a>
+    <img src="../image/advertisement/main1_2.jpg" alt="HIELO" onerror="imageError(this)">
+        <a href="" class="over_link" style="display: none;"></a>
         <div class="over_view" id="over_view2" style="display: none;">
            <ul>
                 
@@ -208,9 +215,19 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0067780"></ul>
+        <div class="size_view_box" id="size_view_box2" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list" id="size_list2"  prdtcode="0067780">
+
+
+
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">290</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -221,8 +238,8 @@
 
 <div class="model_img_box" id="model_img_box3"  mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/title/1149/0056244_title.jpg" alt="CLIMAX" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0056244" class="over_link" style="display: none;"></a>
+    <img src="../image/advertisement/main1_3.jpg" alt="CLIMAX" onerror="imageError(this)">
+        <a href="" class="over_link" style="display: none;"></a>
         <div class="over_view" id="over_view3" style="display: none;">
             <ul>
                 
@@ -258,9 +275,22 @@
 
         </ul>
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0056244"></ul>
+        <div class="size_view_box" id="size_view_box3" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+          <ul class="size_list" id="size_list3"  prdtcode="0056244">
+
+
+
+<li class="grid-box"><span class="grid-2">220</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">290</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -274,8 +304,8 @@
 
 <div class="model_img_box" id="model_img_box4"  mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1027/0071247_list.jpg" alt="ADILETTE SANDAL" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0071247" class="over_link"></a>
+    <img src="../image/advertisement/main1_4.jpg" alt="ADILETTE SANDAL" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view4"  style="display: none;">
             <ul>
                 
@@ -307,9 +337,22 @@
 
         </ul>
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0071247"></ul>
+        <div class="size_view_box" id="size_view_box4" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list" id="size_list4"  prdtcode="0071247">
+
+
+
+<li class="grid-box"><span class="grid-2">225</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">235</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">245</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">255</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">265</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">275</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">285</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">295</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -320,8 +363,8 @@
 
 <div class="model_img_box" id="model_img_box5"  mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1072/0068093_list.jpg" alt="PAD SANDAL" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0068093" class="over_link" style="display: none;"></a>
+    <img src="../image/advertisement/main1_5.jpg" alt="PAD SANDAL" onerror="imageError(this)">
+        <a href="" class="over_link" style="display: none;"></a>
         <div class="over_view" id="over_view5" style="display: none;">
              <ul>
                 
@@ -348,9 +391,18 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0068093"></ul>
+        <div class="size_view_box" id="size_view_box5" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list" id="size_list5"  prdtcode="0068093">
+
+
+
+<li class="grid-box"><span class="grid-2">220</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -361,8 +413,8 @@
 
 <div class="model_img_box" id="model_img_box6" mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1577/0068094_list.jpg" alt="PAD SANDAL" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0068094" class="over_link" style="display: none;"></a>
+    <img src="../image/advertisement/main1_6.jpg" alt="PAD SANDAL" onerror="imageError(this)">
+        <a href="" class="over_link" style="display: none;"></a>
         <div class="over_view" id="over_view6" style="display: none;">
             <ul>
                 
@@ -389,9 +441,18 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0068094"></ul>
+        <div class="size_view_box" id="size_view_box6" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+          <ul class="size_list" id="size_list6"  prdtcode="0068094">
+
+
+
+<li class="grid-box"><span class="grid-2">220</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -402,8 +463,8 @@
 
 <div class="model_img_box" id="model_img_box7"  mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1743/0068089_list.jpg" alt="PAD SANDAL" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0068089" class="over_link"></a>
+    <img src="../image/advertisement/main1_7.jpg" alt="PAD SANDAL" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view7" style="display: none;">
             <ul>
                 
@@ -430,9 +491,19 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0068089"></ul>
+        <div class="size_view_box" id="size_view_box7" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+           <ul class="size_list" id="size_list7"  prdtcode="0068089">
+
+
+
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">290</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -443,8 +514,8 @@
 
 <div class="model_img_box" id="model_img_box8"  mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1557/0068090_list.jpg" alt="PAD SANDAL" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0068090" class="over_link"></a>
+    <img src="../image/advertisement/main1_8.jpg" alt="PAD SANDAL" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view8"  style="display: none;">
             <ul>
                 
@@ -471,9 +542,19 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0068090"></ul>
+        <div class="size_view_box" id="size_view_box8" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+          <ul class="size_list" id="size_list8"  prdtcode="0068090">
+
+
+
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">290</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -499,8 +580,8 @@
 
 <div class="model_img_box" id="model_img_box9" mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/title/1168/0062954_title.jpg" alt="Zurich SFB" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0062954" class="over_link" style="display: none;"></a>
+    <img src="../image/advertisement/main1_9.jpg" alt="Zurich SFB" onerror="imageError(this)">
+        <a href="" class="over_link" style="display: none;"></a>
         <div class="over_view" id="over_view9"  style="display: none;">
              <ul>
                 
@@ -527,9 +608,19 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0062954"></ul>
+        <div class="size_view_box" id="size_view_box9">
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+          <ul class="size_list" id="size_list9"  prdtcode="0062954">
+
+
+
+<li class="grid-box"><span class="grid-2">225</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">245</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -540,8 +631,8 @@
 
 <div class="model_img_box" id="model_img_box10"  mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/title/1099/0048380_title.jpg" alt="ISEO" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0048380" class="over_link" style="display: none;"></a>
+    <img src="../image/advertisement/main1_10.jpg" alt="ISEO" onerror="imageError(this)">
+        <a href="" class="over_link" style="display: none;"></a>
         <div class="over_view" id="over_view10" style="display: none;">
              <ul>
                 
@@ -568,9 +659,18 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0048380"></ul>
+        <div class="size_view_box" id="size_view_box10">
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+           <ul class="size_list"  id="size_list10" prdtcode="0048380">
+
+
+
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -581,8 +681,8 @@
 
 <div class="model_img_box" id="model_img_box11" mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/title/1635/0000595_title.jpg" alt="ARIZONA" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0000595" class="over_link" style="display: none;"></a>
+    <img src="../image/advertisement/main1_11.jpg" alt="ARIZONA" onerror="imageError(this)">
+        <a href="" class="over_link" style="display: none;"></a>
         <div class="over_view" id="over_view11" style="display: none;">
             <ul>
                 
@@ -609,9 +709,30 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0000595"></ul>
+        <div class="size_view_box" id="size_view_box11">
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list"  id="size_list11"  prdtcode="0000595">
+
+
+
+<li class="grid-box"><span class="grid-2">225</span><span class="grid-2">X</span></li>
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">X</span></li>
+<li class="grid-box"><span class="grid-2">235</span><span class="grid-2">X</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">X</span></li>
+<li class="grid-box"><span class="grid-2">245</span><span class="grid-2">X</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">255</span><span class="grid-2">X</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">265</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">275</span><span class="grid-2">X</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">285</span><span class="grid-2">X</span></li>
+<li class="grid-box"><span class="grid-2">290</span><span class="grid-2">X</span></li>
+<li class="grid-box"><span class="grid-2">295</span><span class="grid-2">X</span></li>
+<li class="grid-box"><span class="grid-2">300</span><span class="grid-2">X</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -623,8 +744,8 @@
 
 <div class="model_img_box" id="model_img_box12" mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1149/0070578_list.jpg" alt="ZURICH SFB VL" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0070578" class="over_link"></a>
+    <img src="../image/advertisement/main1_12.jpg" alt="ZURICH SFB VL" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view12" style="display: none;">
             <ul>
                 
@@ -651,9 +772,19 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0070578"></ul>
+        <div class="size_view_box" id="size_view_box12">
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+          <ul class="size_list" id="size_list12" prdtcode="0070578">
+
+
+
+<li class="grid-box"><span class="grid-2">225</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">245</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -664,8 +795,8 @@
 
 <div class="model_img_box" id="model_img_box13" mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1644/0070577_list.jpg" alt="ZURICH SFB VL" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0070577" class="over_link"></a>
+    <img src="../image/advertisement/main1_13.jpg" alt="ZURICH SFB VL" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view13" style="display: none;">
             <ul>
                 
@@ -692,9 +823,19 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0070577"></ul>
+        <div class="size_view_box" id="size_view_box13" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+           <ul class="size_list" id="size_list13" prdtcode="0070577">
+
+
+
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">265</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -705,8 +846,8 @@
 
 <div class="model_img_box" id="model_img_box14" mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1989/0070501_list.jpg" alt="BOSTON VL WB" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0070501" class="over_link"></a>
+    <img src="../image/advertisement/main1_14.jpg" alt="BOSTON VL WB" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view14" style="display: none;">
              <ul>
                 
@@ -733,9 +874,19 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0070501"></ul>
+        <div class="size_view_box" id="size_view_box14" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+         <ul class="size_list" id="size_list14"  prdtcode="0070501">
+
+
+
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">265</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -746,8 +897,8 @@
 
 <div class="model_img_box" id="model_img_box15"  mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1478/0070582_list.jpg" alt="ARIZONA KIDS" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0070582" class="over_link"></a>
+    <img src="../image/advertisement/main1_15.jpg" alt="ARIZONA KIDS" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view15" style="display: none;">
           <ul>
                 
@@ -774,9 +925,17 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0070582"></ul>
+        <div class="size_view_box" id="size_view_box15">
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+          <ul class="size_list" id="size_list15"  prdtcode="0070582">
+
+
+
+<li class="grid-box"><span class="grid-2">200</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">210</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">220</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -787,8 +946,8 @@
 
 <div class="model_img_box" id="model_img_box16"  mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1973/0070581_list.jpg" alt="ARIZONA KIDS" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0070581" class="over_link"></a>
+    <img src="../image/advertisement/main1_16.jpg" alt="ARIZONA KIDS" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view16" style="display: none;">
            <ul>
                 
@@ -815,9 +974,18 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0070581"></ul>
+        <div class="size_view_box" id="size_view_box16">
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+           <ul class="size_list" id="size_list16"  prdtcode="0070581">
+
+
+
+<li class="grid-box"><span class="grid-2">190</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">200</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">210</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">220</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -843,8 +1011,8 @@
 
 <div class="model_img_box" id="model_img_box17"  mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/title/1962/0060419_title.jpg" alt="2 STRAP EVA" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0060419" class="over_link"></a>
+    <img src="../image/advertisement/main1_17.jpg" alt="2 STRAP EVA" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view17" style="display: none;">
             <ul>
                 
@@ -871,9 +1039,17 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0060419"></ul>
+        <div class="size_view_box" id="size_view_box17">
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+           <ul class="size_list" id="size_list17"  prdtcode="0060419">
+
+
+
+<li class="grid-box"><span class="grid-2">230(S)</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240(M)</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250(L)</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -884,8 +1060,8 @@
 
 <div class="model_img_box" id="model_img_box18" mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/title/1080/0049603_title.jpg" alt="GIZEH EVA" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0049603" class="over_link" style="display: none;"></a>
+    <img src="../image/advertisement/main1_18.jpg" alt="GIZEH EVA" onerror="imageError(this)">
+        <a href="" class="over_link" style="display: none;"></a>
         <div class="over_view" id="over_view18" style="display: none;">
            <ul>
                 
@@ -912,9 +1088,23 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0049603"></ul>
+        <div class="size_view_box" id="size_view_box18">
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+           <ul class="size_list"  id="size_list18" prdtcode="0049603">
+
+
+
+<li class="grid-box"><span class="grid-2">225</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">245</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">265</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -925,8 +1115,8 @@
 
 <div class="model_img_box" id="model_img_box19" mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/title/1977/0056097_title.jpg" alt="HEEL STRAP EVA" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0056097" class="over_link"></a>
+    <img src="../image/advertisement/main1_19.jpg" alt="HEEL STRAP EVA" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view"  id="over_view19" style="display: none;">
             <ul>
                 
@@ -953,9 +1143,20 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0056097"></ul>
+        <div class="size_view_box" id="size_view_box19">
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list" id="size_list19"  prdtcode="0056097">
+
+
+
+<li class="grid-box"><span class="grid-2">220</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -968,8 +1169,8 @@
 
 <div class="model_img_box" id="model_img_box20" mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1064/0069160_list.jpg" alt="GIZEH EVA" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0069160" class="over_link"></a>
+    <img src="../image/advertisement/main1_20.jpg" alt="GIZEH EVA" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view20" style="display: none;">
              <ul>
                 
@@ -996,9 +1197,20 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0069160"></ul>
+        <div class="size_view_box" id="size_view_box20">
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+          <ul class="size_list"  id="size_list20" prdtcode="0069160">
+
+
+
+<li class="grid-box"><span class="grid-2">225</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">245</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -1009,8 +1221,8 @@
 
 <div class="model_img_box" id="model_img_box21"  mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1250/0069159_list.jpg" alt="ARIZONA EVA" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0069159" class="over_link"></a>
+    <img src="../image/advertisement/main1_21.jpg" alt="ARIZONA EVA" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view21" style="display: none;">
            <ul>
                 
@@ -1037,9 +1249,19 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0069159"></ul>
+        <div class="size_view_box" id="size_view_box21" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+           <ul class="size_list" id="size_list21"  prdtcode="0069159">
+
+
+
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">245</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -1050,8 +1272,8 @@
 
 <div class="model_img_box" id="model_img_box22" mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1926/0067528_list.jpg" alt="THONG EVA" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0067528" class="over_link"></a>
+    <img src="../image/advertisement/main1_22.jpg" alt="THONG EVA" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view22" style="display: none;">
           <ul>
                 
@@ -1078,9 +1300,17 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0067528"></ul>
+        <div class="size_view_box" id="size_view_box22" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list"  id="size_list22" prdtcode="0067528">
+
+
+
+<li class="grid-box"><span class="grid-2">230(S)</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240(M)</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250(L)</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -1091,8 +1321,8 @@
 
 <div class="model_img_box" id="model_img_box23" mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1360/0067526_list.jpg" alt="THONG EVA" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0067526" class="over_link" style="display: none;"></a>
+    <img src="../image/advertisement/main1_23.jpg" alt="THONG EVA" onerror="imageError(this)">
+        <a href="" class="over_link" style="display: none;"></a>
         <div class="over_view" id="over_view23" style="display: none;">
             <ul>
                 
@@ -1119,9 +1349,17 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0067526"></ul>
+        <div class="size_view_box" id="size_view_box23" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+        <ul class="size_list" id="size_list23"  prdtcode="0067526">
+
+
+
+<li class="grid-box"><span class="grid-2">230(S)</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240(M)</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250(L)</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -1132,8 +1370,8 @@
 
 <div class="model_img_box" id="model_img_box24" mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1865/0067527_list.jpg" alt="THONG EVA" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0067527" class="over_link"></a>
+    <img src="../image/advertisement/main1_24.jpg" alt="THONG EVA" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view24" style="display: none;">
              <ul>
                 
@@ -1160,9 +1398,18 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0067527"></ul>
+        <div class="size_view_box" id="size_view_box24" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list" id="size_list24"  prdtcode="0067527">
+
+
+
+<li class="grid-box"><span class="grid-2">250(S)</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260(M)</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270(L)</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280(XL)</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
