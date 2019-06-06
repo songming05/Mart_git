@@ -129,6 +129,9 @@ public class UserController {
 		String resultJoin="";
 		if(way.equals("email")) {
 			UserDTO userDTO = userDAO.getInfoByEmail(map);
+			if(userDTO==null) {
+				return "일치하는 정보가 없습니다";
+			}
 			String sourceId = userDTO.getId();
 			resultId=sourceId.substring(0, 3);
 			for(int i=3; i<sourceId.length(); i++) {
@@ -149,6 +152,26 @@ public class UserController {
 						+ resultId+" 입니다.<br>"
 						+"가입연도 : "+resultJoin;
 		return result;		
+	}
+	
+	@RequestMapping(value ="/findMyPwd", method = RequestMethod.POST)
+	@ResponseBody
+	public String findMyPwd(@RequestParam Map<String,String> map) {
+		UserDTO userDTO = userDAO.findUserInfo(map);
+		if(userDTO==null) {
+			return "not_exist";
+		} else
+			return "exist";
+	}
+	
+	@RequestMapping(value ="/pwdReset", method = RequestMethod.POST)
+	@ResponseBody
+	public void pwdReset(@RequestParam Map<String,String> map) {
+		System.out.println(map.get("password"));
+		String EncodedPassword = passwordEncoder.encode(map.get("password"));
+		map.remove("password");
+		map.put("password", EncodedPassword);
+		userDAO.pwdReset(map);
 	}
 	
 }

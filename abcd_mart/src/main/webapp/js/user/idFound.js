@@ -10,7 +10,20 @@ $('select[name="foundMailDomain"]').on('change', function() {
 		$('#userMailAddress2').val(foundMail);
 		$('#userMailAddress2').prop('readonly',true);
 	}
+});
 
+$('select[name="mailDomain"]').on('change', function() {
+	var foundMail = $('select[name="mailDomain"]').val();
+	
+
+	if(foundMail == 'insert'){
+		 $('#userMailAddress2').val('');
+		 $('#userMailAddress2').prop('readonly',false);
+	     
+	}else{
+		$('#userMailAddress2').val(foundMail);
+		$('#userMailAddress2').prop('readonly',true);
+	}
 });
 
 //인증번호요청 클릭
@@ -90,4 +103,55 @@ function findIdEmail(){
 			}			
 		});	
 	}
+}
+
+function findPwdEmail() {
+	var way ='email';
+	var userId = $('#userId');
+	var userName = $('#userName');
+	//var userNamePhone = $('#userNamePhone');
+	var email1 =$('#userMailAddress1');
+	var email2 =$('#userMailAddress2');
+	if(userId.val()==''){
+		swal("아이디를 입력해주세요");
+	}else if(userName.val()==''){
+		swal("이름을 입력해주세요");
+	}else if(email1.val()==''||email2.val()=='') {
+		swal("이메일 주소를 입력해주세요");
+	}else {
+		$.ajax({
+			type: 'POST',
+			url: '/abcd_mart/user/findMyPwd',
+			data: {'way': way,//DB column
+					'id': userId.val(),
+					'name': userName.val(),
+					'email': email1.val()+'@'+email2.val()},
+			dataType:'text',
+			success: function(exist) {
+				console.log(exist);
+				if(exist.equals('exist')){
+					swal("Write something here:", 
+						{
+						  content: "input",
+						}
+					).then((value) => {
+						$.ajax({
+							type:'POST',
+							url:'/abcd_mart/user/pwdReset',
+							data:{'id': userId.val(),
+									'password':'${value}'},
+							success: function() {
+								swal('비밀번호를 수정하였습니다');
+							}
+							
+						});
+						//swal(`You typed: ${value}`);
+					});
+				} else {
+					swal('일치하는 정보가 없습니다');
+				}
+			}			
+		});
+	}
+	
 }

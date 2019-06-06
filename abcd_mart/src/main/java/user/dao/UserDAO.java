@@ -17,4 +17,6 @@ public interface UserDAO {
 
 	public UserDTO getInfoByEmail(Map<String, String> map);
 
+	public UserDTO findUserInfo(Map<String, String> map);
+
 }

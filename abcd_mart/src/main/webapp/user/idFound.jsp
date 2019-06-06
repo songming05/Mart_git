@@ -49,58 +49,8 @@
        <div class="member_area800">
            <ul class="column_tab column2 tabs-nav">
                <li class="current"><a href="#cm_tabs_01">이메일 주소로 찾기</a></li>
-               <li><a href="#cm_tabs_02">휴대폰 번호로 찾기</a></li>                
            </ul>
            <div class="tabs-content">
-           
-           
-           	<!-- 휴대폰번호 -->
-               <form action="/abc/user/layerFindUserId" method="post" id="form-find-by-phone">
-                   <input type="hidden" name="searchGbn" class="searchGbn" value="02">
-                   <input type="hidden" name="authUnitGbn" class="authUnitGbn" value="1">
-
-                   <div id="cm_tabs_02" class="tabs-cont">
-                       <article class="loss_member_box">
-                           <table class="layout_table">
-                               <colgroup>
-                                   <col width="113px" /><col width="*" />
-                               </colgroup>
-                               <tr>
-                                   <td class="align-top"><p class="mt5"><strong class="fs12 fc_type6">이름</strong></p></td>
-                                   <td>
-                                       <input type="text" name="userNamePhone" id="userNamePhone" style="width:300px;" maxlength="30">
-                                   </td>
-                               </tr>
-                               <tr>
-                                   <td class="align-top"><p class="mt5"><strong class="fs12 fc_type6">휴대폰</strong></p></td>
-                                   <td>
-                                       <input type="hidden" name="hdphnNum">
-                                       <select name="handphoneNumber1" class="handphoneNumber1" style="width:86px;">
-										   <option value="010">010</option>
-										   <option value="011">011</option>
-										   <option value="016">016</option>
-										   <option value="017">017</option>
-										   <option value="018">018</option>
-										   <option value="019">019</option>
-										</select>
-									 -
-                                       <input type="text" class="text" name="handphoneNumber2" value="" maxlength="4" pattern="\d{3,4}" style="width:93px"> -
-                                       <input type="text" class="text" name="handphoneNumber3" value="" maxlength="4" pattern="\d{4}" style="width:93px">&nbsp;
-                                       <a href="javascript:findId()" class="fs12">확인하기</a>
-                                   </td>
-                               </tr>
-                           </table>
-                       </article>
-                       <ul class="loss_member_add">
-                           <li><strong class="fs12">비밀번호를 잊으셨나요?</strong>&nbsp;&nbsp;<a href="https://www.abcmart.co.kr/abc/user/findPasswordForm" class="btn_sType2">비밀번호 찾기</a></li>
-                           <li><strong class="fs12">ABC-MART 회원가입하러 가기 </strong>&nbsp;&nbsp;<a href="https://www.abcmart.co.kr/abc/user/joinUserIntro" class="btn_sType2">회원가입</a></li>
-                       </ul>
-                   </div>
-               </form>
-               
-               
-               
-               
                
                <!-- 이메일로 찾기 -->
                <form action="/abc/user/layerFindUserId" method="post" id="form-find-by-email">
@@ -153,7 +103,7 @@
                         </article>
                         <ul class="loss_member_add">
                             <li><strong class="fs12">비밀번호를 잊으셨나요?</strong>&nbsp;&nbsp;<a href="../user/pwdFind" class="btn_sType2">비밀번호 찾기</a></li>
-                            <li><strong class="fs12">ABC-MART 회원가입하러 가기 </strong>&nbsp;&nbsp;<a href="#" class="btn_sType2">회원가입</a></li>
+                            <li><strong class="fs12">ABC-MART 회원가입하러 가기 </strong>&nbsp;&nbsp;<a href="../user/signUpStep_01" class="btn_sType2">회원가입</a></li>
                         </ul>
                     </div>
                 </form>
