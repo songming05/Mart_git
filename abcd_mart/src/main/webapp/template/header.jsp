@@ -33,14 +33,19 @@
 	<div id="main_center">
 		<img id="logo" src="../image/header/ABCD-MART.png" onclick="location.href='/abcd_mart/main/index'" style="cursor: pointer;"/>
 		
+		
+		<!-- 검색기능 -->
+		<form id="searchForm" action="/abcd_mart/search/search?searchText=">
 		<div id="searchBox">
-			<input type="text" id="searchText"/>
+			<input type="text" id="searchText" name="searchText"/>
 			<input type="button" id="searchButton" value="🔍">
 		</div>
+		</form>
 		
-		<div id="hotIssue">
-			<h2>인기검색어</h2>
-		</div> 
+		
+		
+		
+		
 		
 		<ul id="main_center_rightUl">
 			<li>👍TOP30</li>

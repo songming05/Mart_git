@@ -6,4 +6,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getProduct" parameterType="String" resultType="detailPage">
 		select * from product join image using (prdtCode) where prdtCode=#{prdtCode}
 	</select>
+	
+	<select id="searchList" parameterType="String" resultType="detailPage">
+		select 
+			* 
+		from 
+			product 
+		join 
+			image 
+		using 
+			(prdtCode) 
+		where
+			prdtMainName like '%'||#{searchText}||'%'
+			or
+			prdtMiniName like '%'||#{searchText}||'%'
+	</select>
 </mapper>
