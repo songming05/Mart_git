@@ -1276,6 +1276,6 @@
 <script type="text/javascript" src="../js/mainFooter.js"></script> 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.0.min.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
-<script type="text/javascript" src="../js/adPage.js"></script>
+<script type="text/javascript" src="../js/advertise/adPage.js"></script>
 </html>
         
