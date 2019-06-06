@@ -27,6 +27,7 @@
 </header>
 <jsp:include page="../template/quickBarOther.jsp"/>
 
+<div style="margin-bottom:300px;">
 <div class="container_wrap">            
     <div class="container_area" id="container_area">
         <div class="container_layout">
@@ -55,7 +56,7 @@
 			
 			<c:forEach var="data" items="${searchList }">
 			<ul class="gallery_basic gallery_box_type1 w150">
-				<li>							
+				<li style="margin-left:50px;">							
 				<div class="model_img_box" mode="1"> 
 			    	<img src="../image/page/product/${data.prdtCode }/${data.prdtImage1 }" alt="${data.prdtMiniName }" onerror="imageError(this)">
 			        <a href="../product/detail?prdtCode=${data.prdtCode }" class="over_link" style="display: block;"></a>
@@ -70,7 +71,7 @@
 				</div>
 				
 				<a href="../product/detail?prdtCode=${data.prdtCode}" class="model_box ">
-				    <span class="brand">???브랜드 </span>
+				    <span class="brand">${data.prdtBrand } </span>
 				    <span class="name">${data.prdtMiniName }</span>
 				    <span class="price">${data.prdtPrice }</span>
 				</a>
@@ -84,24 +85,19 @@
 			</c:forEach>
 			
 			</div>
+			
+			
+			
+			
 		</div>
-		
-			<p class="paginate">
-			<a href="javascript://" class="on">1</a>
-			</p>
+
 			</div>
 		</div>
 	</div>
 </div>
-            
+</div>            
             
 
-<div style="border: 2px solid red;'"> 
-<span> </span>
-<p>
-<br><br><br><br>
-</p>
-</div>
 <footer>
 <jsp:include page="../template/mainFooter.jsp"/>
 </footer>
