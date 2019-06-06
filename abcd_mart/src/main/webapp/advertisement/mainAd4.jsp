@@ -27,7 +27,7 @@
             <!-- page_location -->
             <section class="page_location">
                 <ul>
-                    <li><a href="/abc/main">홈</a></li>
+                    <li><a href="../main/index.jsp">홈</a></li>
                     
                         <li><span>기획전/이벤트</span></li>
                         <li><span>기획전</span></li>
@@ -39,18 +39,18 @@
                 <h2 class="sub_tit">기획전</h2>
             
                 <div class="positR exhibit_tab">
-                    <ul class="column_tab type2">
+                    <ul class="column_tab type2" id="column_tab">
                         
-                            <li><a href="/abc/planDisp/detail?plndpId=004880">2019 상반기 베스트 아이템</a></li>
+                            <li ><a href="./mainAd2.jsp">2019 상반기 베스트 아이템</a></li>
                             
                             
-                            <li><a href="/abc/planDisp/detail?plndpId=004869">여름나기 기획전!</a></li>
+                            <li ><a href="./mainAd1.jsp">여름나기 기획전!</a></li>
                             
                             
-                            <li><a href="/abc/planDisp/detail?plndpId=004848">썸머슈즈 이벤트</a></li>
+                            <li><a href="./mainAd6.jsp">썸머슈즈 이벤트</a></li>
                             
                             
-                            <li><a href="/abc/planDisp/detail?plndpId=004823">호킨스 쿨앤라이트 썸머샌들</a></li>
+                            <li><a href="./mainAd3.jsp">호킨스 쿨앤라이트 썸머샌들</a></li>
                             
                             
                             <li><a href="/abc/planDisp/detail?plndpId=004785">그랜드스테이지 프리미엄 신발</a></li>
@@ -79,7 +79,7 @@
                             
                     </ul>
                     
-                        <a href="javascript://" class="btn_view">더보기</a>
+                        <a  class="btn_view">더보기</a>
                     
                 </div>
             
@@ -90,17 +90,11 @@
                             2019.05.16 ~ 2019.05.31
                         </p>
                     
-                    <ul class="sns_group pt0 mr10">
-                        <li><a href="javascript://" onclick="shareKakaoStory(&quot;/abc/planDisp/detail?plndpId=004784&quot;, &quot;03&quot;, &quot;&quot;);" class="sns_01">카카오</a></li>
-                        <li><a href="javascript://" onclick="shareFacebook(&quot;/abc/planDisp/detail?plndpId=004784&quot;, &quot;03&quot;, &quot;&quot;);" class="sns_02">페이스북</a></li>
-                        <li><a href="javascript://" onclick="shareTwitter(&quot;/abc/planDisp/detail?plndpId=004784&quot;, &quot;Reebok DMX 1000&quot;, &quot;03&quot;, &quot;&quot;);" class="sns_03">트위터</a></li>
-                        <li><a href="javascript://" onclick="sharePinterest(&quot;/abc/planDisp/detail?plndpId=004784&quot;, &quot;&quot;, &quot;Reebok DMX 1000&quot;, &quot;03&quot;, &quot;&quot;);" class="sns_04">핀터리스트</a></li>
-                        <li><a href="javascript:copyUrl();" class="sns_05">URL</a></li>
-                    </ul>
+                   
                 </header>
             
             <div id="planDispDetailContent">
-                <p></p><p><img alt="" src="http://image.abcmart.co.kr/nexti/images/abcmart/client/1339/20190514141229960.jpg" style="width:100%;"></p>
+                <p></p><p><img alt="" src="../image/advertisement/main4_main.jpg" style="width:100%;"></p>
 <p></p>
             </div>
             
@@ -131,8 +125,8 @@
 
 <div class="model_img_box"  id="model_img_box1" mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/title/1714/0071330_title.jpg" alt="DMX SERIES 1000" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0071330" class="over_link"></a>
+    <img src="../image/advertisement/main4_1.jpg" alt="DMX SERIES 1000" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view1" style="display: none"  >
            <ul>
                 
@@ -164,9 +158,26 @@
 
         </ul>
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0071330"></ul>
+        <div class="size_view_box" id="size_view_box1" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list" id="size_list1"  prdtcode="0071330">
+
+
+
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">235</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">245</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">255</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">265</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">275</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">290</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -177,8 +188,8 @@
 
 <div class="model_img_box" id="model_img_box2"  mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/title/1645/0071331_title.jpg" alt="DMX SERIES 1000" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0071331" class="over_link"></a>
+    <img src="../image/advertisement/main4_2.jpg" alt="DMX SERIES 1000" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view2" style="display: none"  >
              <ul>
                 
@@ -212,9 +223,27 @@
 
         </ul>
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0071331"></ul>
+        <div class="size_view_box" id="size_view_box2" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list" id="size_list2"  prdtcode="0071331">
+
+
+
+<li class="grid-box"><span class="grid-2">225</span><span class="grid-2">X</span></li>
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">235</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">245</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">255</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">265</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">275</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">290</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -225,8 +254,8 @@
 
 <div class="model_img_box" id="model_img_box3"  mode="">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/title/1292/0071332_title.jpg" alt="DMX SERIES 1000" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0071332" class="over_link"></a>
+    <img src="../image/advertisement/main4_3.jpg" alt="DMX SERIES 1000" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view3" style="display: none"  >
              <ul>
                 
@@ -258,9 +287,26 @@
 
         </ul>
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0071332"></ul>
+        <div class="size_view_box" id="size_view_box3" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list" id="size_list3"  prdtcode="0071332">
+
+
+
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">235</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">245</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">255</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">265</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">275</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">290</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -283,8 +329,8 @@
 
 <div class="model_img_box" id="model_img_box4"  mode="2">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/title/1157/0069527_title.jpg" alt="DAYTONA DMX MU" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0069527" class="over_link"></a>
+    <img src="../image/advertisement/main4_4.jpg" alt="DAYTONA DMX MU" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view4" style="display: none"  >
            <ul>
                 
@@ -313,9 +359,25 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0069527"></ul>
+        <div class="size_view_box" id="size_view_box4" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list" id="size_list4"  prdtcode="0069527">
+
+
+
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">235</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">245</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">255</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">265</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">275</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
 </div>
@@ -328,8 +390,8 @@
 
 <div class="model_img_box" id="model_img_box5"  mode="2">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/title/1032/0068743_title.jpg" alt="DAYTONA DMX MU" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0068743" class="over_link"></a>
+    <img src="../image/advertisement/main4_5.jpg" alt="DAYTONA DMX MU" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view5" style="display: none"  >
           <ul>
                 
@@ -358,9 +420,25 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0068743"></ul>
+        <div class="size_view_box" id="size_view_box5" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list" id="size_list5"  prdtcode="0068743">
+
+
+
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">235</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">245</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">255</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">265</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">275</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
 </div>
@@ -373,8 +451,8 @@
 
 <div class="model_img_box" id="model_img_box6"  mode="1">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1331/0068742_list.jpg" alt="DAYTONA DMX MU" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0068742" class="over_link"></a>
+    <img src="../image/advertisement/main4_6.jpg" alt="DAYTONA DMX MU" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view6" style="display: none"  >
            <ul>
                 
@@ -401,9 +479,25 @@
     </a>
     
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0068742"></ul>
+        <div class="size_view_box" id="size_view_box6">
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list" id="size_list6"  prdtcode="0068742">
+
+
+
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">235</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">245</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">255</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">265</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">275</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -414,8 +508,8 @@
 
 <div class="model_img_box" id="model_img_box7"  mode="1">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1314/0065412_list.jpg" alt="DMX SERIES 1200" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0065412" class="over_link"></a>
+    <img src="../image/advertisement/main4_7.jpg" alt="DMX SERIES 1200" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view7" style="display: none"  >
              <ul>
                 
@@ -451,9 +545,26 @@
 
         </ul>
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0065412"></ul>
+        <div class="size_view_box" id="size_view_box7">
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list" id="size_list7"  prdtcode="0065412">
+
+
+
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">235</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">245</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">255</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">265</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">275</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">290</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -464,8 +575,8 @@
 
 <div class="model_img_box" id="model_img_box8"  mode="1">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1324/0065410_list.jpg" alt="DMX SERIES 1200" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0065410" class="over_link"></a>
+    <img src="../image/advertisement/main4_8.jpg" alt="DMX SERIES 1200" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view8" style="display: none"  >
            <ul>
                 
@@ -501,9 +612,22 @@
 
         </ul>
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0065410"></ul>
+        <div class="size_view_box" id="size_view_box8" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list" id="size_list8"  prdtcode="0065410">
+
+
+
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">X</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">X</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">265</span><span class="grid-2">X</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">275</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">290</span><span class="grid-2">X</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -514,8 +638,8 @@
 
 <div class="model_img_box" id="model_img_box9"  mode="1">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1819/0065411_list.jpg" alt="DMX SERIES 1200" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0065411" class="over_link"></a>
+    <img src="../image/advertisement/main4_9.jpg" alt="DMX SERIES 1200" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view9" style="display: none"  >
            <ul>
                 
@@ -551,9 +675,26 @@
 
         </ul>
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0065411"></ul>
+        <div class="size_view_box" id="size_view_box9" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list" id="size_list9"  prdtcode="0065411">
+
+
+
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">235</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">245</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">255</span><span class="grid-2">X</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">265</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">275</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">290</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -564,8 +705,8 @@
 
 <div class="model_img_box" id="model_img_box10"  mode="1">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1138/0065409_list.jpg" alt="DMX RUN 10" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0065409" class="over_link"></a>
+    <img src="../image/advertisement/main4_10.jpg" alt="DMX RUN 10" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view10" style="display: none"  >
             <ul>
                 
@@ -601,9 +742,25 @@
 
         </ul>
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0065409"></ul>
+        <div class="size_view_box" id="size_view_box10" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list" id="size_list10"  prdtcode="0065409">
+
+
+
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">X</span></li>
+<li class="grid-box"><span class="grid-2">235</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">245</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">255</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">265</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">275</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -614,8 +771,8 @@
 
 <div class="model_img_box"  id="model_img_box11" mode="1">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1643/0065408_list.jpg" alt="DMX RUN 10" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0065408" class="over_link"></a>
+    <img src="../image/advertisement/main4_11.jpg" alt="DMX RUN 10" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view11" style="display: none"  >
             <ul>
                 
@@ -651,9 +808,25 @@
 
         </ul>
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0065408"></ul>
+        <div class="size_view_box" id="size_view_box11" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list" id="size_list11"  prdtcode="0065408">
+
+
+
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">235</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">245</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">255</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">265</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">275</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -664,8 +837,8 @@
 
 <div class="model_img_box" id="model_img_box12"  mode="1">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1395/0065170_list.jpg" alt="DAYTONA DMX" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0065170" class="over_link"></a>
+    <img src="../image/advertisement/main4_12.jpg" alt="DAYTONA DMX" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view12" style="display: none"  >
              <ul>
                 
@@ -701,9 +874,27 @@
 
         </ul>
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0065170"></ul>
+        <div class="size_view_box" id="size_view_box12" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list" id="size_list12"  prdtcode="0065170">
+
+
+
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">235</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">245</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">255</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">265</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">275</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">285</span><span class="grid-2">X</span></li>
+<li class="grid-box"><span class="grid-2">290</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -714,8 +905,8 @@
 
 <div class="model_img_box" id="model_img_box13"  mode="1">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1405/0065172_list.jpg" alt="DMX SERIES 1200" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0065172" class="over_link"></a>
+    <img src="../image/advertisement/main4_13.jpg" alt="DMX SERIES 1200" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view13" style="display: none"  >
             <ul>
                 
@@ -751,9 +942,26 @@
 
         </ul>
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0065172"></ul>
+        <div class="size_view_box" id="size_view_box13" >
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list" id="size_list13"  prdtcode="0065172">
+
+
+
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">235</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">245</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">255</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">265</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">275</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">290</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -764,8 +972,8 @@
 
 <div class="model_img_box" id="model_img_box14"  mode="1">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1910/0065173_list.jpg" alt="DMX SERIES 1200" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0065173" class="over_link"></a>
+    <img src="../image/advertisement/main4_14.jpg" alt="DMX SERIES 1200" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view14" style="display: none"  >
            <ul>
                 
@@ -801,9 +1009,26 @@
 
         </ul>
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0065173"></ul>
+        <div class="size_view_box" id="size_view_box14">
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list" id="size_list14"  prdtcode="0065173">
+
+
+
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">235</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">245</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">255</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">265</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">275</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">290</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>
@@ -814,8 +1039,8 @@
 
 <div class="model_img_box" id="model_img_box15"  mode="1">
     
-    <img src="http://image.abcmart.co.kr/nexti/images/list/1900/0065171_list.jpg" alt="DMX SERIES 1200" onerror="imageError(this)">
-        <a href="/abc/product/detail?prdtCode=0065171" class="over_link"></a>
+    <img src="../image/advertisement/main4_15.jpg" alt="DMX SERIES 1200" onerror="imageError(this)">
+        <a href="" class="over_link"></a>
         <div class="over_view" id="over_view15" style="display: none"  >
             <ul>
                 
@@ -851,9 +1076,26 @@
 
         </ul>
     
-        <div class="size_view_box">
-            <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-            <ul class="size_list" prdtcode="0065171"></ul>
+        <div class="size_view_box" id="size_view_box15">
+            <a href="javascript://" class="btn_size"><img src="../image/advertisement/size.PNG"></a>
+            <ul class="size_list" id="size_list15"  prdtcode="0065171">
+
+
+
+<li class="grid-box"><span class="grid-2">230</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">235</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">240</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">245</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">250</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">255</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">260</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">265</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">270</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">275</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">280</span><span class="grid-2">O</span></li>
+<li class="grid-box"><span class="grid-2">290</span><span class="grid-2">O</span></li>
+
+</ul>
         </div>
     
     </li>

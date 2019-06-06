@@ -42,7 +42,7 @@
                                     <li><a href="#">3월 무이자 할부안내 </a></li>
                             </ul>
                         </div>
-                        <a href="/abc/customer/announcementList" class="quick-link-go"><span class="main-blind"></span></a>
+                        <a href="" class="quick-link-go"><span class="main-blind"></span></a>
                     </div>
                 </div>
                 
