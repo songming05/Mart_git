@@ -28,7 +28,7 @@
             <!-- page_location -->
             <section class="page_location">
                 <ul>
-                    <li><a href="../main/index.jsp">홈</a></li>
+                    <li><a href="../main/index">홈</a></li>
                     
                         <li><span>기획전/이벤트</span></li>
                         <li><span>기획전</span></li>

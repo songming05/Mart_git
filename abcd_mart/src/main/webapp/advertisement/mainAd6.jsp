@@ -27,7 +27,7 @@
             <!-- page_location -->
             <section class="page_location">
                 <ul>
-                    <li><a href="../main/index.jsp">홈</a></li>
+                    <li><a href="../main/index">홈</a></li>
                     
                         <li><span>기획전/이벤트</span></li>
                         <li><span>기획전</span></li>
@@ -41,31 +41,31 @@
                 <div class="positR exhibit_tab">
                     <ul class="column_tab type2" id="column_tab">
                         
-                            <li ><a href="./mainAd2.jsp">2019 상반기 베스트 아이템</a></li>
+                            <li ><a href="../advertisement/mainAd2">2019 상반기 베스트 아이템</a></li>
                             
                             
-                            <li ><a href="./mainAd1.jsp">여름나기 기획전!</a></li>
+                            <li><a href="../advertisement/mainAd1">여름나기 기획전!</a></li>
                             
                             
-                            <li class="current"><a href="./mainAd6.jsp">썸머슈즈 이벤트</a></li>
+                            <li class="current"><a href="../advertisement/mainAd6">썸머슈즈 이벤트</a></li>
                             
                             
-                            <li><a href="./mainAd3.jsp">호킨스 쿨앤라이트 썸머샌들</a></li>
+                            <li ><a href="../advertisement/mainAd3">호킨스 쿨앤라이트 썸머샌들</a></li>
                             
                             
-                            <li><a href="./midAd1.jsp">그랜드스테이지 프리미엄 신발</a></li>
+                            <li><a href="../advertisement/midAd1">그랜드스테이지 프리미엄 신발</a></li>
                             
                             
-                            <li><a href="./midAd1_1.jsp">그랜드스테이지 나이키 의류 판매</a></li>
+                            <li><a href="../advertisement/midAd1_1">그랜드스테이지 나이키 의류 판매</a></li>
                             
                             
-                            <li><a href="./mainAd5.jsp">누오보 x 전소미 </a></li>
+                            <li ><a href="../advertisement/mainAd5">누오보 x 전소미 </a></li>
                             
                             
-                            <li><a href="./mainAd4.jsp">Reebok DMX 1000</a></li>
+                            <li ><a href="../advertisement/mainAd4">Reebok DMX 1000</a></li>
                             
                             
-                            <li><a href="">ABC 아울렛! 19,000원↓</a></li>
+                            <li><a href="../advertisement/minAd2">ABC 아울렛! 19,000원↓</a></li>
                             
                             
                             <li><a href="">오! 당신이 찾는 빅 사이즈</a></li>
@@ -94,7 +94,8 @@
                 </header>
             
             <div id="planDispDetailContent">
-                <p></p><p><img alt="1100.jpg" src="../image/advertisement/main6_main.jpg" style="width:100%;" usemap="#1100.jpg"><map name="1100.jpg"><area alt="" coords="169,678,541,775" class="giveCp1" onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="564,678,942,778" class="giveCp2" onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="65,1052,369,1363" onclick="location.href='./mainAd6_1.jsp'" onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="401,1049,698,1361" onclick="location.href='./mainAd6_2.jsp'" onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="729,1052,1028,1360" onclick="location.href='./mainAd6_3.jsp'" onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="71,1394,368,1704" onclick="location.href='./mainAd6_4.jsp'" onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="403,1394,697,1698" onclick="location.href='./mainAd6_5.jsp'" onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="735,1393,1030,1700" onclick="location.href='./mainAd6_6.jsp'" onfocus="this.blur()" shape="rect" target=""></map></p>
+                <p></p><p><img alt="1100.jpg" src="../image/advertisement/main6_main.jpg" style="width:100%;" usemap="#1100.jpg"><map name="1100.jpg"><area alt="" coords="169,678,541,775" class="giveCp1" onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="564,678,942,778" class="giveCp2" onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="65,1052,369,1363" 
+                href='../advertisement/mainAd6_1' onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="401,1049,698,1361"  href='../advertisement/mainAd6_2' onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="729,1052,1028,1360"  href='../advertisement/mainAd6_3' onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="71,1394,368,1704"  href='../advertisement/mainAd6_4' onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="403,1394,697,1698"  href='../advertisement/mainAd6_5' onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="735,1393,1030,1700"  href='../advertisement/mainAd6_6' onfocus="this.blur()" shape="rect" target=""></map></p>
 <p></p>
             </div>
             

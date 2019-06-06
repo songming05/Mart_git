@@ -13,37 +13,37 @@
 	
 		<ul class="carousel-inner" id="sizeModify" style="height: 400px;">	
 			<li class="item active" style="background: rgb(0, 160, 217);">
-				<a onclick="location.href='../advertisement/mainAd1.jsp'" >
+				<a href="../advertisement/mainAd1">
 					<img src="../image/advertisement/main_advertise_Lsize_img1.jpg" >
 				</a>
 			</li>
 	
 			<li class="item"  style="background: rgb(239, 77, 126);"> 
-				<a  onclick="location.href='../advertisement/mainAd2.jsp'">
+				<a href="../advertisement/mainAd2">
 					<img src="../image/advertisement/main_advertise_Lsize_img2.jpg" >
 				</a>
 			</li>
 		
 			<li class="item" style="background:rgb(35, 195, 209);">
-				<a onclick="location.href='../advertisement/mainAd3.jsp'" >
+				<a href="../advertisement/mainAd3" >
 					<img src="../image/advertisement/main_advertise_Lsize_img3.jpg">
 				</a>
 			</li>
 			
 			<li class="item"  style="background: rgb(252, 252, 252); ">
-			 	<a onclick="location.href='../advertisement/mainAd4.jsp'" >
+			 	<a href="../advertisement/mainAd4">
 			 		<img src="../image/advertisement/main_advertise_Lsize_img4.jpg">
 			 	</a>
 			</li>
 			
 			<li class="item" style="background: rgb(246, 222, 225);" > 
-				<a onclick="location.href='../advertisement/mainAd5.jsp'" >
+				<a href="../advertisement/mainAd5">
 					<img src="../image/advertisement/main_advertise_Lsize_img5.jpg">
 				</a>
 			</li>
 	
 			<li class="item"  style="background: rgb(141, 222, 242);"> 
-				<a onclick="location.href='../advertisement/mainAd6.jsp'">
+				<a href="../advertisement/mainAd6">
 					<img src="../image/advertisement/main_advertise_Lsize_img6.jpg">
 				</a>
 			</li>

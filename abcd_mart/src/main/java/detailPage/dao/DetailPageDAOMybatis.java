@@ -1,5 +1,7 @@
 package detailPage.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,8 +17,12 @@ public class DetailPageDAOMybatis implements DetailPageDAO {
 	
 	@Override
 	public DetailPageDTO getProduct(String prdtCode) {
-		System.out.println("sql"+prdtCode);
+		//System.out.println("sql"+prdtCode);
 		return sqlSession.selectOne("detailPageSQL.getProduct",prdtCode);
+	}
+	@Override
+	public List<DetailPageDTO> searchList(String searchText) {
+		return sqlSession.selectList("detailPageSQL.searchList", searchText);
 	}
 	
 	

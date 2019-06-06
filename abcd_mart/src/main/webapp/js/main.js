@@ -158,3 +158,7 @@ $('#main_center').mouseover(function(){
 	$('#brand_div').hide();
 	$('#smartSearch_div').hide();
 });
+
+$('#searchButton').click(function() {
+	$('#searchForm').submit();
+});

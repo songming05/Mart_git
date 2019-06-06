@@ -156,14 +156,14 @@ $(document).ready(function(){
 
 <div class="container">
   <div class="show">
-    <img src="../image/page/product/${detailPageDTO.getPrdtImage1()}" id="show-img">
+    <img src="../image/page/product/${detailPageDTO.prdtCode}/${detailPageDTO.getPrdtImage1()}" id="show-img">
   </div>
   <div class="small-img">
     <div class="small-container">
-        <img src="../image/page/product/${detailPageDTO.getPrdtImage1()}" class="show-small-img" alt="">
-        <img src="../image/page/product/${detailPageDTO.getPrdtImage2()}" class="show-small-img" alt="">
-        <img src="../image/page/product/${detailPageDTO.getPrdtImage3()}" class="show-small-img" alt="">
-        <img src="../image/page/product/${detailPageDTO.getPrdtImage4()}" class="show-small-img" alt="">
+        <img src="../image/page/product/${detailPageDTO.prdtCode}/${detailPageDTO.getPrdtImage1()}" class="show-small-img" alt="">
+        <img src="../image/page/product/${detailPageDTO.prdtCode}/${detailPageDTO.getPrdtImage2()}" class="show-small-img" alt="">
+        <img src="../image/page/product/${detailPageDTO.prdtCode}/${detailPageDTO.getPrdtImage3()}" class="show-small-img" alt="">
+        <img src="../image/page/product/${detailPageDTO.prdtCode}/${detailPageDTO.getPrdtImage4()}" class="show-small-img" alt="">
     </div>
   </div>
 </div>
@@ -267,9 +267,9 @@ $(document).ready(function(){
 	      <a class="nav-link" href="#position4" style="color:#AAAAAA;">배송 / 교환 / 교환 / AS안내</a>
 	    </li>
 	  </ul>
-		<img src="../image/page/product/${detailPageDTO.getPrdtDetailImage1()}" width="1000px" height="800px">
-	    <img src="../image/page/product/${detailPageDTO.getPrdtDetailImage2()}" width="1000px" height="800px">
-	    <img src="../image/page/product/${detailPageDTO.getPrdtDetailImage3()}" width="1000px" height="800px">
+		<img src="../image/page/product/${detailPageDTO.prdtCode}/${detailPageDTO.getPrdtDetailImage1()}" width="1000px" height="800px">
+	    <img src="../image/page/product/${detailPageDTO.prdtCode}/${detailPageDTO.getPrdtDetailImage2()}" width="1000px" height="800px">
+	    <img src="../image/page/product/${detailPageDTO.prdtCode}/${detailPageDTO.getPrdtDetailImage3()}" width="1000px" height="800px">
 		
 		<table class="table table-striped" id="guideTable">
 		    <tbody>
