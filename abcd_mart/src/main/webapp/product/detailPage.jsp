@@ -34,6 +34,7 @@ $(document).ready(function(){
 	
 	$(document).on('click','.btn-danger,#qtyCheck',function(){
 		//alert('결제창으로');
+		$('#buttonType').val('now');
 		$('input[name=prdtcode]').val('${detailPageDTO.getPrdtCode()}');
 		$('input[name=shoesname]').val('${detailPageDTO.getPrdtMainName()}');
 		$('input[name=shoesimage]').val('${detailPageDTO.getPrdtImage1()}');
@@ -60,7 +61,8 @@ $(document).ready(function(){
 			var aJson = new Object();
 			 aJson.list={
 					 	"count":i,
-						"id":document.getElementsByName("id")[i].value,
+					 	//"type":document.getElementById("buttonType").value,
+					 	"id":document.getElementsByName("id")[i].value,
 						"prdtcode":document.getElementsByName("prdtcode")[i].value,
 						"shoesname":document.getElementsByName("shoesname")[i].value,
 						"shoesimage":document.getElementsByName("shoesimage")[i].value,
@@ -116,6 +118,71 @@ $(document).ready(function(){
 		//DB로 데이터 보내기 INSERT
 		 
 		
+	});
+	
+	
+	//장바구니 담기 클릭시
+	$('#addCart').click(function () {
+		$('#buttonType').val('cart');
+		$('input[name=prdtcode]').val('${detailPageDTO.getPrdtCode()}');
+		$('input[name=shoesname]').val('${detailPageDTO.getPrdtMainName()}');
+		$('input[name=shoesimage]').val('${detailPageDTO.getPrdtImage1()}');
+		$('input[name=shoesbrand]').val('${detailPageDTO.getPrdtBrand()}');
+		$('input[name=shoescolor]').val('${detailPageDTO.getPrdtColor()}');
+		$('input[name=shoesprice]').val('${detailPageDTO.getPrdtPrice()}');
+		
+		//나중에 ID랑 QTY 받아올때 씀 
+		//$('input[name=shoesprice]').val(${detailPageDTO.getPrdtCode()});
+		//$('input[name=prdtcode]').val(${detailPageDTO.getPrdtCode()});
+
+		var count = 0;
+		$('input[name=qtyName]').each(function(index,item){
+			count=parseInt(count)+parseInt($(item).val());
+
+		});
+		var aJsonArray = new Array();
+
+		for(var i=0; i< count; i++){
+			var aJson = new Object();
+			 aJson.list={
+					 	"count":i,
+						"id":document.getElementsByName("id")[i].value,
+						"prdtcode":document.getElementsByName("prdtcode")[i].value,
+						"shoesname":document.getElementsByName("shoesname")[i].value,
+						"shoesimage":document.getElementsByName("shoesimage")[i].value,
+						"shoesbrand":document.getElementsByName("shoesbrand")[i].value,
+						"shoescolor":document.getElementsByName("shoescolor")[i].value,
+						"shoessize":document.getElementsByName("shoessize")[i].value,
+						"shoesprice":document.getElementsByName("shoesprice")[i].value,
+						"shoesqty":document.getElementsByName("shoesdiscount")[i].value,
+						"shoesdiscount":document.getElementsByName("shoesdiscount")[i].value,
+						"shoespoint":document.getElementsByName("shoespoint")[i].value
+						
+						};
+			
+			 aJsonArray.push(aJson);
+			 
+			 
+			 $.ajax({
+		    	url:'/abcd_mart/cart/addCart',
+		    	type:'POST',
+		    	data: JSON.stringify(aJson.list),
+		    	contentType :"application/json; charset=UTF-8",
+		    	dataType:'text',
+		    	success:function(result){
+		    		if(result=='not_login'){
+		    			swal('로그인시 이용가능합니다.');
+		    			return false;
+		    		} else if(result=='addComplete'){
+		    			$('#orderDirect').submit();
+		    			swal('장바구니 등록 성공');
+		    		}
+		    		
+		    		
+		    	}
+		    
+			 });
+		}
 	});
 	
 
@@ -177,6 +244,8 @@ $(document).ready(function(){
   
   <form id="orderDirect" method="get" action="/abcd_mart/order_pay/orderDirect">
   <!-- 값 넘기기 -->
+  <input type="hidden" id="buttonType" name="buttonType" value="">
+  
 
   
   
@@ -240,7 +309,7 @@ $(document).ready(function(){
 	  
 	  
 	  <button type="button" class="btn btn-outline-danger"><h5>찜하기</h5></button>&emsp;
-	  <button type="button" class="btn btn-outline-danger"><h5>장바구니</h5></button>&emsp;
+	  <button type="button" id="addCart" class="btn btn-outline-danger"><h5>장바구니</h5></button>&emsp;
 	  <button type="button" class="btn btn-danger"><h5>바로구매</h5></button>
 	  </div>
 </td>

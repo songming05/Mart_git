@@ -3,8 +3,13 @@ package cart.controller;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,14 +18,17 @@ import org.springframework.web.servlet.ModelAndView;
 
 import cart.bean.CartDTO;
 import cart.dao.CartDAO;
+import order.dao.OrderDAO;
 
 @Controller
 public class ShoppingBasketController {
 	
 	@Autowired
 	private CartDAO cartDAO;
+	@Autowired
+	private OrderDAO orderDAO;
 	
-	//¿ÂπŸ±∏¥œ ∏ﬁ¿Œ
+	//ÔøΩÔøΩŸ±ÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩ
 	@RequestMapping(value="/order_pay/shoppingBasket", method=RequestMethod.GET)
 	public ModelAndView shoppingBasket() {
 		List<CartDTO> list = cartDAO.orderAllList();
@@ -31,21 +39,21 @@ public class ShoppingBasketController {
 		return modelAndView;
 	}
 
-	//ºˆ∑Æ∫Ø∞Ê
+	//ÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩÔøΩ
 	@RequestMapping(value="/order_pay/updateQtyText", method=RequestMethod.POST)
 	public @ResponseBody String updateQtyText(@RequestParam Map<String, String> map) {
 		cartDAO.shoesQtyText(map);
 		return "/abcd_mart/order_pay/shoppingBasket";
 	}
 	
-	//πŸ∑Œ±∏∏≈
+	//ÔøΩŸ∑Œ±ÔøΩÔøΩÔøΩ
 	@RequestMapping(value="/order_pay/orderChoice", method=RequestMethod.POST)
 	public @ResponseBody String orderChoice(@RequestParam Map<String, String> map) {
 		cartDAO.insert_temporary_cartlist(map);
 		return "/abcd_mart/order_pay/goOrderChoice";
 	}
 	
-	//πŸ∑Œ±∏∏≈ -> order.jsp ¿Ãµø
+	//ÔøΩŸ∑Œ±ÔøΩÔøΩÔøΩ -> order.jsp ÔøΩÃµÔøΩ
 	@RequestMapping(value="/order_pay/goOrderChoice", method=RequestMethod.GET)
 	public ModelAndView goOrderChoice() {
 		List<CartDTO> list = cartDAO.temporary_cartlist();
@@ -57,14 +65,14 @@ public class ShoppingBasketController {
 		return modelAndView;
 	}
 	
-	//«∞∏ÒªË¡¶
+	//«∞ÔøΩÔøΩÔøΩÔøΩÔøΩ
 	@RequestMapping(value="/order_pay/deleteList", method=RequestMethod.POST)
 	public @ResponseBody String deleteList(@RequestParam Map<String, String> map) {
 		cartDAO.deleteList(map);
 		return "/abcd_mart/order_pay/shoppingBasket";
 	}
 	
-	//º±≈√ªÛ«∞ ªË¡¶
+	//ÔøΩÔøΩÔøΩ√ªÔøΩ«∞ ÔøΩÔøΩÔøΩÔøΩ
 	@RequestMapping(value="/order_pay/select_deleteList", method=RequestMethod.POST)
 	public @ResponseBody String select_deleteList(@RequestParam String[] id, @RequestParam String[] prdtcode, @RequestParam String[] shoesimage,
 												  @RequestParam String[] shoesbrand, @RequestParam String[] shoesname, @RequestParam String[] shoescolor,
@@ -92,7 +100,7 @@ public class ShoppingBasketController {
 		return "/abcd_mart/order_pay/shoppingBasket";
 	}
 	
-	//º±≈√ªÛ«∞ ¡÷πÆ«œ±‚
+	//ÔøΩÔøΩÔøΩ√ªÔøΩ«∞ ÔøΩ÷πÔøΩÔøΩœ±ÔøΩ
 	@RequestMapping(value="/order_pay/orderSelect", method=RequestMethod.POST)
 	public @ResponseBody String orderSelect(@RequestParam String[] id, @RequestParam String[] prdtcode, @RequestParam String[] shoesimage,
 											@RequestParam String[] shoesbrand, @RequestParam String[] shoesname, @RequestParam String[] shoescolor,
@@ -120,7 +128,7 @@ public class ShoppingBasketController {
 		return "/abcd_mart/order_pay/goOrderSelect";
 	}
 	
-	//º±≈√ªÛ«∞ ¡÷πÆ«œ±‚ -> order.jsp ¿Ãµø
+	//ÔøΩÔøΩÔøΩ√ªÔøΩ«∞ ÔøΩ÷πÔøΩÔøΩœ±ÔøΩ -> order.jsp ÔøΩÃµÔøΩ
 	@RequestMapping(value="/order_pay/goOrderSelect", method=RequestMethod.GET)
 	public ModelAndView goOrderSelect() {
 		List<CartDTO> list = cartDAO.temporary_cartlist();
@@ -132,7 +140,7 @@ public class ShoppingBasketController {
 		return modelAndView;
 	}
 	
-	//¿¸√ºªÛ«∞ ¡÷πÆ«œ±‚
+	//ÔøΩÔøΩ√ºÔøΩÔøΩ«∞ ÔøΩ÷πÔøΩÔøΩœ±ÔøΩ
 	@RequestMapping(value="/order_pay/orderAll", method=RequestMethod.GET)
 	public ModelAndView orderAll() {	
 		List<CartDTO> list = cartDAO.orderAllList();
@@ -144,6 +152,44 @@ public class ShoppingBasketController {
 	}
 	
 	
+	@RequestMapping(value="/cart/addCart", method = RequestMethod.POST)
+	@ResponseBody
+	public String addCart(@RequestBody Map<String,Object>map,
+						HttpSession session,
+						Model model){
+		
+		System.out.println(map);
+		String result="";
+		String id = (String) session.getAttribute("memId");
+
+		if(id==null||id.equals("")) {
+			result="not_login";
+			id="guest";
+			
+		} else {
+			//DBÏóê Ï∂îÍ∞Ä(Ïû•Î∞îÍµ¨Îãà)
+			CartDTO cartDTO = new CartDTO();
+			cartDTO.setId(id);
+			cartDTO.setPrdtcode((String) map.get("prdtcode"));
+			cartDTO.setShoesname((String) map.get("shoesname"));
+			cartDTO.setShoesimage((String) map.get("shoesimage"));
+			cartDTO.setShoesbrand((String) map.get("shoesbrand"));
+			cartDTO.setShoescolor((String) map.get("shoescolor"));
+			cartDTO.setShoessize((String) map.get("shoessize"));
+			cartDTO.setShoesprice((String) map.get("shoesprice"));
+			cartDTO.setShoesqty((String) map.get("shoesqty"));
+			cartDTO.setShoesdiscount((String) map.get("shoesdiscount"));
+			cartDTO.setShoespoint((String) map.get("shoespoint"));
+			
+			orderDAO.directWrite(cartDTO);
+			
+			
+			
+			result="addComplete";
+		}
+			
+		return result;
+	}
 		
 }
 
