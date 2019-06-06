@@ -9,7 +9,7 @@ $(document).ready(function(){
 			dataType : 'json',
 			error : function(){alert("실패");},
 			success : function(data){
-				 $("#afterBoardDiv").load("../page/afterBoardView.jsp",function(){
+				 $("#afterBoardDiv").load("../product/afterBoardView.jsp",function(){
 					 $('#id').val(data.id); $('#subject').val(data.subject); $('#content').val(data.content);
 					 $('#good').val(data.good); 
 					 $('input:radio[name=whereToBuy]:input[value=' + data.whereToBuy + ']').attr("checked", true);
@@ -34,7 +34,7 @@ $(document).ready(function(){
 	//상품 후기 등록
 	$('#afterBoardBtn').click(function(){
 		var code = $('#code').val();
-	    $("#afterBoardDiv").load("../page/afterBoardPage.jsp").dialog({ 
+	    $("#afterBoardDiv").load("../product/afterBoardPage.jsp").dialog({ 
 			resizable: false,
 			height: 550,
 			width: 530,
@@ -51,7 +51,7 @@ $(document).ready(function(){
 						error : function(){alert("실패");},
 						success : function(data){
 							swal("등록완료")
-							.then((value) => {location.href="/abcd_mart/page/detailPage.do?prdtCode="+$('#code').val()});}
+							.then((value) => {location.href="/abcd_mart/product/detailPage.do?prdtCode="+$('#code').val()});}
 					});
 					$( this ).dialog( "close" );
 			},
@@ -64,7 +64,7 @@ $(document).ready(function(){
 	//사이즈 버튼 자동 생성
 	for(var i=0; i<=30; i=i+5){
 		var size = $('#size').val()*1+i;
-		$('#btn').append('<button type=button class="btn btn-light" id="inBtn" value='+size.toString()+'>'+size.toString()+'</button>&nbsp;');
+		$('#btn').append('<button style="font-size:15px; font-family:맑은고딕;" type=button class="btn btn-light" id="inBtn" value='+size.toString()+'>'+size.toString()+'</button>&nbsp;');
 	}
 	
 	
@@ -223,8 +223,8 @@ $(document).ready(function(){
 	//상품후기 게시판 페이징 처리
 	$(document).on('click','#paging',function(){
 		var pg = 0;
-		if($(this).text() == '이전'){pg = (($('#currentPaging').text()*1-1)/3*3+1)-1; alert(pg+"");}
-		else if($(this).text() == '다음'){pg = (($('#currentPaging').text()*1-1)/3*3+1)+1; alert(pg+"");}
+		if($(this).text() == '이전'){pg = (($('#currentPaging').text()*1-1)/3*3+1)-1;}
+		else if($(this).text() == '다음'){pg = (($('#currentPaging').text()*1-1)/3*3+1)+1;}
 		else{pg = $(this).text();}
 		
 		$.ajax({
@@ -334,15 +334,6 @@ $(document).ready(function(){
 		
 		$('#selectOption').val('noOption').attr('selected', 'selected');
 	});//on
-	
-
-	//스마트 계산기
-	$('#smartCal').click(function(){
-		swal({
-			content:'input',
-			button: {text: "다시 계산하기",},
-		});
-	});
 	
 	//----------------------바로 구매 --------------------
 	

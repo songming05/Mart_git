@@ -26,7 +26,7 @@
 
         paras = $.extend({}, defaultParas, paras);
 
-        console.log($(this)+' & '+$(this).typeof);
+       // console.log($(this)+' & '+$(this).typeof);
         $(this).each(function() {
             var self = $(this).css({position: 'relative'});
             var selfOffset = self.offset();
@@ -87,7 +87,8 @@
             	// 사진위에서 움직이는 좌표 계산
                 var x = e.pageX - selfOffset.left;
                 var y = e.pageY - selfOffset.top;
-
+                
+                console.log(x+'= x좌표,       '+y+'y=좌표');
                 if(x <= paras.layerW / 2) {
                     x = 0;
                 }else if(x >= imageW - paras.layerW / 2) {
@@ -97,18 +98,18 @@
                 }
 
                 if(y < paras.layerH / 2) {
-                    y = 0;
+                    y = e.pageY-300;
                 } else if(y >= imageH - paras.layerH / 2) {
                     y = imageH - paras.layerH;
                 } else {
                     y = y - paras.layerH / 2;
                 }
-
+                
                 layer.css({
                     left: x,
                     top: y
                 });
-
+                
                 img.css({
                     left: -x * wTimes,
                     top: -y * hTimes

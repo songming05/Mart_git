@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="afterBoardSQL">
+	<select id="getAfterBoardList" parameterType="java.util.Map" resultType="afterBoard">
+		select * from 
+		(select rownum rn, tt.* from
+		(select seq, prdtCode, 
+				id, subject, content, good, whereToBuy,
+				ref, lev, step, pseq, reply,
+				hit, to_char(logtime, 'YYYY.MM.DD') as logtime
+				from afterBoard where prdtCode = #{prdtCode}
+				order by ref desc, step asc)tt)
+				where rn<![CDATA[ >= ]]>#{startNum} and rn<![CDATA[ <= ]]>#{endNum}
+	</select>
+	
+	<select id="getTotalA" resultType="int">
+		select count(*) from afterBoard 
+	</select>
+	
+	<insert id="afterBoardWrite" parameterType="afterBoard">
+		insert into afterBoard values(seq_afterBoard.nextval, #{prdtCode}, #{id}, #{subject}, #{content}, #{good}, #{whereToBuy}, seq_afterBoard.currval, 0, 0, 0, 0, 0, sysdate) 
+	</insert>
+	
+	<select id="afterBoardView" parameterType="String" resultType="afterBoard">
+		select * from afterBoard where seq = #{seq}
+	</select>
+</mapper>

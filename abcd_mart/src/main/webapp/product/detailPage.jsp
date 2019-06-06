@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,90 +10,46 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>${detailPageDTO.getPrdtMainName()} 상세페이지</title>
+
+<!--ㅇㅇㅇ  -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css" />
+<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.min.js' /></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.4.0.min.js"></script>
+
+<link rel="stylesheet" href="../css/main.css"/>
+<link rel="stylesheet" href="../css/header.css"/>
+<link rel="stylesheet" href="../css/mainFooter.css"/>
+
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
 <link rel="stylesheet" href="../css/detailPage/page/detailPageCss.css">
 <link rel="stylesheet" href="../css/detailPage/zoom/zoomExam.css">
- <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-  <style>
-	body {min-height: 100vh;} 
-  .container { margin: 150px auto; max-width: 960px; }
-  
-</style>
-
-
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.4.0.min.js"></script>
-<script src="../js/detailPage/page/detailPageJs.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-	$('.btn , .btn-danger').click(function(){
-		//alert($('#code').val());
-		alert('결제창으로');
-		$('#orderDirect').submit();
-		
-	});
-	var count = 0;
-	$('#table').on('click','.btn-light',function(){
-		alert($(this).val());
-		var arrNumber = new Array();
-		
-		arrNumber[count] = $(this).val();
-	
-		//alert(count);
-		//alert(arrNumber[1]);
-		
-		//console.log(arrNumber[count]);
-
-		count++;
-		
-	});
-});
-
-</script>
 
 
-
+<!-- ㅇㅇㅇ --> 
+<jsp:include page="../template/header.jsp"/>
 </head>
 <body>
-
 <!-- 값 넘기기 -->
-<!--브랜드 , 사이즈, 컬러 , 갯수   -->
-<form id="orderDirect" method="post" action="/abcd_mart/order_pay/orderDirect.do">
-
-<!-- 값 넘기기 -->
-<!--브랜드 , 사이즈, 컬러 , 갯수   -->
-
-<input type="hidden" value="aaa" name="id">
-<input type="hidden" value="${detailPageDTO.getPrdtCode()}" name="prdtcode" id="code"><!-- 상품코드 -->
-<input type="hidden" value="${detailPageDTO.getPrdtMainName()}" name="shoesname" id="mainName"><!-- 상품이름 -->
-<input type="hidden" value="${detailPageDTO.getPrdtImage1()}" name="shoesimage" id="image1"><!-- 상품이미지 -->
-<input type="hidden" value="${detailPageDTO.getPrdtBrand()}" name="shoesbrand" id="brand"><!-- 브랜드 -->
-
-<input type="hidden" value="${detailPageDTO.getPrdtColor()}" name="shoescolor" id="prdtColor"><!-- 컬러 -->
-<input type="hidden" value="${detailPageDTO.getPrdtSize()}" name="shoessize" id="size">	<!-- 사이즈 -->
-<input type="hidden" value="${detailPageDTO.getPrdtPrice()}" name="shoesprice" id="price"><!-- 가격 -->
-<input type="hidden" value="1" name="shoesqty" id="qty"><!-- 갯수 -->
-<input type="hidden" value="0" name="shoesdiscount" id="coupon"><!-- 쿠폰 -->
-<input type="hidden" value="1000" name="shoespoint" id="point"><!-- 포인트 -->
-
+<input type="hidden" value="${detailPageDTO.getPrdtMainName()}" id="mainName">
 <input type="hidden" value="${detailPageDTO.getPrdtImage1()}" id="image1">
 <input type="hidden" value="${detailPageDTO.getPrdtImage2()}" id="image2">
 <input type="hidden" value="${detailPageDTO.getPrdtImage3()}" id="image3">
 <input type="hidden" value="${detailPageDTO.getPrdtImage4()}" id="image4">
-
-
+<input type="hidden" value="${detailPageDTO.getPrdtSize()}" id="size">
+<input type="hidden" value="${detailPageDTO.getPrdtPrice()}" id="price">
+<input type="hidden" value="${detailPageDTO.getPrdtCode()}" id="code">
 
 <div class="container" style="width:1100px;">
-<br><br>
 <table align="center">
 <!-- 한줄 -->
 <tr>
 <td colspan="2" style="height:30px;">
-<div style="border:1px solid #AAAAAA; width:90%; margin:auto;"></div>
+<!-- <div style="border:1px solid #AAAAAA; width:90%; margin:auto;"></div> -->
 </td>
 </tr>
 
@@ -103,7 +60,7 @@ $(document).ready(function(){
 
 <div class="container">
   <div class="show">
-    <img src="../image/page/product/${detailPageDTO.getPrdtImage2()}" id="show-img">
+    <img src="../image/page/product/${detailPageDTO.getPrdtImage1()}" id="show-img">
   </div>
   <div class="small-img">
     <div class="small-container">
@@ -114,18 +71,15 @@ $(document).ready(function(){
     </div>
   </div>
 </div>
-<script src="../js/detailPage/zoom/zoomExam.js"></script>
-<script src="../js/detailPage/zoom/zoomMain.js"></script>
-
 </td>
 
 <td>
-  <h2 style="float:left; font-weight:bold;">${detailPageDTO.getPrdtMainName()}</h2><br><br><br>
+  <h2 style="float:left; font-weight:bold; color:black;">${detailPageDTO.getPrdtMainName()}</h2><br><br><br>
   <h6 align="left" style="color:#AAAAAA;">${detailPageDTO.getPrdtMiniName()}</h6><br>            
   <table class="table" style="width:550px;" id="detailPage">
     <thead>
       <tr>
-        <td colspan="2" align="left" style="font-size:11px;">스타일코드 : ${detailPageDTO.getPrdtStyleCode()} &emsp; 상품코드 : ${detailPageDTO.getPrdtCode()}</td>
+        <td colspan="2" align="left" style="font-family: arial; font-size:11px; color:#AAAAAA;">스타일코드 : ${detailPageDTO.getPrdtStyleCode()} &emsp; 상품코드 : ${detailPageDTO.getPrdtCode()}</td>
       </tr>
     </thead>
     <tbody>
@@ -133,15 +87,15 @@ $(document).ready(function(){
       <tr>
         <td width="90px" height="80px" style="font:bold 20px; color:#686868;">판매가</td>
         <td align="left">
-        <font size="5">
-        <fmt:formatNumber type="number" value="${detailPageDTO.getPrdtPrice()}" pattern="#,###"/></font>원
+        <h2 style="float:left; font-weight:bold; color:black; font-family:gulim;">
+        <fmt:formatNumber type="number" value="${detailPageDTO.getPrdtPrice()}" pattern="#,###"/><font size="4">원</font></h2>
         
         </td>
       </tr>
       
       <tr>
         <td width="90px" height="80px" style="font:bold 20px; color:#686868;">배송비</td>
-        <td align="left">${detailPageDTO.getPrdtDeliveryPrice()}</td>
+        <td align="left"><h6 style="font-size:15px;">${detailPageDTO.getPrdtDeliveryPrice()}</h6></td>
       </tr>
       
       <tr>
@@ -213,17 +167,17 @@ $(document).ready(function(){
 		<table class="table table-striped" id="guideTable">
 		    <tbody>
 		      <tr>
-		        <td>성별</td>
-		        <td>${detailPageDTO.getPrdtGender()}</td>
-		        <td>소재</td>
-		        <td>상세페이지 참조</td>
+		        <td style="font-size:11px;">성별</td>
+		        <td style="font-size:11px;">${detailPageDTO.getPrdtGender()}</td>
+		        <td style="font-size:11px;">소재</td>
+		        <td style="font-size:11px;">상세페이지 참조</td>
 		      </tr>
 		      
 		      <tr>
-		        <td>색상</td>
-		        <td>${detailPageDTO.getPrdtColor() }</td>
-		        <td>치수</td>
-		        <td>
+		        <td style="font-size:11px;">색상</td>
+		        <td style="font-size:11px;">${detailPageDTO.getPrdtColor() }</td>
+		        <td style="font-size:11px;">치수</td>
+		        <td style="font-size:11px;">
 		        <c:forEach var="i" begin="0" step="5" end="30">
 		        ${detailPageDTO.getPrdtSize()+i}
 		        <c:if test="i ne 30">/</c:if>
@@ -232,43 +186,42 @@ $(document).ready(function(){
 		      </tr>
 		      
 		      <tr>
-		        <td>굽높이</td>
-		        <td>상세페이지 참조</td>
-		        <td>제조자</td>
-		        <td>상세페이지 참조</td>
+		        <td style="font-size:11px;">굽높이</td>
+		        <td style="font-size:11px;">상세페이지 참조</td>
+		        <td style="font-size:11px;">제조자</td>
+		        <td style="font-size:11px;">상세페이지 참조</td>
 		      </tr>
 		      
 		      <tr>
-		        <td>제조국</td>
-		        <td>없음</td>
-		        <td>수입자</td>
-		        <td></td>
+		        <td style="font-size:11px;">제조국</td>
+		        <td style="font-size:11px;">없음</td>
+		        <td style="font-size:11px;">수입자</td>
+		        <td style="font-size:11px;"></td>
 		      </tr>
 		      
 		      <tr>
-		        <td>A/S 책임자와 전화번호</td>
-		        <td>ABCD마트 A/S 담당자 : 000-123-1234</td>
-		        <td>제조년월</td>
-		        <td>상세페이지 참조</td>
+		        <td style="font-size:11px;">A/S 책임자와 전화번호</td>
+		        <td style="font-size:11px;">ABCD마트 A/S 담당자 : 000-123-1234</td>
+		        <td style="font-size:11px;">제조년월</td>
+		        <td style="font-size:11px;">상세페이지 참조</td>
 		      </tr>
 		      
 		      <tr>
-		        <td>특이사항</td>
-		        <td></td>
-		        <td>품질보증기준</td>
-		        <td>본 제품은 정부 고시 소비자 분쟁해결 기준에 의거하여 보상해드립니다.(품질 보증기간 : 구입별로부터 6개월이내)</td>
+		        <td style="font-size:11px;">특이사항</td>
+		        <td style="font-size:11px;"></td>
+		        <td style="font-size:11px;">품질보증기준</td>
+		        <td style="font-size:11px;">본 제품은 정부 고시 소비자 분쟁해결 기준에 의거하여 보상해드립니다.(품질 보증기간 : 구입별로부터 6개월이내)</td>
 		      </tr>
 		      
 		      <tr>
-		        <td>사이즈 TIP</td>
-		        <td></td>
-		        <td>소재별 관리방법</td>
-		        <td>가벼운 오염물이 물들었을 때에는 부드러운 솔로 털어내주시기 바랍니다. 물세탁이 되지 않는 소재입니다. 물에 젖지 않게 해주시기 바라며, 만약에 물에 젖었을 떄에는 마른 걸레로 닦아주시기 바랍니다.</td>
+		        <td style="font-size:11px;">사이즈 TIP</td>
+		        <td style="font-size:11px;"></td>
+		        <td style="font-size:11px;">소재별 관리방법</td>
+		        <td style="font-size:11px;">가벼운 오염물이 물들었을 때에는 부드러운 솔로 털어내주시기 바랍니다. 물세탁이 되지 않는 소재입니다. 물에 젖지 않게 해주시기 바라며, 만약에 물에 젖었을 떄에는 마른 걸레로 닦아주시기 바랍니다.</td>
 		      </tr>
 		    </tbody>
 		  </table>
-</form>
-		  <h6 style="color:#AAAAAA;">전자상거래 등에서의 상품정보제공 고시에 따라 작성되었습니다.</h6>
+		  <h6 style="color:#AAAAAA; font-size:11px;">전자상거래 등에서의 상품정보제공 고시에 따라 작성되었습니다.</h6>
 <!-- 상품후기 -->
 <br><br><br><br>
 	<ul class="nav nav-tabs nav-justified" id="position2">
@@ -288,12 +241,12 @@ $(document).ready(function(){
 	  <br>
 	  <img src="../image/page/basic/상품후기.PNG" width="250px" height="160px">
 		<ul>
-			<li id="guideAfter">상품 후기를 작성해주시면 발도장 10개를 드립니다.</li>
-			<li id="guideAfter">상품 후기를 작성해주시면 최대 2,000 포인트를 적립해드립니다.</li>
-			<li id="guideAfter">후기 포인트는 등록일 이후 최대 3일 이내에 적립해드립니다. (주말 및 공휴일 제외)</li>
-			<li id="guideAfter">용품 및 액세서리에 대한 후기는 포인트 지급이 제외됩니다.</li>
-			<li id="guideAfter">구매 확정일로부터 30일이 지난 후 등록된 후기는 포인트 지급이 제외됩니다.</li>
-			<li id="guideAfter">직접 촬영한 사진이 아닐 경우 포토 후기에 대한 포인트 지급이 제외됩니다.</li>
+			<li id="guideAfter" style="font-size:11px;">상품 후기를 작성해주시면 발도장 10개를 드립니다.</li>
+			<li id="guideAfter" style="font-size:11px;">상품 후기를 작성해주시면 최대 2,000 포인트를 적립해드립니다.</li>
+			<li id="guideAfter" style="font-size:11px;">후기 포인트는 등록일 이후 최대 3일 이내에 적립해드립니다. (주말 및 공휴일 제외)</li>
+			<li id="guideAfter" style="font-size:11px;">용품 및 액세서리에 대한 후기는 포인트 지급이 제외됩니다.</li>
+			<li id="guideAfter" style="font-size:11px;">구매 확정일로부터 30일이 지난 후 등록된 후기는 포인트 지급이 제외됩니다.</li>
+			<li id="guideAfter" style="font-size:11px;">직접 촬영한 사진이 아닐 경우 포토 후기에 대한 포인트 지급이 제외됩니다.</li>
 		</ul>
 		
 		<br><br>
@@ -345,9 +298,9 @@ $(document).ready(function(){
 	  
 	  <br><br>
 	 <ul>
-		<li id="guideAfter">단순 상품비방, 상업적인 내용, 미풍양속 위반, 게시판의 성격에 맞지 않는 글은 통보 없이 삭제될 수 있습니다.</li>
-		<li id="guideAfter">오프라인 매장 재고현황 문의는 ‘전국오프라인매장’ 정보를 참고하시어 해당 매장으로 문의하시면 좀 더 정확한 확인이 가능합니다.</li>
-		<li id="guideAfter">주문/배송/반품 및 AS 등 기타 문의는 1:1 상담문의(마이페이지>쇼핑수첩>나의상담)에 남겨주시기 바랍니다.<br>
+		<li id="guideAfter" >단순 상품비방, 상업적인 내용, 미풍양속 위반, 게시판의 성격에 맞지 않는 글은 통보 없이 삭제될 수 있습니다.</li>
+		<li id="guideAfter" >오프라인 매장 재고현황 문의는 ‘전국오프라인매장’ 정보를 참고하시어 해당 매장으로 문의하시면 좀 더 정확한 확인이 가능합니다.</li>
+		<li id="guideAfter" >주문/배송/반품 및 AS 등 기타 문의는 1:1 상담문의(마이페이지>쇼핑수첩>나의상담)에 남겨주시기 바랍니다.<br>
 											(상품 자체에 대한 문의가 아닌 주문/배송/반품 및 AS 등의 기타문의를 작성하실 경우 나의상담 메뉴로 글이 이동될 수 있습니다.)
 		</li>
 	</ul>
@@ -597,18 +550,37 @@ $(document).ready(function(){
 	      </tr>
 	    </tbody>
  	 </table>
-	  
-	  
-	  
-	<br><br><br><br>
-	
-	
 </td>
 </tr>
 </table>
 </div><!-- 전체 DIV컨테이너 -->
 
 
+<footer>
+<jsp:include page="../template/mainFooter.jsp"/>
+</footer>
+
 
 </body>
+
+<style>
+	body {min-height: 100vh;} 
+  .container { margin: 20px auto; max-width: 960px; }
+</style>
+
+
+
+<script type="text/javascript" src="../js/detailPage/page/detailPageJs.js"></script>
+
+<script type="text/javascript" src="../js/detailPage/zoom/zoomExam.js"></script>
+<script type="text/javascript" src="../js/detailPage/zoom/zoomMain.js"></script>
+<!-- <script type="text/javascript" src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+ --> 
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ 
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/mainFooter.js"></script> 
+ 
+
 </html>
