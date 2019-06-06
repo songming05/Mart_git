@@ -3,18 +3,74 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="adminSQL">
-	<select id="paymentList" parameterType="map" resultType="payment">
-		select * from paymentinfo 		
-		where 
-			<![CDATA[
-			    orderdate >= #{fromDate}
-			and 
-				orderdate <= #{toDate}
-			]]>
-			<if test="orderResult!=''">
-			and
-				${orderSelect} = #{orderResult} 
+	<select id="paymentList" parameterType="map" resultType="payment">	
+		select * from 
+			 paymentinfo		
+		where 			 
+			 orderdate <![CDATA[>=]]>  #{fromDate} 
+			
+			 and 
+			
+			 orderdate <![CDATA[<=]]> #{toDate}
+			
+			 <if test="orderResult!=''">			 
+			 and
+				 ${orderSelect} like '%'||#{orderResult}||'%' 
 			</if>
-
 	</select>
+	
+	<insert id="applyImg" parameterType="map">
+		insert into 
+					image
+		values(
+				#{prdtCode},
+				#{prdtImage1},
+				#{prdtImage2},
+				#{prdtImage3},
+				#{prdtImage4},
+				#{prdtDetailImage1},
+				#{prdtDetailImage2},
+				#{prdtDetailImage3})
+	</insert>
+	
+	
+	<select id="prdtManagement" parameterType="map" resultType="prdtManagement">	
+		select * from 
+			 prdtManagement		
+			
+			 <if test="prdtResult!=''">
+			 where 
+			 	 
+			 
+				 ${prdtSelect} like '%'||#{prdtResult}||'%' 
+			</if>
+	</select>
+	
+	
+	<update id="prdtChange" parameterType="map">	
+		update prdtManagement
+			set prdtQty = #{changeQty}
+			 where
+					 prdtCode = #{changePrdt}
+			    and
+			    	 prdtSize = #{changeSize}
+	</update>
+	
+	<select id="orderReturn" parameterType="map" resultType="returnDTO">	
+		select * from 
+			 returnInfo		
+		where 
+			 returnSts = #{returnSts}
+			 
+			 <if test="returnDate!=''">
+			 and
+			 	returnDate = #{returnDate}
+			 </if>
+
+			 <if test="returnResult!=''">			 
+			 and
+				 ${returnSelect} = #{returnResult} 
+			</if>
+	</select>
+	
 </mapper>

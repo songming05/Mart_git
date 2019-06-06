@@ -71,7 +71,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="deleteCart" parameterType="String">
 		delete from cartlist where id = #{id}
 	</delete>
-	
+	<!--  paymentInfo 테이블에 등록-->
 	<insert id="paymentInfo" parameterType="order.bean.PaymentinfoDTO">
 		insert into paymentinfo values(
 								#{orderNum},
@@ -85,5 +85,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			
 								)
 	</insert>
-	
+	<!-- 재고 관리 -1 -->
+	<update id="prdtManagement" parameterType="java.util.Map">
+		update prdtManagement set prdtqty= prdtqty-1 where prdtcode = #{prdtcode} and prdtsize = #{shoessize}
+	</update>
 </mapper>

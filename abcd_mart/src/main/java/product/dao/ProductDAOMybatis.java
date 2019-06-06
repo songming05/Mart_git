@@ -14,7 +14,7 @@ public class ProductDAOMybatis implements ProductDAO {
 	private SqlSession sqlSession;
 
 	@Override
-	public void applyPdt(Map<String, String> map) {
+	public void applyPdt(Map<String, Object> map) {
 		sqlSession.insert("productSQL.applyPdt",map);
 	}
 }

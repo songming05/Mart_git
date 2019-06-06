@@ -63,12 +63,12 @@ $(document).ready(function(){
 						"id":document.getElementsByName("id")[i].value,
 						"prdtcode":document.getElementsByName("prdtcode")[i].value,
 						"shoesname":document.getElementsByName("shoesname")[i].value,
-						"shoesimage":document.getElementsByName("shoesimage")[i].value,
+						"shoesimage":$('#image1').val(),
 						"shoesbrand":document.getElementsByName("shoesbrand")[i].value,
 						"shoescolor":document.getElementsByName("shoescolor")[i].value,
 						"shoessize":document.getElementsByName("shoessize")[i].value,
 						"shoesprice":document.getElementsByName("shoesprice")[i].value,
-						"shoesqty":document.getElementsByName("shoesdiscount")[i].value,
+						"shoesqty":document.getElementsByName("qtyName")[i].value,
 						"shoesdiscount":document.getElementsByName("shoesdiscount")[i].value,
 						"shoespoint":document.getElementsByName("shoespoint")[i].value
 						

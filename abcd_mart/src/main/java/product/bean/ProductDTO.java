@@ -13,8 +13,10 @@ public class ProductDTO {
 	private String prdtStyleCode ;
 	private String prdtCode;
 	private int prdtPrice ;
-	private String prdtdeliveryPrice ;
-	private int sizeMin;
-	private int sizeMax;
-	private int good;
+	private String prdtDeliveryPrice;
+	private String prdtBrand;
+	private String prdtColor;
+	private String prdtGender;
+	private int prdtSize;
+	private int prdtGood ;
 }

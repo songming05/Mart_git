@@ -10,6 +10,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="cart.bean.CartDTO" alias="cartDTO"/>
 		<typeAlias type="admin.bean.PaymentDTO" alias="payment"/>
 		<typeAlias type="order.bean.OrderDTO" alias="orderDTO"/>
-		<typeAlias type="board.bean.AfterBoardDTO" alias="afterBoard"/>			
+		<typeAlias type="board.bean.AfterBoardDTO" alias="afterBoard"/>
+		<typeAlias type="admin.bean.PaymentDTO" alias="payment"/>   
+     	<typeAlias type="admin.bean.PrdtManagementDTO" alias="prdtManagement"/>
+     	<typeAlias type="admin.bean.ReturnDTO" alias="returnDTO"/>
 	</typeAliases>
 </configuration>

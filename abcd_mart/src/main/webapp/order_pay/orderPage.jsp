@@ -85,7 +85,7 @@
 								   <c:set var="totalPoint" value="0"/><!-- 총합 포인트 변수 -->
 								   
 								   <c:forEach var="orderDTO" items="${orderList }"> 
-								   <c:set var="totalPrice" value="${totalPrice + orderDTO.getShoesprice() }"/>
+								   <c:set var="totalPrice" value="${totalPrice + orderDTO.getShoesprice()*orderDTO.getShoesqty()  }"/>
 								   <c:set var="discount" value="${discount + orderDTO.getShoesdiscount() }"/>
 										<tr class="group-center">
 											<td class="align-left modeloutBox">
@@ -93,8 +93,7 @@
 											<input type="hidden" name="shoesimage" value="${orderDTO.getShoesimage()}"><!-- 상품이미지 -->
 											
 												<div class="model_img_box">
-													<img src="" alt="SPLINE SCRIPT" onerror="imageError(this)"/>
-													이미지명:${orderDTO.getShoesimage() }
+													<img src="../image/page/product/${orderDTO.getPrdtcode()}/${orderDTO.getShoesimage() }" alt="SPLINE SCRIPT" onerror="imageError(this)"/>
 													<input name="shoesimage" id="shoesimage" type="hidden" value="${orderDTO.getShoesimage() }">
 												</div>
 												
@@ -109,10 +108,10 @@
 											</td>
 											<td class="orderPrice">
 												<input id="orderPrice" type="hidden" value="${orderDTO.getShoesprice() }">
-												<span><fmt:formatNumber value="${orderDTO.getShoesprice() }" type="number"/></span>원<!--가격-->							
+												<span><fmt:formatNumber value="${orderDTO.getShoesprice()*orderDTO.getShoesqty()  }" type="number"/></span>원<!--가격-->							
 											</td>
 											<td class="check_list_box">
-												1
+												${orderDTO.getShoesqty() }
 											</td>
 											
 											<td>
@@ -125,7 +124,7 @@
 												</em>
 											</td>
 											<td class="totalPrice">
-											    <div class="od-won"><span class="order_price"><fmt:formatNumber value="${orderDTO.getShoesprice()-orderDTO.getShoesdiscount() }" type="number"/></span>원</div>
+											    <div class="od-won"><span class="order_price"><fmt:formatNumber value="${orderDTO.getShoesprice()*orderDTO.getShoesqty() -orderDTO.getShoesdiscount() }" type="number"/></span>원</div>
 												<div class="od-point">
 												 <div style="font-size: 11px; color: #666; font-weight:bold;">
 												  <span class="prdt_point" style="font-size: 11px; color: #666;"><fmt:formatNumber value="${orderDTO.getShoespoint() }" type="number"/></span> 
