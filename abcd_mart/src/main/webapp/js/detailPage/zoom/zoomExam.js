@@ -98,7 +98,7 @@
                 }
 
                 if(y < paras.layerH / 2) {
-                    y = e.pageY-300;
+                    y = e.pageY-350;
                 } else if(y >= imageH - paras.layerH / 2) {
                     y = imageH - paras.layerH;
                 } else {
