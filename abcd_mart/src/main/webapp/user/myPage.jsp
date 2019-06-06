@@ -8,8 +8,6 @@
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/header.css"/>
 <link rel="stylesheet" href="../css/user/myPage.css"/>
-<!-- quickBar -->
-<link rel="stylesheet" href="../css/quickBar.css"/>	
 <!-- footer-->
 <link rel="stylesheet" href="../css/mainFooter.css"/>
 </head>
@@ -18,9 +16,8 @@
 <jsp:include page="../template/header.jsp"/>
 
 </header>
-<jsp:include page="../template/quickBarOther.jsp"/>
 
-<div class="container_wrap">
+<div class="container_wrap" id="myPage">
             <div class="container_area">
                 <div class="container_layout">
                     <!-- page_location -->
@@ -312,7 +309,7 @@
                             <input type="text" class="day_select mr5 hasDatepicker" id="selectStartDt" name="startDt" value="20190522" maxlength="8" onkeydown="onlyNum();" style="width:138px;height:26px;" readonly="readonly"><img class="ui-datepicker-trigger" src="//image.abcmart.co.kr/nexti/images/abcmart_new/ico_calander.gif" alt="..." title="...">
                             ~
                             <input type="text" class="day_select mr5 hasDatepicker" id="selectEndDt" name="endDt" value="20190606" maxlength="8" onkeydown="onlyNum();" style="width:138px;height:26px;" readonly="readonly"><img class="ui-datepicker-trigger" src="//image.abcmart.co.kr/nexti/images/abcmart_new/ico_calander.gif" alt="..." title="...">
-                            <a href="javascript:formSubmit('dateSearch');" class="btn_mlType1 ml10" style="width:63px; height:30px;">조회</a>
+                            <a href="javascript:formSubmit('dateSearch');" id="cml10" class="btn_mlType1 ml10" style="width:63px; height:30px;">조회</a>
                         </td>
                     </tr>
                 </tbody>
@@ -479,9 +476,7 @@
 
 
 <jsp:include page="../template/mainFooter.jsp"/>
-</body>
-<!-- quickBar -->
-<script type="text/javascript" src="../js/quickBar.js"></script>  
+</body> 
 <!-- footer -->
 <script type="text/javascript" src="../js/mainFooter.js"></script> 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.0.min.js"></script>
