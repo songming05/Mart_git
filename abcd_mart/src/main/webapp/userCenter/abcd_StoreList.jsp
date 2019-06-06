@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8"
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -38,34 +38,34 @@
 
 
 </header>
- <section class="cutomer_cont store_mapCont">
+ <section class="cutomer_cont store_mapCont" style="width: 1100px; margin: auto; ">
         <section class="store_mapbox mt30 clearfix">
             
             <div class="store_map">
                 <ul>
-                     <li class="map01">
+                     <li class="map01 top_map">
                     	<div class="positR">
 	                    	<a href="javascript://" targetId="areaCode" idValue="01">
 	                    	<img src='../image/abcd_mart_map/map_01.png' alt="서울">
 	                    	</a>
-	                    	<span>서울 <em>1개</em></span>
+	                    	<span>서울 <em>123개</em></span>
                     	</div>
                     </li>
-                    <li class="map02"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="06"><img src='../image/abcd_mart_map/map_02.png' alt="경기도"></a><span>경기도 <em>0개</em></span></div></li>
-                    <li class="map03"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="07"><img src='../image/abcd_mart_map/map_03.png' alt="인천광역시"></a><span>인천광역시 <em>0개</em></span></div></li>
-                    <li class="map04"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="02"><img src='../image/abcd_mart_map/map_04.png' alt="강원도"></a><span>강원도 <em>0개</em></span></div></li>
-                    <li class="map05"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="03"><img src='../image/abcd_mart_map/map_05.png' alt="대전광역시"></a><span>대전광역시 <em>0개</em></span></div></li>
-                    <li class="map06"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="04"><img src='../image/abcd_mart_map/map_06.png' alt="충청남도"></a><span>충청남도 <em>0개</em></span></div></li>
-                    <li class="map07"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="05"><img src='../image/abcd_mart_map/map_07.png' alt="충청북도"></a><span>충청북도 <em>0개</em></span></div></li>
-                    <li class="map08"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="08"><img src='../image/abcd_mart_map/map_08.png' alt="광주광역시"></a><span>광주광역시 <em>0개</em></span></div></li>
-                    <li class="map09"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="10"><img src='../image/abcd_mart_map/map_09.png' alt="전라북도"></a><span>전라북도 <em>0개</em></span></div></li>
-                    <li class="map10"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="09"><img src='../image/abcd_mart_map/map_10.png' alt="전라남도"></a><span>전라남도 <em>0개</em></span></div></li>
-                    <li class="map11"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="14"><img src='../image/abcd_mart_map/map_11.png' alt="대구광역시"></a><span>대구광역시 <em>0개</em></span></div></li>
-                    <li class="map12"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="13"><img src='../image/abcd_mart_map/map_12.png' alt="경상북도"></a><span>경상북도 <em>0개</em></span></div></li>
-                    <li class="map13"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="12"><img src='../image/abcd_mart_map/map_13.png' alt="경상남도"></a><span>경상남도 <em>0개</em></span></div></li>
-                    <li class="map14"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="15"><img src='../image/abcd_mart_map/map_14.png' alt="울산광역시"></a><span>울산광역시 <em>0개</em></span></div></li>
-                    <li class="map15"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="11"><img src='../image/abcd_mart_map/map_15.png' alt="부산광역시"></a><span>부산광역시 <em>0개</em></span></div></li>
-                    <li class="map16"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="16"><img src='../image/abcd_mart_map/map_16.png' alt="제주도"></a><span>제주도 <em>0개</em></span></div></li>
+                    <li class="map02"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="06"><img src='../image/abcd_mart_map/map_02.png' alt="경기도"></a><span>경기도 <em>12개</em></span></div></li>
+                    <li class="map03 top_map"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="07"><img src='../image/abcd_mart_map/map_03.png' alt="인천광역시"></a><span>인천광역시 <em>7개</em></span></div></li>
+                    <li class="map04"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="02"><img src='../image/abcd_mart_map/map_04.png' alt="강원도"></a><span>강원도 <em>10개</em></span></div></li>
+                    <li class="map05 top_map"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="03"><img src='../image/abcd_mart_map/map_05.png' alt="대전광역시"></a><span>대전광역시 <em>10개</em></span></div></li>
+                    <li class="map06"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="04"><img src='../image/abcd_mart_map/map_06.png' alt="충청남도"></a><span>충청남도 <em>10개</em></span></div></li>
+                    <li class="map07"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="05"><img src='../image/abcd_mart_map/map_07.png' alt="충청북도"></a><span>충청북도 <em>10개</em></span></div></li>
+                    <li class="map08 top_map"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="08"><img src='../image/abcd_mart_map/map_08.png' alt="광주광역시"></a><span>광주광역시 <em>10개</em></span></div></li>
+                    <li class="map09"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="10"><img src='../image/abcd_mart_map/map_09.png' alt="전라북도"></a><span>전라북도 <em>10개</em></span></div></li>
+                    <li class="map10"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="09"><img src='../image/abcd_mart_map/map_10.png' alt="전라남도"></a><span>전라남도 <em>10개</em></span></div></li>
+                    <li class="map11 top_map"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="14"><img src='../image/abcd_mart_map/map_11.png' alt="대구광역시"></a><span>대구광역시 <em>10개</em></span></div></li>
+                    <li class="map12"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="13"><img src='../image/abcd_mart_map/map_12.png' alt="경상북도"></a><span>경상북도 <em>10개</em></span></div></li>
+                    <li class="map13"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="12"><img src='../image/abcd_mart_map/map_13.png' alt="경상남도"></a><span>경상남도 <em>10개</em></span></div></li>
+                    <li class="map14 top_map"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="15"><img src='../image/abcd_mart_map/map_14.png' alt="울산광역시"></a><span>울산광역시 <em>10개</em></span></div></li>
+                    <li class="map15 top_map"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="11"><img src='../image/abcd_mart_map/map_15.png' alt="부산광역시"></a><span>부산광역시 <em>10개</em></span></div></li>
+                    <li class="map16"><div class="positR"><a href="javascript://" targetId="areaCode" idValue="16"><img src='../image/abcd_mart_map/map_16.png' alt="제주도"></a><span>제주도 <em>100개</em></span></div></li>
                 </ul>
             </div>
             

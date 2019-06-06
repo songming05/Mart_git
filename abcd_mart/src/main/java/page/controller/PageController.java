@@ -19,9 +19,9 @@ public class PageController {
 	
 	@RequestMapping(value="/detail",method=RequestMethod.GET)
 	public ModelAndView detailPage(@RequestParam String prdtCode, Model model) {
-	
+	System.out.println("prdt 코드"+prdtCode);
 		DetailPageDTO detailPageDTO = detailPageDAO.getProduct(prdtCode);
-		
+		//System.out.println("꺼낸후 값"+detailPageDTO.getPrdtCode());
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("detailPageDTO",detailPageDTO);
 		mav.setViewName("/product/detailPage");

@@ -16,26 +16,75 @@
   <style>
 	body {min-height: 100vh;} 
   .container { margin: 150px auto; max-width: 960px; }
+  
 </style>
 
+
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.0.min.js"></script>
-<script src="../js/detailPage/page/detailPageJs2.js"></script>
+<script src="../js/detailPage/page/detailPageJs.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.btn , .btn-danger').click(function(){
+		//alert($('#code').val());
+		alert('결제창으로');
+		$('#orderDirect').submit();
+		
+	});
+	var count = 0;
+	$('#table').on('click','.btn-light',function(){
+		alert($(this).val());
+		var arrNumber = new Array();
+		
+		arrNumber[count] = $(this).val();
+	
+		//alert(count);
+		//alert(arrNumber[1]);
+		
+		//console.log(arrNumber[count]);
+
+		count++;
+		
+	});
+});
+
+</script>
 
 
 
 </head>
 <body>
+
 <!-- 값 넘기기 -->
-<input type="hidden" value="${detailPageDTO.getPrdtMainName()}" id="mainName">
+<!--브랜드 , 사이즈, 컬러 , 갯수   -->
+<form id="orderDirect" method="post" action="/abcd_mart/order_pay/orderDirect.do">
+
+<!-- 값 넘기기 -->
+<!--브랜드 , 사이즈, 컬러 , 갯수   -->
+
+<input type="hidden" value="aaa" name="id">
+<input type="hidden" value="${detailPageDTO.getPrdtCode()}" name="prdtcode" id="code"><!-- 상품코드 -->
+<input type="hidden" value="${detailPageDTO.getPrdtMainName()}" name="shoesname" id="mainName"><!-- 상품이름 -->
+<input type="hidden" value="${detailPageDTO.getPrdtImage1()}" name="shoesimage" id="image1"><!-- 상품이미지 -->
+<input type="hidden" value="${detailPageDTO.getPrdtBrand()}" name="shoesbrand" id="brand"><!-- 브랜드 -->
+
+<input type="hidden" value="${detailPageDTO.getPrdtColor()}" name="shoescolor" id="prdtColor"><!-- 컬러 -->
+<input type="hidden" value="${detailPageDTO.getPrdtSize()}" name="shoessize" id="size">	<!-- 사이즈 -->
+<input type="hidden" value="${detailPageDTO.getPrdtPrice()}" name="shoesprice" id="price"><!-- 가격 -->
+<input type="hidden" value="1" name="shoesqty" id="qty"><!-- 갯수 -->
+<input type="hidden" value="0" name="shoesdiscount" id="coupon"><!-- 쿠폰 -->
+<input type="hidden" value="1000" name="shoespoint" id="point"><!-- 포인트 -->
+
 <input type="hidden" value="${detailPageDTO.getPrdtImage1()}" id="image1">
 <input type="hidden" value="${detailPageDTO.getPrdtImage2()}" id="image2">
 <input type="hidden" value="${detailPageDTO.getPrdtImage3()}" id="image3">
 <input type="hidden" value="${detailPageDTO.getPrdtImage4()}" id="image4">
-<input type="hidden" value="${detailPageDTO.getPrdtSize()}" id="size">
-<input type="hidden" value="${detailPageDTO.getPrdtPrice()}" id="price">
-<input type="hidden" value="${detailPageDTO.getPrdtCode()}" id="code">
+
+
 
 <div class="container" style="width:1100px;">
 <br><br>
@@ -86,9 +135,7 @@
         <td align="left">
         <font size="5">
         <fmt:formatNumber type="number" value="${detailPageDTO.getPrdtPrice()}" pattern="#,###"/></font>원
-        <div align="right">
-        <button type="button" class="btn btn-outline-secondary btn-sm" id="smartCal" style="padding:1px 1px; margin:right;">스마트 계산기</button>
-        </div>
+        
         </td>
       </tr>
       
@@ -113,12 +160,10 @@
         <td width="90px" height="50px" style="font:bold 20px; color:#686868;">추가구매</td>
         <td align="left">
         
-        <select class="form-control clgfocus" >
-	      	<option value="">선택안함</option>
-	      	<option value="">버진 폼</option>
-	      	<option value="">스타키즘</option>
-	      	<option value="">파워프로텍트</option>
-	        <option value="">메모리폼</option>
+        <select class="form-control clgfocus" id="selectOption">
+	      	<option value="noOption">선택안함</option>
+	      	<option value="클리너">클리너(+5,000원)</option>
+	      	<option value="가죽 클리너">가죽 클리너(+8,000원)</option>
        	</select>
       
         </td>
@@ -222,6 +267,7 @@
 		      </tr>
 		    </tbody>
 		  </table>
+</form>
 		  <h6 style="color:#AAAAAA;">전자상거래 등에서의 상품정보제공 고시에 따라 작성되었습니다.</h6>
 <!-- 상품후기 -->
 <br><br><br><br>
@@ -254,9 +300,6 @@
 		<nav class="navbar navbar-expand-sm bg-light navbar-light">
 		  <ul class="navbar-nav">
 		    <li class="nav-item active">
-		      <a class="nav-link" href="javascript:void(0)" style="font-size:11px;">전체</a>
-		    </li>
-		    <li class="nav-item">
 		      <a class="nav-link" href="javascript:void(0)" style="font-size:11px;">일반</a>
 		    </li>
 		  </ul>
@@ -278,8 +321,11 @@
 		      </tr>
 		    </tbody>
 		  </table>
+		  <div style="text-align:center;" id="boardPagingDiv"></div>
+		  <button type="button" class="btn btn-danger btn-sm" style="float:right;" id="afterBoardBtn">상품후기 작성</button>
+		 
+		  <div id="afterBoardDiv" title="상품후기"></div>
 		  
-		  <button type="button" class="btn btn-danger btn-sm" style="float:right;">상품후기 작성</button>
 <!-- 상품 Q&A -->
 	<br><br><br><br>
 	<ul class="nav nav-tabs nav-justified" id="position3">
@@ -324,7 +370,7 @@
 	</table>
 	
 	<button type="button" class="btn btn-danger btn-sm" style="float:right;">Q&A 작성</button>
-
+	
 
 	<!-- 배송 등 -->
 	<br><br><br><br>

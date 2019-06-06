@@ -1,9 +1,69 @@
 $(document).ready(function(){
-	alert("js");
+	
+	//상품 후기 보기
+	$(document).on('click','#subjectA',function(){
+		$.ajax({
+			type : 'POST',
+			url : "/abcd_mart/board/afterBoardView",
+			data : {'seq' : $(this).attr('class')*1},
+			dataType : 'json',
+			error : function(){alert("실패");},
+			success : function(data){
+				 $("#afterBoardDiv").load("../page/afterBoardView.jsp",function(){
+					 $('#id').val(data.id); $('#subject').val(data.subject); $('#content').val(data.content);
+					 $('#good').val(data.good); 
+					 $('input:radio[name=whereToBuy]:input[value=' + data.whereToBuy + ']').attr("checked", true);
+				 }
+						 
+				 ).dialog({ 
+					resizable: false,
+					height: 550,
+					width: 530,
+					modal: true,
+					buttons: {
+						"확인": function(data) {$( this ).dialog( "close" );}
+					}//buttons
+				 }); //load
+			}//success
+		});//ajax
+	});//on
+	
+	
+	
+	
+	//상품 후기 등록
+	$('#afterBoardBtn').click(function(){
+		var code = $('#code').val();
+	    $("#afterBoardDiv").load("../page/afterBoardPage.jsp").dialog({ 
+			resizable: false,
+			height: 550,
+			width: 530,
+			modal: true,
+			buttons: {
+				"등록": function() {
+					$.ajax({
+						type : 'POST',
+						url : '/abcd_mart/board/afterBoardWrite',
+						data : {'id' : $('#id').val(), 'subject' : $('#subject').val(), 'content' : $('#content').val(), 
+									'whereToBuy' : $('input[name="whereToBuy"]:checked').val(), 'good' : $('#good').val(), 
+									'prdtCode' : $('#code').val()},
+						dataType : 'json',
+						error : function(){alert("실패");},
+						success : function(data){
+							swal("등록완료")
+							.then((value) => {location.href="/abcd_mart/page/detailPage.do?prdtCode="+$('#code').val()});}
+					});
+					$( this ).dialog( "close" );
+			},
+				"취소": function() {
+					$( this ).dialog( "close" );
+			}
+		}});
+	});
 	
 	//사이즈 버튼 자동 생성
 	for(var i=0; i<=30; i=i+5){
-		var size = $('#sizeMin').val()*1+i;
+		var size = $('#size').val()*1+i;
 		$('#btn').append('<button type=button class="btn btn-light" id="inBtn" value='+size.toString()+'>'+size.toString()+'</button>&nbsp;');
 	}
 	
@@ -14,7 +74,7 @@ $(document).ready(function(){
 		if( document.getElementById($(this).attr('value'))==null ){
 			
 			
-			$('#selectTable').append('<tr style="background-color:#EFEFEF">'
+			$('#selectTable').append('<tr id="inTr" style="background-color:#EFEFEF">'
 														+'<td width="250px" align="left">'
 														+'<span  style="font-size:10pt;" id='+$(this).attr('value')+'>'+$('#mainName').val()+'/'+$(this).attr('value')+'</span>'
 														+'</td>'
@@ -48,13 +108,24 @@ $(document).ready(function(){
 			$(this).parent().next().text(amount+'');
 			
 			if(price != 0){
-			var priceArray = price.split(",");	
-			price = (priceArray[0]+priceArray[1])*1 - $('#price').val()*1
-			$(this).parent().parent().parent().parent().parent().next().children(0).children(0).text(String(price*1).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
-			
-			var prdtPriceArray = $('#prdtPrice').text().split(",");
-			price = (prdtPriceArray[0]+prdtPriceArray[1])*1 - $('#price').val()*1
-			$('#prdtPrice').text(String(price).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));   
+				var priceArray = price.split(",");
+				
+				if($(this).parent().parent().parent().parent().parent().parent().attr('id') == 'inTr'){
+					price = (priceArray[0]+priceArray[1])*1 - $('#price').val()*1
+					$(this).parent().parent().parent().parent().parent().next().children(0).children(0).text(String(price*1).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
+					
+					var prdtPriceArray = $('#prdtPrice').text().split(",");
+					price = (prdtPriceArray[0]+prdtPriceArray[1])*1 - $('#price').val()*1
+					$('#prdtPrice').text(String(price).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));  
+				}else {
+					price = (priceArray[0]+priceArray[1])*1-$(this).parent().parent().parent().parent().parent().prev().children(0).attr('id')*1;
+					$(this).parent().parent().parent().parent().parent().next().children(0).children(0).text(String(price*1).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
+					
+					var prdtPriceArray = $('#prdtPrice').text().split(",");
+					price = (prdtPriceArray[0]+prdtPriceArray[1])*1-$(this).parent().parent().parent().parent().parent().prev().children(0).attr('id')*1;
+					$('#prdtPrice').text(String(price).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));  
+				}
+				
 			}
 		}
 	});
@@ -66,14 +137,28 @@ $(document).ready(function(){
 			var amount = $(this).parent().prev().text()*1+1;
 			var price = $(this).parent().parent().parent().parent().parent().next().children(0).children(0).text();
 			$(this).parent().prev().text(amount+'');
-			if(price != 0){
+				if(price != 0){
 				var priceArray = price.split(",");
-				price = (priceArray[0]+priceArray[1])*1+$('#price').val()*1
-				$(this).parent().parent().parent().parent().parent().next().children(0).children(0).text(String(price*1).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
+				//alert($(this).parent().parent().parent().parent().parent().parent().attr('id'));
+				if($(this).parent().parent().parent().parent().parent().parent().attr('id') == 'inTr'){
+					price = (priceArray[0]+priceArray[1])*1+$('#price').val()*1
+					
+					$(this).parent().parent().parent().parent().parent().next().children(0).children(0).text(String(price*1).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
+					
+					var prdtPriceArray = $('#prdtPrice').text().split(",");
+					price = (prdtPriceArray[0]+prdtPriceArray[1])*1 + $('#price').val()*1;
+					$('#prdtPrice').text(String(price).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));  
+				}else{
+					
+					price = (priceArray[0]+priceArray[1])*1+$(this).parent().parent().parent().parent().parent().prev().children(0).attr('id')*1;
+					$(this).parent().parent().parent().parent().parent().next().children(0).children(0).text(String(price*1).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
+					
+					var prdtPriceArray = $('#prdtPrice').text().split(",");
+					price = (prdtPriceArray[0]+prdtPriceArray[1])*1+$(this).parent().parent().parent().parent().parent().prev().children(0).attr('id')*1;
+					$('#prdtPrice').text(String(price).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,')); 
+					
+				}
 				
-				var prdtPriceArray = $('#prdtPrice').text().split(",");
-				price = (prdtPriceArray[0]+prdtPriceArray[1])*1 + $('#price').val()*1
-				$('#prdtPrice').text(String(price).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));   
 			}
 		}
 	});
@@ -81,57 +166,176 @@ $(document).ready(function(){
 	
 	//취소
 	$(document).on('click','#cancel',function(){
-		alert($(this).parent().prop('tagName'));
+		
+		$(this).parent().parent().remove();
+		
+		var prdtPriceArray = $('#prdtPrice').text().split(",");
+		var resultPriceArray = $(this).prev().children(0).text().split(",");
+		
+		var price = (prdtPriceArray[0]+prdtPriceArray[1])*1 - (resultPriceArray[0]+resultPriceArray[1])*1;
+		$('#prdtPrice').text(String(price).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
+		
+		/*if($('#selectOption').val() == 'noOption'){
+		$('#selectOption').val('noOption').attr('selected', 'selected');
+		}*/
 	});
 	
-	//메인 이미지 변경 & 서브이미지 마우스 들어갈시 
-	$('#subImage1').mouseenter(function(){
-		var image1 = $('#image1').val(); 
-		$('#subImage1').css("border","1px solid red");
-		$('#mainImage').attr("src","../image/page/goods/"+image1);
+	//상품후기 게시판
+	$.ajax({
+		type : 'GET',
+		url : '/abcd_mart/board/getAfterBoardList',
+		data : {'pg' : 1, 'prdtCode' : $('#code').val()},
+		dataType : 'json',
+		//error : function(){alert("실패");},
+		success : function(data){
+			
+			if(data.list != ""){
+				$('#afterTable tbody tr').remove();
+				
+				$.each(data.list, function(index, items){
+					$('<tr/>').append($('<td/>',{
+						align : 'left',
+					}).append($('<a/>',{
+						//제목
+						id : 'subjectA',
+						class : items.seq,
+						text : items.subject
+					}))
+					).append($('<td/>',{
+						//구매처
+						text : items.whereToBuy 
+					})).append($('<td/>',{
+						//상품만족도
+						text : items.good
+					})).append($('<td/>',{
+						//작성자
+						text : items.id
+					})).append($('<td/>',{
+						//작성일
+						text : items.logtime
+					})).appendTo($('#afterTable'));
+				})//each
+				$('#boardPagingDiv').html(data.boardPaging.pagingHTML);
+			}//if
+		}//success
+	});//ajax
+	
+	//상품후기 게시판 페이징 처리
+	$(document).on('click','#paging',function(){
+		var pg = 0;
+		if($(this).text() == '이전'){pg = (($('#currentPaging').text()*1-1)/3*3+1)-1; alert(pg+"");}
+		else if($(this).text() == '다음'){pg = (($('#currentPaging').text()*1-1)/3*3+1)+1; alert(pg+"");}
+		else{pg = $(this).text();}
+		
+		$.ajax({
+			type : 'GET',
+			url : '/abcd_mart/board/getAfterBoardList',
+			data : {'pg' : pg, 'prdtCode' : $('#code').val()},
+			dataType : 'json',
+			//error : function(){alert("실패");},
+			success : function(data){
+				
+				if(data!=null){
+					$('#afterTable tbody tr').remove();
+					
+					$.each(data.list, function(index, items){
+						$('<tr/>').append($('<td/>',{
+							
+						}).append($('<a/>',{
+							//제목
+							id : 'subjectA',
+							class : items.seq,
+							align : 'left',
+							text : items.subject
+						}))).append($('<td/>',{
+							//구매처
+							text : items.whereToBuy 
+						})).append($('<td/>',{
+							//상품만족도
+							text : items.good
+						})).append($('<td/>',{
+							//작성자
+							text : items.id
+						})).append($('<td/>',{
+							//작성일
+							text : items.logtime
+						})).appendTo($('#afterTable'));
+					})//each
+					$('#boardPagingDiv').html(data.boardPaging.pagingHTML);
+				}//if
+			}//success
+		});//ajax
 	});
 	
-	$('#subImage2').mouseenter(function(){
-		var image2 = $('#image2').val(); 
-		$('#subImage2').css("border","1px solid red");
-		$('#mainImage').attr("src","../image/page/goods/"+image2);
-	});
+	//상품 옵션 선택시
+	$(document).on('click','#selectOption',function(){
+		//alert($(this).children(0).prop('tagName'));
+		
+		if( document.getElementById('5000') == null ){
+			if($('#selectOption option:selected').val()=='클리너'){
+				$('#selectOption option:selected').attr( 'class', '5000' );
+				price = '5000';
+				
+				$('#selectTable').append('<tr style="background-color:#EFEFEF">'
+						+'<td width="250px" align="left">'
+						+'<span  style="font-size:10pt;" id='+price+'>'+$('#selectOption option:selected').val()+'</span>'
+						+'</td>'
+						+'<td width="100px">'
+						+'<table id="btnbtn" class="table table-bordered" align="right" style="background-color:white; width:70px; height:20px; padding:0;">'
+						+'<tr><td style="width:20px; height:20px; padding:0;"><button type="button" class="btn btn-sm" id="minus" style="padding:0 5px;vertical-align: text-bottom">-</button></td>'   
+						+'<td style="width:30px; height:20px; padding:0;"><spna id="amount"><font size="2">1</font></span></td>'    
+						+'<td style="padding:0; width:20px; height:20px;"><button type="button" class="btn btn-sm" id="plus" style="padding:0 5px;vertical-align: text-bottom">+</button></td></tr></table>'
+						+'</td>'
+						+'<td>'
+						+'<font size="2"><span>'+String(price).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,')+'</span>원</font>&emsp;<button type="button" id="cancel"class="btn btn-light btn-sm" style="padding:0 5px;">x</button></td>'  
+						+'</tr>');
+				
+				if($('#prdtPrice').text() == 0 ){
+					$('#prdtPrice').text(String(price).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
+				}else {
+				var prdtPriceArray = $('#prdtPrice').text().split(",");
+				var resultPrice = (prdtPriceArray[0]+prdtPriceArray[1])*1 + price*1
+				$('#prdtPrice').text(String(resultPrice).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
+				}
+				
+			}//if
+		}//if
+		
+		if( document.getElementById('8000')==null ){
+			 if($('#selectOption option:selected').val()=='가죽 클리너'){
+				$('#selectOption option:selected').attr( 'class', '8000' );
+				price = '8000';
+				
+				$('#selectTable').append('<tr style="background-color:#EFEFEF">'
+						+'<td width="250px" align="left">'
+						+'<span  style="font-size:10pt;" id='+price+'>'+$('#selectOption option:selected').val()+'</span>'
+						+'</td>'
+						+'<td width="100px">'
+						+'<table id="btnbtn" class="table table-bordered" align="right" style="background-color:white; width:70px; height:20px; padding:0;">'
+						+'<tr><td style="width:20px; height:20px; padding:0;"><button type="button" class="btn btn-sm" id="minus" style="padding:0 5px;vertical-align: text-bottom">-</button></td>'   
+						+'<td style="width:30px; height:20px; padding:0;"><spna id="amount"><font size="2">1</font></span></td>'    
+						+'<td style="padding:0; width:20px; height:20px;"><button type="button" class="btn btn-sm" id="plus" style="padding:0 5px;vertical-align: text-bottom">+</button></td></tr></table>'
+						+'</td>'
+						+'<td>'
+						+'<font size="2"><span>'+String(price).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,')+'</span>원</font>&emsp;<button type="button" id="cancel"class="btn btn-light btn-sm" style="padding:0 5px;">x</button></td>'  
+						+'</tr>');
+				
+				if($('#prdtPrice').text() == 0 ){
+					$('#prdtPrice').text(String(price).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
+				}else {
+				var prdtPriceArray = $('#prdtPrice').text().split(",");
+				var resultPrice = (prdtPriceArray[0]+prdtPriceArray[1])*1 + price*1
+				$('#prdtPrice').text(String(resultPrice).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
+				}
+
+				
+			}//if
+		}//if
+		
+		$('#selectOption').val('noOption').attr('selected', 'selected');
+	});//on
 	
-	$('#subImage3').mouseenter(function(){
-		var image3 = $('#image3').val(); 
-		$('#subImage3').css("border","1px solid red");
-		$('#mainImage').attr("src","../image/page/goods/"+image3);
-	});
-	
-	$('#subImage4').mouseenter(function(){
-		var image4 = $('#image4').val(); 
-		$('#subImage4').css("border","1px solid red");
-		$('#mainImage').attr("src","../image/page/goods/"+image4);
-	});
-	
-	$('#subImage5').mouseenter(function(){
-		var image5 = $('#image5').val(); 
-		$('#subImage5').css("border","1px solid red");
-		$('#mainImage').attr("src","../image/page/goods/"+image5);
-	});
-	
-	//서브 이미지 마우스 나갈시
-	$('#subImage1').mouseleave(function(){
-		$('#subImage1').css("border","0px");
-	});
-	$('#subImage2').mouseleave(function(){
-		$('#subImage2').css("border","0px");
-	});
-	$('#subImage3').mouseleave(function(){
-		$('#subImage3').css("border","0px");
-	});
-	$('#subImage4').mouseleave(function(){
-		$('#subImage4').css("border","0px");
-	});
-	$('#subImage5').mouseleave(function(){
-		$('#subImage5').css("border","0px");
-	});
-	
+
 	//스마트 계산기
 	$('#smartCal').click(function(){
 		swal({
@@ -139,6 +343,8 @@ $(document).ready(function(){
 			button: {text: "다시 계산하기",},
 		});
 	});
+	
+	//----------------------바로 구매 --------------------
 	
 	
 	

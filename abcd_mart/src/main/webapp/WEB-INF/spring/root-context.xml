@@ -23,6 +23,8 @@
 	<context:component-scan base-package="product.dao"/>
 	<context:component-scan base-package="center.bean"/>
 	<context:component-scan base-package="center.dao"/>
+	<context:component-scan base-package="order.bean"/>
+	<context:component-scan base-package="order.dao"/>
 	
 	
 	<tx:annotation-driven transaction-manager="transactionManager"/>

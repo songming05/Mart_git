@@ -8,6 +8,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="detailPage.bean.DetailPageDTO" alias="detailPage"/>
 		<typeAlias type="user.bean.UserDTO" alias="user"/>
 		<typeAlias type="cart.bean.CartDTO" alias="cartDTO"/>
-		<typeAlias type="admin.bean.PaymentDTO" alias="payment"/>			
+		<typeAlias type="admin.bean.PaymentDTO" alias="payment"/>
+		<typeAlias type="order.bean.OrderDTO" alias="orderDTO"/>			
 	</typeAliases>
 </configuration>

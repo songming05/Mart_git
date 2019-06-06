@@ -15,6 +15,7 @@ public class DetailPageDAOMybatis implements DetailPageDAO {
 	
 	@Override
 	public DetailPageDTO getProduct(String prdtCode) {
+		System.out.println("sql"+prdtCode);
 		return sqlSession.selectOne("detailPageSQL.getProduct",prdtCode);
 	}
 	
