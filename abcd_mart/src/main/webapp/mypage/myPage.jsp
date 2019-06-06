@@ -7,7 +7,7 @@
 <title>마이페이지</title>
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/header.css"/>
-<link rel="stylesheet" href="../css/user/myPage.css"/>
+<link rel="stylesheet" href="../css/mypage/myPage.css"/>
 <!-- footer-->
 <link rel="stylesheet" href="../css/mainFooter.css"/>
 </head>
@@ -23,7 +23,7 @@
                     <!-- page_location -->
                     <section class="page_location">
                         <ul>
-                            <li><a href="/abc/main">홈</a></li>
+                            <li><a href="../main/index">홈</a></li>
                             <li class="location_box"><span>마이페이지</span></li>
                         </ul>
                     </section>
@@ -132,7 +132,7 @@
             <p class="tit_type1 fs16">
                 
                 
-                황인성님은 <span class="fc_type8 ">온라인 회원</span> 입니다.
+                <span class="fc_type8 ">온라인 회원</span> 입니다.
             </p>
 
             <ul class="list_type3 mt10">
@@ -206,11 +206,9 @@
     <ul>
         <li class="tit">쇼핑내역
             <ul>
-                <li class="on"><a href="http://www.abcmart.co.kr/abc/mypage/listOnlineOrder">주문배송 현황 조회</a></li>
+                <li class="on"><a href="../mypage/myPage">주문배송 현황 조회</a></li>
                 
-                    <li class=""><a href="https://www.abcmart.co.kr/abc/mypage/returnServiceRequest">반품/교환/AS</a></li>
-                    <li class=""><a href="https://www.abcmart.co.kr/abc/mypage/cashReceipt">영수증 조회/발행</a></li>
-                    <li class=""><a href="https://www.abcmart.co.kr/abc/mypage/listGiftcardOrder">상품권 구매 내역</a></li>
+                    <li class=""><a href="../mypage/myAsPage">반품/교환/AS</a></li>
                     
                 
             </ul>
@@ -222,14 +220,13 @@
                     
                     
                     
-                        <li class=""><a href="https://www.abcmart.co.kr/abc/mypage/listCoupon">쿠폰리스트</a></li>
-                    
-                    
-                        <li class=""><a href="https://www.abcmart.co.kr/abc/mypage/listMyFootStamp">발도장</a></li>
+                        <li class=""><a href="../mypage/myCouponList">쿠폰리스트</a></li>
                     
                     
                     
-                        <li class=""><a href="https://www.abcmart.co.kr/abc/mypage/memberGrade">회원등급</a></li>
+                    
+                    
+                        <li class=""><a href="../mypage/myRating">회원등급</a></li>
                     
                 </ul>
             </li>
@@ -238,14 +235,13 @@
             <li class="tit">쇼핑수첩
                 <ul>
                     
-                        <li class=""><a href="https://www.abcmart.co.kr/abc/mypage/listZzim">찜한상품/알림상품 내역</a></li>
                     
                     
-                        <li class=""><a href="https://www.abcmart.co.kr/abc/mypage/myReview">나의 상품후기</a></li>
-                        <li class=""><a href="http://www.abcmart.co.kr/abc/mypage/counselingHistory">나의 상담</a></li>
+                        <li class=""><a href="../mypage/myReview">나의 상품후기</a></li>
+                        <li class=""><a href="../mypage/myConsulting">나의 상담</a></li>
                     
                     
-                        <li class=""><a href="https://www.abcmart.co.kr/abc/mypage/listMyBrand">단골매장/관심브랜드</a></li>
+                        <li class=""><a href="../mypage/myStore">단골매장/관심브랜드</a></li>
                     
                 </ul>
             </li>
@@ -254,22 +250,21 @@
             <li class="tit">개인정보
                 <ul>
                     
-                        <li class=""><a href="https://www.abcmart.co.kr/abc/mypage/viewMyAddress">배송주소록관리</a></li>
+                        <li class=""><a href="../mypage/myAddress">배송주소록관리</a></li>
                     
                     
-                        <li class=""><a href="https://www.abcmart.co.kr/abc/mypage/checkForUpdateUser">개인정보수정</a></li>
+                        <li class=""><a href="../mypage/myPrivate">개인정보수정</a></li>
                     
                     
-                        <li class=""><a href="https://www.abcmart.co.kr/abc/mypage/viewMyEtcInfo">부가정보수정</a></li>
+                        <li class=""><a href="../mypage/myAddInfo">부가정보수정</a></li>
                     
                     
-                        <li class=""><a href="https://www.abcmart.co.kr/abc/mypage/changePasswordForm">비밀번호 변경</a></li>
+                        <li class=""><a href="../mypage/myRePwd">비밀번호 변경</a></li>
                     
                     
-                        <li class=""><a href="https://www.abcmart.co.kr/abc/mypage/leaveSiteForm">회원탈퇴</a></li>
+                        <li class=""><a href="../mypage/myDeleteInfo">회원탈퇴</a></li>
                     
                     
-                        <li class=""><a href="https://www.abcmart.co.kr/abc/mypage/snsConnects">SNS 연결설정</a></li>
                     
                     
                 </ul>
@@ -324,7 +319,7 @@
         <div class="tabs-content mt30">
             <div id="cm_tabs_01" class="tabs-cont basket_box">
                 <div class="table_basic gallery_line_type1">
-                    <table>
+                    <table id="tra">
                         <colgroup>
                             <col width="125">
                             <col width="90">
