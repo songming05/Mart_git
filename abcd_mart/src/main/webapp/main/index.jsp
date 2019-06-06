@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/header.css"/>
 <!-- advertisement -->
-<link rel="stylesheet" href="../css/advertise.css">
+<link rel="stylesheet" href="../css/advertise/advertise.css">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"><!-- 중간광고용 추가 -->
 <!-- best/new 상품 -->
 <link rel="stylesheet" href="../css/newarrivals.css"/>

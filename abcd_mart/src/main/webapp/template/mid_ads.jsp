@@ -7,55 +7,55 @@
             
             <ul class="carousel-inner"  style="width:1140px; height:150; min-width: 100%; min-height: 100%;">
                     <li  class="item active">
-                    	 <a onclick="location.href=''" class="col-md-4 col-sm-6 col-xs-12" style="width:380px; height:150; min-width:380px; min-height: 150px;">
+                    	 <a onclick="location.href='../advertisement/midAd1.jsp'" class="col-md-4 col-sm-6 col-xs-12" style="width:380px; height:150; min-width:380px; min-height: 150px;">
                                <img src="../image/advertisement/main_advertise_Msize_img1.jpg" class="img-responsive center-block" alt="Some text">
                                
                          </a>
                     </li>
                     <li class="item">
-                            <a onclick="location.href=''" class="col-md-4 col-sm-6 col-xs-12" style="width:380px; height:150; min-width:380px; min-height: 150px;">
+                            <a onclick="location.href='../advertisement/minAd2.jsp'" class="col-md-4 col-sm-6 col-xs-12" style="width:380px; height:150; min-width:380px; min-height: 150px;">
                                <img src="../image/advertisement/main_advertise_Msize_img2.jpg" class="img-responsive center-block" alt="Some Text">
                             </a>
                         
                     </li>
                     <li class="item">
-                          <a onclick="location.href=''" class="col-md-4 col-sm-6 col-xs-12" style="width:380px; height:150;  min-width:380px; min-height: 150px;">
+                          <a onclick="location.href='../advertisement/midAd1.jsp'" class="col-md-4 col-sm-6 col-xs-12" style="width:380px; height:150;  min-width:380px; min-height: 150px;">
                                <img src="../image/advertisement/main_advertise_Msize_img3.jpg"  class="img-responsive center-block" alt="Some Text">
                             </a>
                     </li>
                     <li class="item">
-                    		 <a onclick="location.href=''" class="col-md-4 col-sm-6 col-xs-12" style="width:380px; height:150;  min-width:380px; min-height: 150px;">
+                    		 <a onclick="location.href='../advertisement/midAd1.jsp'" class="col-md-4 col-sm-6 col-xs-12" style="width:380px; height:150;  min-width:380px; min-height: 150px;">
                               <img src="../image/advertisement/main_advertise_Msize_img4.jpg" class="img-responsive center-block" alt="Some Text">
                             </a>
                         
                     </li>
                 
                     <li class="item">
-                        <a onclick="location.href=''" class="col-md-4 col-sm-6 col-xs-12" style="width:380px; height:150;  min-width:380px; min-height: 150px;">
+                        <a onclick="location.href='../advertisement/midAd1.jsp'" class="col-md-4 col-sm-6 col-xs-12" style="width:380px; height:150;  min-width:380px; min-height: 150px;">
                                <img src="../image/advertisement/main_advertise_Msize_img5.jpg" class="img-responsive center-block" alt="Some Text">
                             </a>
                     </li>
                 
                     <li class="item">
-                        <a onclick="location.href=''" class="col-md-4 col-sm-6 col-xs-12" style="width:380px; height:150;  min-width:380px; min-height: 150px;">
+                        <a onclick="location.href='../advertisement/midAd1.jsp'" class="col-md-4 col-sm-6 col-xs-12" style="width:380px; height:150;  min-width:380px; min-height: 150px;">
                        <img src="../image/advertisement/main_advertise_Msize_img6.jpg" class="img-responsive center-block" alt="Some Text">
                        </a>
                     </li>
                     
                     <li class="item">
-                        <a onclick="location.href=''" class="col-md-4 col-sm-6 col-xs-12" style="width:380px; height:150;  min-width:380px; min-height: 150px;">
+                        <a onclick="location.href='../advertisement/midAd1.jsp'" class="col-md-4 col-sm-6 col-xs-12" style="width:380px; height:150;  min-width:380px; min-height: 150px;">
                            <img src="../image/advertisement/main_advertise_Msize_img7.jpg"  class="img-responsive center-block" alt="Some Text">
                        </a>
                     </li>
                     
                     <li class="item">
-                        <a onclick="location.href=''" class="col-md-4 col-sm-6 col-xs-12" style="width:380px; height:150;  min-width:380px; min-height: 150px;">
+                        <a onclick="location.href='../advertisement/midAd1.jsp'" class="col-md-4 col-sm-6 col-xs-12" style="width:380px; height:150;  min-width:380px; min-height: 150px;">
                			   <img src="../image/advertisement/main_advertise_Msize_img8.jpg"  class="img-responsive center-block" alt="Some Text">
                        </a>
                     </li>
                     
                     <li class="item">
-                        <a onclick="location.href=''" class="col-md-4 col-sm-6 col-xs-12" style="width:380px; height:150;  min-width:380px; min-height: 150px;">
+                        <a onclick="location.href='../advertisement/midAd1.jsp'" class="col-md-4 col-sm-6 col-xs-12" style="width:380px; height:150;  min-width:380px; min-height: 150px;">
                     		<img src="../image/advertisement/main_advertise_Msize_img9.jpg"  class="img-responsive center-block" alt="Some Text">
                        </a>
                     </li>

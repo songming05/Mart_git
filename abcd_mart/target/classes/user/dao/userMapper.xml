@@ -26,6 +26,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{address, jdbcType=VARCHAR},
 			sysdate)
 	</insert>
+	<update id="pwdReset" parameterType="map">
+		update userinfo set password=#{password} 
+			where id=#{id} 
+	</update>
 	
 	<select id="getUserInfo" parameterType="map" resultType="user">
 		select * from userinfo where id=#{id}

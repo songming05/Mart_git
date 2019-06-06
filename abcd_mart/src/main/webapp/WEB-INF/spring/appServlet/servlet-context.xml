@@ -32,6 +32,7 @@
 	<context:component-scan base-package="center.controller"/>
 	<context:component-scan base-package="order.controller"/>
 	<context:component-scan base-package="board.controller"/>
+	<context:component-scan base-package="advertise.controller"/>
 	
 	
 	<!-- Json 생성 -->
