@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,12 +17,10 @@
 <link rel="stylesheet" href="../css/mainFooter.css"/>
 
 
-
-<!-- <link rel="stylesheet" href="../css/order_pay/sub.css"> -->
-
+<link rel="stylesheet" href="../css/sub.css">
+ 
 </head>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.0.min.js"></script>
-
 
 <body>
 <header>
@@ -30,13 +30,14 @@
 
 
 <div class="container_wrap">
- <div class="container_area">
+ <div class="container_area"> 
   <div class="container_layout">
     <header class="add_header">
      <h2 class="sub_tit">주문서작성/결제</h2>
     </header>	
-    <form name="orderForm" id="orderForm" method="post" action>
-    
+    <form name="orderForm" id="orderForm" method="post" action="/abcd_mart/order_pay/orderPageEnd.do">
+    <input name="id" id="id" type="hidden" value="${id }">
+    <input name="abcdId" id="abcdId" type="hidden" value="${id}">
  	<!-- order_basketCont -->
             <section class="order_basketCont order_sheet">
                 <ul class="order_step">
@@ -49,18 +50,19 @@
                 <div class="basket_box mt40">
                     <div class="positR">
                         <h3 class="tit_type1 fs16 ml10">주문 리스트</h3>
-                        <p class="positA r10 b1 ico_notice">상품수량 및 옵션변경은 상품상세 또는 장바구니에서 가능합니다.<a href="/abc/order/cart" class="btn_sType1 ml5">주문정보 수정</a></p>
+                       
                     </div>
                     <div class="table_basic no_point mt10 gallery_line_type1">
-                        <table>
+                        
+                        <table class="tableA">
 							<colgroup>
 								<col width="430">
 								<col width="95">
 								<col width="80">
 								<col width="165">
-								<col width="120">
+								<%-- <col width="120">
                                 
-								<col width="130">
+								<col width="130"> --%>
                                 
 								<col width="*">
 							</colgroup>
@@ -71,145 +73,117 @@
 									<th>수량</th>
 									<th>할인금액</th>
 									<th>주문금액<br>(적립예정 포인트)</th>
-                                    
-									<th>매장픽업 가능여부</th>
-                                    
-									
-											<th>발송예정처</th>
-										
 								</tr>
 							</thead>
 							<tbody>
+								 
+								<!--상품 리스트 for문-->
+								<c:if test="${not empty orderList }"> 
 								
-									<tr class="group-center">
-										<td class="align-left modeloutBox">
-											<div class="model_img_box">
-												<input type="hidden" name="prdtCode" value="0071357"/>
-												<input type="hidden" name="prdtEngName" value="SPLINE SCRIPT"/>
-												<input type="hidden" name="cartSeq" value="22506054"/>
-												<input type="hidden" name="prdtCount" value="1"/>
-                                                <input type="hidden" name="prdtCntStr" value="1"/>
-                                                <input type="hidden" name="optnId" value="230"/>
-												<img src="https://image.abcmart.co.kr/nexti/images/list/1629/0071357_list.jpg" alt="SPLINE SCRIPT" onerror="imageError(this)"/>
-											</div>
-											<div class="model_txt_box">
-												<div class="model_box">
-													<span class="brand">휠라
-														
-													</span>
-													<span class="name bold">SPLINE SCRIPT</span>
-													<span class="tit_type3">BEG</span>
-													<em class="option">옵션 : <span>230</span></em>
+								   <c:set var="totalPrice" value="0"/><!-- 총가격 계산 변수 -->
+								   <c:set var="discount"  value="0"/><!-- 할인가격 변수 -->
+								   <c:set var="totalPoint" value="0"/><!-- 총합 포인트 변수 -->
+								   
+								   <c:forEach var="orderDTO" items="${orderList }"> 
+								   <c:set var="totalPrice" value="${totalPrice + orderDTO.getShoesprice() }"/>
+								   <c:set var="discount" value="${discount + orderDTO.getShoesdiscount() }"/>
+										<tr class="group-center">
+											<td class="align-left modeloutBox">
+											<input type="hidden" name="abcdCode" value="${orderDTO.getPrdtcode()}"><!-- 상품코드 -->
+											<input type="hidden" name="shoesimage" value="${orderDTO.getShoesimage()}"><!-- 상품이미지 -->
+											
+												<div class="model_img_box">
+													<img src="" alt="SPLINE SCRIPT" onerror="imageError(this)"/>
+													이미지명:${orderDTO.getShoesimage() }
+													<input name="shoesimage" id="shoesimage" type="hidden" value="${orderDTO.getShoesimage() }">
 												</div>
 												
-											</div>
-										</td>
-										<td class="won">
+												<div class="model_txt_box">
+													<div class="model_box">
+														<span class="brand">${orderDTO.getShoesbrand() }</span><!--상품명-->
+														<span class="name bold">${orderDTO.getShoesname() } </span><!--이미지-->
+														<span class="tit_type3">${orderDTO.getShoescolor() }</span>
+														<em class="option">옵션 : <span>${orderDTO.getShoessize()}</span></em><!--사이즈-->
+													</div>
+												</div>
+											</td>
+											<td class="orderPrice">
+												<input id="orderPrice" type="hidden" value="${orderDTO.getShoesprice() }">
+												<span><fmt:formatNumber value="${orderDTO.getShoesprice() }" type="number"/></span>원<!--가격-->							
+											</td>
+											<td class="check_list_box">
+												1
+											</td>
 											
-													<span>49,000</span>원
+											<td>
+												<p class="mt5 mb15"><a data-rel="layer" href="#applyCoupon" class="btn_sType5" onclick="applyCouponA(this, '0071357', 1, 22506054, 0);">쿠폰조회/적용</a></p>
 												
-										</td>
-										<td class="check_list_box">
-											1
-										</td>
-										<td>
-											
-											<input type="hidden" name="dscntAmt" value="0"/>
-											<input type="hidden" name="prdtCpnDscntAmt" value="0"/>
-											<input type="hidden" name="normalCpnUserCpnSeq" value=""/>
-											<input type="hidden" name="doubleCpnUserCpnSeq" value=""/>
-											<input type="hidden" name="firstApplyCpnType" value=""/>
-											<input type="hidden" name="prdtSnglSellAmt" value="49000"/>
-											<input type="hidden" name="prdtRateCpnSnglAmt" value="0"/>
-											<input type="hidden" name="prdtPriceCpnSnglAmt" value="0"/>
-											<input type="hidden" name="manyShoesSnglDscntAmount" value="0"/>
-											<p class="mt5 mb15"><a data-rel="layer" href="#applyCoupon" class="btn_sType5" onclick="applyCouponA(this, '0071357', 1, 22506054, 0);">쿠폰조회/적용</a></p>
-											<em class="tit_type3 mt5"><span class="dscntAmt">0</span></em>원
-											<em class="showmoreBox" style="display: none;">
-												<a href="javascript://" class="showmore">더보기</a>
-												<span class="showBox">
-													
-												</span>
-											</em>
-										</td>
-										<td class="won">
-											<input type="hidden" name="manyShoesDscntAmount" value="0"/>
-											<input type="hidden" name="orgPrdtPrice" value="49000"/>
-											<input type="hidden" name="finalPrdtPrice" value="49000"/>
-
-											<input type="hidden" name="orgSavedPoint" value="1470"/>
-											<input type="hidden" name="prdtSavedPoint" value="1470"/>
-
-
-											<div class="od-won"><span class="order_price">49,000</span>원</div>
-
-											<div class="od-point">
-												<div style="font-size: 11px; color: #666; font-weight:bold;"><span class="prdt_point" style="font-size: 11px; color: #666;">1,470</span> P</div>
-												<p class="fc_type5">멤버십회원가입 시</p>
-											</div>
-										</td>
-                                        
-										<td class="tit_type3">
-											<span class="basket-pickup-ava">
-                                                매장픽업 가능
-                                                
-                                                
-                                            </span>
-										</td>
-                                        
-										
-												<td>
-													
-													
-													   <span class="ico_store">매장</span>
-													
-												</td>
-											
-									</tr>
+												<em class="tit_type3 mt5"><span class="dscntAmt"><fmt:formatNumber value="${orderDTO.getShoesdiscount() }" type="number"/></span></em>원
+												<em class="showmoreBox" style="display: none;">
+													<a href="javascript://" class="showmore">더보기</a>
+													<span class="showBox"></span>
+												</em>
+											</td>
+											<td class="totalPrice">
+											    <div class="od-won"><span class="order_price"><fmt:formatNumber value="${orderDTO.getShoesprice()-orderDTO.getShoesdiscount() }" type="number"/></span>원</div>
+												<div class="od-point">
+												 <div style="font-size: 11px; color: #666; font-weight:bold;">
+												  <span class="prdt_point" style="font-size: 11px; color: #666;"><fmt:formatNumber value="${orderDTO.getShoespoint() }" type="number"/></span> 
+												  P
+												 </div>
+												</div>
+											</td>
+										</tr>
+									 </c:forEach>
+									<%--  <c:out value="${totalPrice }"/>
+									 <c:out value="${discount }"/> --%>
+								  </c:if>
 								
 							</tbody>
 						</table>
+						
                     </div>
                 </div>
                 <!-- // basket_box -->
-
-                <!-- total_price -->
-                <div class="total_price mt40">
-                    <div class="totalBox total1">
-                        <dl>
-                            <dt>주문금액</dt>
-                            <dd>49,000<span>원</span></dd>
-                        </dl>
-                    </div>
-                    <div class="totalBox total2">
-                        <dl>
-                            <dt>총 할인금액</dt>
-                            <dd class="totalDscntArea">0<span>원</span></dd>
-                        </dl>
-                        <ul class="list_type1" id="dscntInfoUl" style="display:none;">
-                            
-                        </ul>
-                    </div>
-                    <div class="totalBox total3">
-                        <dl>
-                            <dt>배송비</dt>
-                            <dd class="orderDlvyAmtArea">0<span>원</span></dd>
-                        </dl>
-                    </div>
-                    <div class="totalBox total4">
-                        <dl>
-                            <dt>결제예정금액</dt>
-                            <dd class="fc_type1" id="totalAmtArea">49,000<span>원</span></dd>
-                        </dl>
-                        <input type="hidden" name="orderAmt" value="49000"/>
-                    </div>
-                </div>
-                <!-- //total_price -->
+                
+	                <!-- total_price -->
+		                <div class="total_price mt40">
+		                    <div class="totalBox total1">
+		                        <dl>
+		                            <dt>주문금액</dt>
+		                            <dd class="ordersPrice"><fmt:formatNumber value="${totalPrice }" type="number"/><span>원</span></dd>
+		                        </dl>
+		                    </div>
+		                    <div class="totalBox total2">
+		                        <dl>
+		                            <dt>총 할인금액</dt>
+		                            <dd class="totalDscntArea"><fmt:formatNumber value="${discount }" type="number"/><span>원</span></dd>
+		                        </dl>
+		                        <ul class="list_type1" id="dscntInfoUl" style="display:none;">
+		                            
+		                        </ul>
+		                    </div>
+		                    <div class="totalBox total3">
+		                        <dl>
+		                            <dt>배송비</dt>
+		                            <dd class="orderDlvyAmtArea">2500<span>원</span></dd>
+		                            
+		                        </dl>
+		                    </div>
+		                    <div class="totalBox total4">
+		                        <dl>
+		                            <dt>결제예정금액</dt>
+		                            <dd class="fc_type1" id="totalAmtArea"><fmt:formatNumber value="${totalPrice+2500 }" type="number"/><span>원</span></dd>
+		                        </dl>
+		                        <input type="hidden" name="orderAmt" value="${totalPrice+2500 }"/>
+		                    </div>
+		                </div>
+	                <!-- //total_price -->
 
                 <div class="mt60">
                     <h3 class="tit_type1 fs16 ml10">주문고객 정보</h3>
                     <section id="buyerInfoSection" class="table_basic mt10 bgfa">
-                        <table>
+                        <table class="tableA">
                             <colgroup>
                                 <col width="160px"><col width="*"><col width="160px"><col width="*">
                             </colgroup>
@@ -229,19 +203,19 @@
                                     </th>
                                     <td>
                                         
-                                                <select name="buyerHdphnNum1" disabled style="width:97px;">
-    <option value="010" selected>010</option>
-    <option value="011">011</option>
-    <option value="016">016</option>
-    <option value="017">017</option>
-    <option value="018">018</option>
-    <option value="019">019</option>
-</select>
+                                                <select name="buyerTel1" id="buyerTel1" style="width:97px;" disabled>
+												    <option value="010">010</option>
+												    <option value="011">011</option>
+												    <option value="016">016</option>
+												    <option value="017">017</option>
+												    <option value="018">018</option>
+												    <option value="019">019</option>
+												</select>
 
                                                 -
-                                                <input type="text" name="buyerHdphnNum2" value="7777" class="text inputNumberText" maxlength="4" style="width:97px" readonly="readonly"/>
+                                                <input type="text" name="buyerTel2" value="7777" class="text inputNumberText" maxlength="4" style="width:97px" readonly="readonly"/>
                                                 -
-                                                <input type="text" name="buyerHdphnNum3" value="7777" class="text inputNumberText" maxlength="4" style="width:97px" readonly="readonly"/>
+                                                <input type="text" name="buyerTel3" value="7777" class="text inputNumberText" maxlength="4" style="width:97px" readonly="readonly"/>
                                             
                                     </td>
                                     <th>
@@ -249,9 +223,9 @@
                                     </th>
                                     <td>
                                         
-                                                <input type="text" name="buyerMailAddress1" value="abcd" class="text" style="width:150px" id="or_email" readonly="readonly"/>
+                                                <input type="text" name="buyerEmail1" value="abcd" class="text" style="width:150px" id="or_email" readonly="readonly"/>
                                                 @
-                                                <input type="text" name="buyerMailAddress2" value="naver.com" class="text" style="width:151px" readonly="readonly"/>
+                                                <input type="text" name="buyerEmail2" value="naver.com" class="text" style="width:151px" readonly="readonly"/>
                                             
                                     </td>
                                 </tr>
@@ -263,7 +237,7 @@
                 <div class="mt60">
                     <h3 class="tit_type1 fs16 ml10">배송지 정보</h3>
                     <section id="dlvyInfoSection" class="table_basic mt10 bgfa">
-                        <table>
+                        <table class="tableA">
                             <colgroup>
                                 <col width="160px"><col width="*"><col width="160px"><col width="*">
                             </colgroup>
@@ -275,10 +249,10 @@
                                     <td colspan="3">
 	                                        <input type="radio" id="or_ch1" name="dlvyTypeCode" value="01" class="mr5" checked="checked"><image src="https://image.abcmart.co.kr/nexti/images/abcmart_new/pc_delivery_icon.jpg"/>&nbsp;<label for="or_ch1" style="margin-right: 19px;">일반 택배</label>	                                        
                                         	                                        
-	                                        <input type="radio" id="or_ch3" name="dlvyTypeCode" value="03" class="mr5 ml10"><image src="https://image.abcmart.co.kr/nexti/images/abcmart_new/pc_abcpick_icon.jpg"/>&nbsp;<label for="or_ch3">편의점 픽업</label>
+	                                       <!--  <input type="radio" id="or_ch3" name="dlvyTypeCode" value="03" class="mr5 ml10"><image src="https://image.abcmart.co.kr/nexti/images/abcmart_new/pc_abcpick_icon.jpg"/>&nbsp;<label for="or_ch3">편의점 픽업</label>
 	                                    
                                         
-                                        <input type="radio" id="or_ch2" name="dlvyTypeCode" value="02" class="mr5 ml10"  ><image src="https://image.abcmart.co.kr/nexti/images/abcmart_new/pc_storepick_icon.jpg"/>&nbsp;<label for="or_ch2">매장픽업</label>
+                                        <input type="radio" id="or_ch2" name="dlvyTypeCode" value="02" class="mr5 ml10"  ><image src="https://image.abcmart.co.kr/nexti/images/abcmart_new/pc_storepick_icon.jpg"/>&nbsp;<label for="or_ch2">매장픽업</label> -->
                                         
                                         
                                     </td>
@@ -288,7 +262,7 @@
                                         <label for="or_name2"><em class="fc_type1">＊</em> 이름</label>
                                     </th>
                                     <td colspan="3">
-                                        <input type="text" name="rcvrName" class="rcvrInfo" maxlength="25" id="or_name2" style="width:130px;" />
+                                        <input type="text" name="dlvyName" class="rcvrInfo" maxlength="25" id="or_name2" style="width:130px;" />
                                         <input type="radio" name="selectDeliveryAddress" value="01" id="or_na1" class="mr5 ml10"><label for="or_na1">주문자와 동일</label>
                                         <input type="radio" name="selectDeliveryAddress" value="02" id="or_na2" class="mr5 ml10"><label for="or_na2">신규입력</label>
                                         
@@ -302,58 +276,21 @@
                                         <label for="or_phone2"><em class="fc_type1">＊</em> 휴대폰 번호</label>
                                     </th>
                                     <td>
-                                        <select name="rcvrHdphnNum1" class="rcvrInfo" style="width:97px;">
-    <option value="010">010</option>
-    <option value="011">011</option>
-    <option value="016">016</option>
-    <option value="017">017</option>
-    <option value="018">018</option>
-    <option value="019">019</option>
-</select>
+                                        <select name="dlvyTel1" id="dlvyTel1" class="dlvyTel1" style="width:97px;">
+										    <option value="010">010</option>
+										    <option value="011">011</option>
+										    <option value="016">016</option>
+										    <option value="017">017</option>
+										    <option value="018">018</option>
+										    <option value="019">019</option>
+										</select>
 
                                         -
-                                        <input type="text" name="rcvrHdphnNum2" class="text rcvrInfo inputNumberText" maxlength="4" style="width:97px"/>
+                                        <input type="text" name="dlvyTel2" class="text rcvrInfo inputNumberText" maxlength="4" style="width:97px"/>
                                         -
-                                        <input type="text" name="rcvrHdphnNum3" class="text rcvrInfo inputNumberText" maxlength="4" style="width:97px"/>
+                                        <input type="text" name="dlvyTel3" class="text rcvrInfo inputNumberText" maxlength="4" style="width:97px"/>
                                     </td>
-                                    <th>
-                                        <label for="or_tel">&nbsp;&nbsp;전화번호</label>
-                                    </th>
-                                    <td>
-                                        <select name="rcvrTelNum1" class="rcvrInfo" style="width:97px;">
-    <option value="02">02</option>
-    <option value="010">010</option>
-    <option value="031">031</option>
-    <option value="032">032</option>
-    <option value="033">033</option>
-    <option value="041">041</option>
-    <option value="042">042</option>
-    <option value="043">043</option>
-    <option value="051">051</option>
-    <option value="052">052</option>
-    <option value="053">053</option>
-    <option value="054">054</option>
-    <option value="055">055</option>
-    <option value="061">061</option>
-    <option value="062">062</option>
-    <option value="063">063</option>
-    <option value="064">064</option>
-    <option value="070">070</option>
-    <option value="080">080</option>
-    <option value="0303">0303</option>
-    <option value="0502">0502</option>
-    <option value="0504">0504</option>
-    <option value="0505">0505</option>
-    <option value="0506">0506</option>
-    <option value="0507">0507</option>
-    <option value="0508">0508</option>
-</select>
-
-                                        -
-                                        <input type="text" name="rcvrTelNum2" class="text rcvrInfo inputNumberText" maxlength="4" style="width:97px">
-                                        -
-                                        <input type="text" name="rcvrTelNum3" class="text rcvrInfo inputNumberText" maxlength="4" style="width:97px">
-                                    </td>
+                                  
                                 </tr>
                                 <tr class="dlvyType dlvyType01" >
                                     <th>
@@ -361,11 +298,11 @@
                                     </th>
                                     <td colspan="3">
                                         <p class="mb5">
-                                            <input type="text" name="rcvrPostNum" class="text rcvrInfo" style="width:130px" readonly="readonly"/>
+                                            <input type="text" id="dlvyZipcode" name="dlvyZipcode" class="text rcvrInfo" style="width:130px" readonly="readonly"/>
                                             <a href="javascript://" id="rcvrPostNumBtn" onclick="popupSearchPostCode();" class="btn_sType1 ml5">우편번호찾기</a>
                                         </p>
-                                        <input type="text" name="rcvrAddr" class="text rcvrInfo" style="width:300px" readonly="readonly" maxlength="100"/>
-                                        <input type="text" name="rcvrDtlAddr" class="text rcvrInfo" style="width:300px" placeholder="나머지 주소를 입력하세요." maxlength="50"/>
+                                        <input type="text" id="dlvyAddr1" name="dlvyAddr1" class="text rcvrInfo" style="width:300px" readonly="readonly" maxlength="100"/>
+                                        <input type="text" id="dlvyAddr2" name="dlvyAddr2" class="text rcvrInfo" style="width:300px" placeholder="나머지 주소를 입력하세요." maxlength="50"/>
                                     </td>
                                 </tr>
                                 <tr class="dlvyType dlvyType01" >
@@ -373,7 +310,7 @@
                                         <label for="or_memo"><em class="fc_type1">&nbsp;</em>배송 시 요청사항</label>
                                     </th>
                                     <td colspan="3">
-                                        <input type="text" name="dlvyMesg" class="text rcvrInfo exceptSpecialChar" style="width:900px" placeholder="배송 메세지는 40자 이내로 입력해 주세요." maxlength="40"/>
+                                        <input type="text" name="dlvyMsg" class="text rcvrInfo exceptSpecialChar" style="width:900px" placeholder="배송 메세지는 40자 이내로 입력해 주세요." maxlength="40"/>
                                     </td>
                                 </tr>
                                 
@@ -412,24 +349,7 @@
                             </tbody>
                         </table>
                     </section>
-                    <ul id="cvsPickupInfo" class="ml5 mt5 fc_type5" style="display:none;">
-                        <li><strong>* 편의점 픽업 주의 사항 *</strong></li>
-                        <li class="mt5">- 편의점 선택은 택배 서비스를 진행하는 매장만 가능합니다.</li>
-                        <li class="mt5">- 상품이 매장에 도착하면 SMS 또는 알림톡으로 안내드립니다.</li>
-                        <li class="mt5">- 안내 메시지에 기재된 기간까지 택배를 찾아가지 않으신 경우 ABC마트로 반송되며, 반송 택배비는 고객 부담입니다.</li>
-                    </ul>
-                    <ul id="storePickupInfo" class="ml5 mt5 fc_type5" style="display:none;">
-                        <li><strong>* 매장픽업 서비스 안내 *</strong></li>
-                        <li class="mt5">- 선택하신 매장의 재고 유무에 따라 픽업 준비 기간이 1~5일 소요됩니다.</li>
-                        <li class="mt5">- <font color="red">상품이 준비되면 상품별로 픽업준비완료 알림톡(SMS) 메시지를 보내드립니다.</font></li>
-                        <li class="mt5">  <font color="red" style="margin-left:10px">메시지 확인 후 매장에 방문하시기 바랍니다. (메시지 수신 전 픽업 불가)</font></li>
-                        <li class="mt5">- 여러 개의 상품을 주문하실 경우 상품별로 준비기간이 다를 수 있습니다.</li>
-                        <li class="mt5">- 픽업가능기간 내에 상품을 픽업하지 않으실 경우 주문 취소됩니다.</li>
-                        <p class="mt10">
-		                    <input type="checkbox" id="storePickupCheck"/>
-		                    <label for="storePickupCheck" class="fc_type5"><span class="fc_type6">매장픽업 서비스 안내 사항을 모두 확인하였습니다.</span></label>
-		                </p>
-                    </ul>
+          
                 </div>
                 <div id="pickupStoreInfo" class="mt60" style="display:none;">
                 	<script type="text/javascript">
@@ -466,7 +386,7 @@
 
                     <h3 class="tit_type1 fs16 ml10" id="pickup-search-tt">픽업 매장 찾기</h3>
                     <section class="table_basic mt10 bgfa js-pickup-search">
-                        <table>
+                        <table class="tableA">
 							<colgroup>
 								<col width="160px"><col width="*"><col width="160px"><col width="*">
 							</colgroup>
@@ -549,32 +469,27 @@
                         <div>
                             <h3 class="tit_type1 fs16 ml10">쿠폰 추가적용</h3>
                             <section id="etcCouponSection" class="table_basic mt10 bgfa">
-                                <table>
+                                <table class="tableA">
                                     <colgroup>
                                         <col width="160px"><col width="*">
                                     </colgroup>
                                     <tbody>
                                         <tr id="freeDlvyCpnTr" >
                                             <th>
-                                                <label for="or_coupon">&nbsp;&nbsp;무료배송 쿠폰</label>
+                                                <label for="or_coupon">&nbsp;&nbsp;쿠폰</label>
                                             </th>
                                             <td>보유 쿠폰 : <em class="bold fc_type8">0</em>장
                                                 
                                                         <a href="javascript://" class="btn_sType1 ml10 mr5 non">쿠폰조회/적용</a>
-                                                        <input type="text" style="width:100px;" disabled="disabled"/> 원
+                                                        <input type="text" name="coupon" style="width:100px;" value="${discount }" disabled="disabled"/> 원
                                                     
                                             </td>
                                         </tr>
                                         <tr>
                                             <th rowspan="2">
-                                                <label for="or_dcoupon">&nbsp;&nbsp;더블포인트적립 쿠폰</label>
+                                                <label for="or_dcoupon">&nbsp;&nbsp;포인트적립</label>
                                             </th>
-                                            <td>적립예정 포인트 <span class="fc_type5">(멤버십 회원 가입 시)</span>: <em class="tit_type3 fc_type2 totalPoint">1,470P</em></td>
-                                        </tr>
-                                        <tr>
-                                            <td>보유 쿠폰 : <em class="bold fc_type8">0</em>장
-                                                <a href="javascript://" class="btn_sType1 ml10 mr5 non">쿠폰조회/적용</a>
-                                            </td>
+                                            <td>적립예정 포인트 : <em class="tit_type3 fc_type2 totalPoint">1,470P</em></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -583,7 +498,7 @@
                         <div class="mt60">
                             <h3 class="tit_type1 fs16 ml10">포인트 결제</h3>
                             <section class="table_basic mt10 bgfa">
-                                <table>
+                                <table class="tableA">
                                     <colgroup>
                                         <col width="160px"><col width="*">
                                     </colgroup>
@@ -601,7 +516,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <input type="text" name="usePoint" style="width:150px;" placeholder="100 단위로 사용 가능" disabled="disabled" maxlength="10" onkeyup="checkUsePoint(this);"/> 원
+                                                <input type="text" name="point" value="0" style="width:150px;" placeholder="100 단위로 사용 가능" disabled="disabled" maxlength="10" onkeyup="checkUsePoint(this);"/> 원
                                                 <a id="applyPointBtn" href="javascript://" class="btn_sType1 ml10 mr5 non">적용</a>
                                                 <input type="checkbox" name="useAllPoint" class="ml10" id="or_useAllpoint" disabled="disabled"/><label for="or_useAllpoint" class="fc_type5 ml5">모두적용</label>
                                                 <input type="hidden" name="useAccessPoint" value="0"/>
@@ -621,7 +536,7 @@
                     <div class="fl-l w490 ml60">
                         <h3 class="tit_type1 fs16 ml10">결제금액</h3>
                         <section class="table_basic mt10 bgfa or_price">
-                            <table>
+                            <table class="tableA">
                                 <colgroup>
                                     <col width="160px"><col width="*">
                                 </colgroup>
@@ -631,7 +546,7 @@
                                             <label for="or_price1">&nbsp;&nbsp;주문금액</label>
                                         </th>
                                         <td>
-                                            <span class="tit_type2">49,000</span>원
+                                            <span class="tit_type2"><fmt:formatNumber value="${totalPrice }" type="number"/></span>원
                                         </td>
                                     </tr>
                                     <tr>
@@ -655,19 +570,17 @@
                                             <label for="or_price4">&nbsp;&nbsp;배송비</label>
                                         </th>
                                         <td>
-                                            <p class="or_bLine"><span class="tit_type3 orderDlvyAmtArea">0</span>원</p>
-                                            <p>
-                                                <em class="mr10 fc_type5" id="dlvyCouponUseInfo" style="display: none;">무료배송쿠폰 사용</em><em class="right"><span class="tit_type3" id="applyDlvyCouponSpan">(-) 0</span>원</em>
-                                            </p>
-                                        </td>
+                                           <span class="tit_type3 orderDlvyAmtArea">2500</span>원
+                                            <input type="hidden" name="dlvyPrice" value="2500">
+                                        </td> 
+                                       
                                     </tr>
                                     <tr>
                                         <th>
                                             <label for="or_price4">&nbsp;&nbsp;적립예정 포인트</label>
                                         </th>
                                         <td>
-                                            <p class="or_bLine"><em class="mr10 fc_type5">멤버십 회원 가입 시</em><em class="right"><span class="tit_type3 totalPoint">1,470</span>P</em></p>
-                                            <p><em class="mr10 fc_type5" id="doublePointCouponUseInfo" style="display: none;">더블포인트 적립쿠폰 사용</em><em class="right"><span class="tit_type3" id="applyDoublePointCouponSpan">(+) 0</span>P</em></p>
+                                            <em class="right"><span class="tit_type3 totalPoint">1,470</span>P</em>
                                         </td>
                                     </tr>
                                     <tr>
@@ -683,7 +596,8 @@
                                             <label for="or_price3">&nbsp;&nbsp;결제할 금액</label>
                                         </th>
                                         <td>
-                                            <span class="fs22" id="finalTotalOrderAmt">49,000</span>원
+                                            <span class="fs22" id="finalTotalOrderAmt"><fmt:formatNumber value="${totalPrice+2500 }" type="number"/></span>원
+                                            <input type="hidden" id="totalPrice" name="totalPrice" value="${totalPrice+2500 }">
                                         </td>
                                     </tr>
                                 </tbody>
@@ -695,7 +609,7 @@
                 <div class="clear mt60">
                     <h3 class="tit_type1 fs16 ml10">개인정보 수집/제공</h3>
                     <section class="table_basic mt10 bgfa">
-                        <table>
+                        <table class="tableA">
                             <colgroup>
                                 <col width="580px"><col width="*">
                             </colgroup>
@@ -727,7 +641,7 @@
                 <div class="clear mt60">
                     <h3 class="tit_type1 fs16 ml10">결제수단 선택</h3>
                     <section class="table_basic mt10 bgfa">
-                        <table>
+                        <table class="tableA">
                             <colgroup>
                                 <col width="580px"><col width="*">
                             </colgroup>
@@ -737,21 +651,21 @@
                                         
                                                  
 
-<input type="radio" name="pymntMeansCode" value="01" class="mr5 ml15" id="pymntMeansCode01"/><label for="pymntMeansCode01">신용카드&nbsp;</label>
+<input type="radio" name="payChoice1" value="신용카드" class="mr5 ml15" id="pymntMeansCode01"/><label for="pymntMeansCode01">신용카드&nbsp;</label>
 
 
-<input type="radio" name="pymntMeansCode" value="02" class="mr5 ml15" id="pymntMeansCode02"/><label for="pymntMeansCode02">계좌이체&nbsp;</label>
+<input type="radio"  name="payChoice1" value="계좌이체" class="mr5 ml15" id="pymntMeansCode02"/><label for="pymntMeansCode02">계좌이체&nbsp;</label>
 
 
-<input type="radio" name="pymntMeansCode" value="03" class="mr5 ml15" id="pymntMeansCode03"/><label for="pymntMeansCode03">휴대폰&nbsp;</label>
+<input type="radio" name="payChoice1" value="휴대폰" class="mr5 ml15" id="pymntMeansCode03"/><label for="pymntMeansCode03">휴대폰&nbsp;</label>
 
 
-<input type="radio" name="pymntMeansCode" value="04" class="mr5 ml15" id="pymntMeansCode04"/><label for="pymntMeansCode04">무통장&nbsp;</label>
+<input type="radio" name="payChoice1" value="무통장" class="mr5 ml15" id="pymntMeansCode04"/><label for="pymntMeansCode04">무통장&nbsp;</label>
 
 
-<input type="radio" name="pymntMeansCode" value="07" class="mr5 ml15" id="pymntMeansCode07"/><label for="pymntMeansCode07">네이버페이&nbsp;</label>
+<input type="radio" name="payChoice1" value="네이버페이" class="mr5 ml15" id="pymntMeansCode07"/><label for="pymntMeansCode07">네이버페이&nbsp;</label>
 
-
+<input type="hidden" name="payChoice" id="payChoice" value="">
 
                                                 <input type="radio" name="pymntMeansCode" value="06" style="display:none;"/>
                                             
@@ -763,7 +677,7 @@
                                 <tr class="last_pay pymntMeansCode02" style="display: none;">
                                     <td>
                                         <section class="table_basic bgfa no_point">
-                                            <table>
+                                            <table class="tableA">
                                                 <colgroup>
                                                     <col width="180px"><col width="*">
                                                 </colgroup>
@@ -792,7 +706,7 @@
                                         <p class="mb10">무통장 입금(가상계좌)는 <span class="fc_type2">주문하신 후 3일 이내</span>(주문일 포함)에 주문하신 금액을 정확히 입금해 주셔야 합니다.</p>
                                         <ul class="list_type3">
                                             <li>계좌번호 : 1회 주문에 한하여 발급되는 1회성 계좌로<br/><span style="padding-left:55px;">주문 완료 시 주문상세내역 또는 고객님의 휴대전화로 발송되는 SMS로 확인하실 수 있습니다.</span></li>
-                                            <li>예금주 : ㈜에이비씨마트코리아</li>
+                                            <li>예금주 : 에이비씨디마트코리아</li>
                                         </ul>
                                     </td>
                                     <td>
@@ -804,7 +718,7 @@
                                 <tr class="last_pay pymntMeansCode04" style="display: none;">
                                     <td>
                                         <section class="table_basic bgfa no_point">
-                                            <table>
+                                            <table class="tableA">
                                                 <colgroup>
                                                     <col width="180px"><col width="*">
                                                 </colgroup>
@@ -833,7 +747,7 @@
                                         <p class="mb10">무통장 입금(가상계좌)는 <span class="fc_type2">주문하신 후 3일 이내</span>(주문일 포함)에 주문하신 금액을 정확히 입금해 주셔야 합니다.</p>
                                         <ul class="list_type3">
                                             <li>계좌번호 : 1회 주문에 한하여 발급되는 1회성 계좌로<br/><span style="padding-left:55px;">주문 완료 시 주문상세내역 또는 고객님의 휴대전화로 발송되는 SMS로 확인하실 수 있습니다.</span></li>
-                                            <li>예금주 : ㈜에이비씨마트코리아</li>
+                                            <li>예금주 : 에이비씨디마트코리아</li>
                                         </ul>
                                     </td>
                                     <td>
@@ -885,8 +799,8 @@
 <script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript" src="../js/mainFooter.js"></script>
 
-<!-- <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script> -->
-<script src="../js/order_pay/orderPage.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script src="../js/order_pay/orderPage22.js"></script>
 
 
 

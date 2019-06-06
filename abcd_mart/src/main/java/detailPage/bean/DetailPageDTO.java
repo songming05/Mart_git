@@ -13,6 +13,7 @@ public class DetailPageDTO {
 	private String prdtCode;
 	private int prdtPrice;
 	private String prdtDeliveryPrice;
+	private String prdtBrand;
 	private String prdtColor;
 	private String prdtGender;
 	private String prdtSize;

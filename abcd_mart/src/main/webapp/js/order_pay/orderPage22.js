@@ -14,35 +14,48 @@ function popupSearchPostCode(){
 	        	addr = data.jibunAddress;
 	        }
 	        
-	        document.getElementsByName('rcvrPostNum')[0].value = data.zonecode;
-            document.getElementsByName("rcvrAddr")[0].value = addr;
-            document.getElementsByName("rcvrDtlAddr")[0].focus();
+	        document.getElementsByName('dlvyZipcode')[0].value = data.zonecode;
+            document.getElementsByName("dlvyAddr1")[0].value = addr;
+            document.getElementsByName("dlvyAddr2")[0].focus();
            
 	    }
 	}).open();	
 	
 }
 
+function checkPostClose(zipcode, address){
+
+
+	
+	opener.document.getElementById('dlvyZipcode').value =zipcode;
+	opener.document.getElementById('dlvyAddr1').value =address;
+	window.close();
+	opener.document.getElementById('dlvyAddr2').focus();
+} 
+
+
 //결제 창 누를시 , 유효성 검사 
 function goPayment(){
-	if($('input[name=rcvrName]').val()==''){
-		document.getElementsByName("rcvrName")[0].focus();
+
+	
+	if($('input[name=dlvyName]').val()==''){
+		document.getElementsByName("dlvyName")[0].focus();
 		swal('이름을 입력해주세요');
 		
-	}else if($('input[name=rcvrHdphnNum2]').val() ==''){
-		document.getElementsByName("rcvrHdphnNum2")[0].focus();
+	}else if($('input[name=dlvyTel2]').val() ==''){
+		document.getElementsByName("dlvyTel2")[0].focus();
 		swal('휴대폰 번호를 입력해주세요');
 		
-	}else if($('input[name=rcvrHdphnNum3]').val() ==''){
-		document.getElementsByName("rcvrHdphnNum3")[0].focus();
+	}else if($('input[name=dlvyTel3]').val() ==''){
+		document.getElementsByName("dlvyTel3")[0].focus();
 		swal('휴대폰 번호 뒷자리를 입력해주세요');
 	
 	}else if($('input[name=rcvrAddr]').val() ==''){
 		document.getElementsByName("rcvrAddr")[0].focus();
 		swal('주소를 입력해주세요');
 		
-	}else if($('input[name=rcvrDtlAddr]').val() ==''){
-		document.getElementsByName("rcvrDtlAddr")[0].focus();
+	}else if($('input[name=dlvyAddr2]').val() ==''){
+		document.getElementsByName("dlvyAddr2")[0].focus();
 		swal('상세 주소를 입력해주세요');
 	
 	}else if($('#agreementCheck').is(":checked")==false){
@@ -61,12 +74,19 @@ function goPayment(){
 	}else if($('#cbOrderClause').is(":checked")==false){
 		swal("구매에 동의를 해주십시오");
 	
-	
 	}else{
+		//$('input[name="radioTxt"]:checked' 체크박스 체크된 값 가져오기
 		
 		if(confirm("결제를 진행 하시겠습니까?")){
-			//location.href="";
-			swal("결제가 완료되었습니다");
+			$('#buyerTel1').attr('disabled',false);
+			$('input[name=coupon]').attr('disabled',false);
+			$('input[name=point]').attr('disabled',false);
+			
+			$('#totalPrice').val($('.total_pay td span').text().replace(',',''));
+			$('#payChoice').val($('input[name="payChoice1"]:checked').val());
+			$('#orderForm').submit();
+			
+			
 			
 		}else return;
 		
@@ -79,11 +99,15 @@ function goPayment(){
 
 /*주문 고객 정보  체크박스 컨트롤 */
 $(document).ready(function(){
+	
 	$('#or_namech').click(function(){
 		if($('input:checkbox[name=changeBuyerInfo]').is(":checked")){
-			$('#or_name,input[name=buyerHdphnNum2],input[name=buyerHdphnNum3],input[name=buyerMailAddress1]').removeAttr("readonly");
+			$('#or_name,input[name=buyerTel2],input[name=buyerTel3],input[name=buyerEmail1]').removeAttr("readonly");
+			$('#buyerTel1').attr('disabled',false);
+			
 		}else{
-			$('#or_name,input[name=buyerHdphnNum2],input[name=buyerHdphnNum3],input[name=buyerMailAddress1]').attr("readonly",true);
+			$('#or_name,input[name=buyerTel2],input[name=buyerTel3],input[name=buyerEmail1]').attr("readonly",true);
+			$('#buyerTel1').attr('disabled',true);
 		}
 	});
 
@@ -107,17 +131,22 @@ $(document).ready(function(){
 	
 	/* 배송지 정보 안의 [주문자와 동일 , 신규입력 , 최근배송지] 라디오 박스 컨트롤  */
 	$('#or_na1').click(function(){
-		$('input[name=rcvrName]').val($('input[name=buyerName]').val())
-		$('input[name=rcvrHdphnNum2]').val($('input[name=buyerHdphnNum2]').val());
-		$('input[name=rcvrHdphnNum3]').val($('input[name=buyerHdphnNum3]').val());
+		$('input[name=dlvyName]').val($('input[name=buyerName]').val())
+		$('input[name=dlvyTel2]').val($('input[name=buyerTel2]').val());
+		$('input[name=dlvyTel3]').val($('input[name=buyerTel3]').val());
 	});
 	
 	$('#or_na2').click(function(){
-		$('input[name=rcvrName],input[name=rcvrHdphnNum2],input[name=rcvrHdphnNum3').val('');
+		$('input[name=dlvyName],input[name=dlvyTel2],input[name=dlvyTel3').val('');
 
 	});
 	
-	$('#or_na3').click(function(){
+	/*최근배송지*/
+	$('#or_na3, .btn_sType1').click(function(){
+		
+		window.open("/abcd_mart/order_pay/orderAddressList.do?id="+$('#abcdId').val(),"","width=650px height=700px");
+		
+		
 	});
 	
 	
@@ -146,5 +175,9 @@ $(document).ready(function(){
 		$('.last_pay.pymntMeansCode02').css('display', 'none');
 		
 	});
+	
+	
+	
+	
 	
 });

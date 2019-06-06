@@ -30,7 +30,7 @@
 					<table>
 						<tr>
 							<td rowspan="3">
-								<img class="shoppingBasket_li_level01_image" src="../image/cart/shoppingBasket_image01.png">
+								<img class="shoppingBasket_li_level01_image" src="../image/shoppingBasket_image01.png">
 							</td>
 							<td class="shoppingBasket_li_level01_td"><em>01</em></td>
 						</tr>
@@ -46,7 +46,7 @@
 					<table>
 						<tr>
 							<td rowspan="3">
-								<img class="shoppingBasket_li_level02_image" src="../image/cart/shoppingBasket_image05.png">
+								<img class="shoppingBasket_li_level02_image" src="../image/shoppingBasket_image05.png">
 							</td>
 							<td class="shoppingBasket_li_level02_td"><em>02</em></td>
 						</tr>
@@ -62,7 +62,7 @@
 					<table>
 						<tr>
 							<td rowspan="3">
-								<img class="shoppingBasket_li_level03_image" src="../image/cart/shoppingBasket_image06.png">
+								<img class="shoppingBasket_li_level03_image" src="../image/shoppingBasket_image06.png">
 							</td>
 							<td class="shoppingBasket_li_level03_td"><em>03</em></td>
 						</tr>
@@ -78,7 +78,7 @@
 					<table>
 						<tr>
 							<td rowspan="3">
-								<img class="shoppingBasket_li_level04_image" src="../image/cart/shoppingBasket_image07.png">
+								<img class="shoppingBasket_li_level04_image" src="../image/shoppingBasket_image07.png">
 							</td>
 						</tr>
 					</table>
@@ -95,13 +95,13 @@
 				-->
 				
 				<div class="shoppingBasket_box_login">
-					<img class="shoppingBasket_box_login_image" src="../image/cart/shoppingBasket_image05.png"/>
+					<img class="shoppingBasket_box_login_image" src="../image/loginOk_image.png"/>
 					<div class="shoppingBasket_box_login_div">
 						<p class="shoppingBasket_box_login_p1">${memName }님은 온라인 회원입니다.</p>
 						<p class="shoppingBasket_box_login_p2">${memName } 회원님의 쇼핑 알리미</p>
 						<ul class="shoppingBasket_box_login_ul">
-							<li class="shoppingBasket_box_login_li1"><img src="../image/cart/shoppingBasket_image06.png"/>사용 가능 쿠폰 : <font>${coupon }</font>장</li>
-							<li class="shoppingBasket_box_login_li2"><img src="../image/cart/shoppingBasket_image06.png"/>보유 포인트 : <font>${point }</font>P</li>
+							<li class="shoppingBasket_box_login_li1"><img src="../image/arrow_image.png"/>사용 가능 쿠폰 : <font>${coupon }</font>장</li>
+							<li class="shoppingBasket_box_login_li2"><img src="../image/arrow_image.png"/>보유 포인트 : <font>${point }</font>P</li>
 						</ul>
 					</div>
 				</div>
@@ -133,8 +133,7 @@
 							<td><input type="checkbox" class="choice_checkbox"/></td>
 							<td>
 								<div class="shoesImage_div">
-									<a href="#"><img class="shoes_image" src="../image/cart/${list.shoesimage }.jpg" width="80" height="80"/></a>
-									<input type="hidden" class="shoes_image_name" value="${list.shoesimage }"/>
+									<a href="#"><img class="shoesImage" src="../image/${list.shoesimage }.jpg" width="80" height="80"/></a>
 								</div>
 								<div class="shoesInfo_div">
 									<span class="shoes_brand">${list.shoesbrand }</span>
@@ -152,21 +151,21 @@
 							<td>
 								<div class="shoesQty_div">
 									<input class="qtyText" type="text" value="${list.shoesqty }" style="width: 30px; height: 22px;" readonly/>
-									<button type="button" class="qtyUp" style="width: 17px; height: 11px;"><img src="../image/cart/shoppingBasket_image08.png"></button>
-									<button type="button" class="qtyDown" style="width: 17px; height: 11px;"><img src="../image/cart/shoppingBasket_image09.png"></button>
+									<button type="button" class="qtyUp" style="width: 17px; height: 11px;"><img src="../image/up_image.png"></button>
+									<button type="button" class="qtyDown" style="width: 17px; height: 11px;"><img src="../image/down_image.png"></button>
 									<button type="button" class="qtyButton" style="width: 32px; height: 25px; margin-left: 25px;">변경</button>
 								</div>
 							</td>
 							<td>
 								<div class="discount_div">
-									<span class="discount_price">${list.shoesdiscount }<img src="../image/cart/shoppingBasket_image09.png"></span>원
+									<span class="discount_price">${list.shoesdiscount }<img src="../image/down_image.png"></span>원
 								</div>
 							</td>
 							<td>
 								<div class="saving_div">
-									<span class="saving_div_price" style="font-size: 9pt">${list.shoesprice*list.shoesqty }</span>원
-									<br>
-									<span class="saving_div_point" style="font-size: 9pt">${list.shoespoint }</span>P
+									<%-- <p class="price" style="font-size: 9pt"><fmt:formatNumber pattern="#,###원" value="${?}" /> </p> --%>
+									<p class="saving_div_price" style="font-size: 9pt">${list.shoesprice*list.shoesqty }원</p>
+									<p class="saving_div_point" style="font-size: 9pt">${list.shoespoint }P</p>
 								</div>
 							</td>
 							<td>
@@ -191,21 +190,21 @@
 						<dl>
 							<dt>주문금액</dt>
 							<dd><span class="total_price_div_price"></span>원
-							<img src="../image/cart/minus.png"/>
+							<img src="../image/minus_image.png"/>
 						</dl>
 					</div>
 					<div class="total_price_box2">
 						<dl>
 							<dt>할인금액</dt>
 							<dd><span class="total_price_div_sale">0</span>원
-							<img src="../image/cart/plus.png"/>
+							<img src="../image/plus_image.png"/>
 						</dl>
 					</div>
 					<div class="total_price_box3">
 						<dl>
 							<dt>배송비</dt>
 							<dd><span class="total_price_div_shippingFee"></span>원
-							<img src="../image/cart/equal.png"/>
+							<img src="../image/=.png"/>
 						</dl>
 					</div>
 					<div class="total_price_box1">
@@ -217,7 +216,7 @@
 				</div>
 				
 				<div class="warning_image_div">
-					<img src="../image/cart/shoppingBasket_image07.png"/>
+					<img src="../image/shoppingBasket_warning_image.png"/>
 				</div>
 				
 				<div class="bottom_menu">

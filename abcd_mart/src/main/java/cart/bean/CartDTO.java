@@ -8,6 +8,16 @@ import lombok.Data;
 @Data
 public class CartDTO {
 	
-	private String shoesimage, shoesbrand, shoesname, shoescolor, shoessize, shoesprice, shoesqty, shoesdiscount, shoespoint;
+	private String id, 
+	prdtcode,
+	shoesimage, 
+	shoesbrand, 
+	shoesname, 
+	shoescolor, 
+	shoessize, 
+	shoesprice, 
+	shoesqty, 
+	shoesdiscount, 
+	shoespoint;
 	
 }
