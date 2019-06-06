@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>벌써 여름</title>
+<title>그랜드스테이지 나이키 의류 판매</title>
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/header.css"/>
 <link rel="stylesheet" href="../css/adPage.css"/>
@@ -12,6 +12,8 @@
 <link rel="stylesheet" href="../css/quickBar.css"/>	
 <!-- footer-->
 <link rel="stylesheet" href="../css/mainFooter.css"/>
+
+
 </head>
 <body>
 <header>
@@ -19,9 +21,12 @@
 
 </header>
 <jsp:include page="../template/quickBarOther.jsp"/>
-<div class="container_wrap" id="mainImg6">
+
+
+
+<div class="container_wrap" id="midImg1">
             
-	<input type="hidden" name="eventId" id="eventId" value="004848">
+	<input type="hidden" name="eventId" id="eventId" value="004785">
     <div class="container_area">
         <div class="container_layout">
             <!-- page_location -->
@@ -41,22 +46,22 @@
                 <div class="positR exhibit_tab">
                     <ul class="column_tab type2" id="column_tab">
                         
-                            <li ><a href="./mainAd2.jsp">2019 상반기 베스트 아이템</a></li>
+ <li ><a href="./mainAd2.jsp">2019 상반기 베스트 아이템</a></li>
                             
                             
                             <li ><a href="./mainAd1.jsp">여름나기 기획전!</a></li>
                             
                             
-                            <li class="current"><a href="./mainAd6.jsp">썸머슈즈 이벤트</a></li>
+                            <li ><a href="./mainAd6.jsp">썸머슈즈 이벤트</a></li>
                             
                             
                             <li><a href="./mainAd3.jsp">호킨스 쿨앤라이트 썸머샌들</a></li>
                             
                             
-                            <li><a href="./midAd1.jsp">그랜드스테이지 프리미엄 신발</a></li>
+                            <li ><a href="./midAd1.jsp">그랜드스테이지 프리미엄 신발</a></li>
                             
                             
-                            <li><a href="./midAd1_1.jsp">그랜드스테이지 나이키 의류 판매</a></li>
+                            <li class="current"><a href="./midAd1_1.jsp">그랜드스테이지 나이키 의류 판매</a></li>
                             
                             
                             <li><a href="./mainAd5.jsp">누오보 x 전소미 </a></li>
@@ -79,22 +84,22 @@
                             
                     </ul>
                     
-                        <a  class="btn_view">더보기</a>
+                        <a href="javascript://" class="btn_view">더보기</a>
                     
                 </div>
             
                 <header class="board_head_txt positR mt35">
-                    <h3 class="fl-l tit_type1 fs16">썸머슈즈 이벤트</h3>
+                    <h3 class="fl-l tit_type1 fs16">그랜드스테이지 나이키 의류 판매</h3>
                     
                         <p class="fl-l mt5 tit_type3 fs12">
-                            2019.05.24 ~ 2019.06.13
+                            2019.05.07 ~ 2019.12.31
                         </p>
                     
-                    
+                   
                 </header>
             
             <div id="planDispDetailContent">
-                <p></p><p><img alt="1100.jpg" src="../image/advertisement/main6_main.jpg" style="width:100%;" usemap="#1100.jpg"><map name="1100.jpg"><area alt="" coords="169,678,541,775" class="giveCp1" onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="564,678,942,778" class="giveCp2" onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="65,1052,369,1363" onclick="location.href='./mainAd6_1.jsp'" onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="401,1049,698,1361" onclick="location.href='./mainAd6_2.jsp'" onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="729,1052,1028,1360" onclick="location.href='./mainAd6_3.jsp'" onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="71,1394,368,1704" onclick="location.href='./mainAd6_4.jsp'" onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="403,1394,697,1698" onclick="location.href='./mainAd6_5.jsp'" onfocus="this.blur()" shape="rect" target=""> <area alt="" coords="735,1393,1030,1700" onclick="location.href='./mainAd6_6.jsp'" onfocus="this.blur()" shape="rect" target=""></map></p>
+                <p></p><p><img alt="1100.jpg" src="http://image.abcmart.co.kr/nexti/images/abcmart/client/1302/20190507112808139.jpg" style="width:100%;" usemap="#1100.jpg"><map name="1100.jpg"><area alt="" coords="242,742,873,839" href="http://www.grandstage.co.kr/" onfocus="this.blur()" shape="rect" target="_blank"></map></p>
 <p></p>
             </div>
             
@@ -106,10 +111,11 @@
             
             <div id="productOptionArea" class="pop_wrap" style="width:370px;"></div>
         </div>
-        
-<jsp:include page="../template/mainFooter.jsp"/>
-</body>
-<!-- quickBar -->
+
+
+ <jsp:include page="../template/mainFooter.jsp"/>
+      </body>
+      <!-- quickBar -->
 <script type="text/javascript" src="../js/quickBar.js"></script>  
 <!-- footer -->
 <script type="text/javascript" src="../js/mainFooter.js"></script> 
@@ -117,4 +123,4 @@
 <script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript" src="../js/adPage.js"></script>
 </html>
-        
+                    

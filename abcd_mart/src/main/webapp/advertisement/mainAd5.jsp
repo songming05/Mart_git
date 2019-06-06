@@ -53,28 +53,28 @@
                             <li><a href="./mainAd3.jsp">호킨스 쿨앤라이트 썸머샌들</a></li>
                             
                             
-                            <li><a href="/abc/planDisp/detail?plndpId=004785">그랜드스테이지 프리미엄 신발</a></li>
+                            <li><a href="./midAd1.jsp">그랜드스테이지 프리미엄 신발</a></li>
                             
                             
-                            <li><a href="/abc/planDisp/detail?plndpId=004783">그랜드스테이지 나이키 의류 판매</a></li>
+                            <li><a href="./midAd1_1.jsp">그랜드스테이지 나이키 의류 판매</a></li>
                             
                             
-                            <li class="current"><a href="/abc/planDisp/detail?plndpId=004751">누오보 x 전소미 </a></li>
+                            <li class="current"><a href="./mainAd5.jsp">누오보 x 전소미 </a></li>
                             
                             
-                            <li><a href="/abc/planDisp/detail?plndpId=004097">해시태그로 보는 트렌드 슈즈!</a></li>
+                            <li><a href="./mainAd4.jsp">Reebok DMX 1000</a></li>
                             
                             
-                            <li><a href="/abc/planDisp/detail?plndpId=004047">ABC 아울렛! 19,000원↓</a></li>
+                            <li><a href="">ABC 아울렛! 19,000원↓</a></li>
                             
                             
-                            <li><a href="/abc/planDisp/detail?plndpId=001436">오! 당신이 찾는 빅 사이즈</a></li>
+                            <li><a href="">오! 당신이 찾는 빅 사이즈</a></li>
                             
                             
-                            <li><a href="/abc/planDisp/detail?plndpId=000341">라스트 원 사이즈 기획전</a></li>
+                            <li><a href="">라스트 원 사이즈 기획전</a></li>
                             
                             
-                            <li><a href="/abc/planDisp/detail?plndpId=000019">착한가격</a></li>
+                            <li><a href="">착한가격</a></li>
                             
                             
                     </ul>
