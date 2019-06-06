@@ -26,55 +26,6 @@ $('select[name="mailDomain"]').on('change', function() {
 	}
 });
 
-//인증번호요청 클릭
-function autoCode(){
-	var name =$('input[name=idUserName]');
-	var email1 =$('input[name=userMailAddress1]');
-	var email2 =$('input[name=userMailAddress2]');
-/*	var email = email1.concat("@",email2);*/
-	if($('#idUserName').val()==''){
-		swal("이름을 입력해주세요");
-	}else if($('#userMailAddress1').val()=='') {
-		swal("이메일 주소를 입력해주세요");
-	}else if($('#userMailAddress2').val()=='') {
-		swal("이메일 주소를 입력해주세요");
-	}else {
-		//이동
-		$.ajax({
-			type: 'POST',
-			url: '/abcd_mart/user/idFound',
-			data: {'name':name.val(),
-				'email':email1.val()+'@'+email2.val()},
-			dataType: 'text',
-			success: function(data) {
-					if(data=='nopass'){
-						swal('유효하지 않은 이메일 주소 입니다.');
-					} else if(data=='pass'){
-						swal('인증번호가 발송되었습니다.')
-						$('#autoCodeEmail').removeAttr("disabled")
-						
-						
-						/*$.ajax({
-							type:'POST'
-							url:'/abcd_mart/user/sendMail',
-							data:'email':email1.val(),
-							dataType: 'text',
-							success: function(data) {
-								swal('인증번호');
-							}
-						});*/
-						
-						
-					
-					}	//else if
-			}
-		});		
-	}
-}	
-	/*else if{
-		$(this).next().removeAttr("disabled")
-	}*/
-
 	
 	
 
@@ -127,31 +78,71 @@ function findPwdEmail() {
 					'name': userName.val(),
 					'email': email1.val()+'@'+email2.val()},
 			dataType:'text',
-			success: function(exist) {
+			success: function(exist) {				
 				console.log(exist);
-				if(exist.equals('exist')){
-					swal("Write something here:", 
-						{
-						  content: "input",
+				if(exist=='exist'){
+					Swal.mixin({
+						input: 'text',
+						confirmButtonText: 'Next &rarr;',
+						showCancelButton: true,
+						progressSteps: ['1', '2']
+					}).queue([
+						{title: '비밀번호 변경',
+							text: '변경하실 비밀번호를 입력하세요'},
+						{title: '비밀번호 재입력',
+						    text: '한번 더 입력하세요'}
+					]).then((result) => {
+						if (result.value) {
+							var pwd = result.value[0];
+							var repwd = result.value[1];
+							if(pwd==repwd){
+								//console.log('일치');
+								$.ajax({
+									type:'POST',
+									url:'/abcd_mart/user/pwdReset',
+									data:{'id': userId.val(),
+											'password':pwd},
+									success: function() {
+										Swal.fire({
+									    	title: '비밀번호 변경 완료!',
+//									    	html: 'Your answers: <pre><code>' +
+//									    		result.value +
+//									    		JSON.stringify(result.value) +
+//									    		'</code></pre>',
+									    	confirmButtonText: '확인'
+									    })
+									}									
+								});	
+							} else if(pwd!=repwd){
+								//console.log('불일치');
+								Swal.fire({
+							    	title: '비밀번호가 일치하지 않습니다!',
+							    	confirmButtonText: '확인'
+							    })
+								
+							}		  
+						    
 						}
-					).then((value) => {
-						$.ajax({
-							type:'POST',
-							url:'/abcd_mart/user/pwdReset',
-							data:{'id': userId.val(),
-									'password':'${value}'},
-							success: function() {
-								swal('비밀번호를 수정하였습니다');
-							}
-							
-						});
-						//swal(`You typed: ${value}`);
-					});
+					});					
 				} else {
 					swal('일치하는 정보가 없습니다');
 				}
 			}			
 		});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 	
 }

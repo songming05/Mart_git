@@ -19,4 +19,6 @@ public interface UserDAO {
 
 	public UserDTO findUserInfo(Map<String, String> map);
 
+	public void pwdReset(Map<String, String> map);
+
 }

@@ -20,7 +20,8 @@ public class OrderController {
 	private OrderDAO orderDAO;
 	
 	@RequestMapping(value="/order_pay/orderPageEnd.do",method=RequestMethod.POST)
-	public String orderPageEnd(@ModelAttribute OrderDTO orderDTO ,Model model) {
+	public String orderPageEnd(@ModelAttribute OrderDTO orderDTO ,
+							Model model) {
 		//DB
 		System.out.println("orderDTO2 "+orderDTO.getBuyerTel2());
 		System.out.println("orderDTO1  "+orderDTO.getDlvyTel1());
@@ -31,6 +32,9 @@ public class OrderController {
 		OrderDTO pDTO = orderDAO.oneOrder(orderDTO.getBuyerName());
 		
 		model.addAttribute("pDTO", pDTO);
+		
+		//넘겨줄 데이터
+		//리스트면 좋구, 상품코드, 개수, 
 		
 		return "/order_pay/orderPageEnd";
 	}

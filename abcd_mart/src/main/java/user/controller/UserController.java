@@ -171,6 +171,7 @@ public class UserController {
 		String EncodedPassword = passwordEncoder.encode(map.get("password"));
 		map.remove("password");
 		map.put("password", EncodedPassword);
+		System.out.println("변경했다맵 "+map.get("password"));
 		userDAO.pwdReset(map);
 	}
 	

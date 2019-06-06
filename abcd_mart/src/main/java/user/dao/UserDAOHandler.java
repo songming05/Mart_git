@@ -27,6 +27,11 @@ public class UserDAOHandler implements UserDAO {
 		}
 		return result;
 	}
+	
+	@Override
+	public void pwdReset(Map<String, String> map) {
+		sqlSession.update("userSQL.pwdReset", map);
+	}
 
 	@Override
 	public UserDTO checkUserId(String id) {		
