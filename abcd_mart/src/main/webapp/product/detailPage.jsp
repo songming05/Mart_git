@@ -34,55 +34,20 @@ $(document).ready(function(){
 	
 	$(document).on('click','.btn-danger,#qtyCheck',function(){
 		alert('결제창으로');
-		//var obj = $('input[name=qtyName]');
-		
-		//for(var i in )
-		var list = new Array();
-		
+
 		var count = 0;
 		$('input[name=qtyName]').each(function(index,item){
-			//count += $(item).text();
-			count+=parseInt($(item).val());
-			 //list.push($(item).val());
-		//	//alert($(item).text());
+			count=parseInt(count)+parseInt($(item).val());
+
 		});
 		alert(count);
 		
 		
-		//'<input type="hidden" id="amount1" name="qtyName" value="amount">' 
-	var obj ; 
-		   $("input[name=qtyName]").each(function(index, item){
-			   //list.push($(item).val());
-			 //obj= obj + parseInt($(item).val());
-		   });
-		  // alert(list);
-			
-			
-		//alert($('#qtyCheck').text());
-		//$('#orderDirect').submit();
 		
 	});
 	
-	
-	
-	var count = 0;
-	$('#table').on('click','.btn-light',function(){
-		alert($(this).val());
-		var arrNumber = new Array();
-		
-		arrNumber[count] = $(this).val();
-	
-		//alert(count);
-		//alert(arrNumber[1]);
-		
-		//console.log(arrNumber[count]);
 
-		count++;
-		
-		
-		
-		
-	});
+	
 });
 
 </script>
