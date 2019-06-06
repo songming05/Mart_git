@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 
 import cart.bean.CartDTO;
 import order.bean.OrderDTO;
+import order.bean.PaymentinfoDTO;
 
 public interface OrderDAO {
 
@@ -20,5 +21,7 @@ public interface OrderDAO {
 	public void directWrite(CartDTO cartDTO);
 
 	public void deleteCart(String id);
+
+	public void paymentInfo(PaymentinfoDTO paymentinfoDTO);
 
 }

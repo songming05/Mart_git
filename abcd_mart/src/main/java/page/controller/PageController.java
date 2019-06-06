@@ -1,5 +1,7 @@
 package page.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import detailPage.dao.DetailPageDAO;
+import order.dao.OrderDAO;
 import detailPage.bean.DetailPageDTO;
 
 @Controller
@@ -16,15 +19,23 @@ import detailPage.bean.DetailPageDTO;
 public class PageController {
 	@Autowired
 	private DetailPageDAO detailPageDAO;
+	@Autowired
+	private OrderDAO orderDAO;
 	
 	@RequestMapping(value="/detail",method=RequestMethod.GET)
-	public ModelAndView detailPage(@RequestParam String prdtCode, Model model) {
+	public ModelAndView detailPage(@RequestParam String prdtCode,HttpSession session ,Model model) {
 	//System.out.println("prdt 코드"+prdtCode);
 		DetailPageDTO detailPageDTO = detailPageDAO.getProduct(prdtCode);
 		//System.out.println("꺼낸후 값"+detailPageDTO.getPrdtCode());
+		String id = (String) session.getAttribute("memId");
+		if(id ==null) {
+			id="guest";
+		}
+		orderDAO.deleteCart(id);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("detailPageDTO",detailPageDTO);
 		mav.setViewName("/product/detailPage");
+		
 		return mav;
 	}
 	
