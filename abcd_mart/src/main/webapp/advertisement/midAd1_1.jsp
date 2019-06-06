@@ -7,7 +7,7 @@
 <title>그랜드스테이지 나이키 의류 판매</title>
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/header.css"/>
-<link rel="stylesheet" href="../css/adPage.css"/>
+<link rel="stylesheet" href="../css/advertise/adPage.css"/>
 <!-- quickBar -->
 <link rel="stylesheet" href="../css/quickBar.css"/>	
 <!-- footer-->
@@ -121,6 +121,6 @@
 <script type="text/javascript" src="../js/mainFooter.js"></script> 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.0.min.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
-<script type="text/javascript" src="../js/adPage.js"></script>
+<script type="text/javascript" src="../js/advertise/adPage.js"></script>
 </html>
                     
