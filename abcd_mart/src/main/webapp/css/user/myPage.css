@@ -101,11 +101,139 @@
     border: 0;
     border-top: 1px solid #dbdbdb;
 }
+.p_re{
+	    margin-bottom: 30px;
+}
+.p_re > p {
+    margin: 0 0 10px 10px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #000000;
+}
+.p_re ul {
+    padding: 20px;
+    border-top: 1px solid #dbdbdb;
+    background: #fafafa;
+}
+.p_re ul li {
+    padding-bottom: 5px;
+    color: #666666;
+}
+.wrap .pop_wrap {
+    background-color: #fff;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 600;
+}
+.mypage_cont .sevice_go .sevice_list li.list3 a:before {
+    width: 28px;
+    background-position: -81px -395px;
+}
+.mypage_cont .sevice_go .sevice_list li.list4 a:before {
+    width: 34px;
+    height: 33px;
+    background-position: -114px -395px;
+}
+#myPage{
+	margin-bottom: 600px;
+}
+.pop_wrap {
+    border: 1px solid #6c6c6c;
+    color: #3b3b3b;
+}
+.p_re ul li:last-child {
+    padding-bottom: 0;
+}
+
+.paginate:after {
+    clear: both;
+}
+.paginate_wide:before, .paginate:after {
+    display: table;
+    overflow: hidden;
+    content: "";
+}
+.paginate:before, .paginate:after {
+    display: table;
+    overflow: hidden;
+    content: "";
+}
+.mt20 {
+    margin-top: 20px !important;
+}
+.paginate {
+    padding: 10px 0;
+    text-align: center;
+}
+table td.non_data, table td .non_data {
+    padding: 40px;
+    text-align: center;
+    color: #3b3b3b;
+    font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif;
+    font-size: 16px;
+}
+.relation_product > a {
+    position: relative;
+    padding: 3px 6px 3px 10px;
+    border: 1px solid #bfbfbf;
+    box-sizing: border-box;
+}
+.relation_product > a .ico_arrow1 {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    display: inline-block;
+    width: 15px;
+    height: 10px;
+    vertical-align: middle;
+    border-left: 1px solid #dbdbdb;
+    background: url(//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png) -69px -78px no-repeat;
+}
+.table_basic th a, .table_basic td a {
+    color: #666666;
+}
+.mypage_cont .my_cont .table_select > p {
+    line-height: 22px;
+}
 .normal {
     font-weight: normal !important;
 }
+.mypage_cont .my_cont .table_select {
+    vertical-align: middle;
+    text-align: left;
+}
+.relation_list{
+	width: 110px;
+}
+.relation_product .relation_list > li {
+    position: relative;
+    border-top: 1px solid #f2f2f2;
+}
+.mypage_cont .my_cont .table_select .relation_product .relation_list li {
+    padding: 3px 5px 3px 10px;
+}
+.relation_product .relation_list > li:first-child {
+    border-top: 0;
+}
+.relation_product .relation_list {
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    left: 0;
+    display: none;
+    max-height: 219px;
+    overflow-y: auto;
+}
+.relation_product {
+    position: relative;
+}
 .mypage_cont .my_cont .table_basic th {
     background: #fafafa;
+}
+.mypage_cont .my_cont .table_select .relation_product {
+    background-color: #fff;
 }
 .table_basic thead th {
     text-align: center;
@@ -118,6 +246,9 @@
     border-top: 1px solid #000000;
     border-bottom: 1px solid #bfbfbf;
     margin-bottom: 10px;
+}
+.gallery_line_type1 td {
+    text-align: center;
 }
 .btn_mlType1 {
     font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif;
@@ -133,8 +264,28 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+table {
+    empty-cells: show;
+    width: 100%;
+    table-layout: fixed;
+    /* border-collapse: collapse; */
+    border: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+}
 .mb10 {
     margin-bottom: 10px;
+}
+.btn_mlType1 mb10{
+	    width: 160px;
+    margin-bottom: 10px;
+    color: #fff !important;
+    border: 1px solid #e50015;
+    background: #e50015;
+    height: 34px;
+    font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .mypage_cont .membox2 .online_box a {
