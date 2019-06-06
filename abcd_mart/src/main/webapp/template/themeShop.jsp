@@ -20,7 +20,7 @@
                 <div class="thema-shop-slide-con-wrap">
                     <div class="thema-shop-slide-ul">
 <!-- 남성 -->
-                        <div class="thema-shop-slide-li" id="manDiv">
+                        <div class="thema-shop-slide-li" id="manDiv" style="display: table; margin-left: auto; margin-right: auto;">
                             <ul class="thema-shop-round-box">
                                 
                                     <li class="thema-shop-round-li">
@@ -74,7 +74,7 @@
 	                        </div>
 
 <!-- 여성 -->
-                        <div class="thema-shop-slide-li" id="womanDiv">
+                        <div class="thema-shop-slide-li" id="womanDiv" style="display: table; margin-left: auto; margin-right: auto;" >
                             <ul class="thema-shop-round-box">
                                     <li class="thema-shop-round-li">
                                         <div class="product-simple-box">
@@ -127,7 +127,7 @@
 	                        </div>
 
 <!-- 아동 -->
-                        <div class="thema-shop-slide-li" id="childDiv">
+                        <div class="thema-shop-slide-li" id="childDiv" style="display: table; margin-left: auto; margin-right: auto;">
                             <ul class="thema-shop-round-box">
                                 
                                     <li class="thema-shop-round-li">
