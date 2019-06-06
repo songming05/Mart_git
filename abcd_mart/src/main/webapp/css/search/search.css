@@ -1,0 +1,24 @@
+@charset "UTF-8";
+.sub_tit { font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; color: #000000; font-size: 54px; font-weight: bold; margin: 45px auto 40px; text-align: center; }
+
+.add_header { margin-bottom: 40px; }
+.add_header .sub_tit { font-size: 36px; margin-bottom: 15px; }
+.add_header .add_tit { font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; font-size: 14px; color: #666666; text-align: center; }
+
+.smart_serch_article { border-top: 1px solid #000; border-bottom: 1px solid #000; margin-top: 30px; }
+
+.list_header_area { padding: 8px 4px; border-bottom: 1px solid #000;  *zoom: 1;}
+.list_header_area .list_condition_box { float: right;}
+.list_header_area .list_condition_box .range_box { float: left; font-size: 12px; margin-top: 4px;}
+.list_header_area .list_condition_box .range_box li { float: left;}
+.list_header_area .list_condition_box .range_box li.on a { color: #e50015;}
+.list_header_area .list_condition_box .range_box li a { text-align: center; padding: 0 20px;}
+
+.list_header_area .list_condition_box .check_type_gallery {
+    float: right;
+    margin-left: 15px;
+}
+.list_header_area .list_condition_box .check_type_gallery .view_type {
+    float: left;
+    margin-top: 3px;
+}
