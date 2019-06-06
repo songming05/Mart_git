@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+
+#subjectA:hover{
+	cursor:pointer;
+	text-decoration: underline;
+}
+
 img.#subImage1:hover {
 
  border:1px solid #f00;
