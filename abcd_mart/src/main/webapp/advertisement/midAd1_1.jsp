@@ -71,7 +71,7 @@
                             <li><a href="../advertisement/mainAd4">Reebok DMX 1000</a></li>
                             
                             
-                            <li><a href="">ABC 아울렛! 19,000원↓</a></li>
+                            <li><a href="../advertisement/minAd2">ABC 아울렛! 19,000원↓</a></li>
                             
                             
                             <li><a href="">오! 당신이 찾는 빅 사이즈</a></li>
