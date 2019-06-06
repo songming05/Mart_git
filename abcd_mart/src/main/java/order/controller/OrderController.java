@@ -1,14 +1,23 @@
 package order.controller;
 
 import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonObjectFormatVisitor;
 
 import cart.bean.CartDTO;
 import order.bean.OrderDTO;
@@ -58,10 +67,17 @@ public class OrderController {
 		return "/order_pay/orderPage";
 	}
 	
-	@RequestMapping(value="/order_pay/orderDirect.do",method=RequestMethod.POST)
-	public String  orderDirect(@RequestParam String id ,  @ModelAttribute CartDTO cartDTO , Model model) {
+	@RequestMapping(value="/order_pay/orderDirect",method=RequestMethod.GET)
+	public String  orderDirect(
+								HttpSession session,
+								Model model) {
 		//장바구니 가져온걸 DB에 insert
-		orderDAO.directWrite(cartDTO);
+		//orderDAO.directWrite(cartDTO);
+		String id = (String) session.getAttribute("memId");
+		if(id==null) {
+			id="guest";
+		}
+		session.getAttribute("memId");
 		
 		//임시로 DB에서 가져오기 
 		List<CartDTO> list = orderDAO.getOrderList(id);
@@ -69,6 +85,50 @@ public class OrderController {
 		
 		model.addAttribute("orderList", list);
 		model.addAttribute("id", id);
+		
+		return "/order_pay/orderPage";
+	}
+	//aJsonArray
+	
+	@RequestMapping(value="/order_pay/orderDirect1.do",method=RequestMethod.POST)
+	public String orderDirect1(@RequestBody Map<String,Object>map,HttpSession session,Model model) {
+	//public ModelAndView  orderDirect1(@RequestBody List<CartDTO>list) {
+		//장바구니 가져온걸 DB에 insert
+		
+		String id = (String) session.getAttribute("memId");
+		if(id ==null) {
+			id="guest";
+		}
+		
+		//이전에 있던 데이터 테이블에서 삭제
+		if(map.get("count"+"").equals("0")) {
+			orderDAO.deleteCart(id);
+		}
+
+		
+		CartDTO cartDTO = new CartDTO();
+		cartDTO.setId(id);
+		cartDTO.setPrdtcode((String) map.get("prdtcode"));
+		cartDTO.setShoesname((String) map.get("shoesname"));
+		cartDTO.setShoesimage((String) map.get("shoesimage"));
+		cartDTO.setShoesbrand((String) map.get("shoesbrand"));
+		cartDTO.setShoescolor((String) map.get("shoescolor"));
+		cartDTO.setShoessize((String) map.get("shoessize"));
+		cartDTO.setShoesprice((String) map.get("shoesprice"));
+		cartDTO.setShoesqty((String) map.get("shoesqty"));
+		cartDTO.setShoesdiscount((String) map.get("shoesdiscount"));
+		cartDTO.setShoespoint((String) map.get("shoespoint"));
+		
+		orderDAO.directWrite(cartDTO);
+
+		//model.addAttribute("id", map.get("id")+"");
+		//return model;
+		//임시로 DB에서 가져오기 
+		//List<CartDTO> list = orderDAO.getOrderList(id);
+	
+		
+		//model.addAttribute("orderList", list);
+		//model.addAttribute("id", id);
 		
 		return "/order_pay/orderPage";
 	}

@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
 
 import cart.bean.CartDTO;
 import order.bean.OrderDTO;
@@ -39,9 +40,16 @@ class OrderDAOMybatis implements OrderDAO {
 	}
 
 
+
 	@Override
 	public void directWrite(CartDTO cartDTO) {
 		sqlSession.insert("orderSQL.directWrite", cartDTO);
+		
+	}
+
+	@Override
+	public void deleteCart(String id) {
+		sqlSession.delete("orderSQL.deleteCart", id);
 		
 	}
 

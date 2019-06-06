@@ -68,5 +68,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 								)
 		
 	</insert>
+	<delete id="deleteCart" parameterType="String">
+		delete from cartlist where id = #{id}
+	</delete>
 	
 </mapper>

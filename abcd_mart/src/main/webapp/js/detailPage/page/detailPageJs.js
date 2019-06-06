@@ -75,6 +75,19 @@ $(document).ready(function(){
 
 			$('#selectTable').append('<tr id="inTr" style="background-color:#EFEFEF">'
 														+'<input type="hidden" id="amount1" name="qtyName" value="1">'
+														+'<input type="hidden" value="aaa" name="id">'
+														+'<input type="hidden" value="" name="prdtcode" id="code">'
+														+'<input type="hidden" value="" name="shoesname" id="mainName">'
+														+'<input type="hidden" value="" name="shoesimage" id="image1">'
+														+'<input type="hidden" value="" name="shoesbrand" id="brand">'
+
+														+'<input type="hidden" value="" name="shoescolor" id="prdtColor">'
+														+'<input type="hidden" value='+$(this).attr('value')+' name="shoessize" id="size">'
+														+'<input type="hidden" value="" name="shoesprice" id="price">'
+														+'<input type="hidden" value="1" name="shoesqty" id="qty">'
+														+'<input type="hidden" value="0" name="shoesdiscount" id="coupon">'
+														+'<input type="hidden" value="1000" name="shoespoint" id="point">'
+														
 														+'<td width="250px" align="left">'
 														+'<span  style="font-size:10pt;" id='+$(this).attr('value')+'>'+$('#mainName').val()+'/'+$(this).attr('value')+'</span>'
 														+'</td>'
