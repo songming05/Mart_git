@@ -7,7 +7,7 @@
 <title>그랜드스테이지 프리미엄 신발</title>
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/header.css"/>
-<link rel="stylesheet" href="../css/adPage.css"/>
+<link rel="stylesheet" href="../css/advertise/adPage.css"/>
 <!-- quickBar -->
 <link rel="stylesheet" href="../css/quickBar.css"/>	
 <!-- footer-->

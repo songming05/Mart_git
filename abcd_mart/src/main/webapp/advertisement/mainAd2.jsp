@@ -7,7 +7,7 @@
 <title>2019 상반기 베스트 아이템</title>
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/header.css"/>
-<link rel="stylesheet" href="../css/adPage.css"/>
+<link rel="stylesheet" href="../css/advertise/adPage.css"/>
 <!-- quickBar -->
 <link rel="stylesheet" href="../css/quickBar.css"/>	
 <!-- footer-->
