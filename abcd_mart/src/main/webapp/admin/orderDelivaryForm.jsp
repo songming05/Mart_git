@@ -20,7 +20,7 @@
 				<tr>
 					<th align="center" height="70px">주문상태</th>
 					<td width="700px"> 
-						<input type="checkbox" value="">배송중&ensp; 
+						<input type="checkbox" value="" checked="true">배송중&ensp; 
 						<input type="checkbox" value="">배송완료&ensp; 
 					</td>
 				</tr>

@@ -7,6 +7,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-<p style="margin-left:5px"><img src="../image/admin_leftImg.png" style="width:170px; height:400px;"></p>
+
 </body>
+<script>
+window.onload = function(){
+	alert("관리자만 접근 가능합니다.");
+	location.href='/abcd_mart/main/index';
+	
+}
+
+
+
+</script>
 </html>

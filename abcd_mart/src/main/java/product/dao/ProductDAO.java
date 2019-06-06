@@ -4,6 +4,6 @@ import java.util.Map;
 
 public interface ProductDAO {
 
-	public void applyPdt(Map<String, String> map);
+	public void applyPdt(Map<String, Object> map);
 
 }

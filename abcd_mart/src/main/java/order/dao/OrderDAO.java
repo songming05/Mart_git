@@ -1,6 +1,7 @@
 package order.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.ui.Model;
 
@@ -23,5 +24,7 @@ public interface OrderDAO {
 	public void deleteCart(String id);
 
 	public void paymentInfo(PaymentinfoDTO paymentinfoDTO);
+
+	public void prdtManagement(Map<String, String> map);
 
 }

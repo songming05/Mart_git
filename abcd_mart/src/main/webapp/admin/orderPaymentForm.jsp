@@ -9,8 +9,8 @@
 				<tr>
 					<th width="150px" height="70px">주문일</th>
 					<td width="700px">
-						<input type="text" id="fromDate" name="fromDate"> &ensp;~&ensp;
-						<input type="text" id="toDate" name="toDate">
+						<input type="date" id="fromDate" name="fromDate"> &ensp;~&ensp;
+						<input type="date" id="toDate" name="toDate">
 					</td>
 				</tr>			
 
@@ -28,15 +28,8 @@
 					<div class="col-xs-3">
 						<select id="orderSelect" name="orderSelect" class="form-control input-sm" >
 							<option value='orderId'>아이디</option>
-							<option>주문번호</option>
-							<option>주문자</option>
-							<option>수령자</option>
-							<option>입금자</option>
-							<option>아이디</option>
-							<option>이메일</option>
-							<option>휴대폰</option>
-							<option>상품명</option>
-							<option>상품번호</option>
+							<option value='orderPdt'>품목(상품번호)</option>
+
 						</select>
 					</div>
 					
@@ -58,11 +51,14 @@
 	
 	<table class="orderDepositForm basicTable2" id="basicTable2" border="1" cellpadding="3" frame="hsides" rules="none">
 		<tr>
-			<th width="150px" height="80px">주문일</th>
-			<th width="150px" >아이디</th>
-			<th width="400px">품목</th>
-			<th width="150px">결제금액</th>
-			<th width="100px">결제수단</th>
+			<th width="150px" height="80px">주문번호</th>
+			<th width="150px" >결제일</th>
+			<th width="150px">아이디</th>
+			<th width="200px">품목(상품코드)</th>
+			<th width="100px">사이즈</th>
+			<th width="200px">가격</th>
+			<th width="250px">결제방법</th>
+			<th width="200px">배송비</th>
 		</tr>
 		<tbody id="table2Tbody"></tbody>
 	</table>

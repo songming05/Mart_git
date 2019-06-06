@@ -202,7 +202,8 @@ a{text-decoration:none;}
 	color : #555;
 }
 
- 
+
+
 /*왼쪽메뉴*/
 #left .left_Layout{
 	margin-top : 50px;
@@ -257,7 +258,7 @@ a{text-decoration:none;}
 .main_Layout{
 	margin: 20px 40px 20px 40px;
 	width:900px;
-	height:600px;
+	/*height:600px; */
 	
 	align:center;
 	background-color: #f3f4f8;
@@ -305,6 +306,7 @@ body {
     margin: 0px; 
     min-width:900px;
     height:100%;
+    background-color:#f3f4f8 !important;
 }
 #layout_Box {
     position: relative;
@@ -327,19 +329,21 @@ body {
 #main {
     
     float: left;
-    height: 700px;
+    /* height: 800px; */
     width: 85%;
     position: relative;
     background-color: #f3f4f8;
 }
 #bottom {
-    background-color: #C0F;
+    background-color: #ffffff;
     width:100%;
     height: 70px;
     position: relative;
     clear: both; 
     float: left; 
 }
+
+
 
 
 /******상품등록*****/

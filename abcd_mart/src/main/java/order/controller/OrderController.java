@@ -3,6 +3,7 @@ package order.controller;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -79,7 +80,16 @@ public class OrderController {
 			paymentinfoDTO.setOrderSize(list.get(i).getShoessize());
 			
 			orderDAO.paymentInfo(paymentinfoDTO);
+			
 			//상품재고 테이블 들어가서 재고 -1 list.get(i).getPrdtcode()
+			for(int j=0; j< Integer.parseInt(list.get(i).getShoesqty());j++) {
+				Map<String,String > map = new HashMap<String,String>();
+				map.put("prdtcode", list.get(i).getPrdtcode());
+				map.put("shoessize", list.get(i).getShoessize());
+				orderDAO.prdtManagement(map);
+				
+			}
+			
 			
 		}
 	

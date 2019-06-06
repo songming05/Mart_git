@@ -25,7 +25,7 @@
 				<div class="welcome sub_type1 ml10">관리자님 환영합니다.</div>
 				<div class="menu_right">
 					<a class="Btn_Type1 sub_type2">관리자설정 </a>
-					<a class="Btn_Type1 sub_type2">abcd마트가기 </a>
+					<a class="Btn_Type1 sub_type2" href='/abcd_mart/main/index'>abcd마트가기 </a>
 					<a class="Btn_Type1 sub_type2">로그아웃 </a>
 				</div>
 			</div>
@@ -36,7 +36,7 @@
 		
 				<ul>
 					<li class="menuLogo">
-					 <img src="../image/header/ABCD-MART.png" style="width:120px; height:45px; margin-right:30px;">
+					 <a href='/abcd_mart/main/index'><img src="../image/header/ABCD-MART.png"  style="width:120px; height:45px; margin-right:30px;"></a>
 					</li>
 				</ul>
 				<ul class="menuList">
@@ -76,12 +76,13 @@
 		</div>
 
 		<div id="main">
+
 			<div class="main_Layout">
 				<jsp:include page="${display}"/>
 			</div>
-		</div>
-		<div id="bottom">bottom</div>
 
+		</div>
+		<!-- <div id="bottom"></div> -->
 	</div>
 
 </body>

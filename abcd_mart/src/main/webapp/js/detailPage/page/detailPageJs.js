@@ -84,7 +84,7 @@ $(document).ready(function(){
 														+'<input type="hidden" value="" name="shoescolor" id="prdtColor">'
 														+'<input type="hidden" value='+$(this).attr('value')+' name="shoessize" id="size">'
 														+'<input type="hidden" value="" name="shoesprice" id="price">'
-														+'<input type="hidden" value="1" name="shoesqty" id="qty">'
+														
 														+'<input type="hidden" value="0" name="shoesdiscount" id="coupon">'
 														+'<input type="hidden" value="1000" name="shoespoint" id="point">'
 														

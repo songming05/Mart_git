@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-메인시작점입니다.
+<img src="../image/admin_mainImg.png" style="width:900px; height:600px;">
 </body>
 </html>

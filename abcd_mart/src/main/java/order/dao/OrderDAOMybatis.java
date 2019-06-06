@@ -1,6 +1,7 @@
 package order.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,5 +60,13 @@ class OrderDAOMybatis implements OrderDAO {
 		sqlSession.insert("orderSQL.paymentInfo", paymentinfoDTO);
 		
 	}
+
+	@Override
+	public void prdtManagement(Map<String, String> map) {
+		sqlSession.update("orderSQL.prdtManagement", map);
+		
+	}
+
+	
 
 }

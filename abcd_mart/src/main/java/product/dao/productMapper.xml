@@ -11,10 +11,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{prdtMiniName},
 			#{prdtStyleCode},
 			#{prdtCode},
-			#{prdtPrice},
-			#{prdtdeliveryPrice},
-			#{sizeMin, jdbcType=INTEGER},
-			#{sizeMax, jdbcType=INTEGER},
-			#{good, jdbcType=INTEGER})
+			#{prdtPrice },
+			#{prdtDeliveryPrice },
+			#{prdtBrand },
+			#{prdtColor },
+			#{prdtGender },
+			#{prdtSize},
+			#{prdtGood})
 	</insert>
 </mapper>
