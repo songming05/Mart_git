@@ -33,7 +33,7 @@
 $(document).ready(function(){
 	
 	$(document).on('click','.btn-danger,#qtyCheck',function(){
-		alert('결제창으로');
+		//alert('결제창으로');
 		$('input[name=prdtcode]').val('${detailPageDTO.getPrdtCode()}');
 		$('input[name=shoesname]').val('${detailPageDTO.getPrdtMainName()}');
 		$('input[name=shoesimage]').val('${detailPageDTO.getPrdtImage1()}');
@@ -50,7 +50,7 @@ $(document).ready(function(){
 			count=parseInt(count)+parseInt($(item).val());
 
 		});
-		alert(count);
+		//alert(count);
 
 		//var id = document.getElementsByName("id")[0].value;
 		//alert(id);
@@ -83,7 +83,7 @@ $(document).ready(function(){
 		    	data: JSON.stringify(aJson.list),
 		    	contentType :"application/json; charset=UTF-8",
 		    	success:function(){
-		    		alert("보내기성공");
+		    		//alert("보내기성공");
 		    		
 		    		$('#orderDirect').submit();
 		    	}

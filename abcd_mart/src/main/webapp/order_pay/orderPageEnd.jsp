@@ -76,7 +76,7 @@ window.onload=function(){
 </header>
 
 <body>
-<h1 align="center">${pDTO.getBuyerName() }님 주문해주셔서 감사합니다</h2>
+<h1 align="center">${pDTO.getId() }님 주문해주셔서 감사합니다</h2>
 <br>
 <br>
 
@@ -122,7 +122,7 @@ window.onload=function(){
                             <th class="align-center">
                                 <label for="map_loca">총 결제 금액</label>
                             </th>
-                            <td colspan="3"><fmt:formatNumber value="${pDTO.getTotalPrice() }" type="number"/>원</td>
+                            <td colspan="3"><fmt:formatNumber value="${pDTO.getTotalPrice()+2500 }" type="number"/>원</td>
                         </tr>
                         
                         <tr>

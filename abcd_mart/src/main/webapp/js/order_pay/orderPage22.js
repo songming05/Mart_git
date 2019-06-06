@@ -84,36 +84,11 @@ function goPayment(){
 			
 			$('#totalPrice').val($('.total_pay td span').text().replace(',',''));
 			$('#payChoice').val($('input[name="payChoice1"]:checked').val());
-			
-			/*$.ajax({
-				type:'POST',
-				url:'/abcd_mart/order_pay/orderPageSave.do',
-				data:
-				
-				
-			});*/
+
+					
 			$('#orderForm').submit();
 			
-			/*$.ajax({
-		    	type:'POST',
-		    	url:'/abcd_mart/center/checkArea.do',
-		    	data:'sido='+area,
-		    	dataType:'json',
-		    	success:function(data){
-
-		    		$('.relation_product .guGunList li').remove();
-		    		
-		    		$.each(data.areaList,function(index,items){
-		    			$('<li/>').append($('<a/>',{
-		    				href:'#',
-		    				id:'area',
-		    				text:items.sigungu
-		    			})).appendTo($('.relation_product .guGunList'));
-		    		});
-		    		
-		    	}
-		    	
-		    });*/
+			
 			
 			
 			

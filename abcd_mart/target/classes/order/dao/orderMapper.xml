@@ -72,4 +72,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from cartlist where id = #{id}
 	</delete>
 	
+	<insert id="paymentInfo" parameterType="order.bean.PaymentinfoDTO">
+		insert into paymentinfo values(
+								#{orderNum},
+								#{orderDate},
+								#{orderId},
+								#{orderPrdt},
+								#{orderPrice},
+								#{orderDelivery},
+								#{orderPayment},
+								#{orderSize}
+			
+								)
+	</insert>
+	
 </mapper>

@@ -1,11 +1,17 @@
 package order.controller;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
@@ -21,29 +27,66 @@ import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonObjectFormatVisitor
 
 import cart.bean.CartDTO;
 import order.bean.OrderDTO;
+import order.bean.PaymentinfoDTO;
 import order.dao.OrderDAO;
 
 @Controller
 public class OrderController {
 	@Autowired
 	private OrderDAO orderDAO;
+	private static int num=1;
 	
 	@RequestMapping(value="/order_pay/orderPageEnd.do",method=RequestMethod.POST)
 	public String orderPageEnd(@ModelAttribute OrderDTO orderDTO ,
-							Model model) {
+							Model model,
+							HttpServletRequest  request) {
+		/*
+		 * Cookie[] cookies = request.getCookies();
+		 * 
+		 * if(cookies == null || cookies.length == 0){
+		 * 
+		 * 
+		 * }
+		 */
+
+		
+		
 		//DB
-		System.out.println("orderDTO2 "+orderDTO.getBuyerTel2());
-		System.out.println("orderDTO1  "+orderDTO.getDlvyTel1());
-		orderDTO.setId("ABCD");
-		orderDTO.setAbcdCode("1");
 		orderDAO.writeOrder(orderDTO);
 		
 		OrderDTO pDTO = orderDAO.oneOrder(orderDTO.getBuyerName());
+		List<CartDTO> list = orderDAO.getOrderList(pDTO.getId());
+		PaymentinfoDTO paymentinfoDTO = new PaymentinfoDTO();
+
+		DateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
+		Date nowDate = new Date();
+		nowDate = pDTO.getLogtime();
+		String orderDate = sdFormat.format(nowDate);
+
+
+		for(int i=0; i<list.size();i++) {
+			paymentinfoDTO.setOrderNum(num);
+			paymentinfoDTO.setOrderDate(orderDate);
+			paymentinfoDTO.setOrderId(pDTO.getId());
+			paymentinfoDTO.setOrderPrdt(list.get(i).getPrdtcode());
+			paymentinfoDTO.setOrderPrice(list.get(i).getShoesprice());
+			if(i==0) {
+				paymentinfoDTO.setOrderDelivery("2500");
+			}else {
+				paymentinfoDTO.setOrderDelivery("0");
+			}
+			paymentinfoDTO.setOrderPayment(pDTO.getPayChoice());
+			paymentinfoDTO.setOrderSize(list.get(i).getShoessize());
+			
+			orderDAO.paymentInfo(paymentinfoDTO);
+			//상품재고 테이블 들어가서 재고 -1 list.get(i).getPrdtcode()
+			
+		}
+	
 		
 		model.addAttribute("pDTO", pDTO);
-		
-		//넘겨줄 데이터
-		//리스트면 좋구, 상품코드, 개수, 
+		num++;
+
 		
 		return "/order_pay/orderPageEnd";
 	}
@@ -74,6 +117,7 @@ public class OrderController {
 		//장바구니 가져온걸 DB에 insert
 		//orderDAO.directWrite(cartDTO);
 		String id = (String) session.getAttribute("memId");
+		String name = (String) session.getAttribute("memName");
 		if(id==null) {
 			id="guest";
 		}
@@ -85,6 +129,7 @@ public class OrderController {
 		
 		model.addAttribute("orderList", list);
 		model.addAttribute("id", id);
+		model.addAttribute("name", name);
 		
 		return "/order_pay/orderPage";
 	}
@@ -94,14 +139,14 @@ public class OrderController {
 	public String orderDirect1(@RequestBody Map<String,Object>map,HttpSession session,Model model) {
 	//public ModelAndView  orderDirect1(@RequestBody List<CartDTO>list) {
 		//장바구니 가져온걸 DB에 insert
-		
+		//System.out.println("iiiii"+map.get("count"));
 		String id = (String) session.getAttribute("memId");
 		if(id ==null) {
 			id="guest";
 		}
 		
 		//이전에 있던 데이터 테이블에서 삭제
-		if(map.get("count"+"").equals("0")) {
+		if(map.get("count").equals("0")) {
 			orderDAO.deleteCart(id);
 		}
 

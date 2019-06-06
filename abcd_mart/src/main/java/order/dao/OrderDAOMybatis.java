@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 
 import cart.bean.CartDTO;
 import order.bean.OrderDTO;
+import order.bean.PaymentinfoDTO;
 
 @Repository
 @Transactional
@@ -50,6 +51,12 @@ class OrderDAOMybatis implements OrderDAO {
 	@Override
 	public void deleteCart(String id) {
 		sqlSession.delete("orderSQL.deleteCart", id);
+		
+	}
+
+	@Override
+	public void paymentInfo(PaymentinfoDTO paymentinfoDTO) {
+		sqlSession.insert("orderSQL.paymentInfo", paymentinfoDTO);
 		
 	}
 

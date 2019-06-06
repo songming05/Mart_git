@@ -37,7 +37,7 @@
     </header>	
     <form name="orderForm" id="orderForm" method="post" action="/abcd_mart/order_pay/orderPageEnd.do">
     <input name="id" id="id" type="hidden" value="${id }">
-    <input name="abcdId" id="abcdId" type="hidden" value="${id}">
+    
  	<!-- order_basketCont -->
             <section class="order_basketCont order_sheet">
                 <ul class="order_step">
@@ -193,7 +193,7 @@
                                         <label for="or_name"><em class="fc_type1">＊</em> 주문하시는 분</label>
                                     </th>
                                     <td colspan="3">
-                                        <input type="text" name="buyerName" value="abcd" maxlength="25" id="or_name" style="width:130px;" readonly="readonly"/>
+                                        <input type="text" name="buyerName" value="${name}" maxlength="25" id="or_name" style="width:130px;" readonly="readonly"/>
                                         <input type="checkbox" name="changeBuyerInfo" class="ml10" id="or_namech"/> <label for="or_namech">주문자 변경</label>
                                     </td>
                                 </tr>
