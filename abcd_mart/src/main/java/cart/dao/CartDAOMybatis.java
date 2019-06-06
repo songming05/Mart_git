@@ -18,8 +18,8 @@ public class CartDAOMybatis implements CartDAO {
 	private SqlSession sqlSession;
 
 	@Override
-	public List<CartDTO> shoesList() {
-		return sqlSession.selectList("cartSQL.shoesList");
+	public List<CartDTO> orderAllList() {
+		return sqlSession.selectList("cartSQL.orderAllList");
 	}
 
 	@Override
@@ -30,6 +30,26 @@ public class CartDAOMybatis implements CartDAO {
 	@Override
 	public void deleteList(Map<String, String> map) {
 		sqlSession.delete("cartSQL.deleteList", map);
+	}
+
+	@Override
+	public void insert_temporary_cartlist(Map<String, String> map) {
+		sqlSession.insert("cartSQL.insert_temporary_cartlist", map);
+	}
+
+	@Override
+	public List<CartDTO> temporary_cartlist() {
+		return sqlSession.selectList("cartSQL.temporary_cartlist");
+	}
+
+	@Override
+	public void delete_temporary_cartlist() {
+		sqlSession.delete("cartSQL.delete_temporary_cartlist");
+	}
+
+	@Override
+	public void select_deleteList(Map<String, String> map) {
+		sqlSession.delete("cartSQL.select_deleteList", map);
 	}
 	
 }
