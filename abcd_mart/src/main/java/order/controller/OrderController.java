@@ -20,10 +20,10 @@ public class OrderController {
 	private OrderDAO orderDAO;
 	
 	@RequestMapping(value="/order_pay/orderPageEnd.do",method=RequestMethod.POST)
-	public String orderPageEnd(@ModelAttribute OrderDTO orderDTO ,Model model) {
+	public String orderPageEnd(@RequestParam List<OrderDTO> list ,Model model) {
 		//DB
-		System.out.println("orderDTO2 "+orderDTO.getBuyerTel2());
-		System.out.println("orderDTO1  "+orderDTO.getDlvyTel1());
+		System.out.println("orderDTO2 "+list.get(0).getDlvyName());
+		System.out.println("orderDTO1  "+list.get(0).getAbcdCode());
 		orderDTO.setId("ABCD");
 		orderDTO.setAbcdCode("1");
 		orderDAO.writeOrder(orderDTO);
@@ -55,17 +55,26 @@ public class OrderController {
 	}
 	
 	@RequestMapping(value="/order_pay/orderDirect.do",method=RequestMethod.POST)
-	public String  orderDirect(@RequestParam String id ,  @ModelAttribute CartDTO cartDTO , Model model) {
-		//장바구니 가져온걸 DB에 insert
-		orderDAO.directWrite(cartDTO);
+	public String  orderDirect(@RequestParam String id ,  @RequestParam List<CartDTO> list , Model model) {
 		
-		//임시로 DB에서 가져오기 
+		System.out.println(list.get(0).getShoessize()+" 2222 " +list.get(1).getShoessize());
+		/*
+		//중복체크
 		List<CartDTO> list = orderDAO.getOrderList(id);
-	
 		
+		if(list.size()!=Integer.parseInt(cartDTO.getShoesqty())) {
+			//장바구니 가져온걸 DB에 insert
+			orderDAO.directWrite(cartDTO);
+		}
+			
+	
+
+		//임시로 DB에서 가져오기 
+		list = orderDAO.getOrderList(id);
+			
 		model.addAttribute("orderList", list);
 		model.addAttribute("id", id);
-		
+		*/
 		return "/order_pay/orderPage";
 	}
 	

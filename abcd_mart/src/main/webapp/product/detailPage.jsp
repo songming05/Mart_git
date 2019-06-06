@@ -29,12 +29,71 @@
 <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$(document).on('click','.btn-danger,#qtyCheck',function(){
+		alert('결제창으로');
+		//var obj = $('input[name=qtyName]');
+		
+		//for(var i in )
+		var list = new Array();
+		
+		var count = 0;
+		$('input[name=qtyName]').each(function(index,item){
+			//count += $(item).text();
+			count+=parseInt($(item).val());
+			 //list.push($(item).val());
+		//	//alert($(item).text());
+		});
+		alert(count);
+		
+		
+		//'<input type="hidden" id="amount1" name="qtyName" value="amount">' 
+	var obj ; 
+		   $("input[name=qtyName]").each(function(index, item){
+			   //list.push($(item).val());
+			 //obj= obj + parseInt($(item).val());
+		   });
+		  // alert(list);
+			
+			
+		//alert($('#qtyCheck').text());
+		//$('#orderDirect').submit();
+		
+	});
+	
+	
+	
+	var count = 0;
+	$('#table').on('click','.btn-light',function(){
+		alert($(this).val());
+		var arrNumber = new Array();
+		
+		arrNumber[count] = $(this).val();
+	
+		//alert(count);
+		//alert(arrNumber[1]);
+		
+		//console.log(arrNumber[count]);
+
+		count++;
+		
+		
+		
+		
+	});
+});
+
+</script>
+
 
 <!-- ㅇㅇㅇ --> 
 <jsp:include page="../template/header.jsp"/>
 </head>
 <body>
-<!-- 값 넘기기 -->
+
+
 <input type="hidden" value="${detailPageDTO.getPrdtMainName()}" id="mainName">
 <input type="hidden" value="${detailPageDTO.getPrdtImage1()}" id="image1">
 <input type="hidden" value="${detailPageDTO.getPrdtImage2()}" id="image2">
@@ -46,6 +105,8 @@
 
 <div class="container" style="width:1100px;">
 <table align="center">
+ <input type="hidden" name="testInput" value="1"/>
+   <input type="hidden" name="testInput" value="2"/>
 <!-- 한줄 -->
 <tr>
 <td colspan="2" style="height:30px;">
@@ -75,7 +136,26 @@
 
 <td>
   <h2 style="float:left; font-weight:bold; color:black;">${detailPageDTO.getPrdtMainName()}</h2><br><br><br>
-  <h6 align="left" style="color:#AAAAAA;">${detailPageDTO.getPrdtMiniName()}</h6><br>            
+  <h6 align="left" style="color:#AAAAAA;">${detailPageDTO.getPrdtMiniName()}</h6><br>
+  <form id="orderDirect" method="post" action="/abcd_mart/order_pay/orderDirect.do">
+  <!-- 값 넘기기 -->
+<input type="hidden" value="aaa" name="id">
+<input type="hidden" value="${detailPageDTO.getPrdtCode()}" name="prdtcode" id="code"><!-- 상품코드 -->
+<input type="hidden" value="${detailPageDTO.getPrdtMainName()}" name="shoesname" id="mainName"><!-- 상품이름 -->
+<input type="hidden" value="${detailPageDTO.getPrdtImage1()}" name="shoesimage" id="image1"><!-- 상품이미지 -->
+<input type="hidden" value="${detailPageDTO.getPrdtBrand()}" name="shoesbrand" id="brand"><!-- 브랜드 -->
+
+<input type="hidden" value="${detailPageDTO.getPrdtColor()}" name="shoescolor" id="prdtColor"><!-- 컬러 -->
+<input type="hidden" value="${detailPageDTO.getPrdtSize()}" name="shoessize" id="size">	<!-- 사이즈 -->
+<input type="hidden" value="${detailPageDTO.getPrdtPrice()}" name="shoesprice" id="price"><!-- 가격 -->
+<input type="hidden" value="1" name="shoesqty" id="qty"><!-- 갯수 -->
+<input type="hidden" value="0" name="shoesdiscount" id="coupon"><!-- 쿠폰 -->
+<input type="hidden" value="1000" name="shoespoint" id="point"><!-- 포인트 -->
+  
+  
+  
+  
+              
   <table class="table" style="width:550px;" id="detailPage">
     <thead>
       <tr>
@@ -126,6 +206,7 @@
       
     </tbody>
   </table>
+  </form>
 	  <div style="text-align:center;">
 	  
 	  <table class="table" style="width:500px;" id="selectTable" align="center"></table>

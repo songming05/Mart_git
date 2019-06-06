@@ -73,15 +73,17 @@ $(document).ready(function(){
 		var price = $('#price').val()*1;
 		if( document.getElementById($(this).attr('value'))==null ){
 			
-			
+			//+'<input type="hidden" id="amount1" name="qtyName">' 
 			$('#selectTable').append('<tr id="inTr" style="background-color:#EFEFEF">'
 														+'<td width="250px" align="left">'
 														+'<span  style="font-size:10pt;" id='+$(this).attr('value')+'>'+$('#mainName').val()+'/'+$(this).attr('value')+'</span>'
 														+'</td>'
 														+'<td width="100px">'
+														+'<input type="hidden" id="amount1" name="qtyName" value="">'
 														+'<table id="btnbtn" class="table table-bordered" align="right" style="background-color:white; width:70px; height:20px; padding:0;">'
 														+'<tr><td style="width:20px; height:20px; padding:0;"><button type="button" class="btn btn-sm" id="minus" style="padding:0 5px;vertical-align: text-bottom">-</button></td>'   
-														+'<td style="width:30px; height:20px; padding:0;"><spna id="amount"><font size="2">1</font></span></td>'    
+														+'<td id="qtyCheck" style="width:30px; height:20px; padding:0;"><span id="amount"><font size="2">1</font></span></td>'
+														
 														+'<td style="padding:0; width:20px; height:20px;"><button type="button" class="btn btn-sm" id="plus" style="padding:0 5px;vertical-align: text-bottom">+</button></td></tr></table>'
 														+'</td>'
 														+'<td>'
@@ -104,6 +106,11 @@ $(document).ready(function(){
 	$(document).on('click','#minus',function(){
 		if($(this).parent().next().text()*1 != 1){
 			var amount = $(this).parent().next().text()*1-1;
+			
+			
+			
+			
+			
 			var price = $(this).parent().parent().parent().parent().parent().next().children(0).children(0).text();
 			$(this).parent().next().text(amount+'');
 			
@@ -135,8 +142,14 @@ $(document).ready(function(){
 	$(document).on('click','#plus',function(){
 		if($(this).parent().prev().text()*1 != 100){
 			var amount = $(this).parent().prev().text()*1+1;
+			
+			$('#amount1').val($('#qtyCheck').text());
+			
+			//$('#qtyCheck').val($(this).parent().prev().text()*1+1);
+			
 			var price = $(this).parent().parent().parent().parent().parent().next().children(0).children(0).text();
 			$(this).parent().prev().text(amount+'');
+			$(this).parent().prev().val(amount+'');
 				if(price != 0){
 				var priceArray = price.split(",");
 				//alert($(this).parent().parent().parent().parent().parent().parent().attr('id'));
