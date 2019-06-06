@@ -7,8 +7,12 @@ import cart.bean.CartDTO;
 
 public interface CartDAO {
 
-	public List<CartDTO> shoesList();
 	public void shoesQtyText(Map<String, String> map);
 	public void deleteList(Map<String, String> map);
+	public List<CartDTO> orderAllList();
+	public void insert_temporary_cartlist(Map<String, String> map);
+	public List<CartDTO> temporary_cartlist();
+	public void delete_temporary_cartlist();
+	public void select_deleteList(Map<String, String> map);
 
 }

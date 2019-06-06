@@ -3,7 +3,7 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cartSQL">
-	<select id="shoesList" resultType="cartDTO">
+	<select id="orderAllList" resultType="cartDTO">
 		select * from cartlist
 	</select>
 	
@@ -14,4 +14,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="deleteList" parameterType="java.util.Map">
 		delete cartlist where shoesbrand=#{shoesbrand} and shoesname=#{shoesname} and shoessize=#{shoessize}
 	</delete>
+	
+	<insert id="insert_temporary_cartlist" parameterType="java.util.Map">
+		insert into temporary_cartlist values(#{id}, #{prdtcode}, #{shoesimage}, #{shoesbrand}, #{shoesname}, #{shoescolor}, #{shoessize}, #{shoesprice}, #{shoesqty}, #{shoesdiscount}, #{shoespoint})
+	</insert>
+	
+	<select id="temporary_cartlist" resultType="cartDTO">
+		select * from temporary_cartlist
+	</select>
+	
+	<delete id="delete_temporary_cartlist">
+		delete from temporary_cartlist
+	</delete>
+	
+	<delete id="select_deleteList">
+		delete cartlist where shoesbrand=#{shoesbrand} and shoesname=#{shoesname} and shoessize=#{shoessize}
+	</delete>
+	
 </mapper>

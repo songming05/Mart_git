@@ -1,6 +1,6 @@
 //전체체크박스가 바뀔때마다 가격 변경
 $('.all_checkbox').change(function(){
-	var ckeck_shoes_count = $('.shoppingBasket_basketlist_table tbody tr').length; //장바구니 총 개수
+	var check_shoes_count = $('.shoppingBasket_basketlist_table tbody tr').length; //장바구니 총 개수
 	var shoes_price; //가격
 	var total_price = '0'; //총 가격
 	var shoes_discount; //할인
@@ -16,34 +16,44 @@ $('.all_checkbox').change(function(){
 		$('.total_price_div_shippingFee').text("0");
 	}
 	
+	var check_shoes_count = $('.shoppingBasket_basketlist_table tbody tr').length; //장바구니 총 개수
+	var shoes_price; //가격
+	var total_price = '0'; //총 가격
+	var shoes_discount; //할인
+	var total_discount = '0'; //총 할인
+	var shoppingFee; //배송비
+	var final_price;
+	
 	//총 주문금액
-	for(i = 0; i < ckeck_shoes_count; i++) {
+	for(i = 0; i < check_shoes_count; i++) {
 		if($('.choice_checkbox:eq('+i+')').is(':checked')) {
-			shoes_price = $('.shoes_price:eq('+i+')').text();
+			shoes_price = $('.hidden_shoesprice:eq('+i+')').val();
 			total_price = parseInt(total_price) + parseInt(shoes_price*$('.qtyText:eq('+i+')').val());
 		}
 	}
-	$('.total_price_div_price').text(total_price);
+	$('.total_price_div_price').text(Number(total_price).toLocaleString('en'));
 	
 	//총 할인금액
-	for(i = 0; i < ckeck_shoes_count; i++) {
+	for(i = 0; i < check_shoes_count; i++) {
 		if($('.choice_checkbox:eq('+i+')').is(':checked')) {
-			shoes_discount = $('.discount_price:eq('+i+')').text();
+			shoes_discount = $('.hidden_shoesdiscount:eq('+i+')').val();
 			total_discount = parseInt(total_discount) + parseInt(shoes_discount);
 		}
 	}
-	$('.total_price_div_sale').text(total_discount);
+	$('.total_price_div_sale').text(Number(total_discount).toLocaleString('en'));
 	
 	//배송비
 	if(parseInt(total_price) < 20000) {
-		$('.total_price_div_shippingFee').text("2500");
+		shoppingFee = '2500';
 	} else {
-		$('.total_price_div_shippingFee').text("0");
+		shoppingFee = '0';
 	}
-	shoppingFee = $('.total_price_div_shippingFee').text();
+	$('.total_price_div_shippingFee').text(Number(shoppingFee).toLocaleString('en'));
+	
+	final_price = parseInt(total_price) - parseInt(total_discount) + parseInt(shoppingFee);
 	
 	//총 결제금액
-	$('.total_price_div_total').text(parseInt(total_price) - parseInt(total_discount) + parseInt(shoppingFee));
+	$('.total_price_div_total').text(Number(final_price).toLocaleString('en'));
 });
 
 //삭제 체크박스가 바뀔때마다 가격 변경
@@ -56,80 +66,91 @@ $('.delete_checkbox').change(function(){
 		$('.all_checkbox').prop("checked", false);
 	}
 	
-	var ckeck_shoes_count = $('.shoppingBasket_basketlist_table tbody tr').length; //장바구니 총 개수
+	var check_shoes_count = $('.shoppingBasket_basketlist_table tbody tr').length; //장바구니 총 개수
 	var shoes_price; //가격
 	var total_price = '0'; //총 가격
 	var shoes_discount; //할인
 	var total_discount = '0'; //총 할인
 	var shoppingFee; //배송비
+	var final_price;
 	
 	//총 주문금액
-	for(i = 0; i < ckeck_shoes_count; i++) {
+	for(i = 0; i < check_shoes_count; i++) {
 		if($('.choice_checkbox:eq('+i+')').is(':checked')) {
-			shoes_price = $('.shoes_price:eq('+i+')').text();
+			shoes_price = $('.hidden_shoesprice:eq('+i+')').val();
 			total_price = parseInt(total_price) + parseInt(shoes_price*$('.qtyText:eq('+i+')').val());
 		}
 	}
-	$('.total_price_div_price').text(total_price);
+	$('.total_price_div_price').text(Number(total_price).toLocaleString('en'));
 	
 	//총 할인금액
-	for(i = 0; i < ckeck_shoes_count; i++) {
+	for(i = 0; i < check_shoes_count; i++) {
 		if($('.choice_checkbox:eq('+i+')').is(':checked')) {
-			shoes_discount = $('.discount_price:eq('+i+')').text();
+			shoes_discount = $('.hidden_shoesdiscount:eq('+i+')').val();
 			total_discount = parseInt(total_discount) + parseInt(shoes_discount);
 		}
 	}
-	$('.total_price_div_sale').text(total_discount);
+	$('.total_price_div_sale').text(Number(total_discount).toLocaleString('en'));
 	
 	//배송비
 	if(parseInt(total_price) < 20000) {
-		$('.total_price_div_shippingFee').text("2500");
+		shoppingFee = '2500';
 	} else {
-		$('.total_price_div_shippingFee').text("0");
+		shoppingFee = '0';
 	}
-	shoppingFee = $('.total_price_div_shippingFee').text();
+	$('.total_price_div_shippingFee').text(Number(shoppingFee).toLocaleString('en'));
+	
+	final_price = parseInt(total_price) - parseInt(total_discount) + parseInt(shoppingFee);
 	
 	//총 결제금액
-	$('.total_price_div_total').text(parseInt(total_price) - parseInt(total_discount) + parseInt(shoppingFee));
+	$('.total_price_div_total').text(Number(final_price).toLocaleString('en'));
 });
 
 //물품 별 체크박스가 바뀔때마다 가격 변경
 $('.choice_checkbox').change(function(){
-	var ckeck_shoes_count = $('.shoppingBasket_basketlist_table tbody tr').length; //장바구니 총 개수
+	var check_shoes_count = $('.shoppingBasket_basketlist_table tbody tr').length; //장바구니 총 개수
 	var shoes_price; //가격
 	var total_price = '0'; //총 가격
 	var shoes_discount; //할인
 	var total_discount = '0'; //총 할인
 	var shoppingFee; //배송비
+	var final_price;
 	
 	//총 주문금액
-	for(i = 0; i < ckeck_shoes_count; i++) {
+	for(i = 0; i < check_shoes_count; i++) {
 		if($('.choice_checkbox:eq('+i+')').is(':checked')) {
-			shoes_price = $('.shoes_price:eq('+i+')').text();
+			shoes_price = $('.hidden_shoesprice:eq('+i+')').val();
 			total_price = parseInt(total_price) + parseInt(shoes_price*$('.qtyText:eq('+i+')').val());
 		}
 	}
-	$('.total_price_div_price').text(total_price);
+	$('.total_price_div_price').text(Number(total_price).toLocaleString('en'));
 	
 	//총 할인금액
-	for(i = 0; i < ckeck_shoes_count; i++) {
+	for(i = 0; i < check_shoes_count; i++) {
 		if($('.choice_checkbox:eq('+i+')').is(':checked')) {
-			shoes_discount = $('.discount_price:eq('+i+')').text();
+			shoes_discount = $('.hidden_shoesdiscount:eq('+i+')').val();
 			total_discount = parseInt(total_discount) + parseInt(shoes_discount);
 		}
 	}
-	$('.total_price_div_sale').text(total_discount);
+	$('.total_price_div_sale').text(Number(total_discount).toLocaleString('en'));
 	
 	//배송비
 	if(parseInt(total_price) < 20000) {
-		$('.total_price_div_shippingFee').text("2500");
+		shoppingFee = '2500';
 	} else {
-		$('.total_price_div_shippingFee').text("0");
+		shoppingFee = '0';
 	}
-	shoppingFee = $('.total_price_div_shippingFee').text();
+	$('.total_price_div_shippingFee').text(Number(shoppingFee).toLocaleString('en'));
+	
+	final_price = parseInt(total_price) - parseInt(total_discount) + parseInt(shoppingFee);
 	
 	//총 결제금액
-	$('.total_price_div_total').text(parseInt(total_price) - parseInt(total_discount) + parseInt(shoppingFee));
+	$('.total_price_div_total').text(Number(final_price).toLocaleString('en'));
+});
+
+//옵션변경버튼
+$('.shoes_optionBtn').click(function(){
+	$('.change_option').show();
 });
 
 //수량조절버튼
@@ -158,7 +179,7 @@ $('.qtyButton').click(function(){
 	
 	$.ajax({
 		type : 'POST',
-		url : '/ABCD_MART/cart/updateQtyText.do',
+		url : '/abcd_mart/order_pay/updateQtyText',
 		data : 'shoesbrand='+shoesbrand+'&shoesname='+shoesname+'&shoessize='+shoessize+'&shoesqty='+shoesqty,
 		success : function(data) {
 			alert("수량이 변경되었습니다.");
@@ -167,18 +188,50 @@ $('.qtyButton').click(function(){
 	});
 });
 
-//바로구매버튼
+//바로구매
 $('.choice_div_buynow').click(function(){
-	var check = confirm("해당상품만 바로 구매하시겠습니까?");
+	var index = $('.choice_div_buynow').index(this);
+	var id = $('.hidden_id:eq('+index+')').val();
+	var prdtcode = $('.hidden_prdtcode:eq('+index+')').val();
+	var shoesimage = $('.hidden_shoes_image:eq('+index+')').val();
+	var shoesbrand = $('.shoes_brand:eq('+index+')').text();
+	var shoesname = $('.shoes_name:eq('+index+')').text();
+	var shoescolor = $('.shoes_color:eq('+index+')').text();
+	var shoessize = $('.shoes_size:eq('+index+')').text();
+	var shoesprice = $('.shoes_price:eq('+index+')').text();
+	var shoesqty = $('.qtyText:eq('+index+')').val();
+	var shoesdiscount = $('.discount_price:eq('+index+')').text();
+	var shoespoint = $('.saving_div_point:eq('+index+')').text();
+	
+	var check = confirm("해당 상품만 바로 구매하시겠습니까?");
+
 	if(check) {
-		location.href='#'
-	}
-	else {
+		$.ajax({
+			type : 'POST',
+			url : '/abcd_mart/order_pay/orderChoice',
+			data : {
+				'id' : id,
+				'prdtcode' : prdtcode,
+				'shoesimage' : shoesimage,
+				'shoesbrand' : shoesbrand,
+				'shoesname' : shoesname,
+				'shoescolor' : shoescolor,
+				'shoessize' : shoessize,
+				'shoesprice' : shoesprice,
+				'shoesqty' : shoesqty,
+				'shoesdiscount' : shoesdiscount,
+				'shoespoint' : shoespoint
+			},
+			success : function(data) {
+				location.href=data;
+			}
+		});
+	} else {
 		return false;
 	};
 });
 
-//물품삭제버튼
+//삭제버튼
 $('.choice_div_delete').click(function(){
 	var index = $('.choice_div_delete').index(this);
 	var shoesbrand = $('.shoes_brand:eq('+index+')').text();
@@ -189,7 +242,7 @@ $('.choice_div_delete').click(function(){
 	
 	$.ajax({
 		type : 'POST',
-		url : '/ABCD_MART/cart/deleteList.do',
+		url : '/abcd_mart/order_pay/deleteList',
 		data : 'shoesbrand='+shoesbrand+'&shoesname='+shoesname+'&shoessize='+shoessize,
 		success : function(data) {
 			alert("삭제되었습니다.");
@@ -199,6 +252,67 @@ $('.choice_div_delete').click(function(){
 	
 });
 
+//선택상품 삭제
+$('.delete_button').click(function(){
+	var count = $('.shoppingBasket_basketlist_table tbody tr').length; //장바구니 물품 개수
+	var checkbox_size = $(".choice_checkbox:checked").length; //체크된 물품 개수
+	
+	var id = new Array();
+	var prdtcode = new Array();
+	var shoesimage = new Array();
+	var shoesbrand = new Array();
+	var shoesname = new Array();
+	var shoescolor = new Array();
+	var shoessize = new Array();
+	var shoesprice = new Array();
+	var shoesqty = new Array();
+	var shoesdiscount = new Array();
+	var shoespoint = new Array();
+	
+	if(checkbox_size == 0) {
+		alert("삭제하실 상품을 선택해주세요.");
+	} else {
+		for(i = 0; i < count; i++ ) {
+			if($('.choice_checkbox:eq('+i+')').is(':checked')) {
+				id.push($('.hidden_id:eq('+i+')').val());
+				prdtcode.push($('.hidden_prdtcode:eq('+i+')').val());
+				shoesimage.push($('.hidden_shoes_image:eq('+i+')').val());
+				shoesbrand.push($('.shoes_brand:eq('+i+')').text());
+				shoesname.push($('.shoes_name:eq('+i+')').text());
+				shoescolor.push($('.shoes_color:eq('+i+')').text());
+				shoessize.push($('.shoes_size:eq('+i+')').text());
+				shoesprice.push($('.shoes_price:eq('+i+')').text());
+				shoesqty.push($('.qtyText:eq('+i+')').val());
+				shoesdiscount.push($('.discount_price:eq('+i+')').text());
+				shoespoint.push($('.saving_div_point:eq('+i+')').text());
+			}
+		}
+		
+		$.ajax({
+			type : 'POST',
+			url : '/abcd_mart/order_pay/select_deleteList',
+			traditional : true,
+			data : {
+				'id' : id,
+				'prdtcode' : prdtcode,
+				'shoesimage' : shoesimage,
+				'shoesbrand' : shoesbrand,
+				'shoesname' : shoesname,
+				'shoescolor' : shoescolor,
+				'shoessize' : shoessize,
+				'shoesprice' : shoesprice,
+				'shoesqty' : shoesqty,
+				'shoesdiscount' : shoesdiscount,
+				'shoespoint' : shoespoint,
+				'size' : checkbox_size
+			},
+			success : function(data) {
+				alert("삭제되었습니다.");
+				location.href = data;
+			}
+		});
+	}
+});
 //계속 쇼핑하기
 $('.continue').click(function(){
 	var check = confirm("메인페이지로 이동하시겠습니까?");
@@ -210,63 +324,122 @@ $('.continue').click(function(){
 	};
 });
 
+//선택상품 주문하기
+$('.select_order').click(function(){
+	var count = $('.shoppingBasket_basketlist_table tbody tr').length; //장바구니 물품 개수
+	var checkbox_size = $(".choice_checkbox:checked").length; //체크된 물품 개수
+	
+	var id = new Array();
+	var prdtcode = new Array();
+	var shoesimage = new Array();
+	var shoesbrand = new Array();
+	var shoesname = new Array();
+	var shoescolor = new Array();
+	var shoessize = new Array();
+	var shoesprice = new Array();
+	var shoesqty = new Array();
+	var shoesdiscount = new Array();
+	var shoespoint = new Array();
+	
+	if(checkbox_size == 0) {
+		alert("주문하실 상품을 선택해주세요.");
+	} else {
+		for(i = 0; i < count; i++ ) {
+			if($('.choice_checkbox:eq('+i+')').is(':checked')) {
+				id.push($('.hidden_id:eq('+i+')').val());
+				prdtcode.push($('.hidden_prdtcode:eq('+i+')').val());
+				shoesimage.push($('.hidden_shoes_image:eq('+i+')').val());
+				shoesbrand.push($('.shoes_brand:eq('+i+')').text());
+				shoesname.push($('.shoes_name:eq('+i+')').text());
+				shoescolor.push($('.shoes_color:eq('+i+')').text());
+				shoessize.push($('.shoes_size:eq('+i+')').text());
+				shoesprice.push($('.shoes_price:eq('+i+')').text());
+				shoesqty.push($('.qtyText:eq('+i+')').val());
+				shoesdiscount.push($('.discount_price:eq('+i+')').text());
+				shoespoint.push($('.saving_div_point:eq('+i+')').text());
+			}
+		}
+		
+		$.ajax({
+			type : 'POST',
+			url : '/abcd_mart/order_pay/orderSelect',
+			traditional : true,
+			data : {
+				'id' : id,
+				'prdtcode' : prdtcode,
+				'shoesimage' : shoesimage,
+				'shoesbrand' : shoesbrand,
+				'shoesname' : shoesname,
+				'shoescolor' : shoescolor,
+				'shoessize' : shoessize,
+				'shoesprice' : shoesprice,
+				'shoesqty' : shoesqty,
+				'shoesdiscount' : shoesdiscount,
+				'shoespoint' : shoespoint,
+				'size' : checkbox_size
+			},
+			success : function(data) {
+				location.href=data;
+			}
+		});
+	}
+});
 
-
-
-
-
-
-
-
-
-
+//전체상품 주문하기
+$('.all_order').click(function(){
+	location.href='/abcd_mart/order_pay/orderAll';
+});
 
 
 
 
 
 $(document).ready(function(){
+	$('.change_option').hide();
+	
 	//장바구니 물품 모두 선택
 	$('.all_checkbox').prop("checked", true); 	
 	$('.choice_checkbox').prop("checked", true);
 	$('.delete_checkbox').prop("checked", true);
 	
-	var ckeck_shoes_count = $('.shoppingBasket_basketlist_table tbody tr').length; //장바구니 총 개수
+	var check_shoes_count = $('.shoppingBasket_basketlist_table tbody tr').length; //장바구니 총 개수
 	var shoes_price; //가격
 	var total_price = '0'; //총 가격
 	var shoes_discount; //할인
 	var total_discount = '0'; //총 할인
 	var shoppingFee; //배송비
+	var final_price;
 	
 	//총 주문금액
-	for(i = 0; i < ckeck_shoes_count; i++) {
+	for(i = 0; i < check_shoes_count; i++) {
 		if($('.choice_checkbox:eq('+i+')').is(':checked')) {
-			shoes_price = $('.shoes_price:eq('+i+')').text();
+			shoes_price = $('.hidden_shoesprice:eq('+i+')').val();
 			total_price = parseInt(total_price) + parseInt(shoes_price*$('.qtyText:eq('+i+')').val());
 		}
 	}
-	$('.total_price_div_price').text(total_price);
+	$('.total_price_div_price').text(Number(total_price).toLocaleString('en'));
 	
 	//총 할인금액
-	for(i = 0; i < ckeck_shoes_count; i++) {
+	for(i = 0; i < check_shoes_count; i++) {
 		if($('.choice_checkbox:eq('+i+')').is(':checked')) {
-			shoes_discount = $('.discount_price:eq('+i+')').text();
+			shoes_discount = $('.hidden_shoesdiscount:eq('+i+')').val();
 			total_discount = parseInt(total_discount) + parseInt(shoes_discount);
 		}
 	}
-	$('.total_price_div_sale').text(total_discount);
+	$('.total_price_div_sale').text(Number(total_discount).toLocaleString('en'));
 	
 	//배송비
 	if(parseInt(total_price) < 20000) {
-		$('.total_price_div_shippingFee').text("2500");
+		shoppingFee = '2500';
 	} else {
-		$('.total_price_div_shippingFee').text("0");
+		shoppingFee = '0';
 	}
+	$('.total_price_div_shippingFee').text(Number(shoppingFee).toLocaleString('en'));
 	
-	shoppingFee = $('.total_price_div_shippingFee').text();
+	final_price = parseInt(total_price) - parseInt(total_discount) + parseInt(shoppingFee);
 	
 	//총 결제금액
-	$('.total_price_div_total').text(parseInt(total_price) - parseInt(total_discount) + parseInt(shoppingFee));
+	$('.total_price_div_total').text(Number(final_price).toLocaleString('en'));
 });
 
 

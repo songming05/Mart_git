@@ -3,14 +3,12 @@ li { list-style-type: none; }
 button { cursor: pointer; outline: 0; }
 
 .shoppingBasket_div { width: 1100px; margin: 0 auto; }
-.shoppingBasket_title { text-align: center; font-size: 36px; font-weight: bold; }
+.shoppingBasket_title { text-align: center; font-size: 36px; }
 
-.shoppingBasket_section { height: 100vh; }
-.shoppingBasket_ul { height: 65px; width: 900px; margin: 0 auto; margin-top: 30px;}
+.shoppingBasket_ul { height: 65px; width: 900px; margin: 0 auto; }
 .shoppingBasket_ul li { display: inline; float: left; }
 
 .shoppingBasket_ul em { font-size: 18px; font-weight: bold; font-family: Verdana, sans-serif, Helvetica, sans-serif; }
-.shoppingBasket_ul hr { border: 0.5px solid lightgray; padding: 0; margin: 0; }
 .shoppingBasket_li_level01_td { width: 200px; padding-left: 10px; font-weight: bold; font-family: Verdana, sans-serif, Helvetica, sans-serif; }
 .shoppingBasket_li_level02_td { width: 200px; padding-left: 10px; font-weight: bold; font-family: Verdana, sans-serif, Helvetica, sans-serif; color: lightgray; }
 .shoppingBasket_li_level03_td { width: 200px; padding-left: 10px; font-weight: bold; font-family: Verdana, sans-serif, Helvetica, sans-serif; color: lightgray; }
@@ -45,7 +43,7 @@ button { cursor: pointer; outline: 0; }
 .shoesInfo_div span { width: 180px; height: 16px; display: block; }
 .shoes_name { font-weight: bold; font-family: "tahoma", Dotum, Gulim, Verdana, sans-serif, Helvetica, sans-serif; }
 .shoesInfo_div em { font-size: 9pt; font-weight: normal; font-style: normal; }
-.shoes_optionBtn { width: 65px; height: 20px; background-color: #bfbfbf; color: white; font-size: 9pt; font-weight: normal; outline: none; border: 1px solid white; position: relative; left: 60px; bottom: 16px; }
+.shoes_optionBtn { width: 65px; height: 20px; background-color: #bfbfbf; color: white; font-size: 9pt; font-weight: normal; outline: none; border: 1px solid white; position: relative; left: 50px; bottom: 20px; }
 
 .shoesQty_div { position: relative; text-align: center; width: 75px; }
 .shoesQty_div button { padding: 0px; margin: 0px; border: 0 none; position: absolute; }
@@ -53,9 +51,9 @@ button { cursor: pointer; outline: 0; }
 .qtyDown { top: 12px; }
 .qtyButton { background-color: #bfbfbf; color: white; font-size: 8pt; font-weight: normal; outline: none; border: 1px solid #bfbfbf; }
 
-.saving_div p { font-size: 7pt; !important; }
+.saving_div span { font-size: 7pt; !important; }
 .saving_div_price { font-weight: bold; }
-.saving_div_point { font-weight: normal; }
+.saving_div_point { font-weight: bold; }
 
 .choice_div button { width: 65px; height: 20px; font-size: 9pt; font-weight: normal; outline: none; margin-bottom: 2px;}
 .choice_div_buynow { background-color: red; border: 1px solid red; color: white; }
@@ -66,15 +64,15 @@ button { cursor: pointer; outline: 0; }
 .delete_button { background-color: white; border: 1px solid #bfbfbf; font-weight: bold; font-size: 8pt; }
 
 .total_price_div { margin-top: 30px; display: inline-block; border: 1px solid black; font-weight: bold; }
-.total_price_div div { float: left; width: 273px; height: 147px; }
+.total_price_div div { float: left; width: 273px; height: 102px; }
 .total_price_box1 { border-right: 1px solid lightgray; }
 .total_price_box2 { border-right: 1px solid lightgray; }
 .total_price_box3 { border-right: 1px solid lightgray; }
-.total_price_div dl { margin: 0px; padding: 30px 30px 0px 30px; float: left; vertical-align: middle; width: 270px; }
+.total_price_div dl { margin: 0px; padding: 30px 30px 0px 30px; float: left; vertical-align: middle; width: 210px; }
 .total_price_div dt { float: left; font-size: 9pt; font-weight: bold; padding-top: 15px; }
-.total_price_div dd { float: right; margin: 0px; padding: 0px; text-align: left; }
+.total_price_div dd { float: right; margin: 0px; padding: 0px; text-align: left; position: relative; top: 5px; text-align: right; }
 .total_price_div span { font-size: 22pt; }
-.total_price_div img { position: absolute; }
+.total_price_div img { position: relative; bottom: 24px; left: 261px; }
 .total_price_box1 img { position: relative; right: -46px; }
 .total_price_box2 img { position: relative; right: -46px; }
 .total_price_box3 img { position: relative; right: -46px; }
@@ -89,10 +87,7 @@ button { cursor: pointer; outline: 0; }
 
 .shoppingBasket_viewList_ul { margin: 0px; padding: 0px; font-size: 14px; font-weight: bold; }
 .shoppingBasket_viewList_li { width: 270px; border: 1px solid black; border-bottom: white; padding: 10px 30px; text-align: center; }
-.shoppingBasket_viewList p { border-top: 1px solid black; text-align: center; font-size: 14px; margin: 0px; padding: 80px 0px; } */
-
-
-
+.shoppingBasket_viewList p { border-top: 1px solid black; text-align: center; font-size: 14px; margin: 0px; padding: 80px 0px; }
 
 
 
