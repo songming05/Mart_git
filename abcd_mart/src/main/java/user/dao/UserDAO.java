@@ -15,10 +15,6 @@ public interface UserDAO {
 
 	public UserDTO checkUserEmail(String email);	
 
-	public String getIdByEmail(Map<String, String> map);
-
-	public String getJoinDate(String userId);
-
 	public UserDTO getInfoByEmail(Map<String, String> map);
 
 }

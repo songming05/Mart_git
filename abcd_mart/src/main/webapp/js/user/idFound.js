@@ -86,6 +86,7 @@ function findIdEmail(){
 			dataType:'text',
 			success: function(userId) {
 				console.log(userId);
+				swal(userId);
 			}			
 		});	
 	}

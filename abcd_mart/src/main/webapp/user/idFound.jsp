@@ -152,8 +152,8 @@
                             </table>
                         </article>
                         <ul class="loss_member_add">
-                            <li><strong class="fs12">비밀번호를 잊으셨나요?</strong>&nbsp;&nbsp;<a href="https://www.abcmart.co.kr/abc/user/findPasswordForm" class="btn_sType2">비밀번호 찾기</a></li>
-                            <li><strong class="fs12">ABC-MART 회원가입하러 가기 </strong>&nbsp;&nbsp;<a href="https://www.abcmart.co.kr/abc/user/joinUserIntro" class="btn_sType2">회원가입</a></li>
+                            <li><strong class="fs12">비밀번호를 잊으셨나요?</strong>&nbsp;&nbsp;<a href="../user/pwdFind" class="btn_sType2">비밀번호 찾기</a></li>
+                            <li><strong class="fs12">ABC-MART 회원가입하러 가기 </strong>&nbsp;&nbsp;<a href="#" class="btn_sType2">회원가입</a></li>
                         </ul>
                     </div>
                 </form>

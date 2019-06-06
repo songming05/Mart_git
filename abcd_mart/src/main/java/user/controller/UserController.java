@@ -1,5 +1,7 @@
 package user.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -111,22 +113,42 @@ public class UserController {
 		return "/user/idFound";
 	}
 	
-	@RequestMapping(value ="/findMyId", method = RequestMethod.POST)
+	@RequestMapping(value ="/pwdFind", method = RequestMethod.GET)
+	public String pwdFind() {
+		return "/user/pwdFind";
+	}
+	
+	
+	@RequestMapping(value ="/findMyId", 
+					method = RequestMethod.POST,
+					produces = "application/text; charset=utf8")
 	@ResponseBody
 	public String findMyId(@RequestParam Map<String,String> map) {
 		String way = map.get("way");
+		String resultId="";
+		String resultJoin="";
 		if(way.equals("email")) {
 			UserDTO userDTO = userDAO.getInfoByEmail(map);
-			String userId = userDAO.getIdByEmail(map);
-			String userJoinDate = userDAO.getJoinDate(userId);
-			System.out.println(userId);
-			System.out.println(userJoinDate);
+			String sourceId = userDTO.getId();
+			resultId=sourceId.substring(0, 3);
+			for(int i=3; i<sourceId.length(); i++) {
+				resultId=resultId+"*";
+			}
+			Date sourceJoin = userDTO.getJoin_date();
+			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
+			simpleDateFormat = new SimpleDateFormat("YYYY.MM.dd");
+			resultJoin = simpleDateFormat.format(sourceJoin).toString();
+			
 			System.out.println(userDTO.getId()+userDTO.getJoin_date());
+			System.out.println(resultId+resultJoin);
 		} else if(way.equals("phone")) {
 			
 		}
 		
-		return "";		
+		String result = "회원님의 아이디는 <br>"
+						+ resultId+" 입니다.<br>"
+						+"가입연도 : "+resultJoin;
+		return result;		
 	}
 	
 }
