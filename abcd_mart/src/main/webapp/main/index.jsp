@@ -65,7 +65,7 @@
 
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js"></script>
-<script src="../js/advertise.js"></script>
+<script src="../js/advertise/advertise.js"></script>
 <!-- advertisement -->
 
 <!-- best & new -->
