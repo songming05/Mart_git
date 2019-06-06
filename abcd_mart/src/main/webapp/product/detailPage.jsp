@@ -60,7 +60,7 @@ $(document).ready(function(){
 
 
 <input type="hidden" value="${detailPageDTO.getPrdtMainName()}" id="mainName">
-<input type="hidden" value="${detailPageDTO.getPrdtImage1()}" id="image1">
+<input type="hidden" value="${detailPageDTO.prdtCode }/${detailPageDTO.getPrdtImage1()}" id="image1">
 <input type="hidden" value="${detailPageDTO.getPrdtImage2()}" id="image2">
 <input type="hidden" value="${detailPageDTO.getPrdtImage3()}" id="image3">
 <input type="hidden" value="${detailPageDTO.getPrdtImage4()}" id="image4">
@@ -107,7 +107,7 @@ $(document).ready(function(){
 <input type="hidden" value="aaa" name="id">
 <input type="hidden" value="${detailPageDTO.getPrdtCode()}" name="prdtcode" id="code"><!-- 상품코드 -->
 <input type="hidden" value="${detailPageDTO.getPrdtMainName()}" name="shoesname" id="mainName"><!-- 상품이름 -->
-<input type="hidden" value="${detailPageDTO.getPrdtImage1()}" name="shoesimage" id="image1"><!-- 상품이미지 -->
+<input type="hidden" value="${detailPageDTO.prdtCode }/${detailPageDTO.getPrdtImage1()}" name="shoesimage" id="image1"><!-- 상품이미지 -->
 <input type="hidden" value="${detailPageDTO.getPrdtBrand()}" name="shoesbrand" id="brand"><!-- 브랜드 -->
 
 <input type="hidden" value="${detailPageDTO.getPrdtColor()}" name="shoescolor" id="prdtColor"><!-- 컬러 -->
