@@ -45,9 +45,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from (select  * from orderABCD where buyername = #{id} order by seq desc) where rownum <![CDATA[<=]]> 5
 	</select>
 	
-	<!-- test 장바구에서 결제페이지로 데이터 이동 -->
-	<select id="getOrderList" parameterType="String" resultType="cart.bean.CartDTO">
+	<!-- test 장바구에서 결제페이지로 데이터 이동 --> 
+	<select id="getOrderDirect" parameterType="String" resultType="cartDTO">
 		select * from cartlist where id=#{id}
+	</select>
+	<select id="getOrderList" parameterType="String" resultType="cartDTO">
+		select * from mycartlist where id=#{id}
 	</select>
 	
 	<!-- orderWrite cartDTO에 데이터 넣기 -->
@@ -71,6 +74,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="deleteCart" parameterType="String">
 		delete from cartlist where id = #{id}
 	</delete>
+	
+	
+	<delete id="deleteMyCart" parameterType="String">
+		delete from mycartlist where id=#{id}
+	</delete>
+	
+	
+	
 	<!--  paymentInfo 테이블에 등록-->
 	<insert id="paymentInfo" parameterType="order.bean.PaymentinfoDTO">
 		insert into paymentinfo values(

@@ -40,7 +40,7 @@ public class OrderController {
 	@RequestMapping(value="/order_pay/orderPageEnd.do",method=RequestMethod.POST)
 	public String orderPageEnd(@ModelAttribute OrderDTO orderDTO ,
 							Model model,
-							HttpServletRequest  request) {
+							HttpSession  session) {
 		/*
 		 * Cookie[] cookies = request.getCookies();
 		 * 
@@ -95,10 +95,12 @@ public class OrderController {
 	
 		
 		model.addAttribute("pDTO", pDTO);
+		String id = (String) session.getAttribute("memId");
+		orderDAO.deleteMyCart(id);
 		num++;
 
 		
-		return "/order_pay/orderPageEnd";
+		return "/order_pay/orderPageEnd";  
 	}
 	
 	@RequestMapping(value="/order_pay/orderAddressList.do",method=RequestMethod.GET)
@@ -111,11 +113,15 @@ public class OrderController {
 	}
 
 	@RequestMapping(value="/order_pay/orderList.do",method=RequestMethod.POST)
-	public String  orderList(@RequestParam String id , Model model) {
+	public String  orderList( HttpSession session, Model model) {
+		String id = (String) session.getAttribute("memId");
+		String name = (String) session.getAttribute("memName");
 		List<CartDTO> list = orderDAO.getOrderList(id);
-		
-		model.addAttribute("orderList", list);
+		System.out.println("list");
+		model.addAttribute("buttonType", "cart");
+		model.addAttribute("cartList", list);
 		model.addAttribute("id", id);
+		model.addAttribute("name", name);
 		
 		return "/order_pay/orderPage";
 	}
@@ -138,10 +144,10 @@ public class OrderController {
 		//session.getAttribute("memId");
 		
 		//임시로 DB에서 가져오기 
-		List<CartDTO> list = orderDAO.getOrderList(id);
+		List<CartDTO> list = orderDAO.getOrderDirect(id);
 	
-		
-		model.addAttribute("orderList", list);
+		model.addAttribute("buttonType",buttonType);
+		model.addAttribute("cartList", list);
 		model.addAttribute("id", id);
 		model.addAttribute("name", name);
 		

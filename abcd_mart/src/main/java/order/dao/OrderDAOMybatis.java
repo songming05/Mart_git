@@ -41,7 +41,10 @@ class OrderDAOMybatis implements OrderDAO {
 		return sqlSession.selectList("orderSQL.getOrderList", id);
 	}
 
-
+	@Override
+	public List<CartDTO> getOrderDirect(String id) {
+		return sqlSession.selectList("orderSQL.getOrderDirect", id);
+	}
 
 	@Override
 	public void directWrite(CartDTO cartDTO) {
@@ -65,6 +68,10 @@ class OrderDAOMybatis implements OrderDAO {
 	public void prdtManagement(Map<String, String> map) {
 		sqlSession.update("orderSQL.prdtManagement", map);
 		
+	}
+	@Override
+	public void deleteMyCart(String id) {
+		sqlSession.delete("orderSQL.deleteMyCart", id);
 	}
 
 	

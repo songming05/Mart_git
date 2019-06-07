@@ -17,6 +17,8 @@
 
 
 <link rel="stylesheet" href="../css/order_pay/shoppingBasket.css">
+
+
 </head>
 <body>
 <header>
@@ -27,7 +29,7 @@
 
 <div class="shoppingBasket_div" style="width: 1100px; margin: 0 auto;">
 	<h2 class="shoppingBasket_title" style="text-align: center; font-size: 36px; color: black; margin-bottom: 50px;">장바구니</h2>
-	<form class="shoppingBasket_form" method="post" id="shoppingForm" action="/ABCD_MART/cart/order">
+	<form class="shoppingBasket_form" method="post" id="shoppingForm" action="/abcd_mart/order_pay/orderList.do">
 		<section class="shoppingBasket_section">
 			<ul class="shoppingBasket_ul" style="height: 65px; width: 900px; margin: 0 auto;">
 				<li class="shoppingBasket_li_level01" style="width: 258.8px; padding-left: 10px; font-weight: bold; font-family: Verdana, sans-serif, Helvetica, sans-serif;">
@@ -137,7 +139,7 @@
 							<td><input type="checkbox" class="choice_checkbox"/></td>
 							<td>
 								<div class="shoesImage_div">
-									<a href="#"><img class="shoes_image" src="../image/cart/${list.shoesimage }.jpg" width="80" height="80"/></a>
+									<a href="#"><img class="shoes_image" src="../image/page/product/${list.prdtcode }/${list.shoesimage }" width="80" height="80"/></a>
 									<input type="hidden" class="hidden_shoes_image" name="shoesimage" value="${list.shoesimage }"/>
 									<input type="hidden" class="hidden_id" name="id" value="${list.id }"/>
 									<input type="hidden" class="hidden_prdtcode" name="prdtcode" value="${list.prdtcode }"/>

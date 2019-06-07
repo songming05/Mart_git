@@ -154,7 +154,7 @@ $(document).ready(function(){
 						"shoescolor":document.getElementsByName("shoescolor")[i].value,
 						"shoessize":document.getElementsByName("shoessize")[i].value,
 						"shoesprice":document.getElementsByName("shoesprice")[i].value,
-						"shoesqty":document.getElementsByName("shoesdiscount")[i].value,
+						"shoesqty":document.getElementsByName("qtyName")[i].value,
 						"shoesdiscount":document.getElementsByName("shoesdiscount")[i].value,
 						"shoespoint":document.getElementsByName("shoespoint")[i].value
 						
@@ -174,7 +174,8 @@ $(document).ready(function(){
 		    			swal('로그인시 이용가능합니다.');
 		    			return false;
 		    		} else if(result=='addComplete'){
-		    			$('#orderDirect').submit();
+		    			//$('#orderDirect').submit();
+		    			location.href='../order_pay/shoppingBasket';
 		    			swal('장바구니 등록 성공');
 		    		}
 		    		
@@ -223,7 +224,6 @@ $(document).ready(function(){
 
 <div class="container">
   <div class="show">
-  	<h1>${detailPageDTO.prdtCode }</h1>
     <img src="../image/page/product/${detailPageDTO.prdtCode}/${detailPageDTO.getPrdtImage1()}" id="show-img">
   </div>
   <div class="small-img">
@@ -435,10 +435,10 @@ $(document).ready(function(){
 		  </ul>
 		</nav>
 		
-		<table id="afterTable" class="table table-striped" style="font-size:11px; text-align:center;">
+		<table id="afterTable" class="table table-striped" style="font-size:11px; text-align:left;">
 		    <thead>
 		      <tr>
-		        <th width="300px">제목</th>
+		        <th width="300px" style="text-align:center;">제목</th>
 		        <th width="80px">구매처</th>
 		        <th width="80px">상품만족도</th>
 		        <th width="80px">작성자</th>

@@ -181,7 +181,8 @@ public class ShoppingBasketController {
 			cartDTO.setShoesdiscount((String) map.get("shoesdiscount"));
 			cartDTO.setShoespoint((String) map.get("shoespoint"));
 			
-			orderDAO.directWrite(cartDTO);
+			cartDAO.addMyCart(cartDTO);
+			
 			
 			
 			
@@ -190,7 +191,21 @@ public class ShoppingBasketController {
 			
 		return result;
 	}
+	
+	@RequestMapping(value="/cart/getCartList", method=RequestMethod.POST)
+	public ModelAndView getCartList(HttpSession session) {
 		
+		String id = (String) session.getAttribute("memId");
+		List<CartDTO> list = cartDAO.getCartList(id);
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("list",list);
+		modelAndView.setViewName("jsonView");
+		
+		//System.out.println(id);
+		//System.out.println(modelAndView);
+		return modelAndView;
+	}
+	
 }
 
 

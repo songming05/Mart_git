@@ -52,4 +52,13 @@ public class CartDAOMybatis implements CartDAO {
 		sqlSession.delete("cartSQL.select_deleteList", map);
 	}
 	
+	@Override
+	public List<CartDTO> getCartList(String id) {
+		return sqlSession.selectList("cartSQL.getCartList", id);
+	}
+	@Override
+	public void addMyCart(CartDTO cartDTO) {
+		sqlSession.insert("cartSQL.addMyCart", cartDTO);
+	}
+	
 }

@@ -41,20 +41,34 @@ $(document).ready(function(){
 			modal: true,
 			buttons: {
 				"등록": function() {
-					$.ajax({
-						type : 'POST',
-						url : '/abcd_mart/board/afterBoardWrite',
-						data : {'id' : $('#id').val(), 'subject' : $('#subject').val(), 'content' : $('#content').val(), 
-									'whereToBuy' : $('input[name="whereToBuy"]:checked').val(), 'good' : $('#good').val(), 
-									'prdtCode' : $('#code').val()},
-						dataType : 'json',
-						error : function(){alert("실패");},
-						success : function(data){
-							swal("등록완료")
-							.then((value) => {location.href="/abcd_mart/product/detailPage.do?prdtCode="+$('#code').val()});}
-					});
-					$( this ).dialog( "close" );
-			},
+		               if ($('#id').val() == ""){
+		                  swal("아이디 입력하세요");
+		               }
+		               else if($('#subject').val()==""){
+		                  swal("제목 입력하세요");
+		               }
+		               else if($('#content').val()==""){
+		                  swal("내용 입력하세요");
+		               }
+		               else if($('#good').val()==""){
+		                  swal("만족도를 입력하세요");
+		               }
+		               else{
+		               $.ajax({
+		                  type : 'POST',
+		                  url : '/abcd_mart/board/afterBoardWrite',
+		                  data : {'id' : $('#id').val(), 'subject' : $('#subject').val(), 'content' : $('#content').val(), 
+		                           'whereToBuy' : $('input[name="whereToBuy"]:checked').val(), 'good' : $('#good').val(), 
+		                           'prdtCode' : $('#code').val()},
+		                  dataType : 'json',
+		                  error : function(){alert("실패");},
+		                  success : function(data){
+		                     swal("등록완료")
+		                     .then((value) => {location.href="/abcd_mart/product/detailPage.do?prdtCode="+$('#code').val()});}
+		               });
+		               $( this ).dialog( "close" );
+		               }
+		         },
 				"취소": function() {
 					$( this ).dialog( "close" );
 			}

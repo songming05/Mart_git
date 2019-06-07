@@ -78,56 +78,63 @@
 							<tbody>
 								 
 								<!--상품 리스트 for문-->
-								<c:if test="${not empty orderList }"> 
+								<c:if test="${not empty cartList }"> 
 								
 								   <c:set var="totalPrice" value="0"/><!-- 총가격 계산 변수 -->
 								   <c:set var="discount"  value="0"/><!-- 할인가격 변수 -->
 								   <c:set var="totalPoint" value="0"/><!-- 총합 포인트 변수 -->
 								   
-								   <c:forEach var="orderDTO" items="${orderList }"> 
-								   <c:set var="totalPrice" value="${totalPrice + orderDTO.getShoesprice()*orderDTO.getShoesqty()  }"/>
-								   <c:set var="discount" value="${discount + orderDTO.getShoesdiscount() }"/>
+								   <c:forEach var="cartDTO" items="${cartList }"> 
+								  
+								  <c:set var="totalPrice" value="${totalPrice + cartDTO.getShoesprice()*cartDTO.getShoesqty()  }"/> 
+								   <c:set var="discount" value="${discount + cartDTO.getShoesdiscount() }"/>
 										<tr class="group-center">
 											<td class="align-left modeloutBox">
-											<input type="hidden" name="abcdCode" value="${orderDTO.getPrdtcode()}"><!-- 상품코드 -->
-											<input type="hidden" name="shoesimage" value="${orderDTO.getShoesimage()}"><!-- 상품이미지 -->
+											<input type="hidden" name="abcdCode" value="${cartDTO.getPrdtcode()}"><!-- 상품코드 -->
+											<input type="hidden" name="shoesimage" value="${cartDTO.getShoesimage()}"><!-- 상품이미지 -->
 											
 												<div class="model_img_box">
-													<img src="../image/page/product/${orderDTO.getShoesimage() }" alt="SPLINE SCRIPT" onerror="imageError(this)"/>
-													<input name="shoesimage" id="shoesimage" type="hidden" value="${orderDTO.getShoesimage() }">
+													<c:if test="${buttonType eq now }">
+														<img src="../image/page/product/${cartDTO.getShoesimage() }" alt="SPLINE SCRIPT" onerror="imageError(this)"/>
+													</c:if>
+													<c:if test="${buttonType ne now }">
+														<img src="../image/page/product/${cartDTO.getPrdtcode()}/${cartDTO.getShoesimage() }" alt="SPLINE SCRIPT" onerror="imageError(this)"/>
+													</c:if>
+													
+													<input name="shoesimage" id="shoesimage" type="hidden" value="${cartDTO.getShoesimage() }">
 												</div>
 												
 												<div class="model_txt_box">
 													<div class="model_box">
-														<span class="brand">${orderDTO.getShoesbrand() }</span><!--상품명-->
-														<span class="name bold">${orderDTO.getShoesname() } </span><!--이미지-->
-														<span class="tit_type3">${orderDTO.getShoescolor() }</span>
-														<em class="option">옵션 : <span>${orderDTO.getShoessize()}</span></em><!--사이즈-->
+														<span class="brand">${cartDTO.getShoesbrand() }</span><!--상품명-->
+														<span class="name bold">${cartDTO.getShoesname() } </span><!--이미지-->
+														<span class="tit_type3">${cartDTO.getShoescolor() }</span>
+														<em class="option">옵션 : <span>${cartDTO.getShoessize()}</span></em><!--사이즈-->
 													</div>
 												</div>
 											</td>
 											<td class="orderPrice">
-												<input id="orderPrice" type="hidden" value="${orderDTO.getShoesprice() }">
-												<span><fmt:formatNumber value="${orderDTO.getShoesprice()*orderDTO.getShoesqty()  }" type="number"/></span>원<!--가격-->							
+												<input id="orderPrice" type="hidden" value="${cartDTO.getShoesprice() }">
+												<span><fmt:formatNumber value="${cartDTO.getShoesprice()*cartDTO.getShoesqty()  }" type="number"/></span>원<!--가격-->							
 											</td>
 											<td class="check_list_box">
-												${orderDTO.getShoesqty() }
+												${cartDTO.getShoesqty() }
 											</td>
 											
 											<td>
 												<p class="mt5 mb15"><a data-rel="layer" href="#applyCoupon" class="btn_sType5" onclick="applyCouponA(this, '0071357', 1, 22506054, 0);">쿠폰조회/적용</a></p>
 												
-												<em class="tit_type3 mt5"><span class="dscntAmt"><fmt:formatNumber value="${orderDTO.getShoesdiscount() }" type="number"/></span></em>원
+												<em class="tit_type3 mt5"><span class="dscntAmt"><fmt:formatNumber value="${cartDTO.getShoesdiscount() }" type="number"/></span></em>원
 												<em class="showmoreBox" style="display: none;">
 													<a href="javascript://" class="showmore">더보기</a>
 													<span class="showBox"></span>
 												</em>
 											</td>
 											<td class="totalPrice">
-											    <div class="od-won"><span class="order_price"><fmt:formatNumber value="${orderDTO.getShoesprice()*orderDTO.getShoesqty() -orderDTO.getShoesdiscount() }" type="number"/></span>원</div>
+											    <div class="od-won"><span class="order_price"><fmt:formatNumber value="${cartDTO.getShoesprice()*cartDTO.getShoesqty() -cartDTO.getShoesdiscount() }" type="number"/></span>원</div>
 												<div class="od-point">
 												 <div style="font-size: 11px; color: #666; font-weight:bold;">
-												  <span class="prdt_point" style="font-size: 11px; color: #666;"><fmt:formatNumber value="${orderDTO.getShoespoint() }" type="number"/></span> 
+												  <span class="prdt_point" style="font-size: 11px; color: #666;"><fmt:formatNumber value="${cartDTO.getShoespoint() }" type="number"/></span> 
 												  P
 												 </div>
 												</div>

@@ -4,31 +4,39 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cartSQL">
 	<select id="orderAllList" resultType="cartDTO">
-		select * from cartlist
+		select * from mycartlist
 	</select>
 	
 	<update id="shoesQtyText" parameterType="java.util.Map">
-		update cartlist set shoesqty=#{shoesqty} where shoesbrand=#{shoesbrand} and shoesname=#{shoesname} and shoessize=#{shoessize}
+		update mycartlist set shoesqty=#{shoesqty} where shoesbrand=#{shoesbrand} and shoesname=#{shoesname} and shoessize=#{shoessize}
 	</update>
 	
 	<delete id="deleteList" parameterType="java.util.Map">
-		delete cartlist where shoesbrand=#{shoesbrand} and shoesname=#{shoesname} and shoessize=#{shoessize}
+		delete mycartlist where shoesbrand=#{shoesbrand} and shoesname=#{shoesname} and shoessize=#{shoessize}
 	</delete>
 	
-	<insert id="insert_temporary_cartlist" parameterType="java.util.Map">
+	<insert id="insert_temporary_mycartlist" parameterType="java.util.Map">
 		insert into temporary_cartlist values(#{id}, #{prdtcode}, #{shoesimage}, #{shoesbrand}, #{shoesname}, #{shoescolor}, #{shoessize}, #{shoesprice}, #{shoesqty}, #{shoesdiscount}, #{shoespoint})
 	</insert>
 	
-	<select id="temporary_cartlist" resultType="cartDTO">
+	<select id="temporary_mycartlist" resultType="cartDTO">
 		select * from temporary_cartlist
 	</select>
 	
-	<delete id="delete_temporary_cartlist">
+	<delete id="delete_temporary_mycartlist">
 		delete from temporary_cartlist
 	</delete>
 	
 	<delete id="select_deleteList">
-		delete cartlist where shoesbrand=#{shoesbrand} and shoesname=#{shoesname} and shoessize=#{shoessize}
+		delete mycartlist where shoesbrand=#{shoesbrand} and shoesname=#{shoesname} and shoessize=#{shoessize}
 	</delete>
+	
+	<select id="getCartList" parameterType="String" resultType="cartDTO">
+		select * from mycartlist where id=#{id}
+	</select>
+	
+	<insert id="addMyCart" parameterType="cartDTO">
+		insert into mycartlist values(#{id}, #{prdtcode}, #{shoesimage}, #{shoesbrand}, #{shoesname}, #{shoescolor}, #{shoessize}, #{shoesprice}, #{shoesqty}, #{shoesdiscount}, #{shoespoint})
+	</insert>
 	
 </mapper>

@@ -27,4 +27,8 @@ public interface OrderDAO {
 
 	public void prdtManagement(Map<String, String> map);
 
+	public List<CartDTO> getOrderDirect(String id);
+
+	public void deleteMyCart(String id);
+
 }

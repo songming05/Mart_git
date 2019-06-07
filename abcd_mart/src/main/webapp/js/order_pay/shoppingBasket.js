@@ -1,3 +1,46 @@
+$(document).ready(function() {
+	$.ajax({
+		type:'POST',
+		url:'/abcd_mart/cart/getCartList',
+		dataType:'json',
+		success: function(data) {
+			//console.log(JSON.stringify(data));
+			
+//			$.each(data.list , function(index, items){
+//				$('<tr/>').append($('<td/>',{
+//					align : 'center',
+//					text : items.prdtCode
+//				})).append($('<td/>',{
+//					align : 'center',
+//					text : items.prdtQty
+//				})).append($('<td/>',{
+//					align : 'center',
+//					text : items.prdtBrand
+//				})).append($('<td/>',{
+//					align : 'center',
+//					text : items.prdtColor
+//				})).append($('<td/>',{
+//					align : 'center',
+//					text : items.prdtGender
+//				})).append($('<td/>',{
+//					align : 'center',
+//					text : items.prdtPrice
+//				})).append($('<td/>',{
+//					align : 'center',
+//					text : items.prdtSize
+//				})).appendTo($('#table2Tbody'));
+//		}
+		}
+	});
+});
+
+
+
+
+
+
+
+
 //전체체크박스가 바뀔때마다 가격 변경
 $('.all_checkbox').change(function(){
 	var check_shoes_count = $('.shoppingBasket_basketlist_table tbody tr').length; //장바구니 총 개수
@@ -387,7 +430,8 @@ $('.select_order').click(function(){
 
 //전체상품 주문하기
 $('.all_order').click(function(){
-	location.href='/abcd_mart/order_pay/orderAll';
+	$('#shoppingForm').submit();
+	//location.href='/abcd_mart/order_pay/orderList.do';
 });
 
 
