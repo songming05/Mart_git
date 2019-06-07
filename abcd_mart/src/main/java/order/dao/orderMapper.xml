@@ -100,4 +100,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="prdtManagement" parameterType="java.util.Map">
 		update prdtManagement set prdtqty= prdtqty-1 where prdtcode = #{prdtcode} and prdtsize = #{shoessize}
 	</update>
+	
+	<select id="orderHistory" parameterType="String" resultType="orderDTO">
+		select * from orderABCD where id = #{id} order by 1
+	</select>
+	
 </mapper>

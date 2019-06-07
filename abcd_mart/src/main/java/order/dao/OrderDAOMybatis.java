@@ -74,6 +74,11 @@ class OrderDAOMybatis implements OrderDAO {
 		sqlSession.delete("orderSQL.deleteMyCart", id);
 	}
 
+	@Override
+	public List<OrderDTO> orderHistory(String id) {
+		return sqlSession.selectList("orderSQL.orderHistory", id);
+	}
+
 	
 
 }

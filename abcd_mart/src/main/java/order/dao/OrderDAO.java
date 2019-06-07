@@ -31,4 +31,6 @@ public interface OrderDAO {
 
 	public void deleteMyCart(String id);
 
+	public List<OrderDTO> orderHistory(String id);
+
 }

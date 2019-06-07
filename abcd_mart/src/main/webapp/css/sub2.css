@@ -1,0 +1,1183 @@
+@charset "UTF-8";
+/* ----- SCSS IMPORTS ----- */
+/* ----- SCSS IMPORTS ----- */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, object { display: block; }
+
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+
+audio:not([controls]) { display: none; }
+
+html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+a { text-decoration: none; outline: none; }
+a:focus { outline: 0; }
+a:hover, a:active { text-decoration: underline; }
+
+sub { font-size: 75%; line-height: 0; position: relative; bottom: -.25em; vertical-align: baseline; }
+
+sup { font-size: 75%; line-height: 0; position: relative; top: -.5em; vertical-align: baseline; }
+
+img { width: auto\9; height: auto; vertical-align: middle; -ms-interpolation-mode: bicubic; border: 0; }
+
+area:focus { border: none; outline-style: none; -moz-outline-style: none; }
+
+fieldset { border: 0; }
+fieldset legend { position: absolute; top: -5000em; width: 1px; height: 1px; overflow: hidden; text-indent: -5000em; }
+
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: middle; }
+
+button, input { line-height: normal; *overflow: visible; }
+
+button::-moz-focus-inner, input::-moz-focus-inner { padding: 0; border: 0; }
+
+button, html input[type='button'] { cursor: pointer; -webkit-appearance: button; }
+
+input[type='reset'], input[type='submit'] { cursor: pointer; -webkit-appearance: button; }
+input[type='search'] { -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; -webkit-appearance: textfield; }
+input[type='search']::-webkit-search-decoration, input[type='search']::-webkit-search-cancel-button { -webkit-appearance: none; }
+
+textarea { overflow: auto; vertical-align: top; }
+
+input::-webkit-input-placeholder { font-size: 11px; color: #a4a4a4; line-height: 1.5; }
+
+input:-moz-placeholder { font-size: 11px; color: #a4a4a4; }
+
+input::-moz-placeholder { font-size: 11px; color: #a4a4a4; }
+
+input:-ms-input-placeholder { font-size: 11px !important; color: #a4a4a4 !important; line-height: 1.8 !important; }
+
+.input-block-level { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 100%; min-height: 30px; }
+
+address, cite, code, dfn, em { font-weight: normal; font-style: normal; }
+
+.clear { clear: both; }
+
+.clearfix { *zoom: 1; }
+.clearfix:before, .clearfix:after { display: table; overflow: hidden; content: ""; }
+.clearfix:after { clear: both; }
+
+.hide_text { white-space: nowrap; overflow: hidden; text-indent: -5000em; text-align: left; }
+
+.fl-r { float: right; }
+
+.fl-l { float: left; }
+
+.hide { display: none; }
+
+.show { display: block; }
+
+.affix { position: fixed; }
+
+.positR { position: relative; }
+
+ol, ul { list-style: none; }
+
+hr { margin: 20px 0; border: 0; border-top: 1px solid #eeeeee; border-bottom: 1px solid #ffffff; }
+
+*:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.pt0 { padding-top: 0px !important; }
+.pt10 { padding-top: 10px !important; }
+.pt15 { padding-top: 15px !important; }
+.pt20 { padding-top: 20px; }
+.pt30 { padding-top: 30px; }
+.pt35 { padding-top: 35px; }
+.pt40 { padding-top: 40px; }
+.pt70 { padding-top: 70px; }
+.pt80 { padding-top: 80px; }
+.pt90 { padding-top: 90px; }
+
+.pb0 { padding-bottom: 0px !important; }
+.pb10 { padding-bottom: 10px; }
+.pb20 { padding-bottom: 20px; }
+.pb35 { padding-bottom: 35px; }
+.pb100 { padding-bottom: 100px !important; }
+
+.pl0 { padding-left: 0px !important; }
+.pl10 { padding-left: 10px; }
+.pl15 { padding-left: 15px; }
+.pl20 { padding-left: 20px !important; }
+.pl30 { padding-left: 30px; }
+.pl60 { padding-left: 60px !important; }
+
+.pr0 { padding-right: 0px !important; }
+.pr10 { padding-right: 10px; }
+.pr20 { padding-right: 20px; }
+.pr60 { padding-right: 60px; }
+
+.pa0 { padding: 0px; }
+.pa3 { padding: 3px; }
+.pa10 { padding: 10px; }
+.pa20 { padding: 20px; }
+.pa40 { padding: 40px; }
+
+.mt0 { margin-top: 0px !important; }
+.mt3 { margin-top: 3px; }
+.mt5 { margin-top: 5px !important; }
+.mt8 { margin-top: 8px !important; }
+.mt10 { margin-top: 10px !important; }
+.mt15 { margin-top: 15px; }
+.mt20 { margin-top: 20px !important; }
+.mt25 { margin-top: 25px !important; }
+.mt30 { margin-top: 30px; }
+.mt35 { margin-top: 35px; }
+.mt40 { margin-top: 40px !important; }
+.mt50 { margin-top: 50px; }
+.mt55 { margin-top: 55px; }
+.mt60 { margin-top: 60px !important; }
+.mt65 { margin-top: 65px !important; }
+.mt80 { margin-top: 80px !important; }
+
+.mb0 { margin-bottom: 0px !important; }
+.mb5 { margin-bottom: 5px; }
+.mb10 { margin-bottom: 10px; }
+.mb15 { margin-bottom: 15px; }
+.mb20 { margin-bottom: 20px; }
+.mb25 { margin-bottom: 25px; }
+
+.ml0 { margin-left: 0px !important; }
+.ml5 { margin-left: 5px; }
+.ml10 { margin-left: 10px; }
+.ml15 { margin-left: 15px; }
+.ml20 { margin-left: 20px; }
+.ml30 { margin-left: 30px; }
+.ml40 { margin-left: 40px; }
+.ml60 { margin-left: 60px; }
+
+.mr5 { margin-right: 5px; }
+.mr10 { margin-right: 10px; }
+.mr15 { margin-right: 15px; }
+.mr20 { margin-right: 20px; }
+.mr30 { margin-right: 30px; }
+.mr40 { margin-right: 40px; }
+
+.grid-box { display: table; width: 100%; border-collapse: collapse; *zoom: 1; }
+.grid-box:before, .grid-box:after { display: table; overflow: hidden; content: ""; }
+.grid-box:after { clear: both; }
+.grid-1 { display: table-cell; clear: left; box-sizing: border-box; width: 100%; }
+.grid-2 { display: table-cell; float: left; box-sizing: border-box; width: 50%; }
+.grid-3 { display: table-cell; float: left; box-sizing: border-box; width: 33.33333%; }
+.grid-4 { display: table-cell; float: left; box-sizing: border-box; width: 25%; }
+.grid-5 { display: table-cell; float: left; box-sizing: border-box; width: 20%; }
+
+.fs10 { font-size: 10px !important; }
+.fs11 { font-size: 11px !important; }
+.fs12 { font-size: 12px !important; }
+.fs13 { font-size: 13px !important; }
+.fs14 { font-size: 14px !important; }
+.fs15 { font-size: 15px !important; }
+.fs16 { font-size: 16px !important; }
+.fs18 { font-size: 18px !important; }
+.fs20 { font-size: 20px !important; }
+.fs22 { font-size: 22px !important; }
+.fs24 { font-size: 24px !important; }
+.fs30 { font-size: 30px !important; }
+
+.bold { font-weight: bold !important; }
+
+.normal { font-weight: normal !important; }
+
+.align-center { text-align: center !important; }
+.align-left { text-align: left !important; }
+.align-right { text-align: right !important; }
+.align-top { vertical-align: top !important; }
+.align-middle { vertical-align: middle !important; }
+.align-bottom { vertical-align: bottom !important; }
+
+.auto-height { overflow: auto !important; white-space: normal !important; }
+
+.no_ml { margin-left: 0 !important; }
+
+.inblock { display: inline-block; }
+
+.bor-tG { border-top: 1px solid #dbdbdb; }
+.bor-l { border-left: 1px solid #dbdbdb; }
+.bor-r { border-right: 1px solid #dbdbdb; }
+.bor-b { border-bottom: 1px solid #dbdbdb; }
+
+.bg-f2 { background-color: #f2f2f2; }
+
+.ico_top1:before, .ico_top2:before, .ico_top3:before, .ico_top4:before, .ico_notice:before, .ico_award1:before, .ico_award2:before, .ico_award3:before, .ico_newest:before, .ico_thema1:before, .ico_thema2:before, .ico_thema3:before, .ico_quick1:before, .ico_quick2:before, .ico_quick4:before { display: inline-block; width: 18px; height: 16px; content: ''; vertical-align: middle; background: url("../images/icons.png") 0 -1px no-repeat; }
+.ico_top2:before { background-position: -26px -1px; }
+.ico_top3:before { background-position: -53px -1px; }
+.ico_top4 { margin-top: -3px; }
+.ico_top4:before { height: 20px; background-position: -80px -1px; }
+.ico_notice:before { background-position: -29px -145px; }
+
+.ico_award1:before, .ico_award2:before, .ico_award3:before, .ico_newest:before { margin-right: 4px; background-position: 0 -28px; }
+.ico_award2:before { background-position: -24px -28px; }
+.ico_award3:before { background-position: -46px -28px; }
+.ico_newest:before { background-position: -79px -198px; }
+
+.swiper-slide-active .ico_award1:before, .swiper-slide-active .ico_award2:before, .swiper-slide-active .ico_award3:before, .swiper-slide-active .ico_newest:before, .current .ico_award1:before, .current .ico_award2:before, .current .ico_award3:before, .current .ico_newest:before { background-position: 0 -55px; }
+.swiper-slide-active .ico_award2:before, .current .ico_award2:before { background-position: -24px -55px; }
+.swiper-slide-active .ico_award3:before, .current .ico_award3:before { background-position: -46px -55px; }
+.swiper-slide-active .ico_newest:before, .current .ico_newest:before { background-position: -79px -218px; }
+
+.ico_thema1:before, .ico_thema2:before, .ico_thema3:before { height: 18px; margin-right: 2px; background-position: -80px -28px; }
+.ico_thema2:before { background-position: -106px -29px; }
+.ico_thema3:before { background-position: -136px -29px; }
+
+.current .ico_thema1:before, .current .ico_thema2:before, .current .ico_thema3:before { background-position: -80px -53px; }
+.current .ico_thema2:before { background-position: -106px -54px; }
+.current .ico_thema3:before { background-position: -136px -54px; }
+
+.ico_quick1:before { width: 19px; height: 18px; margin-right: 4px; background-position: -163px -28px; }
+.ico_quick1:hover { color: #e50015; }
+.ico_quick1:hover:before { background-position: -163px -53px; }
+.ico_quick2:before { width: 27px; height: 18px; margin-right: 4px; background-position: -192px -28px; }
+.ico_quick2:hover { color: #e50015; }
+.ico_quick2:hover:before { background-position: -192px -53px; }
+.ico_quick4:before { width: 16px; height: 19px; margin-right: 4px; background-position: -231px -28px; }
+.ico_quick4:hover { color: #e50015; }
+.ico_quick4:hover:before { background-position: -231px -56px; }
+.ico_quick3:after { display: inline-block; width: 10px; height: 10px; content: ''; vertical-align: middle; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -167px 0px no-repeat; margin-left: 4px; }
+
+.ico_arrow:after { display: inline-block; width: 8px; height: 12px; content: ''; vertical-align: middle; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -135px -1px no-repeat; }
+
+.ico_down1:after { display: inline-block; width: 12px; height: 10px; content: ''; vertical-align: middle; margin-left: 3px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -117px -81px no-repeat; }
+
+.ico_down3:after { display: inline-block; width: 18px; height: 19px; content: ''; vertical-align: middle; margin-left: 4px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -110px -197px no-repeat; }
+
+.ico_down4:after { display: inline-block; width: 15px; height: 17px; content: ''; vertical-align: middle; margin-left: 4px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -208px -110px no-repeat; }
+
+.ico_up2:after, .ico_down2:after { display: inline-block; width: 24px; height: 20px; content: ''; vertical-align: middle; margin-left: 3px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") 2px -141px no-repeat; }
+
+.ico_down2:after { background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") 2px -170px no-repeat; }
+
+.ico_camera { white-space: nowrap; overflow: hidden; text-indent: -5000em; text-align: left; display: inline-block; width: 17px; height: 12px; vertical-align: middle; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icon_camera.png") 0 0 no-repeat; margin-left: 10px; }
+
+.ico_answer, .ico_quest { white-space: nowrap; overflow: hidden; text-indent: -5000em; text-align: left; display: inline-block; width: 22px; height: 22px; vertical-align: top; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -140px -144px no-repeat; }
+
+.ico_quest { background-position: -113px -144px; }
+
+.ico_trans:before, .ico_change:before, .ico_memo:before, .ico_chat:before, .ico_alim:before, .ico_as:before { display: inline-block; width: 28px; height: 21px; content: ''; vertical-align: middle; margin-right: 5px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -52px -172px no-repeat; }
+.ico_change:before { background-position: -80px -172px; }
+.ico_memo:before { background-position: -110px -172px; }
+.ico_chat:before { background-position: -138px -172px; }
+.ico_alim:before { background-position: -167px -173px; }
+.ico_as:before { background-position: -194px -173px; }
+
+.ico_arrow_left { white-space: nowrap; overflow: hidden; text-indent: -5000em; text-align: left; display: inline-block; width: 8px; height: 8px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -120px -94px no-repeat; }
+
+.ico_arrow_left2 { white-space: nowrap; overflow: hidden; text-indent: -5000em; text-align: left; display: inline-block; width: 8px; height: 8px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -114px -223px no-repeat; }
+
+.ico_arrow_right { white-space: nowrap; overflow: hidden; text-indent: -5000em; text-align: left; display: inline-block; width: 18px; height: 10px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -233px -158px no-repeat; }
+
+.ico_close { white-space: nowrap; overflow: hidden; text-indent: -5000em; text-align: left; display: inline-block; width: 10px; height: 10px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -58px -147px no-repeat; }
+
+.ico_close2 { white-space: nowrap; overflow: hidden; text-indent: -5000em; text-align: left; display: inline-block; width: 20px; height: 20px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") 0px -200px no-repeat; }
+
+.ico_close3 { white-space: nowrap; overflow: hidden; text-indent: -5000em; text-align: left; display: inline-block; width: 14px; height: 14px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -234px -174px no-repeat; }
+
+.ico_close4 { white-space: nowrap; overflow: hidden; text-indent: -5000em; text-align: left; display: inline-block; width: 16px; height: 16px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -232px -262px no-repeat; }
+
+.ico_delete { white-space: nowrap; overflow: hidden; text-indent: -5000em; text-align: left; display: inline-block; width: 10px; height: 10px; vertical-align: middle; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -77px -146px no-repeat; }
+
+.ico_url:after, .ico_brand:after { display: inline-block; width: 16px; height: 11px; content: ''; vertical-align: middle; margin-left: 4px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -171px -146px no-repeat; }
+.ico_brand:after { width: 9px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -197px -146px no-repeat; }
+
+.ico_note:before { display: inline-block; width: 8px; height: 10px; content: ''; vertical-align: middle; margin-right: 4px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -96px -146px no-repeat; }
+
+.ico_plus { display: inline-block; width: 15px; height: 15px; vertical-align: middle; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -54px -198px no-repeat; }
+
+.ico_search { display: inline-block; width: 16px; height: 16px; vertical-align: middle; margin-left: 5px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -234px -214px no-repeat; }
+
+.ico_link { display: inline-block; width: 16px; height: 18px; vertical-align: middle; margin-right: 5px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_member.png") -420px -119px no-repeat; }
+
+.ico_tel { font-size: 12px; font-family: "tahoma", Dotum, Gulim, Verdana, sans-serif, Helvetica, sans-serif; }
+.ico_tel:before { content: ''; display: inline-block; width: 14px; height: 14px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -207px -262px no-repeat; vertical-align: middle; margin-right: 5px; }
+
+.ico_gift1 { display: inline-block; width: 32px; height: 26px; vertical-align: middle; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") 0px -240px no-repeat; }
+
+.ico_gift2 { display: inline-block; width: 30px; height: 26px; vertical-align: middle; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -41px -240px no-repeat; }
+
+.ico_gift3 { display: inline-block; width: 30px; height: 27px; vertical-align: middle; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -79px -239px no-repeat; }
+
+.ico_offline { position: absolute; top: 5px; left: 0; width: 32px; height: 42px; white-space: nowrap; overflow: hidden; text-indent: -5000em; text-align: left; display: block; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/bg_tag.png") -44px -119px no-repeat; }
+
+.tag_area1:before { content: ''; display: block; width: 40px; height: 50px; margin: auto; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/bg_tag.png") 0 -117px no-repeat; }
+
+.coupon_box li { display: inline-block; margin-left: 3px; }
+.coupon_box li:first-child { margin-left: 0; }
+
+
+.ic_na:before { display: inline-block; width: 18px; height: 18px; content: ''; vertical-align: middle; margin-right: 4px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_member.png") -574px -394px no-repeat; }
+
+.ic_fa:before { display: inline-block; width: 18px; height: 18px; content: ''; vertical-align: middle; margin-right: 4px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_member.png") -574px -412px no-repeat; }
+
+.ico_error { display: inline-block; width: 98px; height: 68px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_etc.png") -304px -192px no-repeat; vertical-align: middle; }
+
+.ic_fa_2 { display: inline-block; width: 47px; height: 31px; margin-right: 5px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_member.png") -451px -81px no-repeat; vertical-align: middle; }
+
+.ic_na_2 { display: inline-block; width: 47px; height: 31px; margin-right: 5px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_member.png") -451px -112px no-repeat; vertical-align: middle; }
+
+.line_on, .line_off:before { text-align: left; }
+.line_on:before, .line_off:before { content: ''; display: inline-block; width: 17px; height: 16px; margin-right: 5px; vertical-align: middle; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_etc.png") no-repeat -452px -367px; }
+
+.line_off:before { width: 17px; height: 18px; background-position: -477px -367px; }
+
+/** BxSlider v4.1.2 - Fully loaded, responsive content slider http://bxslider.com  Written by: Steven Wanderski, 2014 http://stevenwanderski.com (while drinking Belgian ales and listening to jazz)  CEO and founder of bxCreative, LTD http://bxcreative.com */
+/** RESET AND LAYOUT
+===================================*/
+.bx-wrapper { position: relative; margin: 0 auto; padding: 0; *zoom: 1; }
+.bx-wrapper img { display: block; }
+
+/** THEME
+===================================*/
+.bx-wrapper .bx-viewport { /*fix other elements on the page moving (on Chrome)*/ -webkit-transform: translatez(0); -moz-transform: translatez(0); -ms-transform: translatez(0); -o-transform: translatez(0); transform: translatez(0);     /*-moz-box-shadow: 0 0 5px #ccc;
+-webkit-box-shadow: 0 0 5px #ccc;
+box-shadow: 0 0 5px #ccc;
+border:  5px solid #fff;
+left: -5px;*/ background: #fff; overflow: hidden; }
+.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto { position: absolute; bottom: 20px; width: 100%; }
+
+
+@-webkit-keyframes swiper-preloader-spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes swiper-preloader-spin { 100% { transform: rotate(360deg); } }
+.sw
+@media all and (min-width: 768px) { .swiper1 .swiper-slide, .swiper2 .swiper-slide { width: 640px; }
+  .detail_area .d_topInfo .swiper1 .swiper-slide { width: 100%; }
+  .leftdimd { background: rgba(255, 255, 255, 0.7); width: 50%; position: absolute; top: 0px; left: 0; margin-left: -320px; height: 100%; z-index: 2; }
+  .rightdimd { background: rgba(255, 255, 255, 0.7); width: 50%; position: absolute; top: 0px; right: 0; margin-right: -320px; height: 100%; z-index: 2; } }
+
+*, html, body { margin: 0; padding: 0; }
+
+html { height: 100%; }
+
+body { font-size: 11px; position: relative; min-width: 1100px; height: 100%; color: #7b7b7b; font-family: Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; }
+
+h1, h2, h3, h4, h5, h6, .side_nav .nav { font-weight: normal; font-family: Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; }
+
+input, button, select, textarea { line-height: 1.5; display: inline-block; word-break: break-all; font-family: Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; }
+
+button { overflow: visible; padding: 0; border: none; background: none; }
+
+select[type='text'], select[type='password'], select[type='datetime'], select[type='datetime-local'], select[type='date'], select[type='month'], select[type='time'], select[type='week'], select[type='number'], select[type='email'], select[type='url'], select[type='search'], select[type='tel'], select[type='color'], textarea[type='text'], textarea[type='password'], textarea[type='datetime'], textarea[type='datetime-local'], textarea[type='date'], textarea[type='month'], textarea[type='time'], textarea[type='week'], textarea[type='number'], textarea[type='email'], textarea[type='url'], textarea[type='search'], textarea[type='tel'], textarea[type='color'], input[type='text'], input[type='password'], input[type='datetime'], input[type='datetime-local'], input[type='date'], input[type='month'], input[type='time'], input[type='week'], input[type='number'], input[type='email'], input[type='url'], input[type='search'], input[type='tel'], input[type='color'] { font-size: 12px; width: 220px; min-height: 22px; padding: 1px 10px; color: #666666; border: 1px solid #dbdbdb; outline: 0 !important; background-color: #fff; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+select { width: auto; min-width: 70px; border-color: #bfbfbf; }
+
+textarea:focus[type='text']:focus, textarea:focus[type='password']:focus, textarea:focus[type='datetime']:focus, textarea:focus[type='datetime-local']:focus, textarea:focus[type='date']:focus, textarea:focus[type='month']:focus, textarea:focus[type='time']:focus, textarea:focus[type='week']:focus, textarea:focus[type='number']:focus, textarea:focus[type='email']:focus, textarea:focus[type='url']:focus, textarea:focus[type='search']:focus, textarea:focus[type='tel']:focus, textarea:focus[type='color']:focus, input[type='text']:focus, input[type='password']:focus, input[type='datetime']:focus, input[type='datetime-local']:focus, input[type='date']:focus, input[type='month']:focus, input[type='time']:focus, input[type='week']:focus, input[type='number']:focus, input[type='email']:focus, input[type='url']:focus, input[type='search']:focus, input[type='tel']:focus, input[type='color']:focus { border-color: #bfbfbf; }
+
+textarea { resize: none; border: 1px solid #dbdbdb; }
+
+label { margin-right: 12px; }
+
+.tit_type1 { font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; font-weight: bold; color: #000000; }
+
+.tit_type2 { font-family: Verdana, sans-serif, Helvetica, sans-serif; font-weight: bold; color: #000000; }
+
+.tit_type3 { font-family: "tahoma", Dotum, Gulim, Verdana, sans-serif, Helvetica, sans-serif; }
+
+.tit_type4 { font-family: Verdana, sans-serif, Helvetica, sans-serif; }
+
+.fc_type1 { color: #e50015; }
+
+.fc_type2 { color: #f3646a; }
+
+.fc_type3 { color: #666666; }
+
+.fc_type4 { color: #7b7b7b; }
+
+.fc_type5 { color: #a4a4a4; }
+
+.fc_type6 { color: #3b3b3b; }
+
+.fc_type7 { color: #feb2b6; }
+
+.fc_type8 { color: #000000; }
+
+.fc_type9 { color: #f5ca01; }
+
+.width-100 { width: 100%; }
+
+/* --->> 2 - LINKS 
+------------------------------------------*/
+a { display: inline-block; color: #7b7b7b; }
+a:hover, a:active { text-decoration: none; }
+a.link { text-decoration: underline; color: #7b7b7b; }
+a.link.fc_type2 { color: #f3646a; }
+
+
+/* --->> 6 a - UI: TABS 怨듯넻
+------------------------------------------*/
+.tabs-menu { *zoom: 1; }
+.tabs-menu:before, .tabs-menu:after { display: table; overflow: hidden; content: ""; }
+.tabs-menu:after { clear: both; }
+.tabs-menu li { float: left; margin-right: 2px; }
+.tabs-menu li a { padding: 8px 8px; }
+.tabs-menu li.current { position: relative; z-index: 5; }
+.tabs-menu li.current a { color: #e50015; }
+
+.tabs-content { overflow: hidden; }
+.tabs-content .tabs-cont, .tabs-content .tabs3, .tabs-content .tabs4, .tabs-content .tabs5, .tabs-content .tabs6 { display: none; }
+.tabs-content #tabs-1, .tabs-content #tabs1-1, .tabs-content #tabs2-1, .tabs-content #tabs3-1, .tabs-content #tabs4-1, .tabs-content #tabs5-3, .tabs-content #tabs6-1, .tabs-content #gallery_tabs_01, .tabs-content #cm_tabs_01 { display: block; }
+
+
+
+/* --->> 6 d - UI: LIST
+------------------------------------------*/
+p.list_type1, .list_type1 li { line-height: 1.8; position: relative; padding-left: 10px; font-family: "tahoma", Dotum, Gulim, Verdana, sans-serif, Helvetica, sans-serif; color: #666666; }
+p.list_type1:before, .list_type1 li:before { position: absolute; top: 8px; left: 0; display: block; width: 2px; height: 2px; content: ''; background: #7b7b7b; }
+p.list_type1.fc_type1, .list_type1 li.fc_type1 { color: #e50015; }
+p.list_type1.fc_type1:before, .list_type1 li.fc_type1:before { background-color: #e50015; }
+
+p.list_type1_1, .list_type1_1 li { line-height: 1.8; position: relative; padding-left: 8px; }
+p.list_type1_1:before, .list_type1_1 li:before { position: absolute; top: 7px; left: 0; display: block; width: 3px; height: 3px; content: ''; background: #bfbfbf; }
+
+.list_type1_2 li { line-height: 1.8; position: relative; padding-left: 10px; }
+.list_type1_2 li:before { position: absolute; top: 8px; left: 0; display: block; width: 2px; height: 2px; content: ''; background: #bfbfbf; }
+
+.list_type2 li { line-height: 1.8; position: relative; padding-left: 10px; }
+.list_type2 li:before { position: absolute; top: 7px; left: 0; display: block; width: 2px; height: 2px; content: ''; background: #8b8b8b; }
+ 
+p.list_type1_3, .list_type1_1 li { line-height: 1.8; position: relative; padding-left: 4px; font-family: "tahoma", Dotum, Gulim, Verdana, sans-serif, Helvetica, sans-serif; color: #666666; }
+p.list_type1_3:before, .list_type1_1 li:before { position: absolute; top: 8px; left: 0; display: block; width: 2px; height: 2px; content: ''; background: #7b7b7b; }
+
+div.list_type3, p.list_type3, .list_type3 li { line-height: 1.8; position: relative; padding-left: 12px; }
+div.list_type3:before, p.list_type3:before, .list_type3 li:before { position: absolute; top: 7px; left: 3px; display: block; width: 4px; height: 5px; content: ''; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -213px -130px no-repeat; }
+
+.basic_list_type li { font-size: 12px; line-height: 1.8; color: #666666; }
+
+a.bu_type1 { display: inline-block; }
+
+.bu_type1:before { content: ''; display: inline-block; width: 9px; height: 9px; margin-right: 5px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") no-repeat -236px -196px; }
+
+/* --->> 6 e - UI: PAGE
+------------------------------------------*/
+.paginate { padding: 10px 0; text-align: center; *zoom: 1; }
+.paginate:before, .paginate:after { display: table; overflow: hidden; content: ""; }
+.paginate:after { clear: both; }
+.paginate a { width: 22px; height: 22px; border: 1px solid #dbdbdb; vertical-align: middle; line-height: 22px; color: #7b7b7b; font-family: "tahoma", Dotum, Gulim, Verdana, sans-serif, Helvetica, sans-serif; font-size: 12px; }
+.paginate a.first { background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_pagenate.png") no-repeat -1px 0px; text-indent: -9999em; }
+.paginate a.prev { background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_pagenate.png") no-repeat -26px 0px; text-indent: -9999em; margin-right: 6px; }
+.paginate a.next { background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_pagenate.png") no-repeat -51px 0px; text-indent: -9999em; margin-left: 6px; }
+.paginate a.last { background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_pagenate.png") no-repeat -76px 0px; text-indent: -9999em; }
+.paginate a.on { color: #ffffff; background-color: #e50015; border-color: #e50015; }
+
+.paginate_wide { /* padding: 10px 0; */ text-align: center; *zoom: 1; }
+.paginate_wide:before, .paginate:after { display: table; overflow: hidden; content: ""; }
+.paginate_wide:after { clear: both; }
+.paginate_wide a { width: 45px; height: 24px; border: 1px solid #dbdbdb; vertical-align: middle; line-height: 22px; color: #7b7b7b; font-size: 12px; }
+.paginate_wide a.first { width: 24px; background: url("//image.abcmart.co.kr/nexti/images/mobile_new/controls.png") no-repeat 6px -109px; background-size: 64px 126.5px; text-indent: -9999em; }
+.paginate_wide a.prev { width: 24px; background: url("//image.abcmart.co.kr/nexti/images/mobile_new/controls.png") no-repeat -11px -109px; background-size: 64px 126.5px; text-indent: -9999em; margin-right: 6px; }
+.paginate_wide a.next { width: 24px; background: url("//image.abcmart.co.kr/nexti/images/mobile_new/controls.png") no-repeat -28px -109px; background-size: 64px 126.5px; text-indent: -9999em; margin-left: 6px; }
+.paginate_wide a.last { width: 24px; background: url("//image.abcmart.co.kr/nexti/images/mobile_new/controls.png") no-repeat -46px -109px; background-size: 64px 126.5px; text-indent: -9999em; }
+.paginate_wide a.on { color: #ffffff; background-color: #e50015; border-color: #e50015; }
+
+.positR { position: relative; }
+.positR .positA { position: absolute; }
+.positR .positA.r0 { right: 0px; }
+.positR .positA.r10 { right: 10px; }
+.positR .positA.b9 { bottom: 9px; }
+.positR .positA.b10 { bottom: 10px; }
+.positR .positA.b1 { bottom: 1px; }
+.positR .positA.b0 { bottom: 0px; }
+.positR .positA.b-3 { bottom: -3px; }
+.positR .positA.t0 { top: 0px; }
+.positR .positA.t9 { top: 9px; }
+.positR .positA.t50p { top: 50%; }
+
+/* --->> 7 - TABLES
+------------------------------------------*/
+table { empty-cells: show; width: 100%; table-layout: fixed; /* border-collapse: collapse; */ border: 0; border-collapse: separate; border-spacing: 0; }
+table td .cp_type1_1, table td .cp_type1_2, table td .cp_type1_2 { line-height: 1.3; }
+
+.table_basic { border-top: 1px solid #000000; border-bottom: 1px solid #bfbfbf; margin-bottom: 10px; }
+.table_basic.no_bb { border-bottom: 0; }
+.table_basic table tr:first-child th, .table_basic table tr:first-child td { border-top: 0; }
+.table_basic caption { display: none; }
+.table_basic th, .table_basic td { font-size: 11px; line-height: 1.5; padding: 10px 15px; word-break: break-all; color: #666666; border: 0; border-top: 1px solid #dbdbdb; }
+.table_basic th.wide_padding, .table_basic td.wide_padding { padding: 20px 15px; }
+.table_basic th.align-top, .table_basic td.align-top { vertical-align: top; }
+.table_basic th a, .table_basic td a { color: #666666; }
+.table_basic th.txt_box, .table_basic td.txt_box { padding: 35px 30px; line-height: 2.0; font-size: 12px; }
+.table_basic th.txt_box img, .table_basic td.txt_box img { max-width: 100%; }
+.table_basic th.total_bg, .table_basic td.total_bg { background: #fafafa; }
+.table_basic th.fc_type8, .table_basic td.fc_type8 { color: #000000; }
+.table_basic th { font-weight: 400; text-align: left; background: #f5f5f6; }
+.table_basic thead th { text-align: center; border-bottom: 1px solid #dbdbdb; font-weight: bold; background-color: #fafafa; }
+.table_basic tfoot th { border-bottom: 1px solid #ebebeb !important; }
+.table_basic .group-center th, .table_basic .group-center td { text-align: center; }
+.table_basic .group-center th.align-left, .table_basic .group-center td.align-left { text-align: left; }
+.table_basic label { display: inline-block; }
+.table_basic.no_point { border-top-color: #dbdbdb; border-bottom-color: #dbdbdb; }
+.table_basic.no_point thead th { font-weight: normal; }
+.table_basic.bgfa th { background-color: #fafafa; }
+.table_basic.bgfa td { color: #7b7b7b; }
+.table_basic.or_price table th { text-align: left; }
+.table_basic.or_price table td { text-align: right; }
+.table_basic.table_center table th { text-align: center; }
+.table_basic.table_center table td { text-align: center; }
+
+/* --->> 10 a - PAGES :  PRODUCT List PAGE 怨듯넻
+------------------------------------------*/
+.gallery_basic { *zoom: 1; }
+.gallery_basic:before, .gallery_basic:after { display: table; overflow: hidden; content: ""; }
+.gallery_basic:after { clear: both; }
+.gallery_basic .model_img_box { position: relative; display: inline-block; }
+
+.gallery_line_type1 > li { border-top: 1px solid #f2f2f2; padding: 20px; }
+.gallery_line_type1 > li:first-child { border-top: 0; }
+.gallery_line_type1 td { text-align: center; }
+.gallery_line_type1 .model_img_box { float: left; margin-right: 30px; }
+.gallery_line_type1 .model_img_box img { width: 130px; }
+.gallery_line_type1 .model_txt_box { position: relative; float: left; height: 130px; }
+.gallery_line_type1 .model_txt_box .model_box { text-align: left; }
+.gallery_line_type1 .model_txt_box .size_view_box { left: 0; bottom: 5px; margin-left: 0; }
+.gallery_line_type1 .model_txt_box .size_view_box .size_list { margin-left: 0; }
+.gallery_line_type1 .model_box { margin-top: 0; }
+.gallery_line_type1 .model_box .price { margin-top: 0; }
+.gallery_line_type1 .model_box .price .formal { margin-left: 0; }
+.gallery_line_type1 .rating_box { width: 78px; margin: auto; margin-bottom: 5px; }
+.gallery_line_type1 .rating_box strong { color: #666666; }
+
+.gallery_box_type1 { text-align: center; }
+.gallery_box_type1 > li { float: left; vertical-align: top; }
+.gallery_box_type1 > li:first-child { margin-left: 0; }
+
+/* -->> -------------------------- Table of Content:     10 b - PAGES : SUB Common PAGE 10 c - PAGES : PRODUCT Detail PAGE 10 d - PAGES :  BRAND MAIN 10 e - PAGES :  CATEGORY PAGE 10 f - PAGES :  THEMA SHOP - COLOR ZONE, TOP30, NEW ZONE , webzin 10 g - PAGES :  FOOTER 10 h - PAGES :  MEMBER 10 i - PAGES :  ETC 10 j - PAGES :  EVENT, EXHIBIT, GIFT 10 k - PAGES :  ORDER 10 l - PAGES : SEARCH RESULT 11   - PAGES :  POPUP 12   - PAGES :  COUSTOMER 13   - PAGES :  MYPAGE -->> --------------------------- */
+/* --->> 10 b - PAGES : SUB Common PAGE
+------------------------------------------*/
+.container_wrap { min-height: 600px; padding-bottom: 50px; }
+
+.page_location { padding: 10px; border-bottom: 1px solid #dbdbdb; }
+.page_location > ul { *zoom: 1; }
+.page_location > ul:before, .page_location > ul:after { display: table; overflow: hidden; content: ""; }
+.page_location > ul:after { clear: both; }
+.page_location > ul > li { position: relative; float: left; }
+.page_location > ul > li > a { position: relative; width: 143px; padding: 3px 6px 3px 10px; padding: 4px 6px 2px 10px \0/IE89; border: 1px solid #bfbfbf; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.page_location > ul > li > span { display: inline-block; margin-top: 4px; }
+.page_location > ul > li:before { display: inline-block; width: 10px; height: 12px; margin: 0 3px 0 7px; content: ''; vertical-align: middle; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -151px -1px no-repeat; }
+.page_location > ul > li:first-child:before { display: none; }
+.page_location > ul > li:first-child > a { width: auto; padding: 3px 0; color: #666666; border-color: #fff; }
+.page_location > ul > li.location_box a.on { border-color: #000; }
+.page_location > ul > li.location_box a.on .ico_arrow1 { background-position: -69px -94px; }
+.page_location > ul > li.location_box .other_list { position: absolute; z-index: 1; top: 20px; left: 24px; overflow: hidden; width: 143px; height: 0; }
+.page_location > ul > li.location_box .other_list.on { height: auto; border: 1px solid #000; border-top-color: #bfbfbf; background: #fff; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.page_location > ul > li.location_box .other_list.on a { width: 100%; padding: 4px 10px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.page_location > ul > li.location_box .other_list.on a:hover { background-color: #f2f2f2; }
+.page_location > ul .ico_arrow1 { position: absolute; top: 4px; right: 6px; display: inline-block; width: 15px; height: 10px; vertical-align: middle; border-left: 1px solid #dbdbdb; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -69px -78px no-repeat; }
+
+/* --->> 10 c - PAGES : PRODUCT Detail PAGE
+------------------------------------------*/
+.product_detail_box1 { *zoom: 1; }
+.product_detail_box1:before, .product_detail_box1:after { display: table; overflow: hidden; content: ""; }
+.product_detail_box1:after { clear: both; }
+.product_detail_box1.preview { padding-bottom: 50px; }
+.product_detail_box1 .detail_box1_left { float: left; width: 400px; }
+.product_detail_box1 .detail_box1_right { float: right; width: 640px; }
+
+.detail_img_box .img_area { position: relative; }
+.detail_img_box .img_area img { width: 100%; height: 100%; }
+.detail_img_box .img_area .tag_area1 { position: absolute; top: 25px; left: 20px; text-align: center; }
+.detail_img_box .img_area .tag_area_icon { position: absolute; top: 25px; left: 20px; text-align: center; }
+.detail_img_box .img_area .tag_area1 h2 { font-size: 16px; color: #3b3b3b; }
+.detail_img_box .select_area { text-align: center; }
+.detail_img_box .select_area li { display: inline; margin-left: 5px; }
+.detail_img_box .select_area li a { border: 1px solid #dbdbdb; }
+.detail_img_box .select_area li a img { width: 60px; height: 60px; }
+.detail_img_box .select_area li.current a { border-color: #e50015; }
+.detail_img_box .select_area li:first-child { margin-left: 0; }
+
+.detail_add_box { margin-top: 30px; border: 1px solid #dbdbdb; }
+.detail_add_box.preview { width: 344px; margin: 30px auto 0; }
+.detail_add_box.preview .detail_add_box1 .rating_box { width: 100%; border-right: 0; }
+.detail_add_box .detail_add_box1 { padding: 15px 0; *zoom: 1; }
+.detail_add_box .detail_add_box1:before, .detail_add_box .detail_add_box1:after { display: table; overflow: hidden; content: ""; }
+.detail_add_box .detail_add_box1:after { clear: both; }
+.detail_add_box .detail_add_box1 .rating_box { float: left; width: 50%; text-align: center; color: #3b3b3b; border-right: 1px solid #dbdbdb; }
+.detail_add_box .detail_add_box1 .rating_box .tit_type2 { font-size: 30px; }
+.detail_add_box .detail_add_box1 .rating_box .tit_type2 .won { font-weight: normal; }
+.detail_add_box .detail_add_box1 .appraisal_box { float: left; width: 49.5%; text-align: center; color: #3b3b3b; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.detail_add_box .detail_add_box1 .appraisal_box li { line-height: 1.5; padding: 0 5px; text-align: center; }
+.detail_add_box .detail_add_box1 .appraisal_box .btn_sType1 { margin-top: 13px; }
+.detail_add_box .detail_add_box1.offline .rating_box { width: 213px; padding: 0 30px; }
+.detail_add_box .detail_add_box1.offline .appraisal_box { width: 340px; margin-left: 10px; }
+.detail_add_box .detail_add_box1.offline .appraisal_box li { padding: 3px 5px; }
+.detail_add_box .detail_add_box1.offline .appraisal_box .btn_sType1 { margin-top: 18px; }
+.detail_add_box .detail_add_box2 { line-height: 1.5; padding: 7px 5px 5px; text-align: center; background-color: #f2f2f2; }
+
+.sns_group { padding-top: 66px; text-align: right; }
+.sns_group li { display: inline-block; }
+.sns_group li a { width: 24px; height: 24px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") 0 -112px no-repeat; white-space: nowrap; overflow: hidden; text-indent: -5000em; text-align: left; }
+.sns_group li a.sns_02 { background-position: -28px -112px; }
+.sns_group li a.sns_03 { background-position: -56px -112px; }
+.sns_group li a.sns_04 { background-position: -84px -112px; }
+.sns_group li a.sns_05 { background-position: -112px -112px; }
+
+.preview .sns_group, .preview .total_price_box { padding-right: 6px; }
+.preview .check_list_box ul { max-height: 126px; overflow-y: auto; }
+
+.detail_info_area { border-bottom: 1px solid #bfbfbf; }
+.detail_info_area.line_type2 { border-bottom: 1px dashed #dbdbdb; }
+.detail_info_area.preview .product_tit { padding: 50px 0 12px; }
+.detail_info_area .product_tit { padding: 60px 0 12px; border-bottom: 1px solid #000; position: relative; }
+.detail_info_area .product_tit .tit_group { width: 485px; }
+.detail_info_area .product_tit .sns_group { position: absolute; right: 6px; bottom: 10px; padding-top: 0; }
+.detail_info_area .product_tit .tit_type1 { font-size: 28px; line-height: 1.1; }
+.detail_info_area .product_tit .tit_type1.fs16 { margin-top: 8px; color: #a4a4a4; }
+.detail_info_area .product_tit .tit_type3 { margin-top: 17px; *zoom: 1; }
+.detail_info_area .product_tit .tit_type3:before, .detail_info_area .product_tit .tit_type3:after { display: table; overflow: hidden; content: ""; }
+.detail_info_area .product_tit .tit_type3:after { clear: both; }
+.detail_info_area .product_tit .tit_type3 li { float: left; padding: 0 10px  0 1px; }
+.detail_info_area .product_tit .tit_type3 li:before { display: inline-block; width: 1px; height: 10px; margin-top: -2px; margin-right: 10px; content: ''; vertical-align: middle; background: #dbdbdb; }
+.detail_info_area .product_tit .tit_type3 li:first-child:before { display: none; }
+.detail_info_area .detail_section { padding: 20px; border-top: 1px dashed #dbdbdb; }
+.detail_info_area .detail_section dl { margin-top: 20px; *zoom: 1; }
+.detail_info_area .detail_section dl:before, .detail_info_area .detail_section dl:after { display: table; overflow: hidden; content: ""; }
+.detail_info_area .detail_section dl:after { clear: both; }
+.detail_info_area .detail_section dl:first-child { margin-top: 0; }
+.detail_info_area .detail_section dl dt { font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; font-size: 13px; font-weight: bold; float: left; color: #666666; }
+.detail_info_area .detail_section dl dd { width: 463px; margin-left: 156px; color: #3b3b3b; }
+.detail_info_area .detail_section.detail_info1 { position: relative; border-top: 0; }
+.detail_info_area .detail_section.detail_info1 .btn_group { position: absolute; top: 22px; right: 20px; }
+.detail_info_area .detail_section.detail_info1 .widthout_layer { position: absolute; top: 0; right: 84px; display: none; width: 316px; padding: 18px 20px; border: 1px solid #000; background-color: #fff; }
+.detail_info_area .detail_section.detail_info1 .widthout_layer header { padding-bottom: 10px; border-bottom: 1px solid #dbdbdb; }
+.detail_info_area .detail_section.detail_info1 .widthout_layer header h3 { font-weight: bold; margin-right: 10px; padding-right: 20px; color: #000000; border-right: 1px dotted #8b8b8b; }
+.detail_info_area .detail_section.detail_info1 .widthout_layer ul { margin-top: 15px; }
+.detail_info_area .detail_section.detail_info1 .widthout_layer ul p { line-height: 1.5; margin-top: 3px; margin-left: 55px; color: #a4a4a4; }
+.detail_info_area .detail_section.detail_info1 .widthout_layer .ico_close { position: absolute; top: 7px; right: 5px; }
+.detail_info_area .detail_section.detail_info1 .widthout_layer.on { display: block; }
+.detail_info_area .detail_section.no_relation_product { padding-top: 0; border-top: 0; }
+.detail_info_area .detail_section.no_relation_product .check_list_box { margin-top: 0; }
+
+.detail_info_area .coupon_box li { margin: 0; margin-right: 3px; margin-bottom: 5px; }
+
+.detail_price .price { font-family: Verdana, sans-serif, Helvetica, sans-serif; font-size: 18px; font-weight: bold; display: block; }
+.detail_price .price .formal { font-size: 16px; margin-left: 6px; text-decoration: line-through; color: #a4a4a4; }
+.detail_price .price .won { font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; font-size: 14px; font-weight: bold; }
+.detail_price .detail_price_add { margin-top: 10px; }
+.detail_price .detail_price_add li { float: left; padding: 0 8px  0 1px; }
+.detail_price .detail_price_add li:before { display: inline-block; width: 1px; height: 10px; margin-top: -2px; margin-right: 8px; content: ''; vertical-align: middle; background: #dbdbdb; }
+.detail_price .detail_price_add li:first-child:before { display: none; }
+.detail_price .detail_price_add strong { color: #f3646a; }
+
+.detail_price_type2 .price { font-family: Verdana, sans-serif, Helvetica, sans-serif; font-size: 24px; font-weight: bold; color: #e50015; }
+.detail_price_type2 .won { font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; font-size: 14px; font-weight: bold; }
+
+.detail_color li { display: inline-block; margin-right: 3px; margin-bottom: 5px; }
+.detail_color li a { border: 1px solid #bfbfbf; }
+.detail_color li a img { width: 50px; height: 50px; }
+.detail_color li.current a { border-color: #e50015; }
+
+.incrementer .qty { font-family: "tahoma", Dotum, Gulim, Verdana, sans-serif, Helvetica, sans-serif; font-size: 11px; width: 50px; margin-left: -1px; text-align: center; }
+.incrementer input { font-weight: bold; height: 22px; padding: 0; vertical-align: middle; color: #7b7b7b; border: 1px solid #bfbfbf; }
+.incrementer input.qtyminus { width: 22px; background: #fff url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -139px -114px no-repeat; white-space: nowrap; overflow: hidden; text-indent: -5000em; text-align: left; }
+.incrementer input.qtyplus { width: 22px; margin-left: -1px; background: #fff url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -163px -114px no-repeat; white-space: nowrap; overflow: hidden; text-indent: -5000em; text-align: left; }
+.incrementer.type2 .count_box { width: 109px; height: 26px; overflow: hidden; position: relative; margin: auto; }
+.incrementer.type2 .count_box .qty { width: 36px; height: 26px; border-color: #dbdbdb; margin-right: 15px; }
+.incrementer.type2 .count_box .qtyplus { display: block; position: absolute; left: 42px; top: 0; width: 19px; height: 14px; background-position: -232px -85px; border: 0 none; vertical-align: bottom; overflow: hidden; }
+.incrementer.type2 .count_box .qtyminus { display: block; position: absolute; left: 41px; top: 14px; width: 19px; height: 13px; background-position: -232px -98px; border: 0 none; vertical-align: top; overflow: hidden; }
+.incrementer.type2 .count_box .btn_sType5 { padding: 4px 6px; }
+
+.relation_product { position: relative; }
+.relation_product > a { position: relative; width: 445px; padding: 3px 6px 3px 10px; padding: 4px 6px 2px 10px \0/IE89; border: 1px solid #bfbfbf; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.relation_product > a .ico_arrow1 { position: absolute; top: 4px; right: 6px; display: inline-block; width: 15px; height: 10px; vertical-align: middle; border-left: 1px solid #dbdbdb; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -69px -78px no-repeat; }
+.relation_product > a.on { border-color: #000; }
+.relation_product > a.on .ico_arrow1 { background-position: -69px -94px; }
+.relation_product .relation_list { position: absolute; z-index: 1; top: 20px; left: 0; display: none; width: 445px; max-height: 219px; overflow-y: auto; }
+.relation_product .relation_list > li { position: relative; padding: 10px; border-top: 1px solid #f2f2f2; }
+.relation_product .relation_list > li:first-child { border-top: 0; }
+.relation_product .relation_list.on { display: block; border: 1px solid #000; border-top-color: #bfbfbf; background: #fff; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.relation_product .relation_list .add_prd_layer { display: none; }
+.relation_product.por_pa5 .relation_list li { padding: 5px 5px 5px 10px; }
+
+.add_prd_box img { width: 50px; height: 50px; border: 1px solid #dbdbdb; }
+.add_prd_box .name { margin-top: 20px; color: #7b7b7b; }
+.add_prd_box .btn_sType1 { margin-top: 16px; }
+
+.add_prd_layer { position: absolute; z-index: 2; top: 44px; right: 10px; display: none; width: 257px; padding: 20px 40px; border: 1px solid #8b8b8b; background-color: #fff; }
+.add_prd_layer.on { display: block !important; }
+.add_prd_layer .positR > a { width: 100%; margin-bottom: 15px; padding: 3px 6px 3px 10px; padding: 4px 6px 2px 10px \0/IE89; border: 1px solid #bfbfbf; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.add_prd_layer .positR > a .ico_arrow1 { position: absolute; top: 4px; right: 6px; display: inline-block; width: 15px; height: 10px; vertical-align: middle; border-left: 1px solid #dbdbdb; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -69px -78px no-repeat; }
+.add_prd_layer .positR > a.on { border-color: #000; }
+.add_prd_layer .positR > a.on .ico_arrow1 { background-position: -69px -94px; }
+.add_prd_layer .add_prd_list { position: absolute; z-index: 1; top: 20px; left: 0; overflow: hidden; width: 100%; height: 0; }
+.add_prd_layer .add_prd_list a { display: block; padding: 4px 10px; }
+.add_prd_layer .add_prd_list a:hover { background-color: #f2f2f2; }
+.add_prd_layer .add_prd_list.on { height: auto; border: 1px solid #000; border-top-color: #bfbfbf; background: #fff; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.add_prd_layer .align-center { padding-top: 20px; border-top: 1px solid #dbdbdb; }
+
+.soldout { padding: 4px 10px; color: #a4a4a4; background-color: #f2f2f2; }
+.soldout a { display: inline-block !important; padding: 0 6px; }
+
+.check_list_box { margin-top: 20px; border-top: 1px solid #8b8b8b; }
+.check_list_box .add_prd_layer { top: 21px; left: 0; }
+.check_list_box li.bg_list { font-size: 12px; padding: 20px; color: #3b3b3b; border-bottom: 1px solid #dbdbdb; background-color: #f2f2f2; }
+.check_list_box .count_box { width: 212px; }
+.check_list_box .ico_delete { margin-left: 8px; }
+.check_list_box .btn_sType1 { margin-top: -3px; margin-left: 10px; }
+
+.total_price_box { font-size: 16px; padding: 10px 0; text-align: right; color: #000000; }
+.total_price_box span { display: inline-block; margin-top: 8px; vertical-align: top; }
+.total_price_box .tit_type2 { font-size: 30px; margin-top: 0; color: #e50015; }
+
+.btn_group_section { margin-top: 20px; text-align: center; }
+.btn_group_section li { display: inline-block; margin-left: 5px; }
+.btn_group_section li:first-child { margin-left: 0; }
+
+.product_detail_box2 { margin-top: 80px; }
+.product_detail_box2 .freebie_box { position: relative; }
+.product_detail_box2 .freebie_box .soldout { font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; font-size: 30px; position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding-top: 53px; text-align: center; color: #ffffff; background-color: rgba(0, 0, 0, 0.6); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.product_detail_box2 .grid-box { margin-top: 60px; margin-bottom: 90px; }
+.product_detail_box2 .grid-box .grid-2 { width: 48%; }
+.product_detail_box2 .grid-box .grid-2.fl-r { float: right; }
+.product_detail_box2 .grid-box h2 { margin-bottom: 15px; text-align: center; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/bg_line4.gif") 0 50% repeat-x; }
+.product_detail_box2 .grid-box h2 .bg_fff { padding: 0 20px; background: #fff; }
+
+.popular_slider { *zoom: 1; }
+.popular_slider:before, .popular_slider:after { display: table; overflow: hidden; content: ""; }
+.popular_slider:after { clear: both; }
+.popular_slider li { float: left; width: 150px; text-align: center; }
+.popular_slider li img { width: 100px; height: 100px; margin: auto; }
+.popular_slider li a { width: 100px; }
+
+
+.review_txtsection { width: 800px; word-break: break-all; }
+
+.qna_txtsection { width: 490px; word-break: break-all; }
+
+
+.cu_box .positA { right: 0; top: 0; }
+.cu_box .positA a { width: 100px; padding: 0 !important; text-align: center; }
+
+
+
+.order_basketCont .finish_box .nomem_finish_in .myinfo_box { margin-bottom: 20px; background-color: #fafafa; }
+.order_basketCont .finish_box .nomem_finish_in .myinfo_box div { width: 325px; height: 20px; padding: 30px 0; text-align: center; }
+.order_basketCont .finish_box .nomem_finish_in .myinfo_box div p { font-weight: bold; font-size: 14px; color: #000; line-height: 21px; }
+.order_basketCont .finish_box .nomem_finish_in .myinfo_box div p em { font-weight: bold; font-family: "tahoma", Dotum, Gulim, Verdana, sans-serif, Helvetica, sans-serif; }
+.order_basketCont .finish_box .nomem_finish_in .finish_total .or_bLine:after { width: 650px; }
+
+
+.list_tab_section { margin-top: 50px; }
+
+
+.table_basic td .shok1, .table_basic td .shok2, .table_basic td .shok3, .table_basic td .shok4, .table_basic td .shok5 { vertical-align: middle; }
+
+
+
+.basket_box .total_bg li { display: inline-block; padding-left: 28px; }
+.basket_box .total_bg li:before { content: ''; display: inline-block; width: 1px; height: 10px; background: #dbdbdb; margin-right: 30px; }
+.basket_box .total_bg li:first-child:before { display: none; }
+
+/* --->>  10 k - PAGES : ORDER
+------------------------------------------*/
+
+.order_basketCont .table_basic { /* table { tbody { th { position:relative; padding-left:28px; em { position:absolute;left:15px;top:50%; margin-top:-8px; } } }
+} */ }
+.order_basketCont .table_basic.or_price table tbody th { padding-left: 10px; }
+.order_basketCont .table_basic.no_point table tbody th { padding-left: 10px; }
+.order_basketCont .gallery_basic .relation_product { margin-top: 20px; }
+.order_basketCont .gallery_basic .relation_product > a { width: 138px; text-align: left; }
+.order_basketCont .gallery_basic .relation_product .relation_list { width: 138px; left: 6px; }
+.order_basketCont .gallery_basic .relation_product .relation_list > li { text-align: left; padding: 5px; }
+.order_basketCont .gallery_basic .wrap_drop_down { margin-top: 20px; }
+.order_basketCont .gallery_basic .wrap_drop_down > a { text-align: left; }
+.order_basketCont .gallery_basic .wrap_drop_down .list_drop_down { width: 150px; }
+.order_basketCont .gallery_basic .btn_group_section { margin-top: 10px; }
+.order_basketCont .basket_box .ico_notice { text-align: right; }
+.order_basketCont .basket_box .table_basic td.won { color: #000000; font-size: 12px; }
+.order_basketCont .basket_box .table_basic td.won span { color: #000000; font-family: "tahoma", Dotum, Gulim, Verdana, sans-serif, Helvetica, sans-serif; font-weight: bold; }
+.order_basketCont .basket_box .table_basic td.btnBox p { padding-bottom: 2px; }
+.order_basketCont .basket_box .table_basic td.btnBox p a { width: 65px; padding: 3px 0; padding: 4px 0px 2px \0/IE89; text-align: center; }
+.order_basketCont .basket_box .table_basic td.btnBox p a.btn_sType1 { color: #666666; }
+.order_basketCont .basket_box .table_basic td.btnBox p a.btn_sType2 { color: #ffffff; }
+.order_basketCont .basket_box .table_basic td.btnBox p a.btn_sType3 { color: #e50015; }
+.order_basketCont .basket_box .table_basic td.check_list_box .incrementer .count_box { width: 109px; position: relative; }
+.order_basketCont .basket_box .table_basic td.check_list_box .incrementer .count_box .qty { width: 36px; height: 26px; border-color: #dbdbdb; margin-right: 15px; }
+.order_basketCont .basket_box .table_basic td.check_list_box .incrementer .count_box .qtyplus { display: block; position: absolute; left: 42px; top: 0; width: 19px; height: 14px; background-position: -232px -85px; border: 0 none; vertical-align: bottom; }
+.order_basketCont .basket_box .table_basic td.check_list_box .incrementer .count_box .qtyminus { display: block; position: absolute; left: 41px; top: 14px; width: 19px; height: 13px; background-position: -232px -98px; border: 0 none; vertical-align: top; }
+.order_basketCont .basket_box .table_basic td.check_list_box .incrementer .count_box .btn_sType5 { padding: 4px 6px; padding: 5px 6px 3px \0/IE89; }
+.order_basketCont .basket_box .table_basic .showmoreBox { position: relative; }
+.order_basketCont .basket_box .table_basic .showmoreBox.open .showBox { display: block; }
+.order_basketCont .basket_box .table_basic .showmoreBox .showmore { margin-left: 3px; vertical-align: middle; }
+.order_basketCont .basket_box .table_basic .showmoreBox .showBox { display: none; width: 130px; height: auto; padding: 10px; position: absolute; left: 3px; top: 10px; margin: 0 !important; border: 1px solid #000; background-color: #fff; z-index: 1000; }
+.order_basketCont .basket_box .table_basic .showmoreBox .showBox em { display: block; *zoom: 1; border-top: 1px dashed #dbdbdb; padding-top: 9px; margin-top: 9px; }
+.order_basketCont .basket_box .table_basic .showmoreBox .showBox em:before, .order_basketCont .basket_box .table_basic .showmoreBox .showBox em:after { display: table; overflow: hidden; content: ""; }
+.order_basketCont .basket_box .table_basic .showmoreBox .showBox em:after { clear: both; }
+.order_basketCont .basket_box .table_basic .showmoreBox .showBox em:first-child { border: 0 none; padding: 0; margin: 0; }
+.order_basketCont .basket_box .gallery_line_type1 table .modeloutBox { padding: 20px 15px; }
+.order_basketCont .basket_box .gallery_line_type1 table .modeloutBox:after { content: ''; display: block; clear: both; }
+.order_basketCont .basket_box .gallery_line_type1 table .modeloutBox .model_img_box { margin-right: 20px; }
+.order_basketCont .basket_box .gallery_line_type1 table .modeloutBox .model_img_box img { width: 80px; height: 80px; }
+.order_basketCont .basket_box .gallery_line_type1 table .modeloutBox .model_txt_box { width: 180px; height: auto; }
+.order_basketCont .basket_box .gallery_line_type1 table .modeloutBox .model_txt_box:after { content: ''; display: block; clear: both; margin-bottom: 10px; }
+.order_basketCont .basket_box .gallery_line_type1 table .modeloutBox .model_txt_box .model_box span { font-size: 11px; color: #666666; }
+.order_basketCont .basket_box .gallery_line_type1 table .modeloutBox .model_txt_box .model_box span.name a { display: inline-block; text-overflow: ellipsis; overflow: hidden; }
+.order_basketCont .basket_box .gallery_line_type1 table .modeloutBox .model_txt_box .model_box:after { content: ''; display: block; clear: both; }
+.order_basketCont .basket_box .gallery_line_type1 table .modeloutBox .model_txt_box .brand { font-family: Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; font-weight: normal; }
+.order_basketCont .basket_box .gallery_line_type1 table .modeloutBox .model_txt_box .brand .ico_ar { vertical-align: top; margin-left: 5px; }
+.order_basketCont .basket_box .gallery_line_type1 table .modeloutBox .model_txt_box .brand .tooltip_type1 { display: none; width: 200px; height: auto; position: absolute; left: 30px; top: -10px; background-color: #fff; border: 1px solid #000; padding: 10px; font-family: Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; z-index: 1; }
+.order_basketCont .basket_box .gallery_line_type1 table .modeloutBox .model_txt_box .brand .tooltip_type1:before { content: ''; display: block; width: 5px; height: 7px; margin-left: -15px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") no-repeat -212px -138px; }
+.order_basketCont .basket_box .gallery_line_type1 table .modeloutBox .model_txt_box .option span { display: inline-block; }
+.order_basketCont .basket_box .gallery_line_type1 table .dum { margin-top: 10px; padding-top: 10px; border-top: 1px dashed #dbdbdb; clear: both; }
+.order_basketCont .basket_box .gallery_line_type1 table .dum:before { content: ''; display: block; clear: both; }
+.order_basketCont .total_price { border: 1px solid #000; background-color: #fafafa; }
+.order_basketCont .total_price .totalBox { width: 274px; border-left: 1px solid #dbdbdb; display: table-cell; vertical-align: top; position: relative; }
+.order_basketCont .total_price .totalBox:first-child { border-left: 0 none; }
+.order_basketCont .total_price .totalBox:first-child:before { display: none; }
+.order_basketCont .total_price .totalBox:before { content: ''; display: block; width: 25px; height: 25px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_member.png") no-repeat -286px -261px; position: absolute; left: -12px; top: 28px; }
+.order_basketCont .total_price .totalBox.total3:before { background-position: -286px -289px; }
+.order_basketCont .total_price .totalBox.total4:before { background-position: -286px -317px; }
+.order_basketCont .total_price .totalBox dl { height: 50px; padding: 30px 30px 7px 30px; background-color: #fff; }
+.order_basketCont .total_price .totalBox dl dt { float: left; font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; color: #000000; font-weight: bold; font-size: 14px; line-height: 24px; }
+.order_basketCont .total_price .totalBox dl dd { float: right; font-family: Verdana, sans-serif, Helvetica, sans-serif; color: #000000; font-weight: bold; font-size: 22px; text-align: right; }
+.order_basketCont .total_price .totalBox dl dd span { font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; font-size: 16px; }
+.order_basketCont .total_price .totalBox dl dd.fc_type1 { color: #e50015; }
+.order_basketCont .total_price .totalBox .list_type1 { margin: 20px 30px; *zoom: 1; }
+.order_basketCont .total_price .totalBox .list_type1:before, .order_basketCont .total_price .totalBox .list_type1:after { display: table; overflow: hidden; content: ""; }
+.order_basketCont .total_price .totalBox .list_type1:after { clear: both; }
+.order_basketCont .total_price .totalBox .list_type1 li { *zoom: 1; font-family: Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; color: #3b3b3b; }
+.order_basketCont .total_price .totalBox .list_type1 li:before, .order_basketCont .total_price .totalBox .list_type1 li:after { display: table; overflow: hidden; content: ""; }
+.order_basketCont .total_price .totalBox .list_type1 li:after { clear: both; }
+.order_basketCont .total_price .totalBox .list_type1 li span { text-align: right; font-family: "tahoma", Dotum, Gulim, Verdana, sans-serif, Helvetica, sans-serif; }
+.order_basketCont .total_price .totalBox .list_type1 li span em { font-family: Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; }
+.order_basketCont .noticeBox { border: 1px solid #dbdbdb; padding: 30px 30px 30px 170px; position: relative; }
+.order_basketCont .noticeBox:before { display: block; content: ''; width: 100px; height: 80px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_member.png") no-repeat -179px -262px; position: absolute; left: 50px; top: 45px; }
+.order_basketCont .noticeBox .tit_type1 { padding-bottom: 10px; border-bottom: 1px solid #f2f2f2; }
+.order_basketCont .btn_group_section { margin-top: 40px; }
+.order_basketCont .view_pro { margin-top: 80px; }
+.order_basketCont .view_pro .tabs-content { clear: both; overflow: inherit; }
+.order_basketCont .order_nameInfo { border: 1px solid #8b8b8b; }
+.order_basketCont .order_nameInfo .inBox { min-width: 700px; max-width: 1000px; padding: 40px 0; margin: 0 auto; *zoom: 1; }
+.order_basketCont .order_nameInfo .inBox:before, .order_basketCont .order_nameInfo .inBox:after { display: table; overflow: hidden; content: ""; }
+.order_basketCont .order_nameInfo .inBox:after { clear: both; }
+.order_basketCont .order_nameInfo .inBox .nameImg { width: 50%; height: 65px; position: relative; font-weight: bold; color: #3b3b3b; font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; font-size: 14px; line-height: 62px; text-align: right; }
+.order_basketCont .order_nameInfo .inBox .nameImg:before { content: ''; display: inline-block; width: 65px; height: 65px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_member.png") 0 -262px no-repeat; vertical-align: middle; margin-right: 15px; }
+.order_basketCont .order_nameInfo .inBox ul.list_type3 { width: 40%; height: 65px; margin-left: 60px; }
+.order_basketCont .order_nameInfo .inBox ul.list_type3 li { float: left; padding-right: 20px; margin-top: 24px; color: #666666; font-family: Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; font-size: 12px; }
+.order_basketCont .order_nameInfo .inBox ul.list_type3 li:before { top: 8px; }
+.order_basketCont .order_nameInfo .inBox ul.list_type3 li span { font-weight: bold; }
+.order_basketCont .order_nameInfo.nomem_info .inBox { min-width: auto; max-width: 100%; padding: 40px 30px; position: relative; font-weight: bold; font-size: 14px; color: #3b3b3b; font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; line-height: 11px; }
+.order_basketCont .order_nameInfo.nomem_info .inBox .buttonBox { position: absolute; right: 30px; top: 30px; }
+.order_basketCont .order_nameInfo.nomem_info .inBox .buttonBox a { font-weight: normal; padding: 0 !important; width: 130px; text-align: center; }
+.order_basketCont .online_info .inBox { min-width: auto; max-width: 100%; padding: 20px 30px 20px 158px; position: relative; min-width: auto; }
+.order_basketCont .online_info .inBox:before { width: 100px; height: 100px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_member.png") -67px -244px no-repeat; position: absolute; left: 30px; top: 30px; }
+.order_basketCont .online_info .inBox .txtBox { width: 680px; }
+.order_basketCont .online_info .inBox .txtBox p { font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; font-weight: bold; color: #7b7b7b; font-size: 14px; }
+.order_basketCont .online_info .inBox .txtBox p.tName { padding-bottom: 5px; color: #3b3b3b; }
+.order_basketCont .online_info .inBox .bottomBox { *zoom: 1; margin-top: 20px; padding-top: 30px; border-top: 1px dashed #dbdbdb; }
+.order_basketCont .online_info .inBox .bottomBox:before, .order_basketCont .online_info .inBox .bottomBox:after { display: table; overflow: hidden; content: ""; }
+.order_basketCont .online_info .inBox .bottomBox:after { clear: both; }
+.order_basketCont .online_info .inBox .bottomBox .tName { width: 240px; font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; font-weight: bold; color: #3b3b3b; font-size: 14px; }
+.order_basketCont .online_info .inBox .bottomBox .list_type3 { width: 370px; height: auto; }
+.order_basketCont .online_info .inBox .bottomBox .list_type3 li { margin: 0; }
+.order_basketCont .online_info .inBox .bottomBox .list_type3 li .fc_type2 { font-weight: normal; font-family: Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; }
+.order_basketCont .online_info .inBox .buttonBox { margin: 25px 0 0 40px; }
+.order_basketCont .online_info .inBox .buttonBox a { display: block; width: 190px; text-align: center; font-weight: normal; padding: 0 !important; }
+.order_basketCont .noBasket { border-top: 1px solid #000; height: 220px; margin-top: 60px; position: relative; }
+.order_basketCont .noBasket:before { content: ''; display: block; width: 70px; height: 60px; margin: 80px auto 10px auto; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_member.png") -326px -271px no-repeat; }
+.order_basketCont .noBasket p { text-align: center; color: #3b3b3b; font-size: 16px; font-weight: bold; font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; }
+.order_basketCont .myCokno { text-align: center; padding: 80px 0; font-size: 16px; font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; color: #3b3b3b; }
+.order_basketCont .mycok .btn_sType2 { width: 125px; }
+.order_basketCont .finish_box { border-top: 1px solid #000; border-bottom: 1px solid #000; padding: 50px 0 60px 0; }
+.order_basketCont .finish_box .finish_in { width: 650px; margin: 0 auto; }
+.order_basketCont .finish_box .finish_in h3 { font-size: 32px; font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; color: #3b3b3b; text-align: center; padding-bottom: 50px; letter-spacing: -2px; }
+.order_basketCont .finish_box .finish_in h3:before { content: ''; display: inline-block; width: 85px; height: 55px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_member.png") -394px -530px no-repeat; vertical-align: middle; }
+.order_basketCont .finish_box .finish_in h3 em { display: block; text-align: center; font-size: 14px; color: #7b7b7b; }
+.order_basketCont .finish_box .finish_in .or_point dt { padding-top: 0; }
+.order_basketCont .finish_box .finish_in .or_point dd { font-size: 12px; font-family: "tahoma", Dotum, Gulim, Verdana, sans-serif, Helvetica, sans-serif; }
+.order_basketCont .finish_box .finish_in th p { font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; }
+.order_basketCont .finish_box .finish_total > p { height: auto; padding: 0 0 20px 0; color: #000000; font-weight: bold; }
+.order_basketCont .finish_box .finish_total > p > span { display: inline-block; width: 50%; text-align: left; font-weight: bold; font-family: Verdana, sans-serif, Helvetica, sans-serif; }
+.order_basketCont .finish_box .finish_total > p em { display: inline-block; width: 50%; text-align: right; color: #e50015; font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; }
+.order_basketCont .finish_box .finish_total .or_bLine:after { width: 440px; }
+.order_basketCont .finish_box .finish_total .or_bLine em { font-weight: bold; }
+.order_basketCont .finish_box .finish_total .total_box { margin: 20px 10px; background-color: #fafafa; padding: 10px 20px; }
+.order_basketCont .finish_box .finish_total .total_box em, .order_basketCont .finish_box .finish_total .total_box span { display: inline-block; width: 49%; color: #7b7b7b; }
+.order_basketCont .finish_box .finish_total .total_box em { text-align: left; font-family: Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; }
+.order_basketCont .finish_box .finish_total .total_box span { text-align: right; font-family: "tahoma", Dotum, Gulim, Verdana, sans-serif, Helvetica, sans-serif; }
+.order_basketCont .finish_box .finish_total .total_box ul { padding-bottom: 10px; }
+.order_basketCont .finish_box .finish_total .total_box p { padding-top: 10px; border-top: 1px dashed #dbdbdb; }
+.order_basketCont .finish_box .finish_total .total_box p em, .order_basketCont .finish_box .finish_total .total_box p span { font-weight: bold; }
+.order_basketCont .finish_txt { height: 40px; border: 1px solid #dbdbdb; padding: 55px 0; position: relative; }
+.order_basketCont .finish_txt p { padding-left: 265px; font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; }
+.order_basketCont .finish_txt:before { content: ''; display: block; width: 113px; height: 110px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_member.png") -385px -597px no-repeat; position: absolute; left: 130px; top: 20px; }
+.order_basketCont .tabs-content { overflow: inherit; }
+
+.ico_online { display: inline-block; width: 32px; height: 13px; text-indent: -9999em; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_member.png") -247px -371px no-repeat; }
+
+.ico_store { display: inline-block; width: 32px; height: 13px; text-indent: -9999em; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_member.png") -247px -356px no-repeat; }
+
+.ico_ar { display: inline-block; width: 20px; height: 15px; text-indent: -9999em; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -233px -138px no-repeat; }
+
+.showmore { display: inline-block; width: 18px; height: 12px; text-indent: -9999em; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") -233px -114px no-repeat; }
+
+.open .showmore { background-position: -233px -126px; }
+
+.bar { display: inline-block; padding-left: 10px; margin-left: 10px; position: relative; }
+.bar:before { content: ''; display: block; width: 1px; height: 10px; background-color: #dbdbdb; position: absolute; left: 0; top: 2px; }
+
+
+.map_box { width: 738px; height: 468px; margin: 0 auto; border: 1px solid #dbdbdb; }
+
+.map_txt { padding: 20px 10px 20px 50px; margin-top: 30px; position: relative; border-top: 1px solid #000; border-bottom: 1px solid #dbdbdb; }
+.map_txt .icon { width: 25px; position: absolute; left: 20px; top: 20px; }
+.map_txt p { color: #7b7b7b; }
+.map_txt p.bold { color: #3b3b3b; }
+
+.member_benefit table.member_table thead th { height: 64px; background-color: #f2f2f2; color: #666666; font-size: 11px; /* border-left:1px solid #dbdbdb; */ }
+.member_benefit table.member_table thead th .ico_member1:before { width: 43px; height: 43px; margin-right: 5px; background-position: -246px -391px; }
+.member_benefit table.member_table thead th .ico_member2:before { width: 43px; height: 43px; margin-right: 5px; background-position: -300px -391px; }
+.member_benefit table.member_table tbody td { padding-left: 15px; font-size: 11px; color: #7b7b7b; }
+.member_benefit table.member_table tbody td.lTxt { padding: 0; text-align: center; color: #3b3b3b; }
+
+.bor-top { border-top: 1px solid #dbdbdb; }
+
+.bg { background-color: #f2f2f2; }
+
+.clearbox:after { content: ''; display: block; clear: both; }
+
+.pop_container .member_table.bor-l td { border-left: 1px solid #dbdbdb; }
+
+.address_tab li { width: 42px; }
+.address_tab li.allStore { width: 73px; }
+
+.address_cont { height: 280px; overflow-y: auto; }
+
+.cou_imgbox { padding-top: 30px; text-align: center; }
+.cou_imgbox .coupon_img2 { width: 200px; }
+.cou_imgbox .list_type1 { width: 200px; margin: 0 auto; text-align: left; }
+.cou_imgbox .coupon_txt { margin: 15px 0 10px 0; font-size: 12px; font-weight: bold; color: #3b3b3b; }
+
+.address_height { height: 340px; }
+
+.option_box .gallery_line_type1 .modeloutBox .model_img_box { width: 100px; height: 100px; margin-right: 20px; }
+.option_box .gallery_line_type1 .modeloutBox .model_img_box img { width: 100%; height: 100%; }
+.option_box .gallery_line_type1 .modeloutBox .model_txt_box { width: 170px; min-height: 100px; }
+.option_box .gallery_line_type1 .modeloutBox .model_txt_box .model_box span.name { max-height: 32px; white-space: normal; }
+.option_box .gallery_line_type1 .modeloutBox .model_txt_box .model_box .option span { display: inline-block; }
+.option_box .lineTxt { height: 30px; }
+.option_box .lineTxt strong { display: inline-block; width: 110px; }
+.option_box.coupon_option .gallery_line_type1 .modeloutBox .model_img_box { width: 80px; height: 80px; margin-top: 5px; }
+
+.mem_box { border: 1px solid #8b8b8b; padding: 40px 30px; height: 15px; position: relative; font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #3b3b3b; line-height: 13px; /* li { float:left; width:480px; height:138px; position:relative; background-color:#fafafa; font-size:13px; div { height:78px; margin:30px 0 0 170px; border-left:1px solid #dbdbdb; padding-left:30px; >a { margin-top:10px; } } &:before { content:''; display:block; position:absolute; background: url('//image.abcmart.co.kr/nexti/images/abcmart_new/ico_member.png') 3px -719px no-repeat; } &.box1:before { width:85px; height:60px; background-position:3px -719px; left:60px;top:30px; } &.box2 { width:588px; margin-left:30px; &:before { width:85px; height:65px; background-position:-90px -717px; left:60px;top:30px; } }  &.box3:before { width:85px; height:65px; background-position:-190px -713px; left:130px;top:30px; } >p { color:$text_color_3; font-family:$font_type2; line-height:17px; text-align:left; }
+} */ }
+.mem_box .btnbox { position: absolute; right: 30px; top: 30px; }
+.mem_box .btnbox a { margin-left: 8px; }
+
+.mem_termsbox article { border: 1px solid #dbdbdb; height: 128px; padding: 20px 30px; overflow-y: scroll; line-height: 18px; }
+.mem_termsbox .btxt { color: #666666; }
+.mem_termsbox .btxt label { margin-left: 10px; }
+
+/* --->> 12 - PAGES : COUSTOMER
+------------------------------------------*/
+.store_info .map_box { width: 650px; height: 370px; overflow: hidden; }
+
+.order_numbox .option_box .gallery_line_type1 .modeloutBox .model_img_box { width: 80px; height: 80px; margin-right: 10px; }
+.order_numbox .option_box .gallery_line_type1 .modeloutBox .model_txt_box { width: 110px; }
+
+table tr td .no_tabledata { height: 70px; padding-top: 55px; font-size: 12px; }
+
+.as_numbox .option_box .gallery_line_type1 .model_txt_box { width: 110px; height: 90px; }
+.as_numbox .option_box .gallery_line_type1 .model_txt_box span { font-weight: normal; color: #666666; }
+
+
+.ico_notice2 { display: inline-block; font-size: 0; width: 54px; height: 15px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_etc.png") -127px -61px no-repeat; vertical-align: middle; }
+
+/* --->> 13 - PAGES : MYPAGE
+------------------------------------------*/
+  .sevice_go > p { width: 120px; margin-left: 70px; float: left; text-align: right; line-height: 28px; }
+  .sevice_go > p span { text-indent: -9999em; margin-left: 8px; display: inline-block; content: ''; width: 0; height: 0; vertical-align: middle; border-top: 3px solid transparent; border-top: 0.3rem solid transparent; border-bottom: 3px solid transparent; border-bottom: 0.3rem solid transparent; border-left: 3px solid #3b3b3b; border-left: 0.3rem solid #3b3b3b; font-size: 0; }
+  .sevice_go .sevice_list { float: left; }
+  .sevice_go .sevice_list li { float: left; width: auto; height: 30px; margin-left: 20px; position: relative; }
+  .sevice_go .sevice_list li a { font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; color: #3b3b3b; font-size: 13px; position: relative; }
+  .sevice_go .sevice_list li a:before { content: ''; display: inline-block; height: 30px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_etc.png") 0 0 no-repeat; vertical-align: middle; margin-right: 3px; }
+  .sevice_go .sevice_list li a .num { display: block; position: absolute; left: -10px; top: -5px; width: 20px; background: #f3646a; -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px; font-family: "tahoma", Dotum, Gulim, Verdana, sans-serif, Helvetica, sans-serif; color: #ffffff; font-size: 10px; text-align: center; line-height: 11px; }
+  .sevice_go .sevice_list li .next { margin-left: 20px; display: inline-block; content: ''; width: 0; height: 0; vertical-align: middle; border-top: 2px solid transparent; border-top: 0.2rem solid transparent; border-bottom: 2px solid transparent; border-bottom: 0.2rem solid transparent; border-left: 2px solid #8b8b8b; border-left: 0.2rem solid #8b8b8b; text-indent: -9999em; }
+  .sevice_go .sevice_list li.list1 a:before { width: 33px; background-position: 0 -397px; }
+  .sevice_go .sevice_list li.list2 a:before { width: 35px; background-position: -38px -395px; }
+  .sevice_go .sevice_list li.list3 a:before { width: 28px; background-position: -81px -395px; }
+  .sevice_go .sevice_list li.list4 a:before { width: 34px; height: 33px; background-position: -114px -395px; }
+  .sevice_go .sevice_list li.list5 a:before { width: 37px; height: 31px; background-position: -155px -395px; }
+  .sevice_go .sevice_list li.list6 a:before { width: 33px; background-position: -196px -396px; }
+  .membox { width: 326px; height: 149px; border: 1px solid #bfbfbf; padding-left: 158px; position: relative; }
+  .membox:before { content: ''; display: block; width: 99px; height: 97px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_member.png") -265px -602px no-repeat; position: absolute; left: 34px; top: 33px; }
+  .membox.online:before { content: ''; display: block; width: 99px; height: 97px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_member.png") -65px -242px no-repeat; position: absolute; left: 34px; top: 33px; }
+  .membox.nomem:before { content: ''; display: block; width: 99px; height: 97px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_member.png") -498px -242px no-repeat; position: absolute; left: 34px; top: 33px; }
+  .membox .tit_type1 { color: #3b3b3b; margin-top: 25px; }
+  .membox .bot_line { margin: 10px 0 0 17px; }
+  .membox .bg_fa { display: inline-block; padding: 2px; }
+  .membox a { margin-left: 10px; }
+  .membox2 { width: 552px; height: 149px; padding-left: 30px; border: 1px solid #e50015; position: relative; }
+  .membox2 .line_up { width: 353px; height: 64px; padding-top: 25px; border-bottom: 1px dotted #dbdbdb; }
+  .membox2 .line_up li { width: 117px; height: 45px; float: left; padding-left: 58px; position: relative; font-size: 14px; font-weight: bold; font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; color: #3b3b3b; }
+  .membox2 .line_up li em { font-weight: bold; font-family: Verdana, sans-serif, Helvetica, sans-serif; font-size: 20px; line-height: 32px; }
+  .membox2 .line_up li:before { content: ''; display: block; width: 50px; height: 50px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_etc.png") 0 0 no-repeat; position: absolute; left: 0; top: 0; }
+  .membox2 .line_up li.coupon { width: 103px; padding-left: 72px; }
+  .membox2 .line_up li.coupon:before { background-position: 0 -341px; left: 10px; }
+  .membox2 .line_up li.point:before { background-position: -62px -341px; }
+  .membox2 .line_do { padding-top: 20px; }
+  .membox2 .line_do li { width: auto; float: left; padding-left: 20px; font-size: 14px; font-weight: bold; font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; color: #3b3b3b; line-height: 12px; }
+  .membox2 .line_do li em { font-weight: bold; }
+  .membox2 .line_do li:before { content: ''; display: inline-block; width: 14px; height: 13px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_etc.png") -121px -342px no-repeat; vertical-align: middle; margin-right: 6px; }
+  .membox2 .line_do li:first-child { padding-left: 0; }
+  .membox2 .view_card { width: 136px; height: 95px; position: absolute; right: 30px; top: 30px; text-align: center; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/membership_card.png") 0 16px no-repeat; }
+  .membox2 .view_card .card_tit { font-size: 12px; font-weight: bold; font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; color: #3b3b3b; line-height: 12px; }
+  .membox2 .view_card .card_num { padding-top: 13px; font-size: 10px; font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; }
+  .membox2 .online_box { width: 166px; height: 78px; position: absolute; right: 21px; top: 34px; }
+  .membox2 .online_box a { padding: 0 !important; line-height: 29px; }
+  .my_lnb { width: 210px; display: table-cell; }
+  .my_lnb ul { margin: 0 30px 0 10px; }
+  .my_lnb ul > .tit { font-size: 16px; font-weight: bold; font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; color: #000000; margin-top: 20px; }
+  .my_lnb ul > .tit:first-child { margin: 0; }
+  .my_lnb ul > .tit ul { margin: 10px 0 0 0; }
+  .my_lnb ul > .tit ul li { height: 24px; /* &:last-child { height:12px;
+} */ }
+  .my_lnb ul > .tit ul li a { font-size: 11px; font-weight: normal; font-family: Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; color: #666666; }
+  .my_lnb ul > .tit ul li.on a { color: #e50015; text-decoration: underline; }
+  .my_cont { width: 890px; display: table-cell; }
+  .my_cont header .positA { right: 10px; bottom: 0; }
+  .my_cont .tooltip_type1 { display: none; width: 130px; height: auto; position: absolute; right: 10px; top: -10px; background-color: #fff; border: 1px solid #000; padding: 10px; font-family: Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; }
+  .my_cont .tooltip_type1:before { content: ''; display: block; width: 5px; height: 7px; margin-left: -15px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") no-repeat -212px -138px; }
+  .my_cont .gallery_line_type1 td .link { display: block; position: relative; }
+  .my_cont .gallery_line_type1 td .link:before { content: ''; display: block; margin: 0 auto 10px auto; width: 43px; height: 36px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_etc.png") no-repeat -198px -342px; }
+  .my_cont .gallery_line_type1 td .link.cash_link:before { background-position: -148px -342px; }
+  .my_cont .gallery_line_type1 td .model_txt_box .model_box span { color: #666666; }
+  .my_cont .gallery_line_type1 td .dum { color: #7b7b7b; }
+  .my_cont .table_select { vertical-align: middle; text-align: left; }
+  .my_cont .table_select > p { line-height: 22px; }
+  .my_cont .table_select .relation_product { background-color: #fff; }
+  .my_cont .table_select .relation_product .relation_list li { padding: 3px 5px 3px 10px; }
+  .my_cont .cal_box { height: 70px; padding: 0 35px; }
+  .my_cont .cal_box table th,   .my_cont .cal_box table td { padding-top: 20px; }
+  .my_cont .cal_box table th { color: #3b3b3b; font-size: 12px; font-weight: bold; text-align: center; }
+  .my_cont .cal_box table td .day_ch { display: inline-block; }
+  .my_cont .cal_box table td .day_ch a { display: inline-block; height: 12px; padding: 3px 8px; margin-right: 4px; color: #666666; border: 1px solid #bfbfbf; background-color: #fff; text-align: center; vertical-align: middle; }
+  .my_cont .cal_box table td .day_ch a.on { background-color: #bfbfbf; color: #fff; }
+  .my_cont .cal_box table td .day_ch a:last-child { margin-right: 0; }
+  .my_cont .cal_box table td .btn_mlType1 { padding: 0 !important; text-align: center; line-height: 24px; }
+  .my_cont .table_basic td .ch_option { color: #f3646a; text-decoration: underline; margin-left: 5px; }
+  .my_cont .table_basic th { background: #fafafa; }
+  .my_cont .list_type1 .meme_list { position: relative; padding-left: 160px; }
+  .my_cont .list_type1 .meme_list span { display: block; position: absolute; left: 10px; top: 0; }
+  .my_cont .member_service li h3 { font-size: 14px; }
+  .my_cont .card_inbox { margin-top: 30px; }
+  .my_cont .card_inbox li { /* width: 287px; */ width: 428px; height: 53px; padding-left: 20px; float: left; position: relative; }
+  .my_cont .card_inbox li a { font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; font-weight: bold; font-size: 14px; color: #3b3b3b; display: inline-block; }
+  .my_cont .card_inbox li a:after { content: ''; display: inline-block; width: 4px; height: 8px; margin-left: 5px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png") no-repeat -35px -216px; }
+  .my_cont .card_inbox li .txt { margin-top: 5px; }
+  .my_cont .card_inbox li:after { content: ''; display: block; position: absolute; right: 20px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_etc.png") no-repeat -265px -339px; }
+  .my_cont .card_inbox li.card1 { padding-left: 10px; }
+  .my_cont .card_inbox li.card1:after { width: 67px; height: 47px; top: 4px; right:70px; }
+  .my_cont .card_inbox li.card2 { /* width: 272px; */ width: 428px; }
+  .my_cont .card_inbox li.card2:after { width: 52px; height: 57px; top: 0; background-position: -348px -338px; right:0px; }
+  .my_cont .card_inbox li.card3 { width: 272px; }
+  .my_cont .card_inbox li.card3:after { width: 67px; height: 47px; background-position: -266px -388px; right: 0px; top: 4px; }
+  .my_cont .card_info { padding: 32px 60px; border: 1px solid #bfbfbf; }
+  .my_cont .card_info .card_img { width: auto; height: auto; }
+  .my_cont .card_info .card_txt { width: 518px; }
+  .my_cont .card_info.txt_inInfo { padding: 32px 30px; }
+  .my_cont .card_info.txt_inInfo .card_img { margin-top: 60px; }
+  .my_cont .card_info.txt_inInfo .card_txt { width: 590px; }
+  .my_cont .card_info.mem_cardbox { text-align: center; padding: 60px 0; }
+  .my_cont .card_info.mem_cardbox p { color: #3b3b3b; font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; font-size: 32px; }
+  .my_cont .card_info.mem_cardbox p:before { content: ''; display: block; width: 53px; height: 53px; margin: 0 auto 10px auto; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_etc.png") no-repeat 0 -438px; }
+  .my_cont .card_info.appcard_box .card_img { margin-top: 20px; }
+  .my_cont .card_info.appcard_box .card_txt { width: 570px; }
+  .my_cont .my_coupon { width: 810px; margin: 0 auto; }
+  .my_cont .my_coupon .cbox { border-top: 1px dashed #dbdbdb; padding-top: 30px; margin-top: 30px; }
+  .my_cont .my_coupon .cbox li { width: 300px; margin-left: 0; }
+  .my_cont .my_coupon .cbox li .info li { color: #666; }
+  .my_cont .my_coupon .cbox li:last-child { width: 200px; }
+  .my_cont .my_coupon .cbox:first-child { padding-top: 0; border-top: 0 none; }
+  .order_detailbox { border-top: 1px solid #dbdbdb; border-bottom: 1px solid #dbdbdb; background: #fafafa; }
+  .order_detailbox.wide_padding { padding: 20px 40px; }
+  .order_detailbox.wide_padding .btn_sType3 { padding-top: 1px; }
+  .order_detailbox header { margin-left: 40px; font-size: 12px; color: #3b3b3b; font-weight: bold; }
+  .order_detailbox header em { margin: 0 20px 0 5px; font-weight: bold; font-size: 18px; font-family: Verdana, sans-serif, Helvetica, sans-serif; }
+  .order_detailbox header a { vertical-align: middle; }
+  .order_detailbox .order_line div { float: left; margin-bottom: 30px; }
+  .order_detailbox .order_line div ul li { width: 100%; clear: both; line-height: 22px; /* padding-bottom:4px; */ }
+  .order_detailbox .order_line div ul li p { float: left; width: 50%; }
+  .order_detailbox .order_line div ul li em { display: block; float: right; width: 50%; text-align: right; }
+  .order_detailbox .order_line div ul li .pickup{background-color:#e5e5e5; display:inline-block; font-weight:lighter !important; width:66px !important; text-align:center;}
+  .order_detailbox .order_line div ul li .pickup span{color:#e50015; font-weight:normal; font-weight:lighter !important;}
+  .order_detailbox .order_line div ul li:after { content: ''; display: block; clear: both; }
+  .order_detailbox .order_line div.inbox1 { width: 185px; padding-left: 108px; }
+  .order_detailbox .order_line div.inbox1 ul li p { width: 35%; }
+  .order_detailbox .order_line div.inbox1 ul li em { width: 65%; }
+  .order_detailbox .order_line div.inbox2 { width: 225px; padding-left: 90px; }
+  .order_detailbox .order_line div.inbox3 { width: 155px; padding-left: 90px; }
+  .order_detailbox .order_line div.inbox3 .price { font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; font-size: 16px; color: #e50015; text-align: right; }
+  .order_detailbox .order_line div.inbox3 .price em { font-weight: bold; font-family: Verdana, sans-serif, Helvetica, sans-serif; font-size: 22px; }
+  .map_infotable .btn_posita { position: absolute; right: 10px; top: 50%; margin-top: -11px; }
+  .mypage_mem .member_table td.bg_img1 { background-size: 241px 617px; background-position: 264px 195px; }
+  .mypage_mem .member_table td.bg_img2 { background-size: 241px 617px; background-position: 264px -164px; }
+  .mypage_mem .career_list_box section { position: relative; }
+  .mypage_mem .career_list_box section:before { display: block; position: absolute; left: 90px; top: 40px; }
+  .mypage_mem .career_list_box section .in { margin-left: 103px; padding-right: 40px; }
+  .mypage_mem .career_list_box section .list_type3 li { float: left; font-family: Verdana, sans-serif, Helvetica, sans-serif; }
+  .mypage_mem .career_list_box section .list_type3 li:before { top: 17px; }
+  .mypage_mem .career_list_box section .bt_txt { padding-top: 10px; margin-top: 30px; border-top: 1px dashed #dbdbdb; }
+  .mypage_mem .career_list_box section .bt_txt p { margin-bottom: 20px; font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; color: #3b3b3b; font-size: 16px; }
+
+
+.btn_mlType1 { font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; font-size: 14px; font-weight: bold; line-height: 30px; height: 34px; padding: 0 30px !important; color: #fff !important; border: 1px solid #e50015; background: #e50015; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.btn_sType2 { font-family: Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; display: inline-block; padding: 2px 6px; padding: 3px 6px 1px \0/IE89; color: #ffffff !important; border: 1px solid #f3646a; background: #f3646a; line-height: 13px; }
+
+.w_table th, .w_table td { padding: 10px 0; border-bottom: 1px solid #f2f2f2; color: #666; text-align: left; font-weight: normal; }
+
+.formal { text-decoration: line-through; }
+
+.l_bar { display: inline-block; padding-left: 15px; margin-left: 15px; position: relative; }
+.l_bar:before { content: ''; display: block; width: 1px; height: 10px; background: #dbdbdb; position: absolute; left: 0; top: 2px; }
+
+.cal_box { border-top: 1px solid #dbdbdb; border-bottom: 1px solid #dbdbdb; background-color: #fafafa; }
+
+.p_re > p { margin: 0 0 10px 10px; font-weight: bold; font-size: 12px; color: #000000; }
+.p_re ul { padding: 20px; border-top: 1px solid #dbdbdb; background: #fafafa; }
+.p_re ul li { padding-bottom: 5px; color: #666666; }
+.p_re ul li:last-child { padding-bottom: 0; }
+
+.moveBtn { font-family: Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; display: inline-block; padding: 6px 16px; color: #3b3b3b; border: 1px solid #8b8b8b; background: #fff; line-height: 13px; }
+.moveBtn.on { border: 1px solid #e50015; color: #e50015 !important; }
+
+.ico_curious { display: inline-block; width: 17px; height: 16px; text-indent: -9999em; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_etc.png") -119px -362px no-repeat; vertical-align: middle; }
+
+table td.non_data, table td .non_data { padding: 40px; text-align: center; color: #3b3b3b; font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; font-size: 16px; }
+table td .fc_type8 { color: #000000 !important; }
+
+
+.contant_warp .cal_box.review_tok { padding-left: 125px; position: relative; }
+.contant_warp .cal_box.review_tok > p { padding: 35px 0 35px; color: #3b3b3b; font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; font-size: 13px; line-height: 18px; }
+.contant_warp .cal_box.review_tok > p span { font-size: 12px; }
+.contant_warp .cal_box.review_tok:before { content: ''; display: block; width: 90px; height: 90px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_etc.png") -298px 0 no-repeat; position: absolute; left: 10px; top: 5px; }
+
+.file_box .file_input_div { height: 25px; }
+
+.table_basic td a.fc_type5 { color: #a4a4a4 !important; }
+.table_basic td .fc_type4 { color: #7b7b7b !important; }
+
+/* .webzin_pop { .table_basic { margin-bottom:0; }
+} */
+.history_box table tbody tr:nth-child(odd) { background: #f2f2f2; }
+
+.w-80 { width: 80px !important; height: 80px !important; }
+
+.store_name p { position: relative; padding-left: 25px; line-height: 14px; }
+.store_name p span { position: absolute; left: 0px; top: 50%; margin-top: -15px; }
+
+.sns_bg_group { background: #fafafa; padding: 40px; border-top: 1px solid #dbdbdb; border-bottom: 1px solid #dbdbdb; }
+.sns_bg_group li { float: left; width: 50%; text-align: center; }
+.sns_bg_group a { width: 260px; height: 31px; border: 1px solid #dedede; line-height: 29px; font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; color: #666666; font-size: 13px; font-weight: bold; background-color: #fff; }
+.sns_bg_group .ico_sns1:before { content: ''; display: inline-block; float: left; width: 48px; height: 31px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_member.png") -451px -81px no-repeat; }
+.sns_bg_group .ico_sns2:before { content: ''; display: inline-block; float: left; width: 48px; height: 31px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_member.png") -451px -112px no-repeat; }
+
+.my_cont .check_list { *zoom: 1; }
+.my_cont .check_list:before, .my_cont .check_list:after { display: table; overflow: hidden; content: ""; }
+.my_cont .check_list:after { clear: both; }
+.my_cont .check_list li { float: left; width: 25%; margin-top: 7px; }
+
+.career_list_box { margin-top: 10px; }
+.career_list_box > section { border-top: 1px solid #dbdbdb; border-bottom: 1px solid #dbdbdb; padding: 40px 0 40px 80px; margin-top: 20px; background-color: #fafafa; *zoom: 1; }
+.career_list_box > section:before, .career_list_box > section:after { display: table; overflow: hidden; content: ""; }
+.career_list_box > section:after { clear: both; }
+.career_list_box > section:first-child { margin-top: 0; }
+.career_list_box > section p { font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif; font-size: 24px; color: #3b3b3b; }
+.career_list_box .career_type1:before { float: left; margin-right: 40px; margin-top: 5px; display: inline-block; content: ''; width: 54px; height: 54px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_etc.png") 0 -439px no-repeat; }
+.career_list_box .career_type2:before { float: left; margin-right: 40px; margin-top: 5px; display: inline-block; content: ''; width: 54px; height: 54px; background: url("//image.abcmart.co.kr/nexti/images/abcmart_new/ico_etc.png") -66px -439px no-repeat; }
+
+.tit_bg_group { background: #fafafa; padding: 30px; border-top: 1px solid #dbdbdb; border-bottom: 1px solid #dbdbdb; }

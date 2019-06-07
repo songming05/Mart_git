@@ -197,7 +197,17 @@ public class OrderController {
 		
 	}
 	
-	
+	@RequestMapping(value="/order_pay/orderHistory.do",method=RequestMethod.POST)
+    public ModelAndView orderHistory(@RequestParam String id) {
+       ModelAndView mav = new ModelAndView();
+       
+       List<OrderDTO>list = orderDAO.orderHistory(id);
+       
+       mav.addObject("history", list);
+       mav.setViewName("jsonView");
+       
+       return mav;
+    }
 	
 	
 }

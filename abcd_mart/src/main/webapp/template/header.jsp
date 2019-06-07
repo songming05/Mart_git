@@ -15,7 +15,6 @@
 			<c:if test="${memId eq null }"> <li><a href="../user/loginPage">🚪로그인</a></li></c:if>
 			<c:if test="${memId eq null }"> <li><a href="/abcd_mart/user/signUpStep_01">✍회원가입</a></li></c:if>
 			<li><a href="../order_pay/shoppingBasket">💼장바구니</a></li>
-			<li>🚚주문배송</li>
 			<li><a href="../mypage/myPage"> 📄마이페이지</a></li>
 			<li>📞고객센터</li>
 			<li><a href="../center/abcd_StoreList">🏠매장찾기</a></li>

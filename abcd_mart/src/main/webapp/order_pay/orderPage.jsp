@@ -94,11 +94,14 @@
 											<input type="hidden" name="shoesimage" value="${cartDTO.getShoesimage()}"><!-- 상품이미지 -->
 											
 												<div class="model_img_box">
-													<c:if test="${buttonType eq now }">
+													<c:if test="${buttonType eq 'now' }">
 														<img src="../image/page/product/${cartDTO.getShoesimage() }" alt="SPLINE SCRIPT" onerror="imageError(this)"/>
+														<!-- asjdhkljashdjkasjk -->
 													</c:if>
-													<c:if test="${buttonType ne now }">
+													<c:if test="${buttonType ne 'now' }">
 														<img src="../image/page/product/${cartDTO.getPrdtcode()}/${cartDTO.getShoesimage() }" alt="SPLINE SCRIPT" onerror="imageError(this)"/>
+														<!-- aaaaaaaaaaaajashdjkasjk -->
+														
 													</c:if>
 													
 													<input name="shoesimage" id="shoesimage" type="hidden" value="${cartDTO.getShoesimage() }">

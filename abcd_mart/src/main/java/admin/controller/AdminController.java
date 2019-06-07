@@ -1,6 +1,7 @@
 package admin.controller;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -129,6 +130,9 @@ public class AdminController {
 	public ModelAndView prdtManagement(@RequestParam Map<String,String> map) { //2개 담김
 		System.out.println("map"+map.get("prdtResult"));
 		List<PrdtManagementDTO> list = adminDAO.prdtManagement(map);
+		if(list==null) {
+			list = new ArrayList<PrdtManagementDTO>();
+		}
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("jsonView");
 		mav.addObject("list",list);

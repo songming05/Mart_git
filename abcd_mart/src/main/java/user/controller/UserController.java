@@ -94,6 +94,8 @@ public class UserController {
 			loginResult="loginOk";
 			session.setAttribute("memId", userDTO.getId());
 			session.setAttribute("memName", userDTO.getName());
+			session.setAttribute("memEmail", userDTO.getEmail());
+			session.setAttribute("memPhone", userDTO.getPhone());
 			//System.out.println(userDTO.getName());
 		} else {
 			loginResult="loginFail";
