@@ -135,14 +135,14 @@
             <p class="tit_type1 fs16">
                 
                 
-                황인성님은 <span class="fc_type8 ">온라인 회원</span> 입니다.
+              <span class="fc_type8 ">온라인 회원</span> 입니다.
             </p>
 
             <ul class="list_type3 mt10">
                 
-                    <li>아이디 : <strong>dlstjd615</strong></li>
+                    <li>아이디 : <strong></strong></li>
                 
-                <li>이메일 주소 : <strong class="fc_type8">gentle1412@naver.com</strong></li>
+                <li>이메일 주소 : <strong class="fc_type8"></strong></li>
             </ul>
 
             <p class="bot_line">
@@ -267,8 +267,8 @@
 
         <div class="table_basic bgfa mt10">
             <form action="/abc/mypage/updateUserEtcInfo" method="post" name="updateForm" id="form-update-user-etc">
-                <input type="hidden" name="userId" value="dlstjd615">
-                <input type="hidden" name="userName" value="황인성">
+                <input type="hidden" name="userId" value="">
+                <input type="hidden" name="userName" value="">
                 <input type="hidden" name="userMailAddress" value="gentle1412@naver.com">
                 <input type="hidden" name="bookMarkStoreId" value="">
                 <input type="hidden" name="birthDay" value="">
