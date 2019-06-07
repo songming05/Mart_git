@@ -198,7 +198,7 @@ $(document).ready(function(){
 <body>
 
 <input type="hidden" value="${detailPageDTO.getPrdtMainName()}" id="mainName">
-<input type="hidden" value="${detailPageDTO.getPrdtImage1()}" id="image1">
+<input type="hidden" value="${detailPageDTO.prdtCode }/${detailPageDTO.getPrdtImage1()}" id="image1">
 <input type="hidden" value="${detailPageDTO.getPrdtImage2()}" id="image2">
 <input type="hidden" value="${detailPageDTO.getPrdtImage3()}" id="image3">
 <input type="hidden" value="${detailPageDTO.getPrdtImage4()}" id="image4">
@@ -223,6 +223,7 @@ $(document).ready(function(){
 
 <div class="container">
   <div class="show">
+  	<h1>${detailPageDTO.prdtCode }</h1>
     <img src="../image/page/product/${detailPageDTO.prdtCode}/${detailPageDTO.getPrdtImage1()}" id="show-img">
   </div>
   <div class="small-img">

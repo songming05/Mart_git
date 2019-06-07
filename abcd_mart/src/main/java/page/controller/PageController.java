@@ -24,7 +24,7 @@ public class PageController {
 	
 	@RequestMapping(value="/detail",method=RequestMethod.GET)
 	public ModelAndView detailPage(@RequestParam String prdtCode,HttpSession session ,Model model) {
-	//System.out.println("prdt 코드"+prdtCode);
+	System.out.println("prdt 코드"+prdtCode);
 		DetailPageDTO detailPageDTO = detailPageDAO.getProduct(prdtCode);
 		//System.out.println("꺼낸후 값"+detailPageDTO.getPrdtCode());
 		String id = (String) session.getAttribute("memId");

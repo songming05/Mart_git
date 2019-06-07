@@ -93,7 +93,7 @@
 											<input type="hidden" name="shoesimage" value="${orderDTO.getShoesimage()}"><!-- 상품이미지 -->
 											
 												<div class="model_img_box">
-													<img src="../image/page/product/${orderDTO.getPrdtcode()}/${orderDTO.getShoesimage() }" alt="SPLINE SCRIPT" onerror="imageError(this)"/>
+													<img src="../image/page/product/${orderDTO.getShoesimage() }" alt="SPLINE SCRIPT" onerror="imageError(this)"/>
 													<input name="shoesimage" id="shoesimage" type="hidden" value="${orderDTO.getShoesimage() }">
 												</div>
 												
