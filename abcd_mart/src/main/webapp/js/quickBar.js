@@ -60,12 +60,15 @@ $(document).ready(function(){
 		}
 		
 	});
-	
 
-		
-
-	
 	
 });
+
+function quickViewAll(){
+	$('.quickbar_area').css('height','auto');
+	$('.quickbar_area .quick_product').css('height','auto');
+	$('.quickbar_area .quick_product .quick_list').css('height','auto');
+	$('.quick_list ul').css('overflow','visible');
+}
 
 

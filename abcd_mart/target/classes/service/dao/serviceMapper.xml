@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="serviceSQL">
+
+	<!-- 카테고리1 -->
+	<select id="getCategory1" resultType="String">
+		select distinct category1,article_no from usercenter order by ARTICLE_NO
+	</select>
+	
+	<!-- 카테고리2 -->
+	<select id="getCategory2" resultType="String">
+		select distinct category2,article_no from usercenter order by ARTICLE_NO
+	</select>
+	
+	<!-- 메인질문 -->
+	<select id="getTitle" resultType="String">
+		select title from usercenter order by ARTICLE_NO
+	</select>
+	
+	<!-- 메인답변 -->
+	<select id="getAnswer" resultType="String">
+		select answer from usercenter order by ARTICLE_NO
+	</select>
+		
+	<!-- 상품정보 -->
+	<select id="getProductInfo" parameterType="map" resultType="service">
+	select * from usercenter where category1=#{category}
+		<if test="select.equals('all')"></if>
+		<if test="select.equals('search')">and category2='상품검색'</if>
+		<if test="select.equals('price')">and category2='가격'</if>
+		<if test="select.equals('size')">and category2='사이즈'</if>
+		<if test="select.equals('management')">and category2='신발관리법'</if>
+		<if test="select.equals('ask')">and category2='입고문의'</if>
+	</select>
+	
+	<!-- 교환/반품/환불 -->
+	<select id="getExchange" parameterType="map" resultType="service">
+		select * from usercenter where category1=#{category}
+		<if test="select.equals('all')"></if>
+		<if test="select.equals('trade')">and category2='교환'</if>
+		<if test="select.equals('payback')">and category2='반품(환불)'</if>
+		<if test="select.equals('offline')">and category2='오프라인 교환/환불'</if>
+	</select>
+	
+	<!-- 배송현황 -->
+	<select id="getDelivery" parameterType="map" resultType="service">
+		select * from usercenter where category1=#{category}
+		<if test="select.equals('all')"></if>
+		<if test="select.equals('check')">and category2='배송조회'</if>
+		<if test="select.equals('delay')">and category2='배송지연'</if>
+		<if test="select.equals('problem')">and category2='배송오류'</if>
+		<if test="select.equals('cost')">and category2='배송비'</if>
+	</select>
+	
+	<!-- 주문/결제/취소 -->
+	<select id="getOrderRelation" parameterType="map" resultType="service">
+		select * from usercenter where category1=#{category}
+		<if test="select.equals('all')"></if>
+		<if test="select.equals('order')">and category2='주문'</if>
+		<if test="select.equals('payment')">and category2='결제'</if>
+		<if test="select.equals('cancle')">and category2='취소'</if>
+	</select>
+	
+	<!-- AS -->
+	<select id="getAS" parameterType="map" resultType="service">
+		select * from usercenter where category1=#{category}
+		<if test="select.equals('all')"></if>
+		<if test="select.equals('asreceive')">and category2='AS접수/현황/결과'</if>
+		<if test="select.equals('asreview')">and category2='심의접수/현황/결과'</if>
+		<if test="select.equals('ascost')">and category2='수선비단가표'</if>
+	</select>
+	
+	<!-- 회원정보 -->
+	<select id="getMemberInfo" parameterType="map" resultType="service">
+		select * from usercenter where category1=#{category}
+		<if test="select.equals('all')"></if>
+		<if test="select.equals('login')">and category2='로그인'</if>
+		<if test="select.equals('signup')">and category2='회원가입/탈퇴'</if>
+		<if test="select.equals('lost')">and category2='ID/PW분실'</if>
+		<if test="select.equals('infoChange')">and category2='개인정보변경'</if>
+	</select>
+	
+	<!-- 페이지 목록 -->
+ 	<select id="getAllPageList" parameterType="map" resultType="service">
+ 		select * from
+		(select rownum rn, tt.* from
+		(select * from usercenter
+		<if test="category!=null and !category.equals('') and category.equals('상품정보')">where category1=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('상품검색')">where category2=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('가격')">where category2=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('입고문의')">where category2=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('신발관리법')">where category2=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('사이즈')">where category2=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('교환/반품/환불')">where category1=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('교환')">where category2=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('반품(환불)')">where category2=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('오프라인 교환/환불')">where category2=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('배송현황')">where category1=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('배송조회')">where category2=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('배송지연')">where category2=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('배송오류')">where category2=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('배송비')">where category2=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('주문/결제/취소')">where category1=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('주문')">where category2=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('결제')">where category2=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('취소')">where category2=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('AS')">where category1=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('AS접수/현황/결과')">where category2=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('심의접수/현황/결과')">where category2=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('수선비단가표')">where category2=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('회원정보')">where category1=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('로그인')">where category2=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('회원가입/탈퇴')">where category2=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('ID/PW분실')">where category2=#{category}</if>
+		<if test="category!=null and !category.equals('') and category.equals('개인정보변경')">where category2=#{category}</if>
+		)tt)
+		where rn <![CDATA[>=]]> #{startNum} and rn <![CDATA[<=]]> #{endNum}
+ 	</select>
+ 	 	
+ 	<!-- 총 글 수 -->
+	<select id="getTotalA" resultType="Integer">
+		select count(*) from usercenter
+	</select>
+
+
+
+
+</mapper>

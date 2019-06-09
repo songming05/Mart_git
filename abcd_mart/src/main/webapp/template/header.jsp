@@ -17,7 +17,7 @@
 			<li><a href="../order_pay/shoppingBasket">💼장바구니</a></li>
 			<li><a href="../mypage/myPage"> 📄마이페이지</a></li>
 			<!-- <li><a onclick="myPageCheck()"> 📄마이페이지</a></li> -->
-			<li>📞고객센터</li>
+			<li><a href="../service/serviceMain">📞고객센터</a></li>
 			<li><a href="../center/abcd_StoreList">🏠매장찾기</a></li>
 		</ul>
 	</div>

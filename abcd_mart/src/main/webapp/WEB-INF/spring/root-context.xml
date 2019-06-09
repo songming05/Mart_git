@@ -28,6 +28,8 @@
 	<context:component-scan base-package="board.bean"/>
 	<context:component-scan base-package="board.dao"/>
 	<context:component-scan base-package="myPage.bean"/>
+	<context:component-scan base-package="service.bean"/>
+	<context:component-scan base-package="service.dao"/>
 	
 	
 	<tx:annotation-driven transaction-manager="transactionManager"/>
