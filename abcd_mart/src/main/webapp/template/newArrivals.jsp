@@ -1,6 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*, java.text.*"  %>
 
+<%
+java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("MMddHHmm");
+String splitNext = formatter.format(new java.util.Date()).substring(0, 4);
+String splitToday = formatter.format(new java.util.Date());
+splitToday = Double.parseDouble(splitToday)+"";
+String nextDay = (Integer.parseInt(splitNext)+1)+"0000";
+String today = Integer.parseInt(formatter.format(new java.util.Date()))+"";
+String calc =  ((int) Integer.parseInt(nextDay)-Double.parseDouble(splitToday))+"";
+%>
 <div class="new-main-contents-area " style="padding-top: 50px;">
 	<div class="new-main-new-arrivals">
 
@@ -39,7 +49,7 @@
 
 	    <div class="time-sale-box">
 			<i class="clock-ico"></i>
-			<input type="hidden" id="timeDiff" value="32457">
+			<input type="hidden" id="timeDiff" value="39605">
 			<span class="time-num time">09:00:28</span>
 		</div>
 	</section>
