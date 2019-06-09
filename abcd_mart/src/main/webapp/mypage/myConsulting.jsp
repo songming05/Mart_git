@@ -168,7 +168,7 @@
     <div class="ml30 membox2 fl-l">
         <ul class="line_up">
             <li class="coupon">
-                <p>나의 쿠폰</p> <em class="fc_type1" onclick="" style="cursor: pointer;">0</em>장
+                <p>나의 쿠폰</p> <em class="fc_type1" onclick="location.href='../mypage/myCouponList'" style="cursor: pointer;">0</em>장
             </li>
             <li class="point">
                 <p>나의 포인트</p>

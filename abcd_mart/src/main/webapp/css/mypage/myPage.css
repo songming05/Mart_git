@@ -136,6 +136,16 @@
     left: 50%;
     z-index: 600;
 }
+.pop_wrap .pop_container {
+    padding: 40px 40px 50px 40px;
+}
+.pop_wrap .pop_header {
+	    width: 570px;
+    background-color: #f5ca01;
+    position: relative;
+    text-align: center;
+    padding: 14px 50px 18px;
+}
 .mypage_cont .sevice_go .sevice_list li.list3 a:before {
     width: 28px;
     background-position: -81px -395px;
@@ -168,9 +178,6 @@
     display: table;
     overflow: hidden;
     content: "";
-}
-.mt20 {
-    margin-top: 20px !important;
 }
 .paginate {
     padding: 10px 0;
@@ -1078,9 +1085,6 @@ div.list_type3:before, p.list_type3:before, .list_type3 li:before {
 .fs16 {
     font-size: 16px !important;
 }
-.ml10 {
-    margin-left: 10px;
-}
 .password_box {
     border-top: 1px solid #dbdbdb;
     border-bottom: 1px solid #dbdbdb;
@@ -1127,9 +1131,30 @@ p.list_type1:before, .list_type1 li:before {
     content: '';
     background: #7b7b7b;
 }
-
 .mt20 {
     margin-top: 20px !important;
+}
+.pop_wrap .pop_x {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+}
+.ico_close2 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-indent: -5000em;
+    text-align: left;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png) 0px -200px no-repeat;
+}
+.bg_mask {
+        position: unset;
+    top: 0;
+    overflow: hidden;
+    background-color: #000;
 }
 p.list_type1, .list_type1 li {
     line-height: 1.8;
