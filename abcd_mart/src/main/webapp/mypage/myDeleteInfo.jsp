@@ -24,7 +24,7 @@
 
 
 
-<div class="container_wrap">
+<div class="container_wrap" style="margin-bottom: 200px;">
             <div class="container_area">
                 <div class="container_layout">
                     <!-- page_location -->
@@ -144,9 +144,9 @@
 
             <ul class="list_type3 mt10">
                 
-                    <li>아이디 : ${myPageId}<strong></strong></li>
+                    <li>아이디 : <strong>${myPageId}</strong></li>
                 
-                <li>이메일 주소 : ${myPageEmail} <strong class="fc_type8"></strong></li>
+                <li>이메일 주소 :  <strong class="fc_type8">${myPageEmail}</strong></li>
             </ul>
 
             <p class="bot_line">
@@ -167,7 +167,7 @@
     <div class="ml30 membox2 fl-l">
         <ul class="line_up">
             <li class="coupon">
-                <p>나의 쿠폰</p> <em class="fc_type1" onclick="location.href='https://www.abcmart.co.kr/abc/mypage/listCoupon';" style="cursor: pointer;">0</em>장
+                <p>나의 쿠폰</p> <em class="fc_type1" onclick="" style="cursor: pointer;">0</em>장
             </li>
             <li class="point">
                 <p>나의 포인트</p>
@@ -281,7 +281,7 @@
     <div class="align-center tit_type1 fs16 fc_type6 pt35 pb35 normal">정말 탈퇴 하시겠습니까?</div>
 
     <div class="table_basic no_point">
-        <table>
+        <table id="tableCss">
             <colgroup>
                 <col width="290"><col width="*">
             </colgroup>
@@ -289,7 +289,7 @@
                 <tr>
                     <td class="fc_type4">ABC-MART 이용 중 불편사항을 선택해 주세요.</td>
                     <td>
-                        <input type="hidden" name="userLveRsnCode">
+                        <input type="hidden" name="userLveRsnCode" class="userLveRsnCode">
                         <section class="relation_product">
                             <a style="cursor: pointer;">옵션선택<span class="ico_arrow1"></span></a>
                             <ul class="relation_list">

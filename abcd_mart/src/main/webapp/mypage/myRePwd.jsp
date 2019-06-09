@@ -21,8 +21,8 @@
 </header>
 <jsp:include page="../template/quickBarOther.jsp"/>
 
-<div class="container_wrap">
-            <div class="container_area">
+<div class="container_wrap" style="margin-bottom: 200px;">
+            <div class="container_area" >
                 <div class="container_layout">
                     <!-- page_location -->
                     <section class="page_location">
@@ -141,9 +141,9 @@
 
             <ul class="list_type3 mt10">
                 
-                    <li>아이디 : ${myPageId}<strong></strong></li>
+                    <li>아이디 : <strong>${myPageId}</strong></li>
                 
-                <li>이메일 주소 : ${myPageEmail} <strong class="fc_type8"></strong></li>
+                <li>이메일 주소 : <strong class="fc_type8">${myPageEmail} </strong></li>
             </ul>
 
             <p class="bot_line">
@@ -164,7 +164,7 @@
     <div class="ml30 membox2 fl-l">
         <ul class="line_up">
             <li class="coupon">
-                <p>나의 쿠폰</p> <em class="fc_type1" onclick="location.href='https://www.abcmart.co.kr/abc/mypage/listCoupon';" style="cursor: pointer;">0</em>장
+                <p>나의 쿠폰</p> <em class="fc_type1" onclick="" style="cursor: pointer;">0</em>장
             </li>
             <li class="point">
                 <p>나의 포인트</p>

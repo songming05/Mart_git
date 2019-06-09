@@ -110,15 +110,6 @@
 #asJoin{
 	width: 100%;
 }
-.table_basic th, .table_basic td {
-    font-size: 11px;
-    line-height: 1.5;
-    padding: 10px 15px;
-    word-break: break-all;
-    color: #666666;
-    border: 0;
-    border-top: 1px solid #dbdbdb;
-}
 .p_re{
 	    margin-bottom: 30px;
 }
@@ -155,7 +146,7 @@
     background-position: -114px -395px;
 }
 #myPage{
-	margin-bottom: 600px;
+	margin-bottom: 400px;
 }
 .pop_wrap {
     border: 1px solid #6c6c6c;
@@ -192,11 +183,8 @@ table td.non_data, table td .non_data {
     font-family: "Malgun Gothic", Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif;
     font-size: 16px;
 }
-.relation_product > a {
-    position: relative;
-    padding: 3px 6px 3px 10px;
-    border: 1px solid #bfbfbf;
-    box-sizing: border-box;
+.relation_product > a.on .ico_arrow1 {
+    background-position: -69px -94px;
 }
 .relation_product > a .ico_arrow1 {
     position: absolute;
@@ -208,6 +196,13 @@ table td.non_data, table td .non_data {
     vertical-align: middle;
     border-left: 1px solid #dbdbdb;
     background: url(//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png) -69px -78px no-repeat;
+}
+.relation_product .relation_list.on {
+    display: block;
+    border: 1px solid #000;
+    border-top-color: #bfbfbf;
+    background: #fff;
+    box-sizing: border-box;
 }
 .table_basic th a, .table_basic td a {
     color: #666666;
@@ -249,6 +244,9 @@ table td.non_data, table td .non_data {
 }
 .mypage_cont .my_cont .table_basic th {
     background: #fafafa;
+}
+.relation_product > a.on {
+    border-color: #000;
 }
 .mypage_cont .my_cont .table_select .relation_product {
     background-color: #fff;
@@ -642,6 +640,18 @@ table td .cp_type1_1, table td .cp_type1_2, table td .cp_type1_2 {
     border: 0;
     border-top: 1px solid #dbdbdb;
 }
+.userLveRsnCode{
+	    line-height: 1.5;
+    display: inline-block;
+    word-break: break-all;
+    font-family: Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif;
+}
+
+
+.table_basic.no_point {
+    border-top-color: #dbdbdb;
+    border-bottom-color: #dbdbdb;
+}
 .fc_type5 {
     color: #a4a4a4;
 }
@@ -784,6 +794,14 @@ table td .cp_type1_1, table td .cp_type1_2, table td .cp_type1_2 {
     border-top: 1px solid #000000;
     border-bottom: 1px solid #bfbfbf;
     margin-bottom: 10px;
+}
+#tableCss{
+	empty-cells: show;
+    width: 100%;
+    table-layout: fixed;
+    border: 0;
+    border-collapse: separate;
+    border-spacing: 0;
 }
 .tabl{
 	width:100%

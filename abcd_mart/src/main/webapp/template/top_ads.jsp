@@ -14,37 +14,37 @@
 		<ul class="carousel-inner" id="sizeModify" style="height: 400px;">	
 			<li class="item active" style="background: rgb(0, 160, 217);">
 				<a href="../advertisement/mainAd1">
-					<img src="../image/advertisement/main_advertise_Lsize_img1.jpg" style=" margin-right: 160px;">
+					<img src="../image/advertisement/main_advertise_Lsize_img1.jpg">
 				</a>
 			</li>
 	
 			<li class="item"  style="background: rgb(239, 77, 126);"> 
 				<a href="../advertisement/mainAd2">
-					<img src="../image/advertisement/main_advertise_Lsize_img2.jpg" style=" margin-right: 160px;">
+					<img src="../image/advertisement/main_advertise_Lsize_img2.jpg">
 				</a>
 			</li>
 		
 			<li class="item" style="background:rgb(35, 195, 209);">
 				<a href="../advertisement/mainAd3" >
-					<img src="../image/advertisement/main_advertise_Lsize_img3.jpg" style=" margin-right: 160px;">
+					<img src="../image/advertisement/main_advertise_Lsize_img3.jpg">
 				</a>
 			</li>
 			
 			<li class="item"  style="background: rgb(252, 252, 252); ">
 			 	<a href="../advertisement/mainAd4">
-			 		<img src="../image/advertisement/main_advertise_Lsize_img4.jpg" style=" margin-right: 160px;">
+			 		<img src="../image/advertisement/main_advertise_Lsize_img4.jpg">
 			 	</a>
 			</li>
 			
 			<li class="item" style="background: rgb(246, 222, 225);" > 
 				<a href="../advertisement/mainAd5">
-					<img src="../image/advertisement/main_advertise_Lsize_img5.jpg" style=" margin-right: 160px;">
+					<img src="../image/advertisement/main_advertise_Lsize_img5.jpg">
 				</a>
 			</li>
 	
 			<li class="item"  style="background: rgb(141, 222, 242);"> 
 				<a href="../advertisement/mainAd6">
-					<img src="../image/advertisement/main_advertise_Lsize_img6.jpg" style=" margin-right: 160px;">
+					<img src="../image/advertisement/main_advertise_Lsize_img6.jpg">
 				</a>
 			</li>
 		</ul>
