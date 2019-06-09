@@ -52,7 +52,7 @@
                 
                         
                     
-                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?orderStatCode=01&amp;topAccessYn=true">
+                <a href="">
                     주문접수
                     <em class="num">0</em>
                 </a>
@@ -65,7 +65,7 @@
                 
                         
                     
-                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?orderStatCode=02&amp;topAccessYn=true">
+                <a href="">
                     결제완료
                     <em class="num">0</em>
                 </a>
@@ -78,7 +78,7 @@
                 
                         
                     
-                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?dlvyStatCode=03&amp;topAccessYn=true">
+                <a href="">
                     상품준비중
                     <em class="num">0</em>
                 </a>
@@ -91,7 +91,7 @@
                 
                         
                     
-                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?dlvyStatCode=04&amp;topAccessYn=true">
+                <a href="">
                     상품출고
                     <em class="num">0</em>
                 </a>
@@ -104,7 +104,7 @@
                 
                         
                     
-                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?dlvyStatCode=05&amp;topAccessYn=true">
+                <a href="">
                     배송중
                     <em class="num">0</em>
                 </a>
@@ -117,7 +117,7 @@
                 
                         
                     
-                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?dlvyStatCode=06&amp;topAccessYn=true">
+                <a href="">
                     배송완료
                     <em class="num">0</em>
                 </a>
@@ -165,7 +165,7 @@
     <div class="ml30 membox2 fl-l">
         <ul class="line_up">
             <li class="coupon">
-                <p>나의 쿠폰</p> <em class="fc_type1" onclick="location.href='https://www.abcmart.co.kr/abc/mypage/listCoupon';" style="cursor: pointer;">5</em>장
+                <p>나의 쿠폰</p> <em class="fc_type1" onclick="" style="cursor: pointer;">0</em>장
             </li>
             <li class="point">
                 <p>나의 포인트</p>
@@ -185,8 +185,8 @@
             
             
                 <div class="online_box align-center">
-                    <a href="http://www.abcmart.co.kr/abc/user/memberShipAgreement?mode=change" class="btn_mlType1 mb10" style="width:160px;">멤버십 회원 가입</a>
-                    <a href="https://www.abcmart.co.kr/abc/mypage/memberGrade" class="btn_mlType5" style="width:160px;">등급별 혜택 확인</a>
+                    <a href="" class="btn_mlType1 mb10" style="width:160px;">멤버십 회원 가입</a>
+                    <a href="" class="btn_mlType5" style="width:160px;">등급별 혜택 확인</a>
                 </div>
             
         

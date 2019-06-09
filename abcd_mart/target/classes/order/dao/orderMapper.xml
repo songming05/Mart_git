@@ -42,7 +42,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 최근 배송 리스트  -->
 	<select id="orderAddressList" parameterType="String" resultType="orderDTO">
-		select * from (select  * from orderABCD where buyername = #{id} order by seq desc) where rownum <![CDATA[<=]]> 5
+		select * from (select  * from orderABCD where id = #{id} order by seq desc) where rownum <![CDATA[<=]]> 5
 	</select>
 	
 	<!-- test 장바구에서 결제페이지로 데이터 이동 --> 
@@ -88,7 +88,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 								#{orderNum},
 								#{orderDate},
 								#{orderId},
-								#{orderPrdt},
+								#{prdtcode},
+								
 								#{orderPrice},
 								#{orderDelivery},
 								#{orderPayment},
@@ -98,7 +99,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	<!-- 재고 관리 -1 -->
 	<update id="prdtManagement" parameterType="java.util.Map">
-		update prdtManagement set prdtqty= prdtqty-1 where prdtcode = #{prdtcode} and prdtsize = #{shoessize}
+		update prdtManagement set prdtqty= prdtqty-1 , soldqty=soldqty+1 where prdtcode = #{prdtcode} and prdtsize = #{shoessize}
 	</update>
 	
 	<select id="orderHistory" parameterType="String" resultType="orderDTO">
