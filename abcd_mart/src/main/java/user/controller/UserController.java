@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import myPage.bean.MypageDTO;
 import user.bean.UserDTO;
 import user.dao.UserDAO;
 
@@ -25,6 +26,8 @@ public class UserController {
 	private UserDAO userDAO;
 	@Autowired
 	BCryptPasswordEncoder passwordEncoder;
+	@Autowired
+	private MypageDTO mypageDTO;
 
 	
 	@RequestMapping(value = "/signUpStep_01", method = RequestMethod.GET)
@@ -97,6 +100,10 @@ public class UserController {
 			session.setAttribute("memEmail", userDTO.getEmail());
 			session.setAttribute("memPhone", userDTO.getPhone());
 			//System.out.println(userDTO.getName());
+			mypageDTO.setLoginState(1);
+			mypageDTO.setMypageEmail(userDTO.getEmail());
+			mypageDTO.setMypageName(userDTO.getName());
+			mypageDTO.setMypageId(userDTO.getId());
 		} else {
 			loginResult="loginFail";
 		}
@@ -107,6 +114,7 @@ public class UserController {
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
 		session.invalidate();
+		mypageDTO.setLoginState(0);
 		return "/main/index";
 	}
 

@@ -135,14 +135,14 @@
             <p class="tit_type1 fs16">
                 
                 
-                <span class="fc_type8 ">온라인 회원</span> 입니다.
+              ${myPageName}님은   <span class="fc_type8 ">온라인 회원</span> 입니다.
             </p>
 
             <ul class="list_type3 mt10">
                 
-                    <li>아이디 : <strong></strong></li>
+                    <li>아이디 : ${myPageId}<strong></strong></li>
                 
-                <li>이메일 주소 : <strong class="fc_type8"></strong></li>
+                <li>이메일 주소 : ${myPageEmail} <strong class="fc_type8"></strong></li>
             </ul>
 
             <p class="bot_line">
@@ -163,7 +163,7 @@
     <div class="ml30 membox2 fl-l">
         <ul class="line_up">
             <li class="coupon">
-                <p>나의 쿠폰</p> <em class="fc_type1" onclick="location.href='https://www.abcmart.co.kr/abc/mypage/listCoupon';" style="cursor: pointer;">5</em>장
+                <p>나의 쿠폰</p> <em class="fc_type1" onclick="location.href='https://www.abcmart.co.kr/abc/mypage/listCoupon';" style="cursor: pointer;">0</em>장
             </li>
             <li class="point">
                 <p>나의 포인트</p>
