@@ -54,7 +54,7 @@
                 
                         
                     
-                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?orderStatCode=01&amp;topAccessYn=true">
+                <a href="">
                     주문접수
                     <em class="num">0</em>
                 </a>
@@ -67,7 +67,7 @@
                 
                         
                     
-                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?orderStatCode=02&amp;topAccessYn=true">
+                <a href="">
                     결제완료
                     <em class="num">0</em>
                 </a>
@@ -80,7 +80,7 @@
                 
                         
                     
-                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?dlvyStatCode=03&amp;topAccessYn=true">
+                <a href="">
                     상품준비중
                     <em class="num">0</em>
                 </a>
@@ -93,7 +93,7 @@
                 
                         
                     
-                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?dlvyStatCode=04&amp;topAccessYn=true">
+                <a href="">
                     상품출고
                     <em class="num">0</em>
                 </a>
@@ -106,7 +106,7 @@
                 
                         
                     
-                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?dlvyStatCode=05&amp;topAccessYn=true">
+                <a href="">
                     배송중
                     <em class="num">0</em>
                 </a>
@@ -119,7 +119,7 @@
                 
                         
                     
-                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?dlvyStatCode=06&amp;topAccessYn=true">
+                <a href="">
                     배송완료
                     <em class="num">0</em>
                 </a>
@@ -177,18 +177,18 @@
         </ul>
 
         <ul class="line_do clearfix">
-            <li>나의상담 <a href="http://www.abcmart.co.kr/abc/mypage/counselingHistory"><em class="fc_type1">0</em></a></li>
-            <li>반품 <a href="http://www.abcmart.co.kr/abc/mypage/listRequestReturn"><em class="fc_type1">0</em></a></li>
-            <li>교환 <a href="http://www.abcmart.co.kr/abc/mypage/listRequestExchange"><em class="fc_type1">0</em></a></li>
-            <li>AS <a href="http://www.abcmart.co.kr/abc/mypage/reqOnlnAsList"><em class="fc_type1">0</em></a></li>
+			<li>나의상담 <a href="../mypage/myConsulting"><em class="fc_type1">0</em></a></li>
+            <li>반품 <a href="../mypage/myAsPage3"><em class="fc_type1">0</em></a></li>
+            <li>교환 <a href="../mypage/myAsPage4"><em class="fc_type1">0</em></a></li>
+            <li>AS <a href="../mypage/myAsPage5"><em class="fc_type1">0</em></a></li>
         </ul>
         
         
             
             
                 <div class="online_box align-center">
-                    <a href="http://www.abcmart.co.kr/abc/user/memberShipAgreement?mode=change" class="btn_mlType1 mb10" style="width:160px;">멤버십 회원 가입</a>
-                    <a href="https://www.abcmart.co.kr/abc/mypage/memberGrade" class="btn_mlType5" style="width:160px;">등급별 혜택 확인</a>
+                    <a href="" class="btn_mlType1 mb10" style="width:160px;">멤버십 회원 가입</a>
+                    <a href="" class="btn_mlType5" style="width:160px;">등급별 혜택 확인</a>
                 </div>
             
         

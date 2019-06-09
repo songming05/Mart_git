@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>반품 교환 AS</title>
+<title>반품 교환 신청</title>
 <link rel="shortcut icon" type="image⁄x-icon" href="../image/mainLogo/ABCD.png">
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/header.css"/>
@@ -22,7 +22,7 @@
 <jsp:include page="../template/quickBarOther.jsp"/>
 
 
-<div class="container_wrap">
+<div class="container_wrap" style="margin-bottom: 200px;">
             <div class="container_area">
                 <div class="container_layout">
                     <!-- page_location -->
@@ -52,7 +52,7 @@
                 
                         
                     
-                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?orderStatCode=01&amp;topAccessYn=true">
+                <a href="">
                     주문접수
                     <em class="num">0</em>
                 </a>
@@ -65,7 +65,7 @@
                 
                         
                     
-                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?orderStatCode=02&amp;topAccessYn=true">
+                <a href="">
                     결제완료
                     <em class="num">0</em>
                 </a>
@@ -78,7 +78,7 @@
                 
                         
                     
-                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?dlvyStatCode=03&amp;topAccessYn=true">
+                <a href="">
                     상품준비중
                     <em class="num">0</em>
                 </a>
@@ -91,7 +91,7 @@
                 
                         
                     
-                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?dlvyStatCode=04&amp;topAccessYn=true">
+                <a href="">
                     상품출고
                     <em class="num">0</em>
                 </a>
@@ -104,7 +104,7 @@
                 
                         
                     
-                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?dlvyStatCode=05&amp;topAccessYn=true">
+                <a href="">
                     배송중
                     <em class="num">0</em>
                 </a>
@@ -117,7 +117,7 @@
                 
                         
                     
-                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?dlvyStatCode=06&amp;topAccessYn=true">
+                <a href="">
                     배송완료
                     <em class="num">0</em>
                 </a>
@@ -175,18 +175,18 @@
         </ul>
 
         <ul class="line_do clearfix">
-            <li>나의상담 <a href="http://www.abcmart.co.kr/abc/mypage/counselingHistory"><em class="fc_type1">0</em></a></li>
-            <li>반품 <a href="http://www.abcmart.co.kr/abc/mypage/listRequestReturn"><em class="fc_type1">0</em></a></li>
-            <li>교환 <a href="http://www.abcmart.co.kr/abc/mypage/listRequestExchange"><em class="fc_type1">0</em></a></li>
-            <li>AS <a href="http://www.abcmart.co.kr/abc/mypage/reqOnlnAsList"><em class="fc_type1">0</em></a></li>
+			<li>나의상담 <a href="../mypage/myConsulting"><em class="fc_type1">0</em></a></li>
+            <li>반품 <a href="../mypage/myAsPage3"><em class="fc_type1">0</em></a></li>
+            <li>교환 <a href="../mypage/myAsPage4"><em class="fc_type1">0</em></a></li>
+            <li>AS <a href="../mypage/myAsPage5"><em class="fc_type1">0</em></a></li>
         </ul>
         
         
             
             
                 <div class="online_box align-center">
-                    <a href="http://www.abcmart.co.kr/abc/user/memberShipAgreement?mode=change" class="btn_mlType1 mb10" style="width:160px;">멤버십 회원 가입</a>
-                    <a href="https://www.abcmart.co.kr/abc/mypage/memberGrade" class="btn_mlType5" style="width:160px;">등급별 혜택 확인</a>
+                    <a href="" class="btn_mlType1 mb10" style="width:160px;">멤버십 회원 가입</a>
+                    <a href="" class="btn_mlType5" style="width:160px;">등급별 혜택 확인</a>
                 </div>
             
         
@@ -258,16 +258,16 @@
                                 
     <h3 class="tit_type1 fs16 ml10">반품 / 교환 / AS</h3>
     <ul class="column_tab column5 mt10">
-        <li class="current"><a href="/abc/mypage/returnServiceRequest">반품/교환신청</a></li>
-        <li><a href="/abc/mypage/reqOnlnAsPossibleOrderList">AS신청</a></li>
-        <li><a href="/abc/mypage/listRequestReturn">반품현황</a></li>
-        <li><a href="/abc/mypage/listRequestExchange">교환현황</a></li>
-        <li><a href="/abc/mypage/reqOnlnAsList">AS현황</a></li>
+        <li class="current"><a href="../mypage/myAsPage">반품/교환신청</a></li>
+        <li><a href="../mypage/myAsPage2">AS신청</a></li>
+        <li><a href="../mypage/myAsPage3">반품현황</a></li>
+        <li><a href="../mypage/myAsPage4">교환현황</a></li>
+        <li><a href="../mypage/myAsPage5">AS현황</a></li>
     </ul>
     <!-- 반품/교환신청 -->
     <header class="positR pt30 ml10">
         <p class="fs12 fc_type6 bold">반품/교환 주의사항</p>
-        <a href="/abc/customer/faqList?parentDepth=0001" class="btn_sType1 positA r10 b0">반품/교환 안내</a>
+        <a href="" class="btn_sType1 positA r10 b0">반품/교환 안내</a>
     </header>
     <ul class="list_type1 mt10">
         <li>제품을 받으신 날부터 7일 이내(상품불량인 경우 30일)에 접수해주시기 바랍니다.</li>

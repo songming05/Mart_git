@@ -142,4 +142,34 @@ public class MyPageController {
 		return "/mypage/mySNS";
 	}
 	
+	
+	@RequestMapping(value = "/mypage/myAsPage2", method = RequestMethod.GET)
+	public String myAsPage2(Model model) {
+		model.addAttribute("myPageEmail",mypageDTO.getMypageEmail());
+		model.addAttribute("myPageName",mypageDTO.getMypageName());
+		model.addAttribute("myPageId",mypageDTO.getMypageId());
+		return "/mypage/myAsPage2";
+	}
+	@RequestMapping(value = "/mypage/myAsPage3", method = RequestMethod.GET)
+	public String myAsPage3(Model model) {
+		model.addAttribute("myPageEmail",mypageDTO.getMypageEmail());
+		model.addAttribute("myPageName",mypageDTO.getMypageName());
+		model.addAttribute("myPageId",mypageDTO.getMypageId());
+		return "/mypage/myAsPage3";
+	}
+	@RequestMapping(value = "/mypage/myAsPage4", method = RequestMethod.GET)
+	public String myAsPage4(Model model) {
+		model.addAttribute("myPageEmail",mypageDTO.getMypageEmail());
+		model.addAttribute("myPageName",mypageDTO.getMypageName());
+		model.addAttribute("myPageId",mypageDTO.getMypageId());
+		return "/mypage/myAsPage4";
+	}
+	@RequestMapping(value = "/mypage/myAsPage5", method = RequestMethod.GET)
+	public String myAsPage5(Model model) {
+		model.addAttribute("myPageEmail",mypageDTO.getMypageEmail());
+		model.addAttribute("myPageName",mypageDTO.getMypageName());
+		model.addAttribute("myPageId",mypageDTO.getMypageId());
+		return "/mypage/myAsPage5";
+	}
+	
 }

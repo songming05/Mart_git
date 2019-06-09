@@ -107,6 +107,9 @@
 #cm_tabs_01{
 	display: block;
 }
+#asJoin{
+	width: 100%;
+}
 .table_basic th, .table_basic td {
     font-size: 11px;
     line-height: 1.5;
