@@ -7,6 +7,7 @@
 <title>여름신발 특가 19,000원~</title>
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/header.css"/>
+<link rel="shortcut icon" type="image⁄x-icon" href="../image/mainLogo/ABCD.png">
 <link rel="stylesheet" href="../css/advertise/adPage.css"/>
 <!-- quickBar -->
 <link rel="stylesheet" href="../css/quickBar.css"/>	
