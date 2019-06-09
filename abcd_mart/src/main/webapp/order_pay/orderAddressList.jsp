@@ -7,9 +7,20 @@
 <head>
 <meta charset="UTF-8">
 <title>최근 배송지</title>
+<style type="text/css">
+.postTable td{
+	font-size:9pt;
+}
+.addressA:link{color: black; text-decoration: none;}
+.addressA:visited{color: black; text-decoration: none;}
+.addressA:hover{color: green; text-decoration: underline;}
+.addressA:active{color: black; text-decoration: none;}
+
+</style>
 </head>
 <body>
-<table id="postTable" border="1" cellpadding="5" cellspacing="0" width="100%" >
+
+<table class="postTable" id="postTable" border="1" cellpadding="5" cellspacing="0" width="100%" >
 
  <tr>
  	<td width="70" align="center" >우편번호</td>

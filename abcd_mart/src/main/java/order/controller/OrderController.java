@@ -41,6 +41,7 @@ public class OrderController {
 	public String orderPageEnd(@ModelAttribute OrderDTO orderDTO ,
 							Model model,
 							HttpSession  session) {
+		
 		/*
 		 * Cookie[] cookies = request.getCookies();
 		 * 
@@ -50,53 +51,96 @@ public class OrderController {
 		 * }
 		 */
 
-		
+		String id = (String) session.getAttribute("memId");
 		
 		//DB
 		orderDAO.writeOrder(orderDTO);
 		
 		OrderDTO pDTO = orderDAO.oneOrder(orderDTO.getBuyerName());
-		List<CartDTO> list = orderDAO.getOrderList(pDTO.getId());
+		List<CartDTO> list1 = orderDAO.getOrderDirect(pDTO.getId());
+		List<CartDTO> list2 = orderDAO.getOrderList(pDTO.getId());
 		PaymentinfoDTO paymentinfoDTO = new PaymentinfoDTO();
 
 		DateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date nowDate = new Date();
 		nowDate = pDTO.getLogtime();
 		String orderDate = sdFormat.format(nowDate);
-
-
-		for(int i=0; i<list.size();i++) {
-			paymentinfoDTO.setOrderNum(num);
-			paymentinfoDTO.setOrderDate(orderDate);
-			paymentinfoDTO.setOrderId(pDTO.getId());
-			paymentinfoDTO.setOrderPrdt(list.get(i).getPrdtcode());
-			paymentinfoDTO.setOrderPrice(list.get(i).getShoesprice());
-			if(i==0) {
-				paymentinfoDTO.setOrderDelivery("2500");
-			}else {
-				paymentinfoDTO.setOrderDelivery("0");
-			}
-			paymentinfoDTO.setOrderPayment(pDTO.getPayChoice());
-			paymentinfoDTO.setOrderSize(list.get(i).getShoessize());
+		
+		// 다이렉스 주문시 - > getOrderDirect cartList에서 가져오고
+		// 장바구니 주문시 -> getOrderList mycartList에서 가져오는걸 구분하는 if
+		
+		if(list1!=null) {
 			
-			orderDAO.paymentInfo(paymentinfoDTO);
 			
-			//상품재고 테이블 들어가서 재고 -1 list.get(i).getPrdtcode()
-			for(int j=0; j< Integer.parseInt(list.get(i).getShoesqty());j++) {
-				Map<String,String > map = new HashMap<String,String>();
-				map.put("prdtcode", list.get(i).getPrdtcode());
-				map.put("shoessize", list.get(i).getShoessize());
-				orderDAO.prdtManagement(map);
+			for(int i=0; i<list1.size();i++) {
+				paymentinfoDTO.setOrderNum(num);
+				paymentinfoDTO.setOrderDate(orderDate);
+				paymentinfoDTO.setOrderId(pDTO.getId());
+				paymentinfoDTO.setPrdtcode(list1.get(i).getPrdtcode());
+				paymentinfoDTO.setOrderPrice(list1.get(i).getShoesprice());
 				
+				if(i==0) {
+					paymentinfoDTO.setOrderDelivery("2500");
+				}else {
+					paymentinfoDTO.setOrderDelivery("0");
+				}
+				paymentinfoDTO.setOrderPayment(pDTO.getPayChoice());
+				paymentinfoDTO.setOrderSize(list1.get(i).getShoessize());
+				
+				orderDAO.paymentInfo(paymentinfoDTO);
+				
+				//상품재고 테이블 들어가서 재고 -1 list.get(i).getPrdtcode()
+				for(int j=0; j< Integer.parseInt(list1.get(i).getShoesqty());j++) {
+					Map<String,String > map = new HashMap<String,String>();
+					map.put("prdtcode", list1.get(i).getPrdtcode());
+					map.put("shoessize", list1.get(i).getShoessize());
+					orderDAO.prdtManagement(map);
+					
+				}
+
 			}
+			//cartlist 비워주기
+			orderDAO.deleteCart(id);
 			
+			
+		}else {
+			
+			//paymentinfo INSERT 
+			for(int i=0; i<list2.size();i++) {
+				paymentinfoDTO.setOrderNum(num);
+				paymentinfoDTO.setOrderDate(orderDate);
+				paymentinfoDTO.setOrderId(pDTO.getId());
+				paymentinfoDTO.setPrdtcode(list2.get(i).getPrdtcode());
+				paymentinfoDTO.setOrderPrice(list2.get(i).getShoesprice());
+				
+				if(i==0) {
+					paymentinfoDTO.setOrderDelivery("2500");
+				}else {
+					paymentinfoDTO.setOrderDelivery("0");
+				}
+				paymentinfoDTO.setOrderPayment(pDTO.getPayChoice());
+				paymentinfoDTO.setOrderSize(list2.get(i).getShoessize());
+				
+				orderDAO.paymentInfo(paymentinfoDTO);
+				
+				//상품재고 테이블 들어가서 재고 -1 , QTY +1 FOR문
+				for(int j=0; j< Integer.parseInt(list2.get(i).getShoesqty());j++) {
+					Map<String,String > map = new HashMap<String,String>();
+					map.put("prdtcode", list2.get(i).getPrdtcode());
+					map.put("shoessize", list2.get(i).getShoessize());
+					orderDAO.prdtManagement(map);
+					
+				}
+
+			}
+			//mycartlist 비워주기
+			orderDAO.deleteMyCart(id);
 			
 		}
 	
 		
 		model.addAttribute("pDTO", pDTO);
-		String id = (String) session.getAttribute("memId");
-		orderDAO.deleteMyCart(id);
+		
 		num++;
 
 		
@@ -104,7 +148,9 @@ public class OrderController {
 	}
 	
 	@RequestMapping(value="/order_pay/orderAddressList.do",method=RequestMethod.GET)
-	public String orderAddressList(@RequestParam String id , Model model) {
+	public String orderAddressList(HttpSession session, Model model) {
+		String id = (String) session.getAttribute("memId");
+		
 		List<OrderDTO> list = orderDAO.orderAddressList(id);
 		
 		model.addAttribute("homeList", list);
