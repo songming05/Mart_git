@@ -163,7 +163,7 @@
     <div class="ml30 membox2 fl-l">
         <ul class="line_up">
             <li class="coupon">
-                <p>나의 쿠폰</p> <em class="fc_type1" onclick="" style="cursor: pointer;">0</em>장
+                <p>나의 쿠폰</p> <em class="fc_type1" onclick="location.href='../mypage/myCouponList'" style="cursor: pointer;">0</em>장
             </li>
             <li class="point">
                 <p>나의 포인트</p>
@@ -274,7 +274,7 @@
     </ul>
     <header class="positR pt30 ml10">
         <p class="fs12 fc_type6 bold">반품/교환 택배비 안내</p>
-        <a href="#target1" data-rel="layer" class="btn_sType2 positA r10 b0">박스 포장 안내</a>
+        <a href="#target1" data-rel="layer" id="mypageBox" class="btn_sType2 positA r10 b0">박스 포장 안내</a>
     </header>
     <ul class="list_type1 mt10">
         <li>왕복 택배비 : 최초 배송비(2,500원) + 반품배송비(2,500원) = 총 5,000원이 부과됩니다.(선결제 또는 환불금액에서 차감 선택)</li>
@@ -329,7 +329,7 @@
     <div id="target1" class="pop_wrap" style="width: 670px; margin-left: -335px; margin-top: -168px;">
         <header class="pop_header">
             <h2>반품/교환 박스 포장 안내</h2>
-            <button type="button" class="pop_x ico_close2">Close</button>
+            <button type="button" id="closeBox" class="pop_x ico_close2">Close</button>
         </header>
 
         <div class="pop_container qnaBox">
@@ -359,7 +359,7 @@
                 </div>
             </div>
         </div>
-
+<div class="bg_mask" style="display: block; width: 1903px; height: 0px; opacity: 0.6; z-index: 500;"></div>
 <jsp:include page="../template/mainFooter.jsp"/>
 </body> 
 <script type="text/javascript" src="../js/quickBar.js"></script>
@@ -367,5 +367,6 @@
 <script type="text/javascript" src="../js/mainFooter.js"></script> 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.0.min.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/mypage/myPage.js"></script>
 </html>
         
