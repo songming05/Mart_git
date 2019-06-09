@@ -4,27 +4,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>배송주소록관리</title>
+<title>AS신청</title>
 <link rel="shortcut icon" type="image⁄x-icon" href="../image/mainLogo/ABCD.png">
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/header.css"/>
 <link rel="stylesheet" href="../css/mypage/myPage.css"/>
-<!-- quickBar -->
-<link rel="stylesheet" href="../css/quickBar.css"/>	
 <!-- footer-->
 <link rel="stylesheet" href="../css/mainFooter.css"/>
+<!-- quickBar -->
+<link rel="stylesheet" href="../css/quickBar.css"/>	
 </head>
 <body>
 <header>
 <jsp:include page="../template/header.jsp"/>
 
 </header>
-
 <jsp:include page="../template/quickBarOther.jsp"/>
 
-
-<div class="container_wrap">
-            <div class="container_area">
+<div class="container_area">
                 <div class="container_layout">
                     <!-- page_location -->
                     <section class="page_location">
@@ -53,7 +50,7 @@
                 
                         
                     
-                <a href="">
+                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?orderStatCode=01&amp;topAccessYn=true">
                     주문접수
                     <em class="num">0</em>
                 </a>
@@ -66,7 +63,7 @@
                 
                         
                     
-                <a href="">
+                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?orderStatCode=02&amp;topAccessYn=true">
                     결제완료
                     <em class="num">0</em>
                 </a>
@@ -79,7 +76,7 @@
                 
                         
                     
-                <a href="">
+                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?dlvyStatCode=03&amp;topAccessYn=true">
                     상품준비중
                     <em class="num">0</em>
                 </a>
@@ -92,7 +89,7 @@
                 
                         
                     
-                <a href="">
+                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?dlvyStatCode=04&amp;topAccessYn=true">
                     상품출고
                     <em class="num">0</em>
                 </a>
@@ -105,7 +102,7 @@
                 
                         
                     
-                <a href="">
+                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?dlvyStatCode=05&amp;topAccessYn=true">
                     배송중
                     <em class="num">0</em>
                 </a>
@@ -118,7 +115,7 @@
                 
                         
                     
-                <a href="">
+                <a href="https://www.abcmart.co.kr/abc/mypage/listOnlineOrder?dlvyStatCode=06&amp;topAccessYn=true">
                     배송완료
                     <em class="num">0</em>
                 </a>
@@ -138,14 +135,14 @@
             <p class="tit_type1 fs16">
                 
                 
-              ${myPageName}님은   <span class="fc_type8 ">온라인 회원</span> 입니다.
+                황인성님은 <span class="fc_type8 ">온라인 회원</span> 입니다.
             </p>
 
             <ul class="list_type3 mt10">
                 
-                    <li>아이디 : ${myPageId}<strong></strong></li>
+                    <li>아이디 : <strong>dlstjd615</strong></li>
                 
-                <li>이메일 주소 : ${myPageEmail} <strong class="fc_type8"></strong></li>
+                <li>이메일 주소 : <strong class="fc_type8">gentle1412@naver.com</strong></li>
             </ul>
 
             <p class="bot_line">
@@ -166,7 +163,7 @@
     <div class="ml30 membox2 fl-l">
         <ul class="line_up">
             <li class="coupon">
-                <p>나의 쿠폰</p> <em class="fc_type1" onclick="location.href='https://www.abcmart.co.kr/abc/mypage/listCoupon';" style="cursor: pointer;">0</em>장
+                <p>나의 쿠폰</p> <em class="fc_type1" onclick="location.href='https://www.abcmart.co.kr/abc/mypage/listCoupon';" style="cursor: pointer;">5</em>장
             </li>
             <li class="point">
                 <p>나의 포인트</p>
@@ -186,8 +183,8 @@
             
             
                 <div class="online_box align-center">
-                    <a href="" class="btn_mlType1 mb10" style="width:160px;">멤버십 회원 가입</a>
-                    <a href="" class="btn_mlType5" style="width:160px;">등급별 혜택 확인</a>
+                    <a href="http://www.abcmart.co.kr/abc/user/memberShipAgreement?mode=change" class="btn_mlType1 mb10" style="width:160px;">멤버십 회원 가입</a>
+                    <a href="https://www.abcmart.co.kr/abc/mypage/memberGrade" class="btn_mlType5" style="width:160px;">등급별 혜택 확인</a>
                 </div>
             
         
@@ -213,7 +210,7 @@
         <li class="tit">쇼핑내역
             <ul>
                <li class=""><a href="../mypage/myPage">주문배송 현황 조회</a></li>
-<li class=""><a href="../mypage/myAsPage">반품/교환/AS</a></li>
+<li class="on"><a href="../mypage/myAsPage">반품/교환/AS</a></li>
                     
                 
             </ul>
@@ -244,7 +241,7 @@
             <li class="tit">개인정보
                 <ul>
                     
-<li class="on"><a href="../mypage/myAddress">배송주소록관리</a></li>
+<li class=""><a href="../mypage/myAddress">배송주소록관리</a></li>
 <li class=""><a href="../mypage/myPrivate">개인정보수정</a></li>
 <li class=""><a href="../mypage/myAddInfo">부가정보수정</a></li>
 <li class=""><a href="../mypage/myRePwd">비밀번호 변경</a></li>
@@ -257,50 +254,68 @@
 
                             <section class="my_cont order_basketCont">
                                 
-<section class="my_cont">
-    <header class="positR">
-        <h3 class="tit_type1 fs16 ml10">배송주소록관리</h3>
-        
-            <a href="https://www.abcmart.co.kr/abc/mypage/changeMyAddressForm" class="positA r10 b0 btn_sType1">배송지 등록</a>
-        
+    <h3 class="tit_type1 fs16 ml10">반품 / 교환 / AS</h3>
+    <ul class="column_tab column5 mt10">
+        <li><a href="../mypage/myAsPage">반품/교환신청</a></li>
+        <li class="current"><a href="../mypage/myAsPage2">AS신청</a></li>
+        <li><a href="../mypage/myAsPage3">반품현황</a></li>
+        <li><a href="../mypage/myAsPage4">교환현황</a></li>
+        <li><a href="../mypage/myAsPage5">AS현황</a></li>
+    </ul>
+    <!-- AS신청 -->
+    <header class="positR pt30 ml10">
+        <p class="fs12 fc_type6 bold">AS신청 안내</p>
+        <a href="" class="btn_sType1 positA r10 b0">AS 안내</a>
     </header>
-
-    <div class="mt10">
-        <div class="table_basic mt10">
-            <form name="addressFrom">
-                <table class="catal">
-                    <colgroup>
-                        <col width="45px"><col width="90px"><col width="105px"><col width="105px"><col width="110px"><col width="*"><col width="90px">
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th>&nbsp;</th>
-                            <th class="normal">배송지명</th>
-                            <th class="normal">수령인</th>
-                            <th class="normal">전화번호</th>
-                            <th class="normal">휴대전화</th>
-                            <th class="normal">배송지주소</th>
-                            <th class="normal">수정</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                            <tr class="group-center">
-                                <td colspan="7"><p class="non_data">등록된 주소가 없습니다.</p></td>
+    <ul class="list_type1 mt10">
+        <li><strong class="fc_type2">나이키 상품은 오프라인 매장에서만 AS접수 가능합니다. (온라인 접수 불가)</strong></li>
+        <li>수선을 원하는 내용을 자세하게(사진 첨부 가능) 기재해주면 처리 시 도움이 될 수 있습니다.</li>
+        <li>수선 접수 시 왕복 택배비(5000원)가 부과됩니다. </li>
+        <li>지정택배(대한통운) 외 타택배 이용 시 추가로 발생되는 금액은 고객님께서 부담해주셔야 합니다.</li>
+        <li>접수 없이 상품을 ABC-MART로 보내실 경우 확인이 어려워 반송되거나 처리가 늦어질 수 있습니다. </li>
+        <li>접수 완료 후 15일 이내 상품 도착하지 않을 경우 접수가 취소 됩니다. </li>
+        <li>브랜드 박스의 훼손이 없도록 택배 박스 및 타 박스로 포장하여 발송해주시기 바랍니다.</li>
+        <li>오프라인 매장에서도 신청 가능합니다. (매장 방문 접수 시 택배비 무료)</li>
+    </ul>
+    <section class="mt40">
+        
+        <div class="tabs-content mt30">
+            <!-- 테이블 -->
+            <div id="cm_tabs_01" class="tabs-cont basket_box">
+                <div class="table_basic gallery_line_type1">
+                    <table id="asJoin">
+                        <colgroup>
+                            <col width="200"><col width="*"><col width="200">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="normal">주문번호</th>
+                                <th class="normal">상품정보</th>
+                                <th class="normal">AS신청</th>
                             </tr>
-                        
-                        
-                    </tbody>
-                </table>
-            </form>
-        </div>
-    </div>  
+                        </thead>
+                        <tbody>
+                            
+                            
+                            <tr>
+                                <td colspan="3"><p class="non_data">AS신청이 가능한 구매내역이 없습니다.</p></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <p class="paginate mt20">
+                    
 
-    <p class="align-center mt30">
-        <a class="btn_mType1 selectAll" style="width:90px; cursor: pointer;">전체 선택</a>
-        <a class="btn_mType3 delSelected" style="width:90px; cursor: pointer;">선택 삭제</a>
-    </p>
-</section>
+
+
+
+
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- //AS신청 -->
 
                             </section>
                         </article>
@@ -314,12 +329,8 @@
                     </section>
                 </div>
             </div>
-        </div>
 
-
-
-
-
+            
 
 <jsp:include page="../template/mainFooter.jsp"/>
 </body> 
