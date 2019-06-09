@@ -14,5 +14,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias type="admin.bean.PaymentDTO" alias="payment"/>   
      	<typeAlias type="admin.bean.PrdtManagementDTO" alias="prdtManagement"/>
      	<typeAlias type="admin.bean.ReturnDTO" alias="returnDTO"/>
+     	<typeAlias type="service.bean.ServiceDTO" alias="service"/>
 	</typeAliases>
 </configuration>
