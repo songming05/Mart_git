@@ -10,6 +10,7 @@
 <meta name="description" content="ABCD-Mart" />
 
 <title>로그인 페이지</title>
+<link rel="shortcut icon" type="image⁄x-icon" href="../image/mainLogo/ABCD.png">
 <link rel="stylesheet" href="../css/user/userLoginCss.css">
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/header.css"/>

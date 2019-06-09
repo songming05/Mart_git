@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/header.css"/>
 <link rel="stylesheet" href="../css/advertise/adPage.css"/>
+<link rel="shortcut icon" type="image⁄x-icon" href="../image/mainLogo/ABCD.png">
+
 <!-- quickBar -->
 <link rel="stylesheet" href="../css/quickBar.css"/>	
 <!-- footer-->

@@ -10,6 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>${detailPageDTO.getPrdtMainName()} 상세페이지</title>
+<link rel="shortcut icon" type="image⁄x-icon" href="../image/mainLogo/ABCD.png">
 <!-- quickBar -->
 <link rel="stylesheet" href="../css/quickBar.css"/>
 <!--ㅇㅇㅇ  -->

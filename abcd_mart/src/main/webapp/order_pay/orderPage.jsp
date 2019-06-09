@@ -11,6 +11,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="ABCD-Mart" />
 <title>결제페이지</title>
+<link rel="shortcut icon" type="image⁄x-icon" href="../image/mainLogo/ABCD.png">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css" />
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/header.css"/>

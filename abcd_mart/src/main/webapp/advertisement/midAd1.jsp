@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>그랜드스테이지 프리미엄 신발</title>
+<link rel="shortcut icon" type="image⁄x-icon" href="../image/mainLogo/ABCD.png">
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/header.css"/>
 <link rel="stylesheet" href="../css/advertise/adPage.css"/>

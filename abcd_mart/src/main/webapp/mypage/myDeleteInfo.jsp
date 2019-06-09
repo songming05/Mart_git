@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>회원 탈퇴</title>
+<link rel="shortcut icon" type="image⁄x-icon" href="../image/mainLogo/ABCD.png">
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/header.css"/>
 <link rel="stylesheet" href="../css/mypage/myPage.css"/>

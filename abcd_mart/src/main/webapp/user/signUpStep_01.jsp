@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Step01</title>
 
-
+<link rel="shortcut icon" type="image⁄x-icon" href="../image/mainLogo/ABCD.png">
 <link rel="stylesheet" href="../css/user/userLoginCss.css">
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/header.css"/>
