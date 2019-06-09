@@ -9,7 +9,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-
+<!-- quickBar -->
+<link rel="stylesheet" href="../css/quickBar.css"/>	
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css" />
 
 <link rel="stylesheet" href="../css/main.css"/>
@@ -38,6 +39,8 @@
 
 
 </header>
+<jsp:include page="../template/quickBarOther.jsp"/>
+
  <section class="cutomer_cont store_mapCont" style="width: 1100px; margin: auto; ">
         <section class="store_mapbox mt30 clearfix">
             
@@ -258,7 +261,7 @@
 
 </body>
 <script type="text/javascript" src="../js/storeList/storeList.js"></script>
-
+<script type="text/javascript" src="../js/quickBar.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript" src="../js/mainFooter.js"></script>
 </head>

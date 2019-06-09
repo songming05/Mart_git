@@ -10,7 +10,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>${detailPageDTO.getPrdtMainName()} 상세페이지</title>
-
+<!-- quickBar -->
+<link rel="stylesheet" href="../css/quickBar.css"/>
 <!--ㅇㅇㅇ  -->
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css" />
 <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.min.js' /></script>
@@ -195,9 +196,10 @@ $(document).ready(function(){
 
 <!-- ㅇㅇㅇ --> 
 <jsp:include page="../template/header.jsp"/>
+
 </head>
 <body>
-
+<jsp:include page="../template/quickBarOther.jsp"/>
 <input type="hidden" value="${detailPageDTO.getPrdtMainName()}" id="mainName">
 <input type="hidden" value="${detailPageDTO.prdtCode }/${detailPageDTO.getPrdtImage1()}" id="image1">
 <input type="hidden" value="${detailPageDTO.getPrdtImage2()}" id="image2">
@@ -759,5 +761,5 @@ $(document).ready(function(){
 <script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript" src="../js/mainFooter.js"></script> 
  
-
+<script type="text/javascript" src="../js/quickBar.js"></script>
 </html>

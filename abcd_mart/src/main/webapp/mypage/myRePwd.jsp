@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/header.css"/>
 <link rel="stylesheet" href="../css/mypage/myPage.css"/>
+<!-- quickBar -->
+<link rel="stylesheet" href="../css/quickBar.css"/>	
 <!-- footer-->
 <link rel="stylesheet" href="../css/mainFooter.css"/>
 </head>
@@ -16,7 +18,7 @@
 <jsp:include page="../template/header.jsp"/>
 
 </header>
-
+<jsp:include page="../template/quickBarOther.jsp"/>
 
 <div class="container_wrap">
             <div class="container_area">
@@ -326,6 +328,7 @@
 
 <jsp:include page="../template/mainFooter.jsp"/>
 </body> 
+<script type="text/javascript" src="../js/quickBar.js"></script>
 <!-- footer -->
 <script type="text/javascript" src="../js/mainFooter.js"></script> 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.0.min.js"></script>

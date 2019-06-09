@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="../css/header.css"/>
 <link rel="stylesheet" href="../css/mainFooter.css"/>
 
+<!-- quickBar -->
+<link rel="stylesheet" href="../css/quickBar.css"/>	
 
 <link rel="stylesheet" href="../css/order_pay/shoppingBasket.css">
 
@@ -25,6 +27,7 @@
 <jsp:include page="../template/header.jsp"/>
 </header>
 
+<jsp:include page="../template/quickBarOther.jsp"/>
 
 
 <div class="shoppingBasket_div" style="width: 1100px; margin: 0 auto;">
@@ -264,7 +267,7 @@
 <script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript" src="../js/mainFooter.js"></script>
 
-
+<script type="text/javascript" src="../js/quickBar.js"></script>
 
 <script type="text/javascript" src="../js/order_pay/shoppingBasket.js"></script>
 

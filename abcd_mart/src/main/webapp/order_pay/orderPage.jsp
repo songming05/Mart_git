@@ -16,7 +16,8 @@
 <link rel="stylesheet" href="../css/header.css"/>
 <link rel="stylesheet" href="../css/mainFooter.css"/>
 
-
+<!-- quickBar -->
+<link rel="stylesheet" href="../css/quickBar.css"/>	
 <link rel="stylesheet" href="../css/sub.css">
  
 </head>
@@ -37,7 +38,7 @@
     </header>	
     <form name="orderForm" id="orderForm" method="post" action="/abcd_mart/order_pay/orderPageEnd.do">
     <input name="id" id="id" type="hidden" value="${id }">
-    
+    <jsp:include page="../template/quickBarOther.jsp"/>
  	<!-- order_basketCont -->
             <section class="order_basketCont order_sheet">
                 <ul class="order_step">
@@ -803,7 +804,7 @@
 <jsp:include page="../template/mainFooter.jsp"/>
 </footer>
 </body>
-
+<script type="text/javascript" src="../js/quickBar.js"></script>
 <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.min.js' /></script>
 <script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript" src="../js/mainFooter.js"></script>

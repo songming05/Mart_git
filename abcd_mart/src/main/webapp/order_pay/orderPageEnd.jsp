@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="../css/header.css"/>
 <link rel="stylesheet" href="../css/mainFooter.css"/>
 
+<!-- quickBar -->
+<link rel="stylesheet" href="../css/quickBar.css"/>	
 
 
 <title>주문 완료</title>
@@ -76,6 +78,9 @@ window.onload=function(){
 </header>
 
 <body>
+<jsp:include page="../template/quickBarOther.jsp"/>
+
+
 <h1 align="center">${pDTO.getId() }님 주문해주셔서 감사합니다</h2>
 <br>
 <br>
@@ -152,7 +157,7 @@ window.onload=function(){
 <jsp:include page="../template/mainFooter.jsp"/>
 
 </footer>
-
+<script type="text/javascript" src="../js/quickBar.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript" src="../js/mainFooter.js"></script>
 <script src="../js/order_pay/orderPage22.js"></script>
