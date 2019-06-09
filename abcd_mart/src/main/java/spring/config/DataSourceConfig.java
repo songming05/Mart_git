@@ -12,7 +12,7 @@ public class DataSourceConfig {
 	public DataSource getDataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
 		String driver = "oracle.jdbc.driver.OracleDriver";
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String url = "jdbc:oracle:thin:@192.168.51.79:1521:xe";
 		String userName = "abcdmart";
 		String password = "spring";
 		int maxTotal = 20;
