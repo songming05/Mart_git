@@ -12,6 +12,15 @@
 .catal{
 	width: 100%;
 }
+.relation_product .relation_list.on {
+    display: block;
+    border: 1px solid #000;
+    border-top-color: #bfbfbf;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 .wrap .container_layout {
     width: 1100px;
     margin: auto;
@@ -204,13 +213,6 @@ table td.non_data, table td .non_data {
     border-left: 1px solid #dbdbdb;
     background: url(//image.abcmart.co.kr/nexti/images/abcmart_new/icons.png) -69px -78px no-repeat;
 }
-.relation_product .relation_list.on {
-    display: block;
-    border: 1px solid #000;
-    border-top-color: #bfbfbf;
-    background: #fff;
-    box-sizing: border-box;
-}
 .table_basic th a, .table_basic td a {
     color: #666666;
 }
@@ -243,6 +245,7 @@ table td.non_data, table td .non_data {
     top: 20px;
     left: 0;
     display: none;
+    width: 445px;
     max-height: 219px;
     overflow-y: auto;
 }
