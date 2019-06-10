@@ -51,8 +51,11 @@ public class OrderController {
 		 * 
 		 * }
 		 */
-		
 		if(session.getAttribute("orderOk")==null) {
+			String str = orderDTO.getShoesimage();
+			String[] arr = str.split(",");
+			orderDTO.setShoesimage(arr[0]);
+			
 			
 			String id = (String) session.getAttribute("memId");
 			

@@ -279,8 +279,8 @@
         
     </ul>
 </section>
-
-                            <section class="my_cont order_basketCont">
+<jsp:include page="../userCenter/orderDelivery.jsp"></jsp:include>
+                         <%--    <section class="my_cont order_basketCont">
                                 
 <section id="scrollPosition" class="my_cont order_basketCont">
     <header class="positR">
@@ -458,7 +458,7 @@
     </div>
 </section>
 
-                            </section>
+                            </section> --%>
                         </article>
 
                         
@@ -480,5 +480,6 @@
 <script type="text/javascript" src="../js/quickBar.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript" src="../js/mainFooter.js"></script>
+<script type="text/javascript" src="../js/myPage/myPage.js"></script>
 </html>
         

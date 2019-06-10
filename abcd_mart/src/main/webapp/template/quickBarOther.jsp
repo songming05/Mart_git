@@ -59,7 +59,7 @@
 		        <li><a href="" id="ico_quick6" class="ico_quick6">
 		        <span class="mouseControll3" id="mouseControll3"></span>
 		        <span class="">매장전용<br />상품존</span></a></li>
-		        <li><a href="" id="ico_quick5" class="ico_quick5">
+		        <li><a href="../mypage/myCouponList" id="ico_quick5" class="ico_quick5">
 		        <span class="mouseControll4" id="mouseControll4"></span>
 		        	쿠폰</a></li>
 		    </ul>

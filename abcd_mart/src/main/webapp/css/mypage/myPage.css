@@ -9,6 +9,11 @@
     color: #7b7b7b;
     font-family: Dotum, Gulim, "tahoma", Verdana, sans-serif, Helvetica, sans-serif;
 }
+#oldTbody tr td img{
+	    width: 60px;
+    height: 60px;
+	
+}
 .catal{
 	width: 100%;
 }
