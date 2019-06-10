@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="container"  >
 	<div class="col=md-12 col-sm-12 col-xs-12" id="bootCar"  style="margin-top:70px; width:1140px; height:150; min-width: 100%; min-height: 100%;">
             <section id="myCarousel" class="custom-carousel carousel slide" data-ride="carousel" data-interval="2950">
