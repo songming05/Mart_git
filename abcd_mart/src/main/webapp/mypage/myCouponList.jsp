@@ -5,6 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>쿠폰리스트</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.4.0.min.js"></script>
+
+
+
 <link rel="shortcut icon" type="image⁄x-icon" href="../image/mainLogo/ABCD.png">
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/header.css"/>
@@ -519,7 +523,6 @@
 <script type="text/javascript" src="../js/quickBar.js"></script>
 <!-- footer -->
 <script type="text/javascript" src="../js/mainFooter.js"></script> 
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.4.0.min.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
 
 </html>
