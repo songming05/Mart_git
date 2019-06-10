@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import myPage.bean.MypageDTO;
+import myPage.bean.MyPageDTO;
 import user.bean.UserDTO;
 import user.dao.UserDAO;
 
@@ -28,7 +28,7 @@ public class UserController {
 	@Autowired
 	BCryptPasswordEncoder passwordEncoder;
 	@Autowired
-	private MypageDTO mypageDTO;
+	private MyPageDTO mypageDTO;
 
 	
 	@RequestMapping(value = "/signUpStep_01", method = RequestMethod.GET)
@@ -100,7 +100,7 @@ public class UserController {
 			session.setAttribute("memName", userDTO.getName());
 			session.setAttribute("memEmail", userDTO.getEmail());
 			session.setAttribute("memPhone", userDTO.getPhone());
-			//System.out.println(userDTO.getName());
+			
 		} else {
 			loginResult="loginFail";
 		}
@@ -183,13 +183,13 @@ public class UserController {
 	
 	
 	@RequestMapping(value ="/myCouponList", method = RequestMethod.POST)
-	public ModelAndView myCouponList() {
-		
-		List<MypageDTO> myPageList = 
+	public ModelAndView myCouponList(HttpSession session) {
+		String id = (String)session.getAttribute("memId");
+		List<MyPageDTO> myPageList = userDAO.getMyPageList(id);
 		
 		ModelAndView modelAndView = new ModelAndView();
 		
-		modelAndView.addObject("myPageList", attributeValue);
+		modelAndView.addObject("myPageList", myPageList);
 		modelAndView.setViewName("jsonView");
 		return modelAndView;
 	}

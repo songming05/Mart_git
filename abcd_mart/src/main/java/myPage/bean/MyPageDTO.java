@@ -8,8 +8,7 @@ import lombok.Setter;
 @Component
 @Getter
 @Setter
-public class MypageDTO {
-	
+public class MyPageDTO {	
 	private String id;
 	private int coupon_seq;
 	private String coupon_name;

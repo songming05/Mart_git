@@ -54,5 +54,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select id, join_date from userinfo where name=#{name} and email=#{email} 
 	</select>
 	
+	<select id="getMyPageList" parameterType="String" resultType="myPage">
+		select * from mypage where id=#{id}
+	</select>
+	
 
 </mapper>
