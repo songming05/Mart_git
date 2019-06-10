@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import myPage.bean.MyPageDTO;
 import user.bean.UserDTO;
 
 @Repository
@@ -55,6 +56,10 @@ public class UserDAOHandler implements UserDAO {
 	@Override
 	public UserDTO getInfoByEmail(Map<String, String> map) {
 		return sqlSession.selectOne("userSQL.getInfoByEmail", map);
+	}
+	@Override
+	public List<MyPageDTO> getMyPageList(String id) {
+		return sqlSession.selectList("userSQL.getMyPageList", id);
 	}
 
 	

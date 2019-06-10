@@ -8,12 +8,7 @@ import lombok.Setter;
 @Component
 @Getter
 @Setter
-public class MypageDTO {
-	private int loginState;
-	private String mypageEmail;
-	private String mypageName;
-	private String mypageId;
-	
+public class MyPageDTO {	
 	private String id;
 	private int coupon_seq;
 	private String coupon_name;
