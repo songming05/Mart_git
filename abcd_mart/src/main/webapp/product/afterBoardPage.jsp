@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<form method="post" id="afterBoardWrite" action="/abcd_mart/board/afterBoardWrite">
 
 <table align="center" style="font-size:10pt;">
 <tr>
@@ -30,6 +29,18 @@
 
 <tr>
 <td colspan="2">
+ <label for="사진">사진</label>
+ <div class="form-group">
+		<form method="post" id="afterBoardImage" enctype="multipart/form-data" action="/abcd_mart/board/afterBoardImage">
+      	<input type="file" class="form-control-file border" id="uploadImage1" name="img1[]" multiple>
+      	</form>
+    </div>
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2">
 <div class="form-group">
   <label for="content">내용</label>
   <textarea class="form-control" cols="70" rows="10" id="content" style="resize:none;"></textarea>
@@ -45,4 +56,4 @@
 </td>
 </tr>
 </table>
-</form>
+

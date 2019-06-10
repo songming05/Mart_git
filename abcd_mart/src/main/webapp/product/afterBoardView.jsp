@@ -33,7 +33,9 @@
 <td colspan="2">
 <div class="form-group">
   <label for="content">내용</label>
-  <textarea class="form-control" cols="70" rows="10" id="content" style="resize:none;" readonly></textarea>
+  <div contentEditable="true" id="content">
+  
+  </div>
 </div>
 </td>
 </tr>

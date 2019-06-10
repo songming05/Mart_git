@@ -3,6 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
@@ -16,6 +17,7 @@
 	<resources mapping="/js/**" location="/js/" />
 	<resources mapping="/css/**" location="/css/" />
 	<resources location="/image/" mapping="/image/**"/>
+	<resources location="/storage/" mapping="/storage/**"/>
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -45,6 +47,10 @@
 	<beans:bean id="beanNameResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">
 		<beans:property name="order" value="0"/>
 	</beans:bean>
+	
+	<!-- 파일 업로드 리졸브 -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" 
+	p:maxUploadSize="5000000"></beans:bean>
 	
 	<!-- SMTP -->	
 	<beans:bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl"> 

@@ -21,4 +21,5 @@ public class AfterBoardDTO {
 	private int reply;
 	private int hit;
 	private String logtime;
+	private String fileName;
 }

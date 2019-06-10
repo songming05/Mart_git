@@ -20,7 +20,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<insert id="afterBoardWrite" parameterType="afterBoard">
-		insert into afterBoard values(seq_afterBoard.nextval, #{prdtCode}, #{id}, #{subject}, #{content}, #{good}, #{whereToBuy}, seq_afterBoard.currval, 0, 0, 0, 0, 0, sysdate) 
+		insert into afterBoard values(seq_afterBoard.nextval, #{prdtCode}, #{id}, #{subject}, #{content}, #{good}, #{whereToBuy}, seq_afterBoard.currval, 0, 0, 0, 0, 0, sysdate, #{fileName})
 	</insert>
 	
 	<select id="afterBoardView" parameterType="String" resultType="afterBoard">

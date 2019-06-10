@@ -10,7 +10,10 @@ $(document).ready(function(){
 			error : function(){alert("실패");},
 			success : function(data){
 				 $("#afterBoardDiv").load("../product/afterBoardView.jsp",function(){
-					 $('#id').val(data.id); $('#subject').val(data.subject); $('#content').val(data.content);
+					 $('#id').val(data.id); 
+					 $('#subject').val(data.subject);
+					 $('#content').css('background','#e9ecef').css('border','1px solid #dbdbdb').css('width','450').css('height','400'); 
+					 $('#content').html('<img width=300 height=300 src="../storage/'+data.fileName+'"><br><br>'+data.content); 
 					 $('#good').val(data.good); 
 					 $('input:radio[name=whereToBuy]:input[value=' + data.whereToBuy + ']').attr("checked", true);
 				 }
@@ -54,17 +57,38 @@ $(document).ready(function(){
 		                  swal("만족도를 입력하세요");
 		               }
 		               else{
+		            	   
+		            	//업로드이미지 파일명
+						var fileValue = $("#uploadImage1").val().split("\\");
+						var fileName = fileValue[fileValue.length-1]; // 파일명
+						
+						//사진 업로드
+						var sendFile = new FormData($('#afterBoardImage')[0]);
+						$.ajax({
+							contentType : false,
+							type : 'POST',
+							url : '/abcd_mart/board/afterBoardImage',
+							data : sendFile,
+							dataType : 'json',
+							cache: false,
+						    async:false,
+							processData: false,
+							error : function(){},
+							success : function(data){}
+						});
+		            	   
+						//글등록
 		               $.ajax({
 		                  type : 'POST',
 		                  url : '/abcd_mart/board/afterBoardWrite',
 		                  data : {'id' : $('#id').val(), 'subject' : $('#subject').val(), 'content' : $('#content').val(), 
 		                           'whereToBuy' : $('input[name="whereToBuy"]:checked').val(), 'good' : $('#good').val(), 
-		                           'prdtCode' : $('#code').val()},
+		                           'prdtCode' : $('#code').val(),'fileName' : fileName},
 		                  dataType : 'json',
-		                  error : function(){alert("실패");},
+		                  error : function(){/*alert("실패");*/},
 		                  success : function(data){
 		                     swal("등록완료")
-		                     .then((value) => {location.href="/abcd_mart/product/detailPage.do?prdtCode="+$('#code').val()});}
+		                     .then((value) => {location.href="/abcd_mart/product/detail?prdtCode="+$('#code').val()});}
 		               });
 		               $( this ).dialog( "close" );
 		               }
@@ -117,10 +141,15 @@ $(document).ready(function(){
 			
 			var priceArray = String($('#prdtPrice').text()).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,').split(",");
 			
+			var priceArray2 = "";
+			for (var i=0; i<priceArray.length; i++){
+				priceArray2 += priceArray[i]; 
+			}
+			
 			if($('#prdtPrice').text() == 0 ){
 				$('#prdtPrice').text(String(price).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
 			}else {
-			var resultPrice = (priceArray[0]+priceArray[1])*1 + $('#price').val()*1
+			var resultPrice = priceArray2*1 + $('#price').val()*1
 			$('#prdtPrice').text(String(resultPrice).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
 			}
 		}else{swal("이미 존재 하는 상품입니다");}
@@ -141,20 +170,36 @@ $(document).ready(function(){
 			
 			if(price != 0){
 				var priceArray = price.split(",");
+			
+				var priceArray2 = "";
+				for (var i=0; i<priceArray.length; i++){
+					priceArray2 += priceArray[i]; 
+				}
 				
 				if($(this).parent().parent().parent().parent().parent().parent().attr('id') == 'inTr'){
-					price = (priceArray[0]+priceArray[1])*1 - $('#price').val()*1
+					price = (priceArray2)*1 - $('#price').val()*1
 					$(this).parent().parent().parent().parent().parent().next().children(0).children(0).text(String(price*1).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
 					
 					var prdtPriceArray = $('#prdtPrice').text().split(",");
-					price = (prdtPriceArray[0]+prdtPriceArray[1])*1 - $('#price').val()*1
+					
+					var prdtPriceArray2 = "";
+					for (var i=0; i<prdtPriceArray.length; i++){
+						prdtPriceArray2 += prdtPriceArray[i]; 
+					}
+					
+					price = (prdtPriceArray2)*1 - $('#price').val()*1
 					$('#prdtPrice').text(String(price).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));  
 				}else {
 					price = (priceArray[0]+priceArray[1])*1-$(this).parent().parent().parent().parent().parent().prev().children(0).attr('id')*1;
 					$(this).parent().parent().parent().parent().parent().next().children(0).children(0).text(String(price*1).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
 					
 					var prdtPriceArray = $('#prdtPrice').text().split(",");
-					price = (prdtPriceArray[0]+prdtPriceArray[1])*1-$(this).parent().parent().parent().parent().parent().prev().children(0).attr('id')*1;
+					
+					var prdtPriceArray2 = "";
+					for (var i=0; i<prdtPriceArray.length; i++){
+						prdtPriceArray2 += prdtPriceArray[i]; 
+					}
+					price = (prdtPriceArray2)*1-$(this).parent().parent().parent().parent().parent().prev().children(0).attr('id')*1;
 					$('#prdtPrice').text(String(price).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));  
 				}
 				
@@ -177,21 +222,40 @@ $(document).ready(function(){
 				if(price != 0){
 				var priceArray = price.split(",");
 				//alert($(this).parent().parent().parent().parent().parent().parent().attr('id'));
+				
+				var priceArray2 = "";
+				for (var i=0; i<priceArray.length; i++){
+					priceArray2 += priceArray[i]; 
+				}
+				
+				
 				if($(this).parent().parent().parent().parent().parent().parent().attr('id') == 'inTr'){
-					price = (priceArray[0]+priceArray[1])*1+$('#price').val()*1
+					price = (priceArray2)*1+$('#price').val()*1
 					
 					$(this).parent().parent().parent().parent().parent().next().children(0).children(0).text(String(price*1).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
 					
 					var prdtPriceArray = $('#prdtPrice').text().split(",");
-					price = (prdtPriceArray[0]+prdtPriceArray[1])*1 + $('#price').val()*1;
+					
+					var prdtPriceArray2 = "";
+					for (var i=0; i<prdtPriceArray.length; i++){
+						prdtPriceArray2 += prdtPriceArray[i]; 
+					}
+					
+					price = (prdtPriceArray2)*1 + $('#price').val()*1;
 					$('#prdtPrice').text(String(price).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));  
 				}else{
 					
-					price = (priceArray[0]+priceArray[1])*1+$(this).parent().parent().parent().parent().parent().prev().children(0).attr('id')*1;
+					price = (priceArray2)*1+$(this).parent().parent().parent().parent().parent().prev().children(0).attr('id')*1;
 					$(this).parent().parent().parent().parent().parent().next().children(0).children(0).text(String(price*1).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
 					
 					var prdtPriceArray = $('#prdtPrice').text().split(",");
-					price = (prdtPriceArray[0]+prdtPriceArray[1])*1+$(this).parent().parent().parent().parent().parent().prev().children(0).attr('id')*1;
+					
+					var prdtPriceArray2 = "";
+					for (var i=0; i<prdtPriceArray.length; i++){
+						prdtPriceArray2 += prdtPriceArray[i]; 
+					}
+					
+					price = (prdtPriceArray2)*1+$(this).parent().parent().parent().parent().parent().prev().children(0).attr('id')*1;
 					$('#prdtPrice').text(String(price).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,')); 
 					
 				}
@@ -209,9 +273,24 @@ $(document).ready(function(){
 		var prdtPriceArray = $('#prdtPrice').text().split(",");
 		var resultPriceArray = $(this).prev().children(0).text().split(",");
 		
-		var price = (prdtPriceArray[0]+prdtPriceArray[1])*1 - (resultPriceArray[0]+resultPriceArray[1])*1;
-		$('#prdtPrice').text(String(price).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
+		var prdtPriceArray2 = "";
+		for (var i=0; i<prdtPriceArray.length; i++){
+			prdtPriceArray2 += prdtPriceArray[i]; 
+		}
 		
+		var resultPriceArray2 = "";
+		for (var i=0; i<resultPriceArray.length; i++){
+			resultPriceArray2 += resultPriceArray[i]; 
+		}
+		
+		if(prdtPriceArray == 0){
+			var price = (prdtPriceArray2)*1
+			$('#prdtPrice').text(String(price).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
+		}
+		else{
+		var price = (prdtPriceArray2)*1 - (resultPriceArray2)*1;
+		$('#prdtPrice').text(String(price).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
+		}
 		/*if($('#selectOption').val() == 'noOption'){
 		$('#selectOption').val('noOption').attr('selected', 'selected');
 		}*/
@@ -331,7 +410,12 @@ $(document).ready(function(){
 					$('#prdtPrice').text(String(price).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
 				}else {
 				var prdtPriceArray = $('#prdtPrice').text().split(",");
-				var resultPrice = (prdtPriceArray[0]+prdtPriceArray[1])*1 + price*1
+				var prdtPriceArray2 = "";
+				for (var i=0; i<prdtPriceArray.length; i++){
+					prdtPriceArray2 += prdtPriceArray[i]; 
+				}
+				
+				var resultPrice = (prdtPriceArray2)*1 + price*1
 				$('#prdtPrice').text(String(resultPrice).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
 				}
 				
@@ -361,7 +445,12 @@ $(document).ready(function(){
 					$('#prdtPrice').text(String(price).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
 				}else {
 				var prdtPriceArray = $('#prdtPrice').text().split(",");
-				var resultPrice = (prdtPriceArray[0]+prdtPriceArray[1])*1 + price*1
+				var prdtPriceArray2 = "";
+				for (var i=0; i<prdtPriceArray.length; i++){
+					prdtPriceArray2 += prdtPriceArray[i]; 
+				}
+				
+				var resultPrice = (prdtPriceArray2)*1 + price*1
 				$('#prdtPrice').text(String(resultPrice).replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,'));
 				}
 
