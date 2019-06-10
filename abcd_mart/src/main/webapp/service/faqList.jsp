@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="../css/header.css"/>
 <link rel="stylesheet" href="../css/mainFooter.css"/>
 <link rel="stylesheet" href="../css/user/service.css" />
-
+<link rel="shortcut icon" type="image⁄x-icon" href="../image/mainLogo/ABCD.png">
 </head>
 <body>
 <header>
