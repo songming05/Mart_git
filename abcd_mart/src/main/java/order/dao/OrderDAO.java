@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import cart.bean.CartDTO;
 import order.bean.OrderDTO;
 import order.bean.PaymentinfoDTO;
+import order.bean.cpDTO;
 
 public interface OrderDAO {
 
@@ -32,5 +33,13 @@ public interface OrderDAO {
 	public void deleteMyCart(String id);
 
 	public List<OrderDTO> orderHistory(String id);
+
+	public List<cpDTO> orderCouponPage(String id);
+
+	public void couponUpdate(Map<String, String> map);
+
+	public Map<String, String> getUserMailPhone(String id);
+
+	public int getCouponCount(String id);
 
 }

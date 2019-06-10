@@ -38,6 +38,7 @@ public class OrderDTO {
 	private String dlvyMsg;
 	
 	//포인트, 쿠폰 , 배송비 추가 적용
+	private String couponNum;
 	private String coupon;
 	private String point;
 	private String dlvyPrice;

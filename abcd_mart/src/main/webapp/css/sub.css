@@ -47,7 +47,7 @@ input::-moz-placeholder { font-size: 11px; color: #a4a4a4; }
 input:-ms-input-placeholder { font-size: 11px !important; color: #a4a4a4 !important; line-height: 1.8 !important; }
  */
 .input-block-level { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 100%; min-height: 30px; }
-
+#discountIn{color: #000000;font-weight: bold;font-size: 22px;}
 /* address, cite, code, dfn, em { font-weight: normal; font-style: normal; } */
 
 .clear { clear: both; }
@@ -1194,7 +1194,7 @@ a.bu_type1 { display: inline-block; }
 .table_basic th.txt_box img, .table_basic td.txt_box img { max-width: 100%; }
 .table_basic th.total_bg, .table_basic td.total_bg { background: #fafafa; }
 .table_basic th.fc_type8, .table_basic td.fc_type8 { color: #000000; }
-.table_basic th { font-weight: 400; text-align: left; background: #f5f5f6; }
+.table_basic th { text-align: left; background: #f5f5f6; }
 .table_basic thead th { text-align: center; border-bottom: 1px solid #dbdbdb; font-weight: bold; background-color: #fafafa; }
 .table_basic tfoot th { border-bottom: 1px solid #ebebeb !important; }
 .table_basic .group-center th, .table_basic .group-center td { text-align: center; }

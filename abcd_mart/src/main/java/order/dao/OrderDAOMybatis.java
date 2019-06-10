@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import cart.bean.CartDTO;
 import order.bean.OrderDTO;
 import order.bean.PaymentinfoDTO;
+import order.bean.cpDTO;
 
 @Repository
 @Transactional
@@ -79,6 +80,27 @@ class OrderDAOMybatis implements OrderDAO {
 		return sqlSession.selectList("orderSQL.orderHistory", id);
 	}
 
-	
+	@Override
+	public List<cpDTO> orderCouponPage(String id) {
+		return sqlSession.selectList("orderSQL.orderCouponPage", id);
+	}
+
+	@Override
+	public void couponUpdate(Map<String, String> map) {
+		sqlSession.update("orderSQL.couponUpdate", map);
+		
+	}
+
+	@Override
+	public Map<String, String> getUserMailPhone(String id) {
+		return sqlSession.selectOne("orderSQL.getUserMailPhone", id);
+	}
+
+	@Override
+	public int getCouponCount(String id) {
+		return sqlSession.selectOne("orderSQL.getCouponCount", id);
+	}
+
+
 
 }

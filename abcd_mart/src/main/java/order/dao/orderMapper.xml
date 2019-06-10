@@ -31,6 +31,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		,sysdate
 		,#{id}
 		,#{shoesimage}
+		,#{couponNum}
 		)
 	</insert> 
 	
@@ -80,6 +81,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from mycartlist where id=#{id}
 	</delete>
 	
+	<select id="getUserMailPhone" parameterType="String" resultType="java.util.Map">
+		select email , phone from userinfo where id=#{id}
+	</select>
 	
 	
 	<!--  paymentInfo 테이블에 등록-->
@@ -102,8 +106,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		update prdtManagement set prdtqty= prdtqty-1 , soldqty=soldqty+1 where prdtcode = #{prdtcode} and prdtsize = #{shoessize}
 	</update>
 	
+	
 	<select id="orderHistory" parameterType="String" resultType="orderDTO">
 		select * from orderABCD where id = #{id} order by 1
 	</select>
+	
+	
+	<!-- 쿠폰 리스트 -->
+	<select id="orderCouponPage" parameterType="String" resultType="order.bean.cpDTO">
+		select * from cplist where id = #{id} and cponoff='on'
+	</select>
+	
+	<!-- 쿠폰 갯수 -->
+	<select id="getCouponCount" parameterType="String" resultType="int">
+		select count(*) from cplist where id = #{id} and cponoff='on'
+	</select>
+	
+	<!-- 결제후 쿠폰 사용 off  -->
+	<update id="couponUpdate" parameterType="java.util.Map">
+		update cplist set cponoff = 'off' where id=#{id} and seq = #{couponNum}
+	</update>
+	
+
 	
 </mapper>

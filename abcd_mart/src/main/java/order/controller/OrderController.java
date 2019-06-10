@@ -29,6 +29,7 @@ import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonObjectFormatVisitor
 import cart.bean.CartDTO;
 import order.bean.OrderDTO;
 import order.bean.PaymentinfoDTO;
+import order.bean.cpDTO;
 import order.dao.OrderDAO;
 
 @Controller
@@ -50,99 +51,108 @@ public class OrderController {
 		 * 
 		 * }
 		 */
-
-		String id = (String) session.getAttribute("memId");
 		
-		//DB
-		orderDAO.writeOrder(orderDTO);
-		
-		OrderDTO pDTO = orderDAO.oneOrder(orderDTO.getBuyerName());
-		List<CartDTO> list1 = orderDAO.getOrderDirect(pDTO.getId());
-		List<CartDTO> list2 = orderDAO.getOrderList(pDTO.getId());
-		PaymentinfoDTO paymentinfoDTO = new PaymentinfoDTO();
-
-		DateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
-		Date nowDate = new Date();
-		nowDate = pDTO.getLogtime();
-		String orderDate = sdFormat.format(nowDate);
-		
-		// 다이렉스 주문시 - > getOrderDirect cartList에서 가져오고
-		// 장바구니 주문시 -> getOrderList mycartList에서 가져오는걸 구분하는 if
-		
-		if(list1!=null) {
+		if(session.getAttribute("orderOk")==null) {
 			
+			String id = (String) session.getAttribute("memId");
 			
-			for(int i=0; i<list1.size();i++) {
-				paymentinfoDTO.setOrderNum(num);
-				paymentinfoDTO.setOrderDate(orderDate);
-				paymentinfoDTO.setOrderId(pDTO.getId());
-				paymentinfoDTO.setPrdtcode(list1.get(i).getPrdtcode());
-				paymentinfoDTO.setOrderPrice(list1.get(i).getShoesprice());
-				
-				if(i==0) {
-					paymentinfoDTO.setOrderDelivery("2500");
-				}else {
-					paymentinfoDTO.setOrderDelivery("0");
-				}
-				paymentinfoDTO.setOrderPayment(pDTO.getPayChoice());
-				paymentinfoDTO.setOrderSize(list1.get(i).getShoessize());
-				
-				orderDAO.paymentInfo(paymentinfoDTO);
-				
-				//상품재고 테이블 들어가서 재고 -1 list.get(i).getPrdtcode()
-				for(int j=0; j< Integer.parseInt(list1.get(i).getShoesqty());j++) {
-					Map<String,String > map = new HashMap<String,String>();
-					map.put("prdtcode", list1.get(i).getPrdtcode());
-					map.put("shoessize", list1.get(i).getShoessize());
-					orderDAO.prdtManagement(map);
-					
-				}
-
-			}
-			//cartlist 비워주기
-			orderDAO.deleteCart(id);
+			//DB
+			orderDAO.writeOrder(orderDTO);
 			
-			
-		}else {
-			
-			//paymentinfo INSERT 
-			for(int i=0; i<list2.size();i++) {
-				paymentinfoDTO.setOrderNum(num);
-				paymentinfoDTO.setOrderDate(orderDate);
-				paymentinfoDTO.setOrderId(pDTO.getId());
-				paymentinfoDTO.setPrdtcode(list2.get(i).getPrdtcode());
-				paymentinfoDTO.setOrderPrice(list2.get(i).getShoesprice());
-				
-				if(i==0) {
-					paymentinfoDTO.setOrderDelivery("2500");
-				}else {
-					paymentinfoDTO.setOrderDelivery("0");
-				}
-				paymentinfoDTO.setOrderPayment(pDTO.getPayChoice());
-				paymentinfoDTO.setOrderSize(list2.get(i).getShoessize());
-				
-				orderDAO.paymentInfo(paymentinfoDTO);
-				
-				//상품재고 테이블 들어가서 재고 -1 , QTY +1 FOR문
-				for(int j=0; j< Integer.parseInt(list2.get(i).getShoesqty());j++) {
-					Map<String,String > map = new HashMap<String,String>();
-					map.put("prdtcode", list2.get(i).getPrdtcode());
-					map.put("shoessize", list2.get(i).getShoessize());
-					orderDAO.prdtManagement(map);
-					
-				}
-
-			}
-			//mycartlist 비워주기
-			orderDAO.deleteMyCart(id);
-			
-		}
+			OrderDTO pDTO = orderDAO.oneOrder(orderDTO.getBuyerName());
+			List<CartDTO> list1 = orderDAO.getOrderDirect(pDTO.getId());
+			List<CartDTO> list2 = orderDAO.getOrderList(pDTO.getId());
+			PaymentinfoDTO paymentinfoDTO = new PaymentinfoDTO();
 	
+			DateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
+			Date nowDate = new Date();
+			nowDate = pDTO.getLogtime();
+			String orderDate = sdFormat.format(nowDate);
+			
+			// 다이렉스 주문시 - > getOrderDirect cartList에서 가져오고
+			// 장바구니 주문시 -> getOrderList mycartList에서 가져오는걸 구분하는 if
+			
+			if(list1!=null) {
+				
+				
+				for(int i=0; i<list1.size();i++) {
+					paymentinfoDTO.setOrderNum(num);
+					paymentinfoDTO.setOrderDate(orderDate);
+					paymentinfoDTO.setOrderId(pDTO.getId());
+					paymentinfoDTO.setPrdtcode(list1.get(i).getPrdtcode());
+					paymentinfoDTO.setOrderPrice(list1.get(i).getShoesprice());
+					
+					if(i==0) {
+						paymentinfoDTO.setOrderDelivery("2500");
+					}else {
+						paymentinfoDTO.setOrderDelivery("0");
+					}
+					paymentinfoDTO.setOrderPayment(pDTO.getPayChoice());
+					paymentinfoDTO.setOrderSize(list1.get(i).getShoessize());
+					
+					orderDAO.paymentInfo(paymentinfoDTO);
+					
+					//상품재고 테이블 들어가서 재고 -1 list.get(i).getPrdtcode()
+					for(int j=0; j< Integer.parseInt(list1.get(i).getShoesqty());j++) {
+						Map<String,String > map = new HashMap<String,String>();
+						map.put("prdtcode", list1.get(i).getPrdtcode());
+						map.put("shoessize", list1.get(i).getShoessize());
+						orderDAO.prdtManagement(map);
+						
+					}
+	
+				}
+				//cartlist 비워주기
+				orderDAO.deleteCart(id);
+				Map<String,String > map = new HashMap<String,String>();
+				map.put("couponNum",orderDTO.getCouponNum() );
+				map.put("id", id);
+				orderDAO.couponUpdate(map);
+				session.setAttribute("orderOk", "ok");
+				
+				
+			}else {
+				
+				//paymentinfo INSERT 
+				for(int i=0; i<list2.size();i++) {
+					paymentinfoDTO.setOrderNum(num);
+					paymentinfoDTO.setOrderDate(orderDate);
+					paymentinfoDTO.setOrderId(pDTO.getId());
+					paymentinfoDTO.setPrdtcode(list2.get(i).getPrdtcode());
+					paymentinfoDTO.setOrderPrice(list2.get(i).getShoesprice());
+					
+					if(i==0) {
+						paymentinfoDTO.setOrderDelivery("2500");
+					}else {
+						paymentinfoDTO.setOrderDelivery("0");
+					}
+					paymentinfoDTO.setOrderPayment(pDTO.getPayChoice());
+					paymentinfoDTO.setOrderSize(list2.get(i).getShoessize());
+					
+					orderDAO.paymentInfo(paymentinfoDTO);
+					
+					//상품재고 테이블 들어가서 재고 -1 , QTY +1 FOR문
+					for(int j=0; j< Integer.parseInt(list2.get(i).getShoesqty());j++) {
+						Map<String,String > map = new HashMap<String,String>();
+						map.put("prdtcode", list2.get(i).getPrdtcode());
+						map.put("shoessize", list2.get(i).getShoessize());
+						orderDAO.prdtManagement(map);
+						
+					}
+	
+				}
+				//mycartlist 비워주기
+				orderDAO.deleteMyCart(id);
+				
+				session.setAttribute("orderOk", "ok");
+				
+			}
 		
-		model.addAttribute("pDTO", pDTO);
-		
-		num++;
-
+			
+			model.addAttribute("pDTO", pDTO);
+			
+			num++;
+		}
 		
 		return "/order_pay/orderPageEnd";  
 	}
@@ -162,12 +172,31 @@ public class OrderController {
 	public String  orderList( HttpSession session, Model model) {
 		String id = (String) session.getAttribute("memId");
 		String name = (String) session.getAttribute("memName");
+		
+		Map<String,String>map = orderDAO.getUserMailPhone(id);
+		String email = map.get("EMAIL");
+		String [] email1 = email.split("@");
+		String tel = map.get("PHONE");
+		String tel1 = tel.substring(0, 2);
+		String tel2 = tel.substring(3, 5);
+		String tel3 = tel.substring(6);
+		System.out.println("list"+email+" pppppp "+tel);
+		System.out.println(tel1+" "+tel2+" "+tel3);
+		
+		int couponCount =orderDAO.getCouponCount(id);
+		
 		List<CartDTO> list = orderDAO.getOrderList(id);
 		System.out.println("list");
 		model.addAttribute("buttonType", "cart");
 		model.addAttribute("cartList", list);
 		model.addAttribute("id", id);
 		model.addAttribute("name", name);
+		model.addAttribute("email1", email1[0]);
+		model.addAttribute("email2", email1[1]);
+		model.addAttribute("tel1", tel1);
+		model.addAttribute("tel2", tel2);
+		model.addAttribute("tel3", tel3);
+		model.addAttribute("couponCount", couponCount);
 		
 		return "/order_pay/orderPage";
 	}
@@ -176,6 +205,8 @@ public class OrderController {
 	public String  orderDirect(@RequestParam String buttonType,
 								HttpSession session,
 								Model model) {
+		session.removeAttribute("orderOk");
+		
 		//장바구니 가져온걸 DB에 insert
 		//orderDAO.directWrite(cartDTO);
 		System.out.println("buttonType="+buttonType);
@@ -184,6 +215,20 @@ public class OrderController {
 		
 		String id = (String) session.getAttribute("memId");
 		String name = (String) session.getAttribute("memName");
+		
+		Map<String,String>map = orderDAO.getUserMailPhone(id);
+		
+		String email = map.get("EMAIL");
+		String[] email1 = email.split("@");
+		String tel = map.get("PHONE");
+		String tel1 = tel.substring(0, 3);
+		String tel2 = tel.substring(3, 7);
+		String tel3 = tel.substring(7);
+		//System.out.println("direct"+email+" pppppp "+tel);
+		//System.out.println(email1[0]+" pppppp "+email1[1]);
+		//System.out.println(tel1+" "+tel2+" "+tel3);
+		
+		
 		if(id==null) {
 			id="guest";
 		}
@@ -191,11 +236,19 @@ public class OrderController {
 		
 		//임시로 DB에서 가져오기 
 		List<CartDTO> list = orderDAO.getOrderDirect(id);
+		int couponCount =orderDAO.getCouponCount(id);
+		model.addAttribute("couponCount", couponCount);
 	
 		model.addAttribute("buttonType",buttonType);
 		model.addAttribute("cartList", list);
 		model.addAttribute("id", id);
 		model.addAttribute("name", name);
+		
+		model.addAttribute("email1", email1[0]);
+		model.addAttribute("email2", email1[1]);
+		model.addAttribute("tel1", tel1);
+		model.addAttribute("tel2", tel2);
+		model.addAttribute("tel3", tel3);
 		
 		String resultPage = "";
 		if(buttonType.equals("now")) {
@@ -205,6 +258,7 @@ public class OrderController {
 		}
 		return resultPage;
 		//return "/order_pay/orderPage";
+
 	}
 	//aJsonArray
 	
@@ -238,6 +292,26 @@ public class OrderController {
 			cartDTO.setShoespoint((String) map.get("shoespoint"));
 			
 			orderDAO.directWrite(cartDTO);
+			session.removeAttribute("orderOk");
+			
+			Map<String,String>map1 = orderDAO.getUserMailPhone(id);
+			String email = map1.get("EMAIL");
+			String [] email1 = email.split("@");
+			String tel = map1.get("PHONE");
+			String tel1 = tel.substring(0, 2);
+			String tel2 = tel.substring(3, 5);
+			String tel3 = tel.substring(6);
+			System.out.println("direct1"+email+" pppppp "+tel);
+			System.out.println(tel1+" "+tel2+" "+tel3);
+			
+			int couponCount =orderDAO.getCouponCount(id);
+			
+			model.addAttribute("email1", email1[0]);
+			model.addAttribute("email2", email1[1]);
+			model.addAttribute("tel1", tel1);
+			model.addAttribute("tel2", tel2);
+			model.addAttribute("tel3", tel3);
+			model.addAttribute("couponCount", couponCount);
 			
 			return "/order_pay/orderPage";
 		
@@ -255,5 +329,15 @@ public class OrderController {
        return mav;
     }
 	
+
+	@RequestMapping(value="/order_pay/order_CouponPage.do",method=RequestMethod.GET)
+	public String orderCouponPage(HttpSession session, Model model) {
+		String id = (String) session.getAttribute("memId");
+		List<cpDTO> list = orderDAO.orderCouponPage(id);
+		model.addAttribute("homeList", list);
+
+		
+		return "/order_pay/orderCouponList";
+	}
 	
 }
