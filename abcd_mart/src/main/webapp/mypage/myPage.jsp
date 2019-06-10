@@ -143,9 +143,9 @@
 
             <ul class="list_type3 mt10">
                 
-                    <li>아이디 :  <strong>${myPageId}</strong></li>
+                    <li>아이디 :  <strong>${sessionScope.memId}</strong></li>
                 
-                <li>이메일 주소 :  <strong class="fc_type8">${myPageEmail}</strong></li>
+                <li>이메일 주소 :  <strong class="fc_type8">${sessionScope.memEmail}</strong></li>
             </ul>
 
             <p class="bot_line">

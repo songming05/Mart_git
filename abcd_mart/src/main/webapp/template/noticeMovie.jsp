@@ -5,13 +5,13 @@
             <div class="etc-box-left">
                 <ul class="guide-link-list">
                     <li>
-                        <a href="/abc/customer/faqList?parentDepth=0011">
+                        <a href="">
                             <div class="ico-box"><img src="../image/mainFooter/mob.gif" alt=""></div>
                             <span class="txt">모바일 이용 안내</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/abc/customer/faqList?parentDepth=0009">
+                        <a href="">
                             <div class="ico-box"><img src="../image/mainFooter/membership.gif" alt=""></div>
                             <span class="txt">멤버쉽 혜택 안내</span>
                         </a>
@@ -23,7 +23,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/abc/etc/digitalGiftCard">
+                        <a href="">
                             <div class="ico-box"><img src="../image/mainFooter/digital.gif" alt=""></div>
                             <span class="txt">디지털 상품권 구매</span>
                         </a>

@@ -9,10 +9,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class MypageDTO {
-	private int loginState;
-	private String mypageEmail;
-	private String mypageName;
-	private String mypageId;
 	
 	private String id;
 	private int coupon_seq;

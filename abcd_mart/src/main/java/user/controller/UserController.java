@@ -101,10 +101,6 @@ public class UserController {
 			session.setAttribute("memEmail", userDTO.getEmail());
 			session.setAttribute("memPhone", userDTO.getPhone());
 			//System.out.println(userDTO.getName());
-			mypageDTO.setLoginState(1);
-			mypageDTO.setMypageEmail(userDTO.getEmail());
-			mypageDTO.setMypageName(userDTO.getName());
-			mypageDTO.setMypageId(userDTO.getId());
 		} else {
 			loginResult="loginFail";
 		}
@@ -115,7 +111,6 @@ public class UserController {
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session) {
 		session.invalidate();
-		mypageDTO.setLoginState(0);
 		return "/main/index";
 	}
 
