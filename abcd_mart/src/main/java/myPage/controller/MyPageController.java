@@ -1,5 +1,7 @@
 package myPage.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,11 +9,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import myPage.bean.MyPageDTO;
+import user.dao.UserDAO;
 
 @Controller
 public class MyPageController {
+	@Autowired
+	UserDAO userDAO;
 	
 	@RequestMapping(value = "/mypage/myPage", method = RequestMethod.GET)
 	public String myPage(Model model, HttpSession session ) {
@@ -38,8 +44,18 @@ public class MyPageController {
 		return "/mypage/myGiftCardPage";
 	}
 	@RequestMapping(value = "/mypage/myCouponList", method = RequestMethod.GET)
-	public String myCouponList(Model model) {
-		return "/mypage/myCouponList";
+	public ModelAndView myCouponList(HttpSession session) {
+		String id = (String)session.getAttribute("memId");
+		if(id==null) {
+			id="guest";
+		}
+		List<MyPageDTO> myPageList = userDAO.getMyPageList(id);
+		
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("myPageList", myPageList);
+		modelAndView.setViewName("/mypage/myCouponList");
+		
+		return modelAndView;
 	}
 	@RequestMapping(value = "/mypage/myFootStamp", method = RequestMethod.GET)
 	public String myFootStamp(Model model) {

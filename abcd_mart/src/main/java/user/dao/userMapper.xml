@@ -55,7 +55,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="getMyPageList" parameterType="String" resultType="myPage">
-		select * from mypage where id=#{id}
+		select * from mypage where id=#{id} and coupon_check='사용가능'
 	</select>
 	
 

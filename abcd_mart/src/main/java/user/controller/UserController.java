@@ -185,6 +185,9 @@ public class UserController {
 	@RequestMapping(value ="/myCouponList", method = RequestMethod.POST)
 	public ModelAndView myCouponList(HttpSession session) {
 		String id = (String)session.getAttribute("memId");
+		if(id==null) {
+			id="guest";
+		}
 		List<MyPageDTO> myPageList = userDAO.getMyPageList(id);
 		
 		ModelAndView modelAndView = new ModelAndView();

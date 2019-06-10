@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -295,6 +297,13 @@
         </ul>
     </section>
 
+
+
+
+
+
+
+
     <div class="tabs-content mt30">
         <div id="cm_tabs_01" class="tabs-cont" style="display: block;">
             <div class="table_basic">
@@ -315,103 +324,39 @@
                     
                     
                     <tbody>
-                            
-           <tr class="group-center">
-               <td class="tit_type3">AC50MVQBOB</td>
-               <td>
-               <div class="cp_type1_2">플러스쿠폰<br><strong>5,000원</strong></div>
-               </td>
-               <td class="align-left pl0">
-                   <div class="fl-l ml20">
-                          할인쿠폰<br>
-                          우븐슈즈 5천원 플러스쿠폰<br>
-                       <span class="fc_type2">상품 : 30,000원 이상 사용가능</span>
-                           
-                    <p class="fc_type5">(일부 브랜드 및 일부 상품에 적용 불가)</p>
-                    </div>
-               </td>
-               <td>
-                   <span class="bold tit_type3 fs12 fc_type8">
-                       5,000
-                   </span><span class="bold">원</span>
-                   
-                           <span class="fc_type5"><br>최대 35%이내<br>적용가능</span>
-                   
-               </td>
-               <td>사용가능</td>
-               <td class="tit_type3"> 
-               2019.05.24 00:00 ~ 2019.06.13 23:59
-               <br> (21일)     
-               </td>
-               <td>온라인/<br>모바일</td>
-           </tr>
-	                  
-	              
-	                  <tr class="group-center">
-	                      <td class="tit_type3">AC50MVQBRE</td>
-	                      <td>
-	                                                  <div class="cp_type1_2">플러스쿠폰<br><strong>5,000원</strong></div>
-	
-	                      </td>
-	                      <td class="align-left pl0">
-	                          <div class="fl-l ml20">
-	                              할인쿠폰<br>
-	                              샌들 5천원 플러스쿠폰<br>
-	                              
-	                              
-	                                  
-	                                  
-	                                      <span class="fc_type2">상품 : 30,000원 이상 사용가능</span>
-	                                  
-	                                  
-	                              
-	                              
-	                               <p class="fc_type5">(일부 브랜드 및 일부 상품에 적용 불가)</p>
-	                              
-	                              
-	                              
-	                              
-	                                  <p class="mt5 list_type3 viewApplicable" data-cpn-id="1000002042" style="cursor: pointer;">적용대상보기 :
-	                                      
-	                                          476개
-	                                      
-	                                      
-	                                      
-	                                      상품
-	                                  </p>
-	                               
-	                                                                     
-	                          </div>
-	                      </td>
-	                      <td>
-	                          <span class="bold tit_type3 fs12 fc_type8">
-	                              5,000
-	                          </span><span class="bold">원</span>
-	                          
-	                                  <span class="fc_type5"><br>최대 35%이내<br>적용가능</span>
-	                          
-	                      </td>
-	                      <td>사용가능</td>
-	                      <td class="tit_type3">
-	                          
-	                               2019.05.24 00:00
-	                               
-	                              
-	                          ~
-	                          2019.06.13 23:59
-	                          <br>
-	                          
-	                          
-	                                   (21일)
-	                              
-	                      </td>
-	                      <td>
-	                          온라인/<br>모바일
-	                          
-	                      </td>
-	                  </tr>
-	              
-
+                    <c:forEach var="data" items="${ myPageList }">
+                    	<tr class="group-center">
+                    	
+			               <td class="tit_type3">${ data.coupon_seq }</td>
+			               <td>
+			               <div class="cp_type1_2">${ data.coupon_name }<br><strong><fmt:formatNumber value="${ data.coupon_price }"/>원</strong></div>
+			               </td>
+			               <td class="align-left pl0">
+			                   <div class="fl-l ml20">
+						              	할인쿠폰<br>${ data.coupon_name }<br>
+			                       <span class="fc_type2"></span>			                           
+			                    <p class="fc_type5">(일부 브랜드 및 <br>일부 상품에 적용 불가)</p>
+			                    </div>
+			               </td>
+			               <td>
+			               		
+			                    <span class="bold tit_type3 fs12 fc_type8">
+			                       <fmt:formatNumber value="${ data.coupon_price }"/>
+			                    </span>
+			                    <span class="bold">원</span>			                   
+							    <span class="fc_type5"></span>			                   
+			               </td>
+			               <td>${ data.coupon_check }</td>
+			               <td class="tit_type3">
+			               <fmt:formatDate value="${ data.coupon_date }" type="date" pattern="yyyy.MM.dd"/>
+			               ~ <br>
+			               <fmt:formatDate value="${ data.coupon_end }" type="date" pattern="yyyy.MM.dd"/>
+			               (30일)     
+			               </td>
+			               <td>온라인/<br>모바일</td>
+           
+                    	</tr>
+					</c:forEach>
                     </tbody>
                 </table>
             </div>
@@ -420,6 +365,18 @@
             </p>
         </div>
         <!-- //테이블 -->
+
+
+
+
+
+
+
+
+
+
+
+
 
         <!-- 테이블 -->
         <div id="cm_tabs_02" class="tabs-cont" style="display: none;">

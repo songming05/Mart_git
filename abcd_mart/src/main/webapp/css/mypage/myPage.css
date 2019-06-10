@@ -1542,3 +1542,7 @@ p.list_type1, .list_type1 li {
     margin-left: 115px;
 }
 
+
+.group-center td{
+	text-align: center;
+}
