@@ -1,3 +1,13 @@
+ window.onload= function(){
+	 if($('#tel1').val()=='010'){
+		 document.getElementById("buyerTel1").options[0].selected = true;
+	 }else if($('#tel1').val()=='011'){
+		 document.getElementById("buyerTel1").options[1].selected = true;
+	 }else if($('#tel1').val()=='016'){
+		 document.getElementById("buyerTel1").options[2].selected = true;
+	 }
+
+ }
 
 //배송 주소 입력
 function popupSearchPostCode(){
@@ -25,13 +35,26 @@ function popupSearchPostCode(){
 
 function checkPostClose(zipcode, address){
 
-
-	
 	opener.document.getElementById('dlvyZipcode').value =zipcode;
 	opener.document.getElementById('dlvyAddr1').value =address;
 	window.close();
 	opener.document.getElementById('dlvyAddr2').focus();
 } 
+
+function checkCouponClose(cpSeq, cpSale){ 
+
+	opener.document.getElementById('couponNum').value =cpSeq;
+	opener.document.getElementById('coupon').value =cpSale;
+	opener.document.getElementById('coupon1').value=cpSale;
+	opener.document.getElementById('couponIn').innerHTML=cpSale;
+	
+	testChange(cpSale);
+	$('#coupon').change();
+	window.close();
+
+
+} 
+
 
 
 //결제 창 누를시 , 유효성 검사 
@@ -87,8 +110,7 @@ function goPayment(){
 
 					
 			$('#orderForm').submit();
-			
-			
+			swal("결제가 완료되었습니다");	
 			
 			
 			
@@ -98,11 +120,37 @@ function goPayment(){
 	
 }
 
+function testChange(cpSale) {
+	var oldtotal = opener.document.getElementById('orderPrice').value;
+	var dliv = opener.document.getElementById('dliv').value;
+	var newtotal = (oldtotal*1)+(dliv*1)-(cpSale*1);
+	//alert(newtotal);
+	
+	//상품목록에 가격변경
+	opener.document.getElementById('discountIn').innerHTML=cpSale+"원";
+	opener.document.getElementById('newTotal').innerHTML=newtotal+"원";
+	//opener.document.getElementById('totalAmtArea').innerHTML=cpSale+"원";
+	
+	//
+	opener.document.getElementById('discountCp').innerHTML=cpSale;
+	opener.document.getElementById('finalTotalOrderAmt').innerHTML=newtotal;
+	opener.document.getElementById('totalPrice').value = newtotal;
 
+	}
+
+
+/*   
+ * #discountIn{
+ * color: #000000;
+    font-weight: bold;
+    font-size: 22px;
+    }
+	*/
 
 
 /*주문 고객 정보  체크박스 컨트롤 */
 $(document).ready(function(){
+	
 	
 	$('#or_namech').click(function(){
 		if($('input:checkbox[name=changeBuyerInfo]').is(":checked")){
@@ -146,9 +194,9 @@ $(document).ready(function(){
 	});
 	
 	/*최근배송지*/
-	$('#or_na3, .btn_sType1').click(function(){
+	$('#or_na3').click(function(){
 		
-		window.open("/abcd_mart/order_pay/orderAddressList.do?id="+$('#abcdId').val(),"","width=650px height=700px");
+		window.open("/abcd_mart/order_pay/orderAddressList.do","","width=650px height=700px");
 		
 		
 	});
@@ -180,6 +228,18 @@ $(document).ready(function(){
 		
 	});
 	
+	
+	/*$('#couponList').click(function(){
+		window.open("/abcd_mart/order_pay/order_CouponPage.do","","width=650px height=700px");
+		
+	});*/
+	
+	$('.tableA').on('click','#couponList',function(){
+		if($('#coupon').val() =='')
+			window.open("/abcd_mart/order_pay/order_CouponPage.do","","width=650px height=700px");
+		else 
+			swal('쿠폰은 한번만 사용가능합니다');
+	});
 	
 	
 	

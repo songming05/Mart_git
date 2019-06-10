@@ -74,7 +74,7 @@
 									<th>판매가</th>
 									<th>수량</th>
 									<th>할인금액</th>
-									<th>주문금액<br>(적립예정 포인트)</th>
+									<th>주문금액</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -98,11 +98,11 @@
 												<div class="model_img_box">
 													<c:if test="${buttonType eq 'now' }">
 														<img src="../image/page/product/${cartDTO.getShoesimage() }" alt="SPLINE SCRIPT" onerror="imageError(this)"/>
-														<!-- asjdhkljashdjkasjk -->
+														
 													</c:if>
 													<c:if test="${buttonType ne 'now' }">
 														<img src="../image/page/product/${cartDTO.getPrdtcode()}/${cartDTO.getShoesimage() }" alt="SPLINE SCRIPT" onerror="imageError(this)"/>
-														<!-- aaaaaaaaaaaajashdjkasjk -->
+				
 														
 													</c:if>
 													
@@ -126,10 +126,12 @@
 												${cartDTO.getShoesqty() }
 											</td>
 											
-											<td>
-												<p class="mt5 mb15"><a data-rel="layer" href="#applyCoupon" class="btn_sType5" onclick="applyCouponA(this, '0071357', 1, 22506054, 0);">쿠폰조회/적용</a></p>
+											<td class="couponTd">
+												<p class="mt5 mb15"><a href="#" id="couponList" class="btn_sType5">쿠폰조회/적용</a></p>
 												
-												<em class="tit_type3 mt5"><span class="dscntAmt"><fmt:formatNumber value="${cartDTO.getShoesdiscount() }" type="number"/></span></em>원
+												<em class="tit_type3 mt5"><span class="dscntAmt" id="couponIn">0</span></em>원
+												<input type="hidden" name="coupon" id="coupon" ><!-- 쿠폰 할인 가격 -->
+												<input type="hidden" name="couponNum" id="couponNum" value=""><!-- 쿠폰 번호 -->
 												<em class="showmoreBox" style="display: none;">
 													<a href="javascript://" class="showmore">더보기</a>
 													<span class="showBox"></span>
@@ -139,8 +141,8 @@
 											    <div class="od-won"><span class="order_price"><fmt:formatNumber value="${cartDTO.getShoesprice()*cartDTO.getShoesqty() -cartDTO.getShoesdiscount() }" type="number"/></span>원</div>
 												<div class="od-point">
 												 <div style="font-size: 11px; color: #666; font-weight:bold;">
-												  <span class="prdt_point" style="font-size: 11px; color: #666;"><fmt:formatNumber value="${cartDTO.getShoespoint() }" type="number"/></span> 
-												  P
+												  <%-- <span class="prdt_point" style="font-size: 11px; color: #666;"><fmt:formatNumber value="${cartDTO.getShoespoint() }" type="number"/></span> 
+												  P --%>
 												 </div>
 												</div>
 											</td>
@@ -163,13 +165,14 @@
 		                        <dl>
 		                            <dt>주문금액</dt>
 		                            <dd class="ordersPrice"><fmt:formatNumber value="${totalPrice }" type="number"/><span>원</span></dd>
+		                        	<input type="hidden" name="orderPrice" id="orderPrice" value="${totalPrice }">
 		                        </dl>
 		                    </div>
 		                    <div class="totalBox total2">
 		                        <dl>
 		                            <dt>총 할인금액</dt>
-		                            <dd class="totalDscntArea"><fmt:formatNumber value="${discount }" type="number"/><span>원</span></dd>
-		                        </dl>
+		                            <dd class="orderDlvyAmtArea"><span id="discountIn">0원</span></dd>
+		                        </dl><!-- <fmt:formatNumber value="${discount }" type="number"/> -->
 		                        <ul class="list_type1" id="dscntInfoUl" style="display:none;">
 		                            
 		                        </ul>
@@ -178,13 +181,14 @@
 		                        <dl>
 		                            <dt>배송비</dt>
 		                            <dd class="orderDlvyAmtArea">2500<span>원</span></dd>
+		                            <input type="hidden"  name="dliv" id="dliv" value="2500">
 		                            
 		                        </dl>
 		                    </div>
 		                    <div class="totalBox total4">
 		                        <dl>
 		                            <dt>결제예정금액</dt>
-		                            <dd class="fc_type1" id="totalAmtArea"><fmt:formatNumber value="${totalPrice+2500 }" type="number"/><span>원</span></dd>
+		                            <dd class="fc_type1" id="newTotal"><fmt:formatNumber value="${totalPrice+2500 }" type="number"/><span>원</span></dd>
 		                        </dl>
 		                        <input type="hidden" name="orderAmt" value="${totalPrice+2500 }"/>
 		                    </div>
@@ -213,20 +217,18 @@
                                         <label for="or_phone"><em class="fc_type1">＊</em> 휴대폰 번호</label>
                                     </th>
                                     <td>
-                                        
+                                        		<input type="hidden" name="tel1" id="tel1" value="${tel1 }"/>
+                                        		
                                                 <select name="buyerTel1" id="buyerTel1" style="width:97px;" disabled>
 												    <option value="010">010</option>
 												    <option value="011">011</option>
 												    <option value="016">016</option>
-												    <option value="017">017</option>
-												    <option value="018">018</option>
-												    <option value="019">019</option>
 												</select>
 
                                                 -
-                                                <input type="text" name="buyerTel2" value="7777" class="text inputNumberText" maxlength="4" style="width:97px" readonly="readonly"/>
+                                                <input type="text" name="buyerTel2" value="${tel2 }" class="text inputNumberText" maxlength="4" style="width:97px" readonly="readonly"/>
                                                 -
-                                                <input type="text" name="buyerTel3" value="7777" class="text inputNumberText" maxlength="4" style="width:97px" readonly="readonly"/>
+                                                <input type="text" name="buyerTel3" value="${tel3 }" class="text inputNumberText" maxlength="4" style="width:97px" readonly="readonly"/>
                                             
                                     </td>
                                     <th>
@@ -234,9 +236,9 @@
                                     </th>
                                     <td>
                                         
-                                                <input type="text" name="buyerEmail1" value="abcd" class="text" style="width:150px" id="or_email" readonly="readonly"/>
+                                                <input type="text" name="buyerEmail1" value="${email1 }" class="text" style="width:150px" id="buyerEmail1" readonly="readonly"/>
                                                 @
-                                                <input type="text" name="buyerEmail2" value="naver.com" class="text" style="width:151px" readonly="readonly"/>
+                                                <input type="text" name="buyerEmail2" value="${email2 }" class="text" style="width:151px" id="buyerEmail2" readonly="readonly"/>
                                             
                                     </td>
                                 </tr>
@@ -278,7 +280,7 @@
                                         <input type="radio" name="selectDeliveryAddress" value="02" id="or_na2" class="mr5 ml10"><label for="or_na2">신규입력</label>
                                         
                                             <input type="radio" name="selectDeliveryAddress" value="03" id="or_na3" class="mr5 ml10 dlvyType dlvyType01" ><label for="or_na3" class="dlvyType dlvyType01" >최근배송지</label>
-                                            <a href="javascript://" onclick="openUserAddrPopup();" class="btn_sType1 ml5 dlvyType dlvyType01" >내 주소록</a>
+      <!--                                       <a href="javascript://" class="btn_sType1 ml5 dlvyType dlvyType01" >내 주소록</a> -->
                                         
                                     </td>
                                 </tr>
@@ -489,24 +491,24 @@
                                             <th>
                                                 <label for="or_coupon">&nbsp;&nbsp;쿠폰</label>
                                             </th>
-                                            <td>보유 쿠폰 : <em class="bold fc_type8">0</em>장
+                                            <td>보유 쿠폰 : <em class="bold fc_type8">${couponCount } </em> 장
                                                 
-                                                        <a href="javascript://" class="btn_sType1 ml10 mr5 non">쿠폰조회/적용</a>
-                                                        <input type="text" name="coupon" style="width:100px;" value="${discount }" disabled="disabled"/> 원
+                                                        <a href="javascript://" class="btn_sType1 ml10 mr5 non" id="couponList">쿠폰조회/적용</a>
+                                                        <input type="text" name="coupon1" id="coupon1" style="width:100px;" value="0" disabled="disabled"/> 원
                                                     
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <!-- <tr>
                                             <th rowspan="2">
                                                 <label for="or_dcoupon">&nbsp;&nbsp;포인트적립</label>
                                             </th>
-                                            <td>적립예정 포인트 : <em class="tit_type3 fc_type2 totalPoint">1,470P</em></td>
-                                        </tr>
+                                            <td>적립예정 포인트 : <em class="tit_type3 fc_type2 totalPoint">1000P</em></td>
+                                        </tr> -->
                                     </tbody>
                                 </table>
                             </section>
                         </div>
-                        <div class="mt60">
+                        <%-- <div class="mt60">
                             <h3 class="tit_type1 fs16 ml10">포인트 결제</h3>
                             <section class="table_basic mt10 bgfa">
                                 <table class="tableA">
@@ -542,7 +544,8 @@
                                         <li class="mt5">* 포인트는 100P 단위로 사용 하실 수 있습니다. </li>
                                     </ul>
                                 
-                        </div>
+                        </div> --%>
+                         <input type="hidden" name="point" value="0"/>
                     </div>
                     <div class="fl-l w490 ml60">
                         <h3 class="tit_type1 fs16 ml10">결제금액</h3>
@@ -573,7 +576,7 @@
                                             <label for="or_price3">&nbsp;&nbsp;쿠폰할인</label>
                                         </th>
                                         <td>
-                                            <span class="tit_type3 totalCpnDscntAmt">0</span>원
+                                            <span class="tit_type3 totalCpnDscntAmt" id="discountCp">0</span>원
                                         </td>
                                     </tr>
                                     <tr>
@@ -590,9 +593,9 @@
                                         <th>
                                             <label for="or_price4">&nbsp;&nbsp;적립예정 포인트</label>
                                         </th>
-                                        <td>
-                                            <em class="right"><span class="tit_type3 totalPoint">1,470</span>P</em>
-                                        </td>
+                                       <!--  <td>
+                                            <em class="right"><span class="tit_type3 totalPoint">1000</span>P</em>
+                                        </td> -->
                                     </tr>
                                     <tr>
                                         <th>

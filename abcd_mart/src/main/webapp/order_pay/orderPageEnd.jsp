@@ -124,10 +124,10 @@ window.onload=function(){
                             <td id="address" colspan="3"><fmt:formatNumber value="${pDTO.getPoint() }" type="number"/>원</td>
                         </tr>
                         <tr class="total">
-                            <th class="align-center">
+                            <th class="align-center"> 
                                 <label for="map_loca">총 결제 금액</label>
                             </th>
-                            <td colspan="3"><fmt:formatNumber value="${pDTO.getTotalPrice()+2500 }" type="number"/>원</td>
+                            <td colspan="3"><fmt:formatNumber value="${pDTO.getTotalPrice()}" type="number"/>원</td>
                         </tr>
                         
                         <tr>
@@ -147,8 +147,8 @@ window.onload=function(){
            	</table>
            	<br>
            	<div align="center">
-           		<input type="button" value="주문조회 하기">
-                <input type="button" value="메인으로 가기">
+           		<input type="button" value="주문조회 하기" onclick="location.href='/abcd_mart/mypage/myPage'">
+                <input type="button" value="메인으로 가기" onclick="location.href='/abcd_mart/main/index'">
            	</div>
 
 </body>

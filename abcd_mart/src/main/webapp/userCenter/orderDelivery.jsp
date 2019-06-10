@@ -104,7 +104,7 @@ $(function() {
 <!-- //고객 정보 -->
 <input type="hidden" id="userId" name="id" value="admin">
 
-<!-- <article class="mt25">
+<article class="mt25">
 <section class="my_lnb">
     <ul>
         <li class="tit">쇼핑내역
@@ -180,7 +180,7 @@ $(function() {
             </li>
         
     </ul>
-</section> -->
+</section>
 
 <section class="my_cont order_basketCont">                                
 <section id="scrollPosition" class="my_cont order_basketCont">
@@ -212,7 +212,7 @@ $(function() {
                             <input type="text" class="day_select mr5" id="abcdDatepickerStart" name="startDt" value="20190513" maxlength="8" onkeydown="onlyNum();"  style="width:138px;height:26px;" readonly="readonly"/>
                             ~
                             <input type="text" class="day_select mr5" id="abcdDatepickerEnd" name="endDt" value="20190528" maxlength="8" onkeydown="onlyNum();" style="width:138px;height:26px;" readonly="readonly"/>
-                            <a href="javascript:formSubmit('dateSearch');" class="btn_mlType1 ml10" id="stopIncrease" style="width:63px; height:30px;">조회</a>
+                            <a href="javascript:formSubmit('dateSearch');" class="btn_mlType1 ml10" style="width:63px; height:30px;">조회</a>
                         </td>
                     </tr>
                 </tbody>
@@ -360,8 +360,8 @@ $(function() {
     </div>
 </section>
 </section>
-<!-- </article>
- -->
+</article>
+
 
 </body>
 </html>
