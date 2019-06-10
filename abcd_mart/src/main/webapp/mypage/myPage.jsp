@@ -138,7 +138,7 @@
             <p class="tit_type1 fs16">
                 
                 
-            ${myPageName}님은  <span  class="fc_type8 "> 온라인 회원</span> 입니다.
+            ${sessionScope.memName}님은  <span  class="fc_type8 "> 온라인 회원</span> 입니다.
             </p>
 
             <ul class="list_type3 mt10">

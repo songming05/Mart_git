@@ -1,5 +1,7 @@
 package myPage.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,17 +16,13 @@ public class MyPageController {
 	private MypageDTO mypageDTO;
 	
 	@RequestMapping(value = "/mypage/myPage", method = RequestMethod.GET)
-	public String myPage(Model model) {
-		int state=mypageDTO.getLoginState();
+	public String myPage(Model model, HttpSession session ) {
+		String id = (String)session.getAttribute("memId");
 		String result="";
-		if(state==1)
+		if(id!=null)
 			result= "/mypage/myPage";
-		else if(state==0)
+		else if(id==null)
 			result= "/user/loginPage";
-		
-		model.addAttribute("myPageEmail",mypageDTO.getMypageEmail());
-		model.addAttribute("myPageName",mypageDTO.getMypageName());
-		model.addAttribute("myPageId",mypageDTO.getMypageId());
 		return result;
 	}
 	

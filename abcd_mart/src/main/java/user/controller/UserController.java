@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import myPage.bean.MypageDTO;
 import user.bean.UserDTO;
@@ -184,5 +185,19 @@ public class UserController {
 		System.out.println("변경했다맵 "+map.get("password"));
 		userDAO.pwdReset(map);
 	}
+	
+	
+	@RequestMapping(value ="/myCouponList", method = RequestMethod.POST)
+	public ModelAndView myCouponList() {
+		
+		List<MypageDTO> myPageList = 
+		
+		ModelAndView modelAndView = new ModelAndView();
+		
+		modelAndView.addObject("myPageList", attributeValue);
+		modelAndView.setViewName("jsonView");
+		return modelAndView;
+	}
+	
 	
 }

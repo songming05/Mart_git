@@ -308,341 +308,111 @@
                             <th class="normal">쿠폰구분</th>
                         </tr>
                     </thead>
+                    
+                    
                     <tbody>
-                        
-                        
                             
-                                <tr class="group-center">
-                                    <td class="tit_type3">AC50MVQBOB</td>
-                                    <td>
-                                                                <div class="cp_type1_2">플러스쿠폰<br><strong>5,000원</strong></div>
-            
-                                    </td>
-                                    <td class="align-left pl0">
-                                        <div class="fl-l ml20">
-                                            할인쿠폰<br>
-                                            우븐슈즈 5천원 플러스쿠폰<br>
-                                            
-                                            
-                                                
-                                                
-                                                    <span class="fc_type2">상품 : 30,000원 이상 사용가능</span>
-                                                
-                                                
-                                            
-                                            
-	                                            <p class="fc_type5">(일부 브랜드 및 일부 상품에 적용 불가)</p>
-                                            
-                                            
-                                            
-                                            
-                                                <p class="mt5 list_type3 viewApplicable" data-cpn-id="1000002043" style="cursor: pointer;">적용대상보기 :
-                                                    
-                                                        69개
-                                                    
-                                                    
-                                                    
-                                                    상품
-                                                </p>
-                                             
-                                                                                   
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="bold tit_type3 fs12 fc_type8">
-                                            5,000
-                                        </span><span class="bold">원</span>
-                                        
-                                                <span class="fc_type5"><br>최대 35%이내<br>적용가능</span>
-                                        
-                                    </td>
-                                    <td>사용가능</td>
-                                    <td class="tit_type3">
-                                        
-	                                            2019.05.24 00:00
-	                                            
-                                            
-                                        ~
-                                        2019.06.13 23:59
-                                        <br>
-                                        
-                                        
-                                                 (21일)
-                                            
-                                    </td>
-                                    <td>
-                                        온라인/<br>모바일
-                                        
-                                    </td>
-                                </tr>
-                            
-                                <tr class="group-center">
-                                    <td class="tit_type3">AC50MVQBRE</td>
-                                    <td>
-                                                                <div class="cp_type1_2">플러스쿠폰<br><strong>5,000원</strong></div>
-            
-                                    </td>
-                                    <td class="align-left pl0">
-                                        <div class="fl-l ml20">
-                                            할인쿠폰<br>
-                                            샌들 5천원 플러스쿠폰<br>
-                                            
-                                            
-                                                
-                                                
-                                                    <span class="fc_type2">상품 : 30,000원 이상 사용가능</span>
-                                                
-                                                
-                                            
-                                            
-	                                            <p class="fc_type5">(일부 브랜드 및 일부 상품에 적용 불가)</p>
-                                            
-                                            
-                                            
-                                            
-                                                <p class="mt5 list_type3 viewApplicable" data-cpn-id="1000002042" style="cursor: pointer;">적용대상보기 :
-                                                    
-                                                        476개
-                                                    
-                                                    
-                                                    
-                                                    상품
-                                                </p>
-                                             
-                                                                                   
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="bold tit_type3 fs12 fc_type8">
-                                            5,000
-                                        </span><span class="bold">원</span>
-                                        
-                                                <span class="fc_type5"><br>최대 35%이내<br>적용가능</span>
-                                        
-                                    </td>
-                                    <td>사용가능</td>
-                                    <td class="tit_type3">
-                                        
-	                                            2019.05.24 00:00
-	                                            
-                                            
-                                        ~
-                                        2019.06.13 23:59
-                                        <br>
-                                        
-                                        
-                                                 (21일)
-                                            
-                                    </td>
-                                    <td>
-                                        온라인/<br>모바일
-                                        
-                                    </td>
-                                </tr>
-                            
-                                <tr class="group-center">
-                                    <td class="tit_type3">AC50MVRQQH</td>
-                                    <td>
-                                                                <div class="cp_type1_2">플러스쿠폰<br><strong>10,000원</strong></div>
-            
-                                    </td>
-                                    <td class="align-left pl0">
-                                        <div class="fl-l ml20">
-                                            할인쿠폰<br>
-                                            상반기 베스트, 1만원 플러스<br>
-                                            
-                                            
-                                                
-                                                
-                                                
-                                                    <span class="fc_type2">신발구매시 사용가능</span>
-                                                
-                                            
-                                            
-	                                            <p class="fc_type5">(일부 브랜드 및 일부 상품에 적용 불가)</p>
-                                            
-                                            
-                                            
-                                            
-                                                <p class="mt5 list_type3 viewApplicable" data-cpn-id="1000002067" style="cursor: pointer;">적용대상보기 :
-                                                    
-                                                        144개
-                                                    
-                                                    
-                                                    
-                                                    상품
-                                                </p>
-                                             
-                                                                                   
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="bold tit_type3 fs12 fc_type8">
-                                            10,000
-                                        </span><span class="bold">원</span>
-                                        
-                                                <span class="fc_type5"><br>최대 35%이내<br>적용가능</span>
-                                        
-                                    </td>
-                                    <td>사용가능</td>
-                                    <td class="tit_type3">
-                                        
-	                                            2019.06.04 00:00
-	                                            
-                                            
-                                        ~
-                                        2019.06.16 23:59
-                                        <br>
-                                        
-                                        
-                                                 (13일)
-                                            
-                                    </td>
-                                    <td>
-                                        온라인/<br>모바일
-                                        
-                                    </td>
-                                </tr>
-                            
-                                <tr class="group-center">
-                                    <td class="tit_type3">AC50MVQAV0</td>
-                                    <td>
-                                                                <div class="cp_type1_2">플러스쿠폰<br><strong>10%</strong></div>
-            
-                                    </td>
-                                    <td class="align-left pl0">
-                                        <div class="fl-l ml20">
-                                            할인쿠폰<br>
-                                            상반기 베스트,10% 플러스<br>
-                                            
-                                            
-                                                
-                                                
-                                                
-                                                    <span class="fc_type2">신발구매시 사용가능</span>
-                                                
-                                            
-                                            
-	                                            <p class="fc_type5">(일부 브랜드 및 일부 상품에 적용 불가)</p>
-                                            
-                                            
-                                            
-                                            
-                                                <p class="mt5 list_type3 viewApplicable" data-cpn-id="1000002066" style="cursor: pointer;">적용대상보기 :
-                                                    
-                                                        167개
-                                                    
-                                                    
-                                                    
-                                                    상품
-                                                </p>
-                                             
-                                                                                   
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="bold tit_type3 fs12 fc_type8">
-                                            10
-                                        </span><span class="bold">%</span>
-                                        
-                                                <span class="fc_type5"><br>최대 35%이내<br>적용가능</span>
-                                        
-                                    </td>
-                                    <td>사용가능</td>
-                                    <td class="tit_type3">
-                                        
-	                                            2019.06.04 00:00
-	                                            
-                                            
-                                        ~
-                                        2019.06.16 23:59
-                                        <br>
-                                        
-                                        
-                                                 (13일)
-                                            
-                                    </td>
-                                    <td>
-                                        온라인/<br>모바일
-                                        
-                                    </td>
-                                </tr>
-                            
-                                <tr class="group-center">
-                                    <td class="tit_type3">AC50MDCQ5F</td>
-                                    <td>
-                                                                <div class="cp_type1_2">플러스쿠폰<br><strong>5,000원</strong></div>
-            
-                                    </td>
-                                    <td class="align-left pl0">
-                                        <div class="fl-l ml20">
-                                            할인쿠폰<br>
-                                            App 가입축하 5,000원 플러스<br>
-                                            
-                                                
-                                                
-                                                    <span class="fc_type2">(상품 : 30,000원 이상 사용가능)</span>
-                                                
-                                                
-                                            
-                                            
-                                            
-	                                            <p class="fc_type5">(일부 브랜드 및 일부 상품에 적용 불가)</p>
-                                            
-                                            
-                                            
-                                                <p class="mt5 list_type3">적용대상보기 : 전체상품
-                                                </p>
-                                            
-                                             
-                                                                                   
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <span class="bold tit_type3 fs12 fc_type8">
-                                            5,000
-                                        </span><span class="bold">원</span>
-                                        
-                                    </td>
-                                    <td>사용가능</td>
-                                    <td class="tit_type3">
-                                        
-	                                            2019.06.01 00:00
-	                                            
-	                                        
-                                        ~
-                                        2019.08.29 23:59
-                                        <br>
-                                        
-                                        
-                                                (90일)
-                                            
-                                    </td>
-                                    <td>
-                                        온라인/<br>모바일
-                                        
-                                    </td>
-                                </tr>
-                            
-                        
+           <tr class="group-center">
+               <td class="tit_type3">AC50MVQBOB</td>
+               <td>
+               <div class="cp_type1_2">플러스쿠폰<br><strong>5,000원</strong></div>
+               </td>
+               <td class="align-left pl0">
+                   <div class="fl-l ml20">
+                          할인쿠폰<br>
+                          우븐슈즈 5천원 플러스쿠폰<br>
+                       <span class="fc_type2">상품 : 30,000원 이상 사용가능</span>
+                           
+                    <p class="fc_type5">(일부 브랜드 및 일부 상품에 적용 불가)</p>
+                    </div>
+               </td>
+               <td>
+                   <span class="bold tit_type3 fs12 fc_type8">
+                       5,000
+                   </span><span class="bold">원</span>
+                   
+                           <span class="fc_type5"><br>최대 35%이내<br>적용가능</span>
+                   
+               </td>
+               <td>사용가능</td>
+               <td class="tit_type3"> 
+               2019.05.24 00:00 ~ 2019.06.13 23:59
+               <br> (21일)     
+               </td>
+               <td>온라인/<br>모바일</td>
+           </tr>
+	                  
+	              
+	                  <tr class="group-center">
+	                      <td class="tit_type3">AC50MVQBRE</td>
+	                      <td>
+	                                                  <div class="cp_type1_2">플러스쿠폰<br><strong>5,000원</strong></div>
+	
+	                      </td>
+	                      <td class="align-left pl0">
+	                          <div class="fl-l ml20">
+	                              할인쿠폰<br>
+	                              샌들 5천원 플러스쿠폰<br>
+	                              
+	                              
+	                                  
+	                                  
+	                                      <span class="fc_type2">상품 : 30,000원 이상 사용가능</span>
+	                                  
+	                                  
+	                              
+	                              
+	                               <p class="fc_type5">(일부 브랜드 및 일부 상품에 적용 불가)</p>
+	                              
+	                              
+	                              
+	                              
+	                                  <p class="mt5 list_type3 viewApplicable" data-cpn-id="1000002042" style="cursor: pointer;">적용대상보기 :
+	                                      
+	                                          476개
+	                                      
+	                                      
+	                                      
+	                                      상품
+	                                  </p>
+	                               
+	                                                                     
+	                          </div>
+	                      </td>
+	                      <td>
+	                          <span class="bold tit_type3 fs12 fc_type8">
+	                              5,000
+	                          </span><span class="bold">원</span>
+	                          
+	                                  <span class="fc_type5"><br>최대 35%이내<br>적용가능</span>
+	                          
+	                      </td>
+	                      <td>사용가능</td>
+	                      <td class="tit_type3">
+	                          
+	                               2019.05.24 00:00
+	                               
+	                              
+	                          ~
+	                          2019.06.13 23:59
+	                          <br>
+	                          
+	                          
+	                                   (21일)
+	                              
+	                      </td>
+	                      <td>
+	                          온라인/<br>모바일
+	                          
+	                      </td>
+	                  </tr>
+	              
+
                     </tbody>
                 </table>
             </div>
             <p class="paginate mt20">
-                
-
-
-
-
-    
-    
-        
-        
             <a href="javascript://" class="selected on">1</a>
-        
-    
-    
-
             </p>
         </div>
         <!-- //테이블 -->
@@ -683,69 +453,6 @@
     </div>
 
     
-        
-        
-    
-
-
-
-
-<script type="text/javascript">
-jQuery(function($){
-    
-	//레이어 팝업 닫기 클릭시 쿠폰번호삭제
-    $(".couponCancle").on("click", function(){
-        $("#cpnUserNum").val("");
-    });
-    
-    $('form#registerCouponForm').submit(function(){
-        var cpnUserNum = $.trim($("input[name='cpnUserNum']").val());
-        
-        if(isEmpty(cpnUserNum)) {
-            alert("쿠폰번호를 입력하셔야 합니다.");
-            $("input[name='cpnUserNum']").focus();
-            return false;
-        }
-        
-        var pattern = /[\W]/g;
-        
-        if(pattern.test(cpnUserNum)){
-            alert("특수문자는 입력할 수 없습니다.");
-            $("input[name='cpnUserNum']").focus();
-            return false;
-        }
-        
-        $.ajax({
-            type: "POST"
-            ,url: "/abc/promotion/eventCouponSave"
-            ,data: {cpnUserNum : cpnUserNum}
-            ,dataType: "json"
-            ,success : function(data) {
-                if(data.success){ 
-                      alert("쿠폰이 등록되었습니다.");
-                
-                      if("true"){
-                          $(".pop_x").click();
-                      }else{
-                          window.close();
-                          opener.location.reload();
-                      }
-                 }else{
-                    alert(data.errorMessages[0]);
-                    $("input[name='cpnUserNum']").focus();
-                    return false;
-                 }
-            }
-            ,error: function(data) {
-                alert('시스템 오류가 발생 했습니다. 관리자에게 문의하세요.');
-            }
-        }); 
-        return false;
-    });
-});
-
-</script>
-
 
 
      <!-- 쿠폰등록 -->
