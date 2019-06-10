@@ -519,8 +519,8 @@
 </footer>
 </body>
 <script type="text/javascript" src="../js/quickBar.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript" src="../js/mainFooter.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript" src="../js/myPage/myCoupon.js"></script>
 </html>
         
