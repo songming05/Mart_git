@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*, java.text.*"  %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("MMddHHmm");
 String splitNext = formatter.format(new java.util.Date()).substring(0, 4);

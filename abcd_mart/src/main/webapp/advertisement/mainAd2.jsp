@@ -1,26 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>2019 상반기 베스트 아이템</title>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css" />
+<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.min.js' /></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.4.0.min.js"></script>
+<link rel="stylesheet" href="../css/quickBar.css"/>
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/header.css"/>
-<link rel="shortcut icon" type="image⁄x-icon" href="../image/mainLogo/ABCD.png">
-
-<link rel="stylesheet" href="../css/advertise/adPage.css"/>
-<!-- quickBar -->
-<link rel="stylesheet" href="../css/quickBar.css"/>	
-<!-- footer-->
 <link rel="stylesheet" href="../css/mainFooter.css"/>
-
-
+<link rel="stylesheet" href="../css/advertise/adPage.css"/>
+<link rel="shortcut icon" type="image⁄x-icon" href="../image/mainLogo/ABCD.png">
 </head>
-<body>
+<body>	
 <header>
 <jsp:include page="../template/header.jsp"/>
-
 </header>
 <jsp:include page="../template/quickBarOther.jsp"/>
 
@@ -1791,14 +1791,13 @@
             
             <div id="productOptionArea" class="pop_wrap" style="width:370px;"></div>
         </div>
-     <jsp:include page="../template/mainFooter.jsp"/>
-      </body>
-      <!-- quickBar -->
+	<footer>
+	<jsp:include page="../template/mainFooter.jsp"/>
+	</footer>
+</body>
 <script type="text/javascript" src="../js/quickBar.js"></script>  
-<!-- footer -->
-<script type="text/javascript" src="../js/mainFooter.js"></script> 
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.4.0.min.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/mainFooter.js"></script> 
 <script type="text/javascript" src="../js/advertise/adPage.js"></script>
 </html>
       

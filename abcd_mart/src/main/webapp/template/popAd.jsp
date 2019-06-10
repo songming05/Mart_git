@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="mLayerNew" id="226New" style="top: 220px; left: 100px; position: absolute; z-index: 10000; width: 400px; height: 360px;">
     	<div class="swiper-container swiper-container1 swiperNew">
     		<ul class="swiper-wrapper swiper-wrapper1" id="mLayerNewCont">

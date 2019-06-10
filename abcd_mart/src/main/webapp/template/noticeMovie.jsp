@@ -5,19 +5,19 @@
             <div class="etc-box-left">
                 <ul class="guide-link-list">
                     <li>
-                        <a href="">
+                        <a href="/abcd_mart/service/serviceMain">
                             <div class="ico-box"><img src="../image/mainFooter/mob.gif" alt=""></div>
                             <span class="txt">모바일 이용 안내</span>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="/abcd_mart/service/serviceMain">
                             <div class="ico-box"><img src="../image/mainFooter/membership.gif" alt=""></div>
                             <span class="txt">멤버쉽 혜택 안내</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/abc/customer/faqList?parentDepth=0004">
+                        <a href="/abcd_mart/service/faqList?category=repair">
                             <div class="ico-box"><img src="../image/mainFooter/faqAS.gif" alt=""></div>
                             <span class="txt">FAQ AS 안내</span>
                         </a>
