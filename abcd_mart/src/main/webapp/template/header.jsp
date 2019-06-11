@@ -80,38 +80,38 @@
 			<tr>
 				<td>
 					<ul>
-						<li id="shoesKinds">운동화</li>
-						<li>컨버스화</li>
-						<li>슬립온</li>
-						<li>스니커즈</li>
+						<li id="shoesKinds"><a href="/abcd_mart/category/categoryPage?category=sportsShoes">운동화</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=sportsShoes&category2=converse">컨버스화</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=sportsShoes&category2=slipon">슬립온</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=sportsShoes&category2=sneakers">스니커즈</a></li>
 					</ul>
 				</td>
 				<td>
 					<ul>
-						<li id="shoesKinds">구두</li>
-						<li>옥스포드</li>
-						<li>로퍼</li>
-						<li>데크슈즈</li>
-						<li>플랫</li>
-						<li>힐</li>
+						<li id="shoesKinds"><a href="/abcd_mart/category/categoryPage?category=shoes">구두</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=shoes&category2=oxford">옥스포드</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=shoes&category2=loafers">로퍼</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=shoes&category2=deckshoes">데크슈즈</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=shoes&category2=flat">플랫</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=shoes&category2=heel">힐</a></li>
 					</ul>
 				</td>
 				<td>
 					<ul>
-						<li id="shoesKinds">샌들</li>
-						<li>플립플랍</li>
-						<li>슬라이드</li>
-						<li>스크랩샌들</li>
+						<li id="shoesKinds"><a href="/abcd_mart/category/categoryPage?category=sandal">샌들</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=sandal&category2=flipflop">플립플랍</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=sandal&category2=slide">슬라이드</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=sandal&category2=strapsandal">스크랩샌들</a></li>
 					</ul>
 				</td>
 				<td>
 					<ul>
-						<li id="shoesKinds">부츠</li>
-						<li>워크부츠</li>
-						<li>앵클.부티</li>
-						<li>레인부츠</li>
-						<li>털부츠</li>
-						<li>패딩부츠</li>
+						<li id="shoesKinds"><a href="/abcd_mart/category/categoryPage?category=boots">부츠</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=boots&category2=workboots">워크부츠</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=boots&category2=anchorbooty">앵클.부티</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=boots&category2=rainboots">레인부츠</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=boots&category2=boots">털부츠</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=boots&category2=paddingboots">패딩부츠</a></li>
 					</ul>
 				</td>
 				<td id="categoryAd">
@@ -136,9 +136,9 @@
 				</td>
 				<td>
 					<ul>
-						<li>컨버스화</li>
-						<li>슬립온</li>
-						<li>스니커즈</li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=sportsShoes&category2=converse">컨버스화</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=sportsShoes&category2=slipon">슬립온</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=sportsShoes&category2=sneakers">스니커즈</a></li>
 					</ul>
 				</td>
 			</tr>
@@ -158,11 +158,11 @@
 				</td>
 				<td>
 					<ul>
-						<li>옥스포드</li>
-						<li>로퍼</li>
-						<li>데크슈즈</li>
-						<li>플랫</li>
-						<li>힐</li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=shoes&category2=oxford">옥스포드</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=shoes&category2=loafers">로퍼</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=shoes&category2=deckshoes">데크슈즈</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=shoes&category2=flat">플랫</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=shoes&category2=heel">힐</a></li>
 					</ul>
 				</td>
 			</tr>
@@ -177,14 +177,14 @@
 			<tr>
 				<td>
 					<ul>
-						<li id="shoesKinds">구두</li>
+						<li id="shoesKinds">샌들</li>
 					</ul>
 				</td>
 				<td>
 					<ul>
-						<li>플립플랍</li>
-						<li>슬라이드</li>
-						<li>스크랩샌들</li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=sandal&category2=flipflop">플립플랍</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=sandal&category2=slide">슬라이드</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=sandal&category2=strapsandal">스크랩샌들</a></li>
 					</ul>
 				</td>
 			</tr>
@@ -204,11 +204,11 @@
 				</td>
 				<td>
 					<ul>
-						<li>워크부츠</li>
-						<li>앵클.부티</li>
-						<li>레인부츠</li>
-						<li>털부츠</li>
-						<li>패딩부츠</li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=boots&category2=workboots">워크부츠</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=boots&category2=anchorbooty">앵클.부티</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=boots&category2=rainboots">레인부츠</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=boots&category2=boots">털부츠</a></li>
+						<li><a href="/abcd_mart/category/categoryPage2?category1=boots&category2=paddingboots">패딩부츠</a></li>
 					</ul>
 				</td>
 			</tr>
