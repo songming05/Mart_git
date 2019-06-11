@@ -17,7 +17,7 @@ $('#prdtManagementForm_Btn').click(function(){
 				$('<tr/>').append($('<td/>',{
 					align : 'center',
 					html : '<a href="/abcd_mart/admin/managementModify?prdtCode='+items.prdtCode
-							+'"	onclick="window.open(this.href, \'재고변경\',\'width=510, height=620\');return false;" target=\'_blank\'>'
+							+'"	onclick="window.open(this.href, \'재고변경\',\'width=430, height=620\');return false;" target=\'_blank\'>'
 							+items.prdtCode+'</a>'
 
 				})).append($('<td/>',{

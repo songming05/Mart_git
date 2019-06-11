@@ -143,6 +143,21 @@ public class AdminController {
 	}
 	
 	
+	@RequestMapping(value="/admin/managementModifyForm", method=RequestMethod.GET)
+	public ModelAndView managementModifyForm(@RequestParam String prdtCode) { //2개 담김
+		
+		List<PrdtManagementDTO> list = adminDAO.managementModify(prdtCode);
+		
+		if(list==null) {
+			list = new ArrayList<PrdtManagementDTO>();
+		}
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("list",list);
+		mav.setViewName("/admin/managementModifyForm");
+		return mav;
+	}
+	
 	@RequestMapping(value="/admin/managementModify", method=RequestMethod.GET)
 	public ModelAndView managementModify(@RequestParam String prdtCode) { //2개 담김
 		
