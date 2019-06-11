@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/header.css"/>
 <link rel="stylesheet" href="../css/mainFooter.css"/>
+<!-- <link rel="stylesheet" href="../css/category/category.css"/> -->
 
 <link rel="stylesheet" href="../css/search/search.css">
 </head>
@@ -58,7 +59,7 @@
 			<ul class="gallery_basic gallery_box_type1 w150">
 				<li style="margin-left:50px;">							
 				<div class="model_img_box" mode="1"> 
-			    	<img src="../image/page/product/${data.prdtCode }/${data.prdtImage1 }" alt="${data.prdtMiniName }" onerror="imageError(this)">
+			    	<img src="../image/page/product/${data.prdtCode }/${data.prdtImage1 }" alt="${data.prdtMiniName }"  onerror="imageError(this)">
 			        <a href="../product/detail?prdtCode=${data.prdtCode }" class="over_link" style="display: block;"></a>
 			        <div class="over_view" style="display: none;">
 			            <ul>
@@ -77,9 +78,14 @@
 				</a>
 				
 				<div class="size_view_box">
-				    <a href="javascript://" class="btn_size"><img src="http://image.abcmart.co.kr/nexti/images/abcmart_new/btn_size.gif"></a>
-				    <ul class="size_list" prdtcode="${data.prdtCode }"></ul>
+				
+				
+				    <%-- <a href="javascript://" class="btn_size"><img src="../image/category/category_image01.png" class="sizelist"></a> --%>
+				    <input type="hidden" class="hidden_prdtcode" value="${data.prdtCode }"/>
+				    
 				</div>
+				<img src="../image/category/category_image01.png" class="sizelist" style="width: 77px; height: 16px; display: block; margin: 0px auto;"/>
+				<input type="hidden" class="hidden_prdtcode" value="${data.prdtCode }"/>
 				</li>
 			</ul>
 			</c:forEach>
@@ -95,8 +101,15 @@
 		</div>
 	</div>
 </div>
-</div>            
-            
+</div>
+
+<div class="sizelist_div">
+	<table class="table_qty" style="font-size:12px; font-weight:bold;">
+		<tbody class="sizelist_tbody">
+		</tbody>
+	</table>
+</div>    
+         
 
 <footer>
 <jsp:include page="../template/mainFooter.jsp"/>
@@ -107,5 +120,6 @@
 <script type="text/javascript" src="../js/quickBar.js"></script>
 <script type="text/javascript" src="../js/main.js"></script>
 <script type="text/javascript" src="../js/mainFooter.js"></script>
+<script type="text/javascript" src="../js/category/category2.js"></script>
 
 </html>
