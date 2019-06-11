@@ -26,8 +26,8 @@ public interface AdminDAO {
 
 	public List<StatsPrdtDTO> statsPrdt(Map<String, String> map);
 
-	public void returnChange(Map<String, String> map);
-
 	public List<StatsPrdtDTO> couponList(Map<String, String> map);
+
+	public void returnChange(Map<String, String> map);
 
 }

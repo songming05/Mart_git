@@ -48,7 +48,6 @@
 		
 		
 		<ul id="main_center_rightUl">
-			<li>👍TOP30</li>
 			<li><a href="../advertisement/mainAd2">📢기획전·이벤트</a></li>
 		</ul>
 	</div>
