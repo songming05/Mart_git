@@ -21,9 +21,12 @@ public class CategoryController {
 	@RequestMapping(value="/category/categoryPage", method=RequestMethod.GET)
 	public ModelAndView categoryPage(@RequestParam String category) {
 		List<PrdtManagementDTO> hotList = categoryDAO.getSoldqty(category);
+		System.out.println(hotList);
 		
 		List<PrdtManagementDTO> shoesList = categoryDAO.getShoesList(category);
 		int shoesListSize = shoesList.size();
+		
+		System.out.println("슈즈리스트: "+shoesList);
 		
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("category", category);

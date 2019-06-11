@@ -3,9 +3,13 @@ package admin.bean;
 import org.springframework.stereotype.Component;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+
 @Component
+@Setter
+@Getter
 public class PrdtManagementDTO {
 	
 	private String prdtCode;

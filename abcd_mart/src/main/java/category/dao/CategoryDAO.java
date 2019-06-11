@@ -6,9 +6,9 @@ import admin.bean.PrdtManagementDTO;
 
 public interface CategoryDAO {
 
-	List<PrdtManagementDTO> getSize(String prdtcode);
-	List<PrdtManagementDTO> getSoldqty(String category);
-	List<PrdtManagementDTO> getShoesList(String category);
-	List<PrdtManagementDTO> getShoesList2(String category2);
+	public List<PrdtManagementDTO> getSize(String prdtcode);
+	public List<PrdtManagementDTO> getSoldqty(String category);
+	public List<PrdtManagementDTO> getShoesList(String category);
+	public List<PrdtManagementDTO> getShoesList2(String category2);
 
 }

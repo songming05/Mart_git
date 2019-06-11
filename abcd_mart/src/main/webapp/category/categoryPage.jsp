@@ -138,7 +138,7 @@
 				<tr>
 					<c:forEach var="hotlist" items="${hotList }" varStatus="status" begin="0" end="3">
 						<td class="themeshop_table_td" style="background-color: #e4e4e4; width: 220px; padding: 10px 0px;">
-							<img src="../image/page/product/${hotlist.prdtCode }/${hotlist.prdtCode }_title.jpg" class="themeshop_image01"/>
+							<a href="/abcd_mart/product/detail?prdtCode=${hotlist.prdtCode }"><img src="../image/page/product/${hotlist.prdtCode }/${hotlist.prdtCode }_title.jpg" class="themeshop_image01"/></a>
 							<p class="category_table_brand_01" style="font-size: 10px; font-weight: bold; color: black;">${hotlist.prdtBrand }</p>
 							<p class="category_table_name_01" style="font-size: 10px; font-weight: normal;">${hotlist.prdtMiniName }</p>
 							<p class="category_table_price_01" style="font-size: 10px; font-weight: bold; color: black;">
@@ -162,7 +162,7 @@
 						<tr>
 					</c:if>
 					<td class="best_table_td" style="width: 250px; padding: 10px 0px;">
-						<img src="../image/page/product/${shoeslist.prdtCode }/${shoeslist.prdtCode }_title.jpg" class="best_image01" style="display: block; margin: 0px auto; cursor: pointer;"/>
+						<a href="/abcd_mart/product/detail?prdtCode=${shoeslist.prdtCode }"><img src="../image/page/product/${shoeslist.prdtCode }/${shoeslist.prdtCode }_title.jpg" class="best_image01" style="display: block; margin: 0px auto; cursor: pointer;"/></a>
 						<p class="best_table_brand_01" style="font-size: 10px; font-weight: bold; color: black;">${shoeslist.prdtBrand }</p>
 						<p class="best_table_name_01" style="font-size: 10px; font-weight: normal;">${shoeslist.prdtMiniName }</p>
 						<p class="best_table_price_01" style="font-size: 10px; font-weight: bold; color: black;">
