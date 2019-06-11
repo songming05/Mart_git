@@ -19,6 +19,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
      	<typeAlias type="admin.bean.StatsSalesDTO" alias="salesDTO"/>
      	<typeAlias type="admin.bean.StatsPrdtDTO" alias="prdtDTO"/>
      	<typeAlias type="admin.bean.CouponListDTO" alias="couponListDTO"/>
+     	<typeAlias type="admin.bean.ProductDTO" alias="productDTO"/>
      	
 	</typeAliases>
 </configuration>

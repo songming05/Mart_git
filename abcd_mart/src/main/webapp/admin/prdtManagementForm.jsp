@@ -13,9 +13,6 @@
 						<select id="prdtSelect" name="prdtSelect" class="form-control input-sm" >
 							<option value='prdtBrand'>브랜드</option>
 							<option value='prdtCode'>품목(상품코드)</option>
-							<option value='prdtColor'>색상</option>
-							<option value='prdtGender'>성별</option>
-							<option value='prdtSize'>사이즈</option>
 							
 						</select>
 					</div>
@@ -39,12 +36,11 @@
 	<table class="prdtManagementForm basicTable2" id="basicTable2" border="1" cellpadding="3" frame="hsides" rules="none">
 		<tr>
 			<th width="150px" height="80px">상품코드</th>
-			<th width="100px" >수량</th>
 			<th width="300px">브랜드명</th>
 			<th width="150px">색상</th>
 			<th width="150px">상품성별</th>
 			<th width="200px">가격</th>
-			<th width="150px">신발사이즈</th>
+
 		</tr>
 		<tbody id="table2Tbody"></tbody>
 	</table>

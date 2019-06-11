@@ -130,7 +130,7 @@ public class AdminController {
 	
 	@RequestMapping(value="/admin/prdtManagement", method=RequestMethod.POST)
 	public ModelAndView prdtManagement(@RequestParam Map<String,String> map) { //2개 담김
-		System.out.println("map"+map.get("prdtResult"));
+		
 		List<PrdtManagementDTO> list = adminDAO.prdtManagement(map);
 		if(list==null) {
 			list = new ArrayList<PrdtManagementDTO>();
@@ -140,6 +140,24 @@ public class AdminController {
 		mav.addObject("list",list);
 		return mav;
 	}
+	
+	
+	@RequestMapping(value="/admin/managementModify", method=RequestMethod.GET)
+	public ModelAndView managementModify(@RequestParam String prdtCode) { //2개 담김
+		
+		List<PrdtManagementDTO> list = adminDAO.managementModify(prdtCode);
+		
+		if(list==null) {
+			list = new ArrayList<PrdtManagementDTO>();
+		}
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("list",list);
+		mav.setViewName("/admin/managementModify");
+		return mav;
+	}
+	
+	
 	
 	//그안에 수량변경버튼
 	@ResponseBody

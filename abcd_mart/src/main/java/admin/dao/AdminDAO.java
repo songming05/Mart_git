@@ -30,4 +30,6 @@ public interface AdminDAO {
 
 	public void returnChange(Map<String, String> map);
 
+	public List<PrdtManagementDTO> managementModify(String prdtCode);
+
 }

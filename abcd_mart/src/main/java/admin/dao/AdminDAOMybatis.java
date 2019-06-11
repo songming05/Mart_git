@@ -72,6 +72,12 @@ public class AdminDAOMybatis implements AdminDAO {
 		return sqlSession.selectList("adminSQL.couponList",map);
 	}
 
+	//새창띄우기
+	@Override
+	public List<PrdtManagementDTO> managementModify(String prdtCode) {
+		return sqlSession.selectList("adminSQL.managementModify", prdtCode);
+	}
+
 	
 
 }

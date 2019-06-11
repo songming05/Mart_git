@@ -16,10 +16,10 @@ $('#prdtManagementForm_Btn').click(function(){
 			$.each(data.list , function(index, items){
 				$('<tr/>').append($('<td/>',{
 					align : 'center',
-					text : items.prdtCode
-				})).append($('<td/>',{
-					align : 'center',
-					text : items.prdtQty
+					html : '<a href="/abcd_mart/admin/managementModify?prdtCode='+items.prdtCode
+							+'"	onclick="window.open(this.href, \'재고변경\',\'width=510, height=620\');return false;" target=\'_blank\'>'
+							+items.prdtCode+'</a>'
+
 				})).append($('<td/>',{
 					align : 'center',
 					text : items.prdtBrand
@@ -32,9 +32,6 @@ $('#prdtManagementForm_Btn').click(function(){
 				})).append($('<td/>',{
 					align : 'center',
 					text : items.prdtPrice
-				})).append($('<td/>',{
-					align : 'center',
-					text : items.prdtSize
 				})).appendTo($('#table2Tbody'));
 				
 			});//each
