@@ -104,8 +104,8 @@ $(function() {
 <!-- //고객 정보 -->
 <input type="hidden" id="userId" name="id" value="admin">
 
-<article class="mt25">
-<section class="my_lnb">
+<!-- <article class="mt25"> -->
+<!-- <section class="my_lnb">
     <ul>
         <li class="tit">쇼핑내역
             <ul>
@@ -180,7 +180,7 @@ $(function() {
             </li>
         
     </ul>
-</section>
+</section> -->
 
 <section class="my_cont order_basketCont">                                
 <section id="scrollPosition" class="my_cont order_basketCont">
@@ -360,7 +360,7 @@ $(function() {
     </div>
 </section>
 </section>
-</article>
+<!-- </article> -->
 
 
 </body>
