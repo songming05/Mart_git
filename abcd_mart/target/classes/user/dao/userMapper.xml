@@ -58,5 +58,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from mypage where id=#{id} and coupon_check='사용가능'
 	</select>
 	
+	<update id="updateUserInfo" parameterType="map">
+		update userinfo set email=#{email}, phone=#{phone}, address=#{address} where id=#{memId}
+	</update>
+	
 
 </mapper>

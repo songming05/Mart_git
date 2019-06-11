@@ -181,6 +181,52 @@ public class UserController {
 		userDAO.pwdReset(map);
 	}
 	
+	//개인정보 수정 전 비밀번호 일치여부 확인
+	@RequestMapping(value = "/myPageLogin", method = RequestMethod.POST)
+	@ResponseBody
+	public String myPageLogin(@RequestParam Map<String, String> map, HttpSession session) {
+		String loginResult="";
+		String id = (String) session.getAttribute("memId");
+		if(id==null) id="null";
+		map.put("id", id);
+		UserDTO userDTO = userDAO.getUserInfo(map);
+		if(passwordEncoder.matches(map.get("password"), userDTO.getPassword())) {
+			loginResult="loginOk";
+		} else {
+			loginResult="loginFail";
+		}
+		return loginResult;
+	}
+	
+	//수정 결과
+	@RequestMapping(value ="/userInfoUpdate", method = RequestMethod.POST) 
+	public ModelAndView userInfoUpdate(@RequestParam String userMailAddress1, String mailDomain, 
+			String handphoneNumber1, String handphoneNumber2, String handphoneNumber3, 
+			String mainAddrPostNum, String mainAddr, String mainAddrDetail, HttpSession session) {
+		
+			Map<String,String> userUpdateMap = new HashMap<String,String>();
+			String email =  userMailAddress1.concat("@"+mailDomain);
+			String phone = handphoneNumber1.concat(handphoneNumber2).concat(handphoneNumber3);
+			String address = mainAddrPostNum.concat(mainAddr).concat(mainAddrDetail);
+					
+			userUpdateMap.put("email", email);
+			userUpdateMap.put("phone", phone);
+			userUpdateMap.put("address", address);
+			userUpdateMap.put("memId", (String) session.getAttribute("memId"));
+			
+			 userDAO.updateUserInfo(userUpdateMap);
+			 ModelAndView modelAndView = new ModelAndView();
+			 
+			 modelAndView.setViewName("/mypage/viewMyInfo");
+		
+			 return modelAndView;
+	}
+	
+	
+	
+	
+	
+	
 	
 	@RequestMapping(value ="/myCouponList", method = RequestMethod.POST)
 	public ModelAndView myCouponList(HttpSession session) {

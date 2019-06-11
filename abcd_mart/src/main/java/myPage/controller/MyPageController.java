@@ -17,7 +17,8 @@ import user.dao.UserDAO;
 @Controller
 public class MyPageController {
 	@Autowired
-	UserDAO userDAO;
+	private UserDAO userDAO;
+	
 	
 	@RequestMapping(value = "/mypage/myPage", method = RequestMethod.GET)
 	public String myPage(Model model, HttpSession session ) {
@@ -122,6 +123,25 @@ public class MyPageController {
 	@RequestMapping(value = "/mypage/myAsPage5", method = RequestMethod.GET)
 	public String myAsPage5(Model model) {
 		return "/mypage/myAsPage5";
+	}
+	
+	@RequestMapping(value = "/mypage/viewMyInfo", method = {RequestMethod.GET, RequestMethod.POST})
+	public String viewMyInfo(HttpSession session, Model model) {
+		String memEmail = (String)session.getAttribute("memEmail");
+		String memPhone = (String)session.getAttribute("memPhone");
+		
+		String email[] = memEmail.split("@");
+		String headPhone = memPhone.substring(0, 3);
+		String middlePhone = memPhone.substring(3, 7);
+		String endPhone = memPhone.substring(7, 11);
+		
+		model.addAttribute("firstEmail", email[0]);
+		model.addAttribute("secondEmail", email[1]);
+		model.addAttribute("headPhone", headPhone);
+		model.addAttribute("middlePhone", middlePhone);
+		model.addAttribute("endPhone", endPhone);
+		
+		return "/mypage/viewMyInfo";
 	}
 	
 }
