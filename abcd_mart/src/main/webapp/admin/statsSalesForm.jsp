@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <h3 style="margin-left:400px">매출 통계</h3>
-			<form id="orderPaymentForm" action="/abcd_mart/admin/orderPayment" method="post">
+	
 				<table class="orderDepositForm basicTable" border="1" cellpadding="3" frame="hsides" rules="none">
 
 				<tbody>
@@ -21,47 +21,32 @@
 						<input type="radio"  name="newSales" value="newSales">신상품순&ensp; 
 					</td>
 				</tr>
-				<tr>
-					<th align="center" height="70px">검색어</th>
-					<td width="700px">
-					<div class="col-xs-3">
-						<select id="orderSelect" name="orderSelect" class="form-control input-sm" >
-							<option value='orderId'>대분류</option>
-							<option value='orderPdt'>소분류</option>
-
-						</select>
-					</div>
-					
-					<div class="col-xs-3">
-						<input type="text" class="form-control input-sm" id="orderResult">
-					</div>
-					</td>
-				</tr>
 				
 			</tbody>
 		</table>
-	</form>
+
 	
 	<div style="margin-left:400px; margin-bottom:50px">
 	<br>
-		<button type="button" class="btn btn-dark bg-red" id="orderPayment_Btn">검  색</button>
+		<button type="button" class="btn btn-dark bg-red" id="statsSales_Btn">검  색</button>
 
 	</div>
 	
 	<table class="orderDepositForm basicTable2" id="basicTable2" border="1" cellpadding="3" frame="hsides" rules="none">
 		<tr>
-			<th width="150px" height="80px">주문번호</th>
-			<th width="150px" >결제일</th>
-			<th width="150px">아이디</th>
-			<th width="200px">품목(상품코드)</th>
-			<th width="100px">사이즈</th>
-			<th width="200px">가격</th>
-			<th width="250px">결제방법</th>
-			<th width="200px">배송비</th>
+			<th width="150px" height="80px">상품코드</th>
+			<th width="150px" >상품명</th>
+			<th width="150px">브랜드명</th>
+			<th width="150px">사이즈</th>
+			<th width="200px">총금액</th>
+			<th width="100px">남은 재고</th>
+			<th width="100px">팔린 수</th>
 		</tr>
 		<tbody id="table2Tbody"></tbody>
 	</table>
-
+	
+	<div id="statsSalesDiv" style="margin-top:50px; text-align:center;">
+	</div>
 	
 
 <!-- 데이터피커 -->

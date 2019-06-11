@@ -54,7 +54,7 @@ $('#orderPayment_Btn').click(function(){
 				'orderResult' : $('#orderResult').val()	},
 		dataType : 'json',
 		success : function(data){
-			alert(JSON.stringify(data));	
+			//alert(JSON.stringify(data));	
 			$( '#table2Tbody').empty();
 			
 			$.each(data.list, function(index, items){
@@ -69,7 +69,7 @@ $('#orderPayment_Btn').click(function(){
 				text :  items.orderId
 			})).append($('<td/>',{
 				align : 'center',
-				text : items.orderPrdt
+				text : items.prdtCode
 			})).append($('<td/>',{
 				align : 'center',
 				text : items.orderSize
@@ -177,16 +177,17 @@ $('#orderReturn_Btn').click(function(){
 		data : $('#orderReturnForm').serialize(),
 		dataType:'json',
 		success : function(data){
-			console.log(data);
-			console.log(data.list);
 
-			alert(JSON.stringify(data));
+			//alert(JSON.stringify(data));
 			$( '#table2Tbody').empty();
 			
 			$.each(data.list, function(index, items){
 			$('<tr/>').append($('<td/>',{
 				align : 'center',
-				text : items.orderDate
+				text : items.returnNum
+			})).append($('<td/>',{
+				align : 'center',
+				text :  items.returnDate
 			})).append($('<td/>',{
 				align : 'center',
 				text :  items.returnDate
@@ -201,7 +202,7 @@ $('#orderReturn_Btn').click(function(){
 				text : items.returnQty
 			})).append($('<td/>',{
 				align : 'center',
-				text : items.returnPrice
+				text : items.returnPrice+'원'
 			})).append($('<td/>',{
 				align : 'center',
 				text : items.returnSts
@@ -218,6 +219,26 @@ $('#orderReturn_Btn').click(function(){
 //반품상태변경하기
 $('#orderReturnForm_Btn').click(function(){
 	$('#changeTable2').css('display','block');
+});
+
+//반품상태변경+2
+$('#returnChange_Btn').click(function(){
+	$.ajax({
+		type:'post',
+		url : '/abcd_mart/admin/returnChange',
+		data : { returnSts : $('#returnSts').val() ,
+				 returnNum : $('#returnNum').val() },
+		dataType:'json',
+		success : function(data){
+			swal({
+				title: "반품상태",
+				text: "변경성공"
+			}).then((value) => {
+				if('${value}') ;
+			});
+		}//success
+	});
+	
 });
 
 
@@ -245,6 +266,148 @@ $('#orderForm_Btn').click(function(){
 	});
 });
 
+
+
+///매출통계
+$('#statsSales_Btn').click(function(){
+	var total = 0;
+	
+	$.ajax({
+		
+		type:'post',
+		url:'/abcd_mart/admin/statsSales',
+		data : {'fromDate' : $('#fromDate').val() ,
+				'toDate' : $('#toDate').val()	},
+		dataType : 'json',
+		success : function(data){
+			//alert(JSON.stringify(data));
+			
+			
+			
+			$( '#table2Tbody').empty();
+			
+			$.each(data.list, function(index, items){
+				
+				$('<tr/>').append($('<td/>',{
+					align : 'center',
+					text : items.prdtCode
+				})).append($('<td/>',{
+					align : 'center',
+					text : items.prdtMiniName 
+				})).append($('<td/>',{
+					align : 'center',
+					text :  items.prdtBrand
+				})).append($('<td/>',{
+					align : 'center',
+					text : items.prdtSize
+				})).append($('<td/>',{
+					align : 'center',
+					text : items.sumTotal+'원'
+				})).append($('<td/>',{
+					align : 'center',
+					text : items.prdtQty
+				})).append($('<td/>',{
+					align : 'center',
+					text : items.soldQty
+				})).appendTo($('#table2Tbody'));
+			
+				total = total + items.sumTotal;
+				//alert(total);
+
+				}); //each
+				
+				
+				$('#statsSalesDiv').text('총 합계 : '+total+'원');
+			}
+			
+				
+				
+				
+	});
+});
+
+
+///상품통계
+$('#statsPrdt_Btn').click(function(){
+	$.ajax({
+		
+		type:'post',
+		url:'/abcd_mart/admin/statsPrdt',
+		data : {'fromDate' : $('#fromDate').val() ,
+				'toDate' : $('#toDate').val()	},
+		dataType : 'json',
+		success : function(data){
+			//alert(JSON.stringify(data));
+			
+			
+			$( '#table2Tbody').empty();
+			
+			$.each(data.list, function(index, items){
+				$('<tr/>').append($('<td/>',{
+					align : 'center',
+					text : items.prdtCode
+				})).append($('<td/>',{
+					align : 'center',
+					text : items.prdtMiniName 
+				})).append($('<td/>',{
+					align : 'center',
+					text :  items.prdtBrand
+				})).append($('<td/>',{
+					align : 'center',
+					text : items.prdtSize
+				})).append($('<td/>',{
+					align : 'center',
+					text : items.prdtPrice
+				})).append($('<td/>',{
+					align : 'center',
+					text : items.soldQty
+				})).appendTo($('#table2Tbody'));
+			
+				}); //each
+
+			}				
+	});
+});
+
+//쿠폰리스트버튼
+$('#couponlistForm_Btn').click(function(){
+	$.ajax({
+		type:'post',
+		url:'/abcd_mart/admin/couponList',
+		data : {'couponSelect' : $('#couponSelect').val(),
+				'couponResult' : $('#couponResult').val()	},
+		dataType : 'json',
+		success : function(data){
+			//alert(JSON.stringify(data));	
+			$( '#table2Tbody').empty();
+			
+			$.each(data.list, function(index, items){
+			$('<tr/>').append($('<td/>',{
+				align : 'center',
+				text : items.id
+			})).append($('<td/>',{
+				align : 'center',
+				text : items.coupon_seq
+			})).append($('<td/>',{
+				align : 'center',
+				text : items.coupon_name
+			})).append($('<td/>',{
+				align : 'center',
+				text : items.coupon_price
+			})).append($('<td/>',{
+				align : 'center',
+				text : items.coupon_end
+			})).append($('<td/>',{
+				align : 'center', 
+				text : items.coupon_check
+			})).appendTo($('#table2Tbody'));
+		
+			}); //each
+			
+			
+			}
+	});
+});
 
 
 

@@ -46,7 +46,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			</if>
 	</select>
 	
-	
+
 	<update id="prdtChange" parameterType="map">	
 		update prdtManagement
 			set prdtQty = #{changeQty}
@@ -55,6 +55,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			    and
 			    	 prdtSize = #{changeSize}
 	</update>
+	
+	
+	<!-- 반품 -->
 	
 	<select id="orderReturn" parameterType="map" resultType="returnDTO">	
 		select * from 
@@ -67,10 +70,61 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			 	returnDate = #{returnDate}
 			 </if>
 
-			 <if test="returnResult!=''">			 
-			 and
-				 ${returnSelect} = #{returnResult} 
+	</select>
+
+	<update id="returnChange" parameterType="map">	
+		update returnInfo set returnSts = #{returnSts} where returnNum = #{returnNum}
+
+	</update>
+	
+	<select id="statsSales" parameterType="map" resultType="salesDTO">
+		
+		select distinct prdtcode,prdtsize, orderdate, prdtmininame , prdtbrand ,soldqty ,prdtqty ,prdtprice, (soldqty*prdtprice) as sumTotal
+			from prdtmanagement 
+			join paymentinfo using(prdtcode)
+		where soldqty <![CDATA[>]]> 0 
+		
+		and
+		    orderdate <![CDATA[>=]]>  #{fromDate} 
+			
+			 and 
+			
+			 orderdate <![CDATA[<=]]> #{toDate}
+			
+		
+		order by soldqty desc
+	
+	</select>
+	
+	
+	<select id="statsPrdt" parameterType="map" resultType="prdtDTO">
+		
+		select distinct prdtcode,prdtsize, orderdate, prdtmininame , prdtbrand ,soldqty ,prdtqty ,prdtprice, (soldqty*prdtprice) as sum
+		from prdtmanagement 
+		join paymentinfo using(prdtcode)
+		where  soldqty  <![CDATA[>]]> 0 
+		
+		and
+		    orderdate <![CDATA[>=]]>  #{fromDate} 
+			
+			 and 
+			
+			 orderdate <![CDATA[<=]]> #{toDate}
+			
+		
+		order by soldqty desc
+	</select>
+	
+	
+	
+	<select id="couponList" parameterType="map" resultType="couponListDTO">
+		
+		select * from mypage
+			<if test="couponResult!=''">
+			where ${couponSelect} = #{couponResult}
 			</if>
 	</select>
+	
+	
 	
 </mapper>

@@ -23,5 +23,8 @@ public interface UserDAO {
 	public void pwdReset(Map<String, String> map);
 
 	public List<MyPageDTO> getMyPageList(String id);
+	
+	public void updateUserInfo(Map<String, String> userUpdateMap);
+
 
 }

@@ -78,10 +78,10 @@
 								</tr>
 							</thead>
 							<tbody>
-								 
+								
 								<!--상품 리스트 for문-->
 								<c:if test="${not empty cartList }"> 
-								
+								   <c:set var="count" value="0"/>
 								   <c:set var="totalPrice" value="0"/><!-- 총가격 계산 변수 -->
 								   <c:set var="discount"  value="0"/><!-- 할인가격 변수 -->
 								   <c:set var="totalPoint" value="0"/><!-- 총합 포인트 변수 -->
@@ -90,6 +90,7 @@
 								  
 								  <c:set var="totalPrice" value="${totalPrice + cartDTO.getShoesprice()*cartDTO.getShoesqty()  }"/> 
 								   <c:set var="discount" value="${discount + cartDTO.getShoesdiscount() }"/>
+								   <c:set var="count" value="count+1"/>
 										<tr class="group-center">
 											<td class="align-left modeloutBox">
 											<input type="hidden" name="abcdCode" value="${cartDTO.getPrdtcode()}"><!-- 상품코드 -->
@@ -119,7 +120,6 @@
 												</div>
 											</td>
 											<td class="orderPrice">
-												<input id="orderPrice" type="hidden" value="${cartDTO.getShoesprice() }">
 												<span><fmt:formatNumber value="${cartDTO.getShoesprice()*cartDTO.getShoesqty()  }" type="number"/></span>원<!--가격-->							
 											</td>
 											<td class="check_list_box">
@@ -150,8 +150,9 @@
 									 </c:forEach>
 									<%--  <c:out value="${totalPrice }"/>
 									 <c:out value="${discount }"/> --%>
+		
 								  </c:if>
-								
+								 <input type="hidden" name="totalQty" id="totalQty" value="${qty}"> 
 							</tbody>
 						</table>
 						
@@ -165,7 +166,7 @@
 		                        <dl>
 		                            <dt>주문금액</dt>
 		                            <dd class="ordersPrice"><fmt:formatNumber value="${totalPrice }" type="number"/><span>원</span></dd>
-		                        	<input type="hidden" name="orderPrice" id="orderPrice" value="${totalPrice }">
+		                        	<input type="hidden" name="orderPrice1" id="orderPrice1" value="${totalPrice }">
 		                        </dl>
 		                    </div>
 		                    <div class="totalBox total2">

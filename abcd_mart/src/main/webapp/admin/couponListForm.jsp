@@ -1,49 +1,50 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<h3 style="margin-left:400px">상품 통계</h3>
-			
+<h3 style="margin-left:400px">쿠폰 내역 관리</h3>
+			<form id="orderPaymentForm" action="/abcd_mart/admin/orderPayment" method="post">
 				<table class="orderDepositForm basicTable" border="1" cellpadding="3" frame="hsides" rules="none">
 
 				<tbody>
-				<tr>
-					<th width="150px" height="70px">검색일</th>
-					<td width="700px">
-						<input type="date" id="fromDate" name="fromDate"> &ensp;~&ensp;
-						<input type="date" id="toDate" name="toDate">
-					</td>
-				</tr>			
+		
 
 				<tr>
-					<th align="center" height="70px">검색순</th>
+					<th align="center" height="70px" width="150px">검색어</th>
 					<td width="700px">
-						<input type="radio" name="bestSales" value="bestSales" checked="true">인기상품순&ensp; 
-						<input type="radio"  name="newSales" value="newSales">신상품순&ensp; 
+					<div class="col-xs-3">
+						<select id="couponSelect" name="couponSelect" class="form-control input-sm" >
+							<option value='id'>아이디</option>
+
+						</select>
+					</div>
+					
+					<div class="col-xs-3">
+						<input type="text" class="form-control input-sm" id="couponResult">
+					</div>
 					</td>
 				</tr>
 				
 			</tbody>
 		</table>
-
+	</form>
+	
 	<div style="margin-left:400px; margin-bottom:50px">
 	<br>
-		<button type="button" class="btn btn-dark bg-red" id="statsPrdt_Btn">검  색</button>
+		<button type="button" class="btn btn-dark bg-red" id="couponlistForm_Btn">검  색</button>
 
 	</div>
 	
 	<table class="orderDepositForm basicTable2" id="basicTable2" border="1" cellpadding="3" frame="hsides" rules="none">
 		<tr>
-			<th width="150px" height="80px">상품코드</th>
-			<th width="250px">이름</th>
-			<th width="150px">브랜드</th>
-			<th width="200px">사이즈</th>
-			<th width="200px">가격</th>
-			<th width="200px">개수</th>
+			<th width="150px" height="80px">아이디</th>
+			<th width="150px" >쿠폰번호</th>
+			<th width="150px">쿠폰이름</th>
+			<th width="150px">쿠폰내용</th>
+			<th width="200px">쿠폰마감일</th>
+			<th width="100px">쿠폰상태</th>
 		</tr>
 		<tbody id="table2Tbody"></tbody>
 	</table>
-
-	
 
 <!-- 데이터피커 -->
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />  
@@ -106,4 +107,4 @@ $('#toDate').datepicker({
 
 </script>
 	
-	
+    

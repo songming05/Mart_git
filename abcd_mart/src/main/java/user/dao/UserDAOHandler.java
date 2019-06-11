@@ -61,6 +61,11 @@ public class UserDAOHandler implements UserDAO {
 	public List<MyPageDTO> getMyPageList(String id) {
 		return sqlSession.selectList("userSQL.getMyPageList", id);
 	}
+	
+	@Override
+	public void updateUserInfo(Map<String, String> userUpdateMap) {
+		sqlSession.update("userSQL.updateUserInfo", userUpdateMap);
+	}
 
 	
 }

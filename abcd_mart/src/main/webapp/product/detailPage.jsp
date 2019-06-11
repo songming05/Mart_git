@@ -61,6 +61,7 @@ $(document).ready(function(){
 			var aJson = new Object();
 			 aJson.list={
 					 	"count":i,
+					 	"qty":count,
 					 	//"type":document.getElementById("buttonType").value,
 					 	"id":document.getElementsByName("id")[i].value,
 						"prdtcode":document.getElementsByName("prdtcode")[i].value,

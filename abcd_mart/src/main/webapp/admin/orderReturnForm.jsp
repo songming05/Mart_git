@@ -15,27 +15,13 @@
 				<tr>
 					<th align="center" height="70px">반품 상태</th>
 					<td width="700px"> 
-						<input type="radio" name="returnSts" value="반품신청" checked="true">반품신청&ensp; 
+						<input type="radio" name="returnSts" value="반품신청" checked="true">반품신청&ensp;
+						<input type="radio" name="returnSts" value="반품진행">반품진행&ensp; 
 						<input type="radio" name="returnSts" value="반품완료">반품완료&ensp; 
 					</td>
 				</tr>
 				
-				<tr>
-					<th align="center" height="70px">검색어</th>
-					<td width="700px">
-					<div class="col-xs-3">
-						<select id="returnSelect" name="returnSelect" class="form-control input-sm" >
-							<option value='returnId'>아이디</option>
-							<option value='returnPrdt'>품목(상품코드)</option>
 
-						</select>
-					</div>
-					
-					<div class="col-xs-3">
-						<input type="text" class="form-control input-sm" name="returnResult">
-					</div>
-					</td>
-				</tr>
 				
 			</tbody>
 		</table>
@@ -49,6 +35,7 @@
 	
 	<table class="orderDepositForm basicTable2" id="basicTable2" border="1" cellpadding="3" frame="hsides" rules="none">
 		<tr>
+			<th width="150px" height="80px">반품번호</th>
 			<th width="150px" height="80px">주문일</th>
 			<th width="150px" height="80px">반품신청일</th>
 			<th width="150px" >아이디</th>
@@ -73,33 +60,29 @@
 				<tbody>
 
 				<tr>
-					<th align="center" width="200px" height="70px">품목(상품번호)</th>
+					<th align="center" width="200px" height="70px">반품번호</th>
 					<td width="700px">
 
 					<div class="col-xs-3">
-						<input type="text" class="form-control input-sm" id="changePrdt">
+						<input type="text" class="form-control input-sm" id="returnNum">
 					</div>
 					</td>
 				</tr>
-				
 				<tr>
-					<th align="center" width="130px" height="70px">사이즈</th>
-					<td width="700px">
+				
 
-					<div class="col-xs-3">
-						<input type="text" class="form-control input-sm" id="changeSize">
-					</div>
-					</td>
-				</tr>
 				
-				<tr>
-					<th align="center" width="130px" height="70px">수량변경</th>
+					<th align="center" width="130px" height="70px">반품상태</th>
 					<td width="700px">
 					<div class="col-xs-3">
-						<input type="text" class="form-control input-sm" id="changeQty">
+						<select id="returnSts" name="returnSts" class="form-control input-sm" >
+							<option value="반품완료">반품완료</option>
+							<option value="반품진행">반품진행</option>
+							<option value="반품신청">반품신청</option>
+						</select>
 					</div>
-						<button type="button" class="btn btn-dark bg-red" id="prdtChange_Btn">변경</button>
-						<button type="button" class="btn btn-dark bg-red" id="prdtClose_Btn">닫기</button>
+						<button type="button" class="btn btn-dark bg-red" id="returnChange_Btn">변경</button>
+						<button type="button" class="btn btn-dark bg-red" id="returnClose_Btn">닫기</button>
 					</td>
 				</tr>
 				
