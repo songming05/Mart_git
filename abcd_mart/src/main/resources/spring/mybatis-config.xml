@@ -5,21 +5,31 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
 	<typeAliases>
 		<typeAlias type="java.util.Map" alias="map"/>
-		<typeAlias type="detailPage.bean.DetailPageDTO" alias="detailPage"/>
-		<typeAlias type="user.bean.UserDTO" alias="user"/>
-		<typeAlias type="cart.bean.CartDTO" alias="cartDTO"/>
+		
 		<typeAlias type="admin.bean.PaymentDTO" alias="payment"/>
-		<typeAlias type="order.bean.OrderDTO" alias="orderDTO"/>
-		<typeAlias type="board.bean.AfterBoardDTO" alias="afterBoard"/>
-		<typeAlias type="admin.bean.PaymentDTO" alias="payment"/>   
      	<typeAlias type="admin.bean.PrdtManagementDTO" alias="prdtManagement"/>
      	<typeAlias type="admin.bean.ReturnDTO" alias="returnDTO"/>
-     	<typeAlias type="service.bean.ServiceDTO" alias="service"/>
-     	<typeAlias type="myPage.bean.MyPageDTO" alias="myPage"/>     	
      	<typeAlias type="admin.bean.StatsSalesDTO" alias="salesDTO"/>
      	<typeAlias type="admin.bean.StatsPrdtDTO" alias="prdtDTO"/>
      	<typeAlias type="admin.bean.CouponListDTO" alias="couponListDTO"/>
-     	<typeAlias type="admin.bean.ProductDTO" alias="productDTO"/>
+
+		<typeAlias type="board.bean.AfterBoardDTO" alias="afterBoard"/>  
+
+		<typeAlias type="cart.bean.CartDTO" alias="cartDTO"/>
+		
+		<typeAlias type="detailPage.bean.DetailPageDTO" alias="detailPage"/>
+		
+     	<typeAlias type="myPage.bean.MyPageDTO" alias="myPage"/>
+     	
+		<typeAlias type="order.bean.OrderDTO" alias="orderDTO"/>
+		
+     	<typeAlias type="product.bean.ProductDTO" alias="productDTO"/>
+     	
+     	<typeAlias type="service.bean.ServiceDTO" alias="service"/>
+     	     	
+     	<typeAlias type="user.bean.UserDTO" alias="user"/>
+     	     	
+     	
      	
 	</typeAliases>
 </configuration>
