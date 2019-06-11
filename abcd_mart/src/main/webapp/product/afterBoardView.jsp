@@ -4,48 +4,35 @@
 
 <form method="post" id="afterBoardView" action="">
 
-<table align="center" style="font-size:10pt;">
-<tr>
-<td>
-<div class="form-group">
-  <label for="id">아이디</label>
-  <input type="text" class="form-control" id="id" autocomplete="off"  readonly>
-</div>
+<table align="center" width="900px" height="700px" style="font-size:10pt;">
 
-</td>
+<tr style="height:100px; background-color:#e9ecef;">
+
 <td align="center">
-<div class="form-check-inline">
-    <input type="radio" class="form-check-input" id="radio1" name="whereToBuy" value="온라인" checked> 온라인
-    &emsp;
-    <input type="radio" class="form-check-input" id="radio2" name="whereToBuy" value="오프라인"> 오프라인
+<div class="form-group" style="width:400px; text-align:right;">
+  <strong>아이디</strong>
+  <span id="id"></span>&emsp;
 </div>
 </td>
-<tr>
-<td colspan="2">
-<div class="form-group">
-  <label for="subject">제목</label>
-  <input type="text" class="form-control" id="subject" autocomplete="off" readonly>
+
+<td align="center">
+<div class="form-group" style="width:400px; text-align:left;">
+	<strong>상품만족도</strong>
+	<span id="good"></span>
 </div>
 </td>
+
 </tr>
 
 <tr>
 <td colspan="2">
 <div class="form-group">
-  <label for="content">내용</label>
-  <div contentEditable="true" id="content">
-  
-  </div>
+<br>
+<div contentEditable="true" id="content">
+</div>
 </div>
 </td>
 </tr>
 
-<tr>
-<td>
-<div class="form-group">
-  <label for="good">상품만족도</label>
-  <input type="text" class="form-control" id="good" autocomplete="off" readonly>
-</td>
-</tr>
 </table>
 </form>

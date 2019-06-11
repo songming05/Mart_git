@@ -52,7 +52,7 @@
 <td>
 <div class="form-group">
   <label for="good">상품만족도</label>
-  <input type="text" class="form-control" id="good" autocomplete="off" placeholder="1~100">
+  <input type="text" class="form-control" id="good" autocomplete="off" placeholder="만족도 1~100까지 입력하세요">
 </td>
 </tr>
 </table>

@@ -329,7 +329,7 @@ $(document).ready(function(){
 	      <a class="nav-link active" href="#position1" style="color:black;">상품정보</a>
 	    </li>
 	    <li class="nav-item">
-	      <a class="nav-link" href="#position2" style="color:#AAAAAA;">상품후기(0)</a>
+	      <a class="nav-link" href="#position2" style="color:#AAAAAA;">상품후기(<span id="totalA1"></span>)</a>
 	    </li>
 	    <li class="nav-item">
 	      <a class="nav-link" href="#position3" style="color:#AAAAAA;">상품 Q&A(0)</a>
@@ -407,7 +407,7 @@ $(document).ready(function(){
 	      <a class="nav-link" href="#position1" style="color:#AAAAAA;">상품정보</a>
 	    </li>
 	    <li class="nav-item">
-	      <a class="nav-link active" href="#position2" style="color:black;">상품후기(0)</a>
+	      <a class="nav-link active" href="#position2" style="color:black;">상품후기(<span id="totalA2"></span>)</a>
 	    </li>
 	    <li class="nav-item">
 	      <a class="nav-link" href="#position3" style="color:#AAAAAA;">상품 Q&A(0)</a>
@@ -464,7 +464,7 @@ $(document).ready(function(){
 	      <a class="nav-link" href="#position1" style="color:#AAAAAA;" id="tab1">상품정보</a>
 	    </li>
 	    <li class="nav-item">
-	      <a class="nav-link" href="#position2" style="color:#AAAAAA;" id="tab2">상품후기(0)</a>
+	      <a class="nav-link" href="#position2" style="color:#AAAAAA;" id="tab2">상품후기(<span id="totalA3"></span>)</a>
 	    </li>
 	    <li class="nav-item">
 	      <a class="nav-link active" href="#position3" style="color:black;" id="tab3">상품 Q&A(0)</a>
@@ -510,7 +510,7 @@ $(document).ready(function(){
 	      <a class="nav-link" href="#position1" style="color:#AAAAAA;" id="tab1">상품정보</a>
 	    </li>
 	    <li class="nav-item">
-	      <a class="nav-link" href="#position2" style="color:#AAAAAA;" id="tab2">상품후기(0)</a>
+	      <a class="nav-link" href="#position2" style="color:#AAAAAA;" id="tab2">상품후기(<span id="totalA4"></span>)</a>
 	    </li>
 	    <li class="nav-item">
 	      <a class="nav-link" href="#position3" style="color:#AAAAAA;" id="tab3">상품 Q&A(0)</a>
