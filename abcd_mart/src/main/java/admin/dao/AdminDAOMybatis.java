@@ -13,6 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 import admin.bean.PaymentDTO;
 import admin.bean.PrdtManagementDTO;
 import admin.bean.ReturnDTO;
+import admin.bean.StatsPrdtDTO;
+import admin.bean.StatsSalesDTO;
 
 @Repository
 @Transactional
@@ -48,5 +50,28 @@ public class AdminDAOMybatis implements AdminDAO {
 	public List<ReturnDTO> orderReturn(Map<String, String> map) {
 		return sqlSession.selectList("adminSQL.orderReturn",map);
 	}
+	
+	@Override
+	public void returnChange(Map<String, String> map) {
+		sqlSession.update("adminSQL.returnChange",map);
+		
+	}
+
+	@Override
+	public List<StatsSalesDTO> statsSales(Map<String, String> map) {
+		return sqlSession.selectList("adminSQL.statsSales",map);
+	}
+
+	@Override
+	public List<StatsPrdtDTO> statsPrdt(Map<String, String> map) {
+		return sqlSession.selectList("adminSQL.statsPrdt",map);
+	}
+
+	@Override
+	public List<StatsPrdtDTO> couponList(Map<String, String> map) {
+		return sqlSession.selectList("adminSQL.couponList",map);
+	}
+
+	
 
 }

@@ -15,9 +15,10 @@ public class PrdtManagementDTO {
 	private String prdtGender;
 	private int prdtPrice;
 	private int prdtSize;
-	private String prdtcategory1;
-	private String prdtcategory2;
-	private int soldqty;
+	private String prdtCategory1;
+	private String prdtCategory2;
+	private int soldQty;
+	private String prdtMiniName;
 	
 	
 }

@@ -15,7 +15,7 @@ public class PaymentDTO {
 	  // @JsonFormat(shape=JsonFormat.Shape.STRING,pattern="yyyy.MM.dd")
 	   private String orderDate; 
 	   private String orderId ;
-	   private String orderPrdt ;
+	   private String prdtCode ;
 	   private String orderPrice ;
 	   private String orderDelivery ;
 	   private String orderPayment ;

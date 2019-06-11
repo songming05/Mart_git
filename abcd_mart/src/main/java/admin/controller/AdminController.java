@@ -20,6 +20,8 @@ import org.springframework.web.servlet.ModelAndView;
 import admin.bean.PaymentDTO;
 import admin.bean.PrdtManagementDTO;
 import admin.bean.ReturnDTO;
+import admin.bean.StatsPrdtDTO;
+import admin.bean.StatsSalesDTO;
 import admin.dao.AdminDAO;
 import product.dao.ProductDAO;
 
@@ -195,11 +197,23 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value="/admin/orderReturn", method=RequestMethod.POST)
-	public ModelAndView orderReturn(@RequestParam Map<String,String> map) {		
+	public ModelAndView orderReturn(@RequestParam Map<String,String> map) {
+		//System.out.println(map.get("returnSts"));
 		List<ReturnDTO> list = adminDAO.orderReturn(map);
 		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("list",list);
+		mav.setViewName("jsonView");
+		return mav;
+	}
+	
+	@RequestMapping(value="/admin/returnChange", method=RequestMethod.POST)
+	public ModelAndView returnChange(@RequestParam Map<String,String> map) {
+		System.out.println(map.get("returnSts"));
+		adminDAO.returnChange(map);
+		
+		ModelAndView mav = new ModelAndView();
+
 		mav.setViewName("jsonView");
 		return mav;
 	}
@@ -212,6 +226,76 @@ public class AdminController {
 		mav.addObject("display", "/admin/orderDelivaryForm.jsp");
 		mav.addObject("leftMenu", "/admin/leftMenu_Order.jsp");
 		mav.setViewName("/admin/index");
+		return mav;
+	}
+	
+	@RequestMapping(value="/admin/statsSalesForm", method=RequestMethod.GET)
+	public ModelAndView statsSalesForm() {
+		ModelAndView mav = new ModelAndView();
+		
+		mav.addObject("display","/admin/statsSalesForm.jsp");
+		mav.addObject("leftMenu","/admin/leftMenu_Stats.jsp");
+		mav.setViewName("/admin/index");
+		return mav;
+	}
+	
+	
+	@RequestMapping(value="/admin/statsSales", method=RequestMethod.POST)
+	public ModelAndView statsSales(@RequestParam Map<String,String> map) {
+		List<StatsSalesDTO> list = adminDAO.statsSales(map);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("list",list);
+		mav.setViewName("jsonView");
+		return mav;
+	}
+	
+	
+	@RequestMapping(value="/admin/statsPrdt", method=RequestMethod.POST)
+	public ModelAndView statsPrdt(@RequestParam Map<String,String> map) {
+		System.out.println(map.get("fromDate"));
+		System.out.println(map.get("toDate")); 
+		List<StatsPrdtDTO> list = adminDAO.statsPrdt(map);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("list",list);
+		mav.setViewName("jsonView");
+		return mav;
+	}
+	
+	
+	@RequestMapping(value="/admin/statsPrdtForm", method=RequestMethod.GET)
+	public ModelAndView statsPrdtForm() {
+		ModelAndView mav = new ModelAndView();
+		
+		mav.addObject("display","/admin/statsPrdtForm.jsp");
+		mav.addObject("leftMenu","/admin/leftMenu_Stats.jsp");
+		mav.setViewName("/admin/index");
+		return mav;
+	}
+	
+	
+	///운영  - 쿠폰리스트
+	@RequestMapping(value="/admin/couponListForm", method=RequestMethod.GET)
+	public ModelAndView couponListForm() {
+		ModelAndView mav = new ModelAndView();
+		
+		mav.addObject("display","/admin/couponListForm.jsp");
+		mav.addObject("leftMenu","/admin/leftMenu_Management.jsp");
+		mav.setViewName("/admin/index");
+		return mav;
+	}
+
+	//쿠폰 json
+	@RequestMapping(value="/admin/couponList", method=RequestMethod.POST)
+	public ModelAndView couponList(@RequestParam Map<String,String> map) {
+		System.out.println(map.get("fromDate"));
+		System.out.println(map.get("toDate")); 
+		List<StatsPrdtDTO> list = adminDAO.couponList(map);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("list",list);
+		mav.setViewName("jsonView");
 		return mav;
 	}
 	
