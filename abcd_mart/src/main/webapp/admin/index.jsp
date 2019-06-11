@@ -50,17 +50,12 @@
 					  <a class="mainMenu_Btn mtm10" id="menu_Order" href="/abcd_mart/admin/orderForm">주문</a>
 					</li>
 					<li>
-					  <a class="mainMenu_Btn mtm10" id="menu_Member">회원</a>
+					  <a class="mainMenu_Btn mtm10" id="menu_Stats" href="/abcd_mart/admin/statsSalesForm">통계</a>
 					</li>
 					<li>
 					 <a class="mainMenu_Btn mtm10" id="menu_Manage">운영</a>
 					</li>
-					<li>
-					 <a class="mainMenu_Btn mtm10" id="menu_Promotion">광고</a>
-					</li>
-					<li>
-					  <a class="mainMenu_Btn mtm10" id="menu_Stats">통계</a>
-					</li>
+
 					
 					</ul>
 				</div>
