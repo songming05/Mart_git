@@ -42,15 +42,15 @@ public class OrderController {
 	public String orderPageEnd(@ModelAttribute OrderDTO orderDTO ,
 							Model model,
 							HttpSession  session) {
-		
-		/*
-		 * Cookie[] cookies = request.getCookies();
-		 * 
-		 * if(cookies == null || cookies.length == 0){
-		 * 
-		 * 
-		 * }
-		 */
+		//쿠폰이 없을시  , 제거
+        if(orderDTO.getCoupon().substring(0, 1).equals(",")) {
+           orderDTO.setCoupon("0");
+           
+           //쿠폰이 있을시 + 2개이상 구매시 , 제거
+        }else {
+           String []coupon = orderDTO.getCoupon().split(",");
+           orderDTO.setCoupon(coupon[0]);
+        }
 		
 		if(session.getAttribute("orderOk")==null) {
 			
@@ -113,10 +113,16 @@ public class OrderController {
 				}
 				//cartlist 비워주기
 				orderDAO.deleteCart(id);
-				Map<String,String > map = new HashMap<String,String>();
-				map.put("couponNum",orderDTO.getCouponNum() );
-				map.put("id", id);
-				orderDAO.couponUpdate(map);
+				
+				//쿠폰 없을시 삭제 안함 쿠폰 있을시 on->off로 
+				if(orderDTO.getCouponNum().equals(null)) {
+		               Map<String,String > map = new HashMap<String,String>();
+		               map.put("couponNum",orderDTO.getCouponNum() );
+		               map.put("id", id);
+		               orderDAO.couponUpdate(map);
+		               
+		            }
+				
 				session.setAttribute("orderOk", "ok");
 				
 				
@@ -183,14 +189,13 @@ public class OrderController {
 		String name = (String) session.getAttribute("memName");
 		
 		Map<String,String>map = orderDAO.getUserMailPhone(id);
-		String email = map.get("EMAIL");
-		String [] email1 = email.split("@");
-		String tel = map.get("PHONE");
-		String tel1 = tel.substring(0, 2);
-		String tel2 = tel.substring(3, 5);
-		String tel3 = tel.substring(6);
-		System.out.println("list"+email+" pppppp "+tel);
-		System.out.println(tel1+" "+tel2+" "+tel3);
+	      
+        String email = map.get("EMAIL");
+        String[] email1 = email.split("@");
+        String tel = map.get("PHONE");
+        String tel1 = tel.substring(0, 3);
+        String tel2 = tel.substring(3, 7);
+        String tel3 = tel.substring(7);
 		
 		int couponCount =orderDAO.getCouponCount(id);
 		
@@ -206,6 +211,8 @@ public class OrderController {
 		model.addAttribute("tel2", tel2);
 		model.addAttribute("tel3", tel3);
 		model.addAttribute("couponCount", couponCount);
+		
+		session.removeAttribute("orderOk");
 		
 		return "/order_pay/orderPage";
 	}
@@ -304,12 +311,13 @@ public class OrderController {
 			session.removeAttribute("orderOk");
 			
 			Map<String,String>map1 = orderDAO.getUserMailPhone(id);
-			String email = map1.get("EMAIL");
-			String [] email1 = email.split("@");
-			String tel = map1.get("PHONE");
-			String tel1 = tel.substring(0, 2);
-			String tel2 = tel.substring(3, 5);
-			String tel3 = tel.substring(6);
+		      
+		    String email = map1.get("EMAIL");
+		    String[] email1 = email.split("@");
+		    String tel = map1.get("PHONE");
+		    String tel1 = tel.substring(0, 3);
+		    String tel2 = tel.substring(3, 7);
+		    String tel3 = tel.substring(7);
 			System.out.println("direct1"+email+" pppppp "+tel);
 			System.out.println(tel1+" "+tel2+" "+tel3);
 			
