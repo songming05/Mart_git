@@ -60,10 +60,10 @@
 		</div>
 		
 		<ul id="shoesType">
-			<li id="sportsShoes">👟운동화</li>
-			<li id="shoes">👞구두</li>
-			<li id="sandal">👡샌들</li>
-			<li id="boots">👢부츠</li>
+			<li id="sportsShoes"><a href="/abcd_mart/category/categoryPage?category=sportsShoes">👟운동화</a></li>
+			<li id="shoes"><a href="/abcd_mart/category/categoryPage?category=shoes">👞구두</a></li>
+			<li id="sandal"><a href="/abcd_mart/category/categoryPage?category=sandal">👡샌들</a></li>
+			<li id="boots"><a href="/abcd_mart/category/categoryPage?category=boots">👢부츠</a></li>
 		</ul>
 		
 		<ul id="bottom_contents">
