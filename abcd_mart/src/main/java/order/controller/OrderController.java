@@ -54,6 +54,15 @@ public class OrderController {
 		
 		if(session.getAttribute("orderOk")==null) {
 			
+			String arr = orderDTO.getShoesimage();
+			System.out.println("arr은="+arr);
+			String[] splits =arr.split(",");
+			String sumString="../image/page/product/"+splits[0]; 
+			orderDTO.setShoesimage(sumString);
+			 System.out.println("sumString은="+sumString);
+			 
+			/* orderDTO.setShoesimage(splits[0]); */
+			
 			String id = (String) session.getAttribute("memId");
 			
 			//DB
