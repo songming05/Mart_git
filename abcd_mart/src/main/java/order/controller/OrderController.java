@@ -312,7 +312,8 @@ public class OrderController {
 			model.addAttribute("tel2", tel2);
 			model.addAttribute("tel3", tel3);
 			model.addAttribute("couponCount", couponCount);
-			
+			model.addAttribute("qty",map.get("qty"));
+			System.out.println("========="+map.get("qty"));
 			return "/order_pay/orderPage";
 		
 	}

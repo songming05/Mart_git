@@ -121,10 +121,10 @@ function goPayment(){
 }
 
 function testChange(cpSale) {
-	var oldtotal = opener.document.getElementById('orderPrice').value;
+	var oldtotal = opener.document.getElementById('orderPrice1').value;
 	var dliv = opener.document.getElementById('dliv').value;
 	var newtotal = (oldtotal*1)+(dliv*1)-(cpSale*1);
-	//alert(newtotal);
+	//alert(oldtotal);
 	
 	//상품목록에 가격변경
 	opener.document.getElementById('discountIn').innerHTML=cpSale+"원";
