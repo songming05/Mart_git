@@ -162,3 +162,39 @@ $('#main_center').mouseover(function(){
 $('#searchButton').click(function() {
 	$('#searchForm').submit();
 });
+
+/*
+$('.sizelist').mouseover(function(){
+	var index = $('.sizelist').index(this);
+	var prdtcode = $('.hidden_prdtcode:eq('+index+')').val();
+	$.ajax({
+		type:'post',
+		url:'/abcd_mart/category/getPrdtcode_size',
+		data : {'prdtcode' : prdtcode},
+		dataType : 'json',
+		success : function(data){
+			$('.sizelist_tbody').empty();
+			
+			$.each(data.list, function(index, items){
+				$('<tr/>').append($('<td/>',{
+					align : 'left',
+					text : items.prdtSize
+				})).append($('<td/>',{
+					align : 'right',
+					text : items.prdtGender
+				})).appendTo($('.sizelist_tbody'));
+			});
+		}	
+	});
+	
+	var Offset = $('.sizelist:eq('+index+')').offset();
+	$('.sizelist_div').offset( { left: Offset.left, bottom: Offset.bottom } );
+	
+	$('.sizelist_div').show();
+});
+
+$('.sizelist').mouseleave(function(){
+	$('.sizelist_div').hide();
+});
+
+*/

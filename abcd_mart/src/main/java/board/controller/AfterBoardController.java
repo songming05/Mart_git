@@ -58,6 +58,7 @@ public class AfterBoardController {
 		boardPaging.makePagingHTML();
 		
 		ModelAndView mav = new ModelAndView();
+		mav.addObject("totalA",totalA);
 		mav.addObject("list",list);
 		mav.addObject("boardPaging",boardPaging);
 		mav.setViewName("jsonView");

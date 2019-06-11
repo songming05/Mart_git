@@ -10,18 +10,27 @@ $(document).ready(function(){
 			error : function(){alert("실패");},
 			success : function(data){
 				 $("#afterBoardDiv").load("../product/afterBoardView.jsp",function(){
-					 $('#id').val(data.id); 
-					 $('#subject').val(data.subject);
-					 $('#content').css('background','#e9ecef').css('border','1px solid #dbdbdb').css('width','450').css('height','400'); 
-					 $('#content').html('<img width=300 height=300 src="../storage/'+data.fileName+'"><br><br>'+data.content); 
-					 $('#good').val(data.good); 
-					 $('input:radio[name=whereToBuy]:input[value=' + data.whereToBuy + ']').attr("checked", true);
+					 $('#id').text(data.id); 
+					 //$('#subject').val(data.subject);
+					 $('#content').css('background','#e9ecef').css('width','900').css('height','auto'); 
+					 $('#content').html('<br><img style="display:block; margin:auto; width:400px; height:auto;" src="../storage/'+data.fileName+'"><br><br>'+data.content); 
+					 
+					 if(data.good >= 95){$('#good').text('★★★★★');}
+					 else if(data.good >= 90){$('#good').text('★★★★☆');}
+					 else if(data.good >= 85){$('#good').text('★★★★');}
+					 else if(data.good >= 80){$('#good').text('★★★☆');}
+					 else if(data.good >= 75){$('#good').text('★★★');}
+					 else if(data.good >= 70){$('#good').text('★★☆');}
+					 else if(data.good >= 65){$('#good').text('★★');}
+					 else if(data.good >= 60){$('#good').text('★☆');}
+					 else{$('#good').text('★');}
+					 //$('input:radio[name=whereToBuy]:input[value=' + data.whereToBuy + ']').attr("checked", true);
 				 }
 						 
 				 ).dialog({ 
 					resizable: false,
-					height: 550,
-					width: 530,
+					height: 800,
+					width: 1000,
 					modal: true,
 					buttons: {
 						"확인": function(data) {$( this ).dialog( "close" );}
@@ -55,6 +64,12 @@ $(document).ready(function(){
 		               }
 		               else if($('#good').val()==""){
 		                  swal("만족도를 입력하세요");
+		               }
+		               else if($('#good').val()*1 <= 0){
+		            	   swal("숫자 1~100 까지 입력하세요");
+		               }
+		               else if($('#good').val()*1 >= 101){
+		            	   swal("숫자 1~100 까지 입력하세요");
 		               }
 		               else{
 		            	   
@@ -305,10 +320,30 @@ $(document).ready(function(){
 		//error : function(){alert("실패");},
 		success : function(data){
 			
+			$('#totalA1').text(data.totalA);
+			$('#totalA2').text(data.totalA);
+			$('#totalA3').text(data.totalA);
+			$('#totalA4').text(data.totalA);
+			
 			if(data.list != ""){
+				
+				
 				$('#afterTable tbody tr').remove();
 				
 				$.each(data.list, function(index, items){
+					
+					var star = "";
+					
+					if(items.good >= 95){star = '★★★★★';}
+				    else if(items.good >= 90){star = '★★★★☆';}
+				    else if(items.good >= 85){star = '★★★★';}
+				    else if(items.good >= 80){star = '★★★☆';}
+				    else if(items.good >= 75){star = '★★★';}
+				    else if(items.good >= 70){star = '★★☆';}
+				    else if(items.good >= 65){star = '★★';}
+				    else if(items.good >= 60){star = '★☆';}
+				    else{star = '★';}
+					
 					$('<tr/>').append($('<td/>',{
 						align : 'left',
 					}).append($('<a/>',{
@@ -322,7 +357,7 @@ $(document).ready(function(){
 						text : items.whereToBuy 
 					})).append($('<td/>',{
 						//상품만족도
-						text : items.good
+						text : star
 					})).append($('<td/>',{
 						//작성자
 						text : items.id
