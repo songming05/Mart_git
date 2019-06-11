@@ -23,6 +23,7 @@ import admin.bean.ReturnDTO;
 import admin.bean.StatsPrdtDTO;
 import admin.bean.StatsSalesDTO;
 import admin.dao.AdminDAO;
+import product.bean.ProductDTO;
 import product.dao.ProductDAO;
 
 @Controller
@@ -131,9 +132,9 @@ public class AdminController {
 	@RequestMapping(value="/admin/prdtManagement", method=RequestMethod.POST)
 	public ModelAndView prdtManagement(@RequestParam Map<String,String> map) { //2개 담김
 		
-		List<PrdtManagementDTO> list = adminDAO.prdtManagement(map);
+		List<ProductDTO> list = adminDAO.prdtManagement(map);
 		if(list==null) {
-			list = new ArrayList<PrdtManagementDTO>();
+			list = new ArrayList<ProductDTO>();
 		}
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("jsonView");

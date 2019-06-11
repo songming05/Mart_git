@@ -9,6 +9,7 @@ import admin.bean.PrdtManagementDTO;
 import admin.bean.ReturnDTO;
 import admin.bean.StatsPrdtDTO;
 import admin.bean.StatsSalesDTO;
+import product.bean.ProductDTO;
 
 public interface AdminDAO {
 
@@ -16,7 +17,7 @@ public interface AdminDAO {
 
 	public void applyImg(Map<String, String> map);
 
-	public List<PrdtManagementDTO> prdtManagement(Map<String, String> map);
+	public List<ProductDTO> prdtManagement(Map<String, String> map);
 
 	public void prdtChange(Map<String, Object> map);
 

@@ -15,6 +15,7 @@ import admin.bean.PrdtManagementDTO;
 import admin.bean.ReturnDTO;
 import admin.bean.StatsPrdtDTO;
 import admin.bean.StatsSalesDTO;
+import product.bean.ProductDTO;
 
 @Repository
 @Transactional
@@ -37,7 +38,7 @@ public class AdminDAOMybatis implements AdminDAO {
 	}
 
 	@Override
-	public List<PrdtManagementDTO> prdtManagement(Map<String, String> map) {
+	public List<ProductDTO> prdtManagement(Map<String, String> map) {
 		return sqlSession.selectList("adminSQL.prdtManagement", map);
 	}
 
