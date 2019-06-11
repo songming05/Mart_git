@@ -19,4 +19,6 @@ public class ProductDTO {
 	private String prdtGender;
 	private int prdtSize;
 	private int prdtGood ;
+	private String prdtCategory1;
+	private String prdtCategory2;
 }

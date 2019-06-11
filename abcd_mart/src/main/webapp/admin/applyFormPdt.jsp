@@ -49,6 +49,44 @@
 					<th align="center" width="150px" height="70px">배송비</th>
 					<td width="300px"><input type="text" size="33" name="prdtDeliveryPrice" id="prdtDeliveryPrice"></td>
 				</tr>
+				
+				<tr>
+					<th width="150px" height="70px">대분류</th>
+					<td width="300px">
+						<select id="prdtCategory1">
+							<option value="sportshoes">sportshoes</option>
+							<option value="shoes">shoes</option>
+							<option value="sandal">sandal</option>
+							<option value="boots">boots</option>
+						</select>
+					</td>
+					
+					<th align="center" width="150px" height="70px">소분류</th>
+					<td width="300px">
+						<select id="prdtCategory2">
+							<option value="converse">converse</option>
+							<option value="slipon">slipon</option>
+							<option value="sneakers">sneakers</option>
+							<option>-----------</option>
+							<option value="oxford">oxford</option>
+							<option value="loafer">loafer</option>
+							<option value="deckshoes">deckshoes</option>
+							<option value="flat">flat</option>
+							<option value="heel">heel</option>
+							<option>-----------</option>
+							<option value="flipflop">flipflop</option>
+							<option value="slid">slid</option>
+							<option value="strapsandal">strapsandal</option>
+							<option>-----------</option>
+							<option value="workboots">workboots</option>
+							<option value="anchorbooty">anchorbooty</option>
+							<option value="rainboots">rainboots</option>
+							<option value="boots">boots</option>
+							<option value="paddingboots">paddingboots</option>
+						</select>
+					
+					</td>
+				</tr>
 				<tr>
 					<th width="150px" height="70px">최소 신발사이즈</th>
 					<td width="700px" colspan="3">
@@ -61,6 +99,8 @@
 					</td>
 
 				</tr>
+				
+				
 				
 				</tbody>
 	</table>

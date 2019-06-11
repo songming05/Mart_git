@@ -138,6 +138,46 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			where prdtCode = #{prdtCode}
 	</select>
 	
+	<!-- 새창띄우기 사이즈수정-->
+	<update id="updateQty" parameterType="map">
+		update prdtManagement set prdtQty = #{prdtQty} 
+		where prdtCode=#{prdtCode} and prdtSize=#{prdtSize} 
+	</update>
+	
+	<insert id="insertMan" parameterType="map">
+		insert into prdtManagement 
+			values(
+				#{prdtCode},
+				0,
+				#{prdtBrand},
+				#{prdtColor},
+				#{prdtGender},
+				#{prdtPrice},
+				#{prdtSize},
+				#{prdtCategory1},
+				#{prdtCategory2},
+				0,
+				#{prdtMiniName}				
+			)
+		
+	</insert>
+	<insert id="insertWoman" parameterType="map">
+		insert into prdtManagement 
+			values(
+				#{prdtCode},
+				0,
+				#{prdtBrand},
+				#{prdtColor},
+				#{prdtGender},
+				#{prdtPrice},
+				#{prdtSize},
+				#{prdtCategory1},
+				#{prdtCategory2},
+				0,
+				#{prdtMiniName}				
+			)
+		
+	</insert>
 	
 	
 </mapper>

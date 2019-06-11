@@ -72,7 +72,31 @@ public class AdminController {
 	
 	@RequestMapping(value="/admin/applyPdt", method=RequestMethod.POST)//상품등록
 	public @ResponseBody void applyPdt(@RequestParam Map<String,Object> map) {
+		//상품등록???
+		
+		System.out.println(map);
 		productDAO.applyPdt(map);
+		
+		//prdtmanagement에 사이즈 220~250까지 등록해야함...
+		if( ((String) map.get("prdtSize")).equals(250) ) {
+			int sizeInit = Integer.parseInt((String) map.get("prdtSize"));
+			for(int i=0; i<7; i++) {
+				map.remove("prdtSize");
+				int inputSize = sizeInit+(i*5);
+				map.put("prdtSize", inputSize+"");
+				adminDAO.insertMan(map);
+				System.out.println("map "+i+"    ="+map);
+			}
+		}else {
+			int sizeInit = Integer.parseInt((String) map.get("prdtSize"));
+			for(int i=0; i<7; i++) {
+				map.remove("prdtSize");
+				int inputSize = sizeInit+(i*5);
+				map.put("prdtSize", inputSize+"");
+				adminDAO.insertWoman(map);
+			}
+		}
+		
 	}
 	
 	@RequestMapping(value="/admin/applyFormImg", method=RequestMethod.GET)
@@ -158,21 +182,14 @@ public class AdminController {
 		return mav;
 	}
 	
-	@RequestMapping(value="/admin/managementModify", method=RequestMethod.GET)
-	public ModelAndView managementModify(@RequestParam String prdtCode) { //2개 담김
-		
-		List<PrdtManagementDTO> list = adminDAO.managementModify(prdtCode);
-		
-		if(list==null) {
-			list = new ArrayList<PrdtManagementDTO>();
-		}
-		
-		ModelAndView mav = new ModelAndView();
-		mav.addObject("list",list);
-		mav.setViewName("/admin/managementModify");
-		return mav;
+	@ResponseBody
+	@RequestMapping(value="/admin/updateQty", method=RequestMethod.POST)
+	public String updateQty(@RequestParam Map<String,String> map) { //2개 담김
+
+		adminDAO.updateQty(map);
+
+		return "/abcd_mart/admin/managementModifyForm?prdtCode="+map.get("prdtCode");	
 	}
-	
 	
 	
 	//그안에 수량변경버튼

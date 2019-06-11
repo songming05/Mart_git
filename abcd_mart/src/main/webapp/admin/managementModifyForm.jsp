@@ -13,7 +13,6 @@
 
 
 
-<form action="/abcd_mart/admin/managementModify" method="post">
 	<table border=1>
 		<tr>
 			<th width="100px" height="50px">상품코드</th>
@@ -21,22 +20,37 @@
 			<th width="100px" height="50px">사이즈</th>
 			<th width="100px" height="50px">색상</th>
 		</tr>
+	</table>
 		
 		
-		<c:forEach items="${list }" var="list" varStatus="status">
+		<c:forEach items="${list }" var="list" varStatus="index" >
+			<form method="post" id="managementModifyForm${index.count }">
+			<table border=1>
 			<tr>
-				<td height="50px" align="center">${list.prdtCode}</td>
-				<td height="50px" align="center"><input type="text" value="${list.prdtQty}" size="2"></td>
-				<td height="50px" align="center">${list.prdtSize}</td>
-				<td height="50px" align="center">${list.prdtColor}</td>
-	
+							
+				<td height="50px" width="100px" align="center">
+					${list.prdtCode}
+					<input type="hidden" name="prdtCode" class="prdtCode" value="${list.prdtCode}">
+				</td>
+				<td height="50px"  width="100px" align="center">
+					<input type="text" value="${list.prdtQty}" class="prdtQty" name="prdtQty" size="2">
+					<input type="button" value="수정" class="managementModify_btn">
+				</td>
+				<td height="50px" width="100px" align="center">
+					${list.prdtSize}
+					<input type="hidden" name="prdtSize" class="prdtSize" value="${list.prdtSize}">
+				</td>
+				<td height="50px" width="100px" align="center">${list.prdtColor}</td>
+				
 			</tr>
+			</table>
+			</form>
+			
 			
 		</c:forEach>
 	
-	</table>
-</form>
-
-		<input type="submit" value="수정" id="managementModify_btn" style="width:75px; height:40px; margin-top:10px; margin-left:350px;">
+		
 </body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.4.0.min.js"></script>
+<script type="text/javascript" src="../js/adminJs/adminJs.js"></script>
 </html>

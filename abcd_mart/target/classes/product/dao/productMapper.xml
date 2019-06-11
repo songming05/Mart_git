@@ -17,6 +17,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{prdtColor },
 			#{prdtGender },
 			#{prdtSize},
-			#{prdtGood})
+			0)
 	</insert>
 </mapper>

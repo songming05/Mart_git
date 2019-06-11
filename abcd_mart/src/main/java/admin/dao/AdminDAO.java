@@ -33,4 +33,10 @@ public interface AdminDAO {
 
 	public List<PrdtManagementDTO> managementModify(String prdtCode);
 
+	public void updateQty(Map<String, String> map);
+
+	public void insertMan(Map<String, Object> map);
+
+	public void insertWoman(Map<String, Object> map);
+
 }

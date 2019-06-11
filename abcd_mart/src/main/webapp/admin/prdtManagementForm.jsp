@@ -45,10 +45,10 @@
 		<tbody id="table2Tbody"></tbody>
 	</table>
 	
-	<div style="margin-left:750px; margin-bottom:50px">
+	<!-- <div style="margin-left:750px; margin-bottom:50px">
 	<br>
 		<button type="button" class="btn btn-dark bg-red" id="prdtChangeForm_Btn">수량변경하기</button>
-	</div>
+	</div> -->
 	
 	<div style="display:none; margin-bottom:100px" id="changeTable">
 		<table class="basicTable" border="1" cellpadding="3" frame="hsides" rules="none">

@@ -79,6 +79,22 @@ public class AdminDAOMybatis implements AdminDAO {
 		return sqlSession.selectList("adminSQL.managementModify", prdtCode);
 	}
 
+	@Override
+	public void updateQty(Map<String, String> map) {
+		sqlSession.update("adminSQL.updateQty",map);
+	}
+
+	//남자 신발사이즈 250~280등록
+	@Override
+	public void insertMan(Map<String, Object> map) {
+		sqlSession.insert("adminSQL.insertMan",map);		
+	}
+
+	@Override
+	public void insertWoman(Map<String, Object> map) {
+		sqlSession.insert("adminSQL.insertWoman",map);
+	}
+
 	
 
 }

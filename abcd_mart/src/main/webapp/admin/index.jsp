@@ -24,9 +24,8 @@
 			<div class="content_layout">
 				<div class="welcome sub_type1 ml10">관리자님 환영합니다.</div>
 				<div class="menu_right">
-					<a class="Btn_Type1 sub_type2">관리자설정 </a>
 					<a class="Btn_Type1 sub_type2" href='/abcd_mart/main/index'>abcd마트가기 </a>
-					<a class="Btn_Type1 sub_type2">로그아웃 </a>
+					<a class="Btn_Type1 sub_type2" href='/abcd_mart/user/logout'>로그아웃 </a>
 				</div>
 			</div>
 			

@@ -16,7 +16,7 @@ $('#prdtManagementForm_Btn').click(function(){
 			$.each(data.list , function(index, items){
 				$('<tr/>').append($('<td/>',{
 					align : 'center',
-					html : '<a href="/abcd_mart/admin/managementModify?prdtCode='+items.prdtCode
+					html : '<a href="/abcd_mart/admin/managementModifyForm?prdtCode='+items.prdtCode
 							+'"	onclick="window.open(this.href, \'재고변경\',\'width=430, height=620\');return false;" target=\'_blank\'>'
 							+items.prdtCode+'</a>'
 
@@ -123,7 +123,18 @@ $('#applyPdt_Btn').click(function(){
 		$.ajax({
 			type : 'POST',
 			url : '/abcd_mart/admin/applyPdt',
-			data :  $('#applyFormPdt_Form').serialize(),
+			data :  { 'prdtMainName' : $('#prdtMainName').val(),
+				'prdtMiniName' : $('#prdtMiniName').val(),
+				'prdtStyleCode' : $('#prdtStyleCode').val(),
+				'prdtCode' : $('#prdtCode').val(),
+				'prdtBrand' : $('#prdtBrand').val(),
+				'prdtColor' : $('#prdtColor').val(),
+				'prdtGender' : $('#prdtGender').val(),
+				'prdtPrice' : $('#prdtPrice').val(),
+				'prdtDeliveryPrice' : $('#prdtDeliveryPrice').val(),
+				'prdtCategory1' : $('#prdtCategory1').val(), 
+				'prdtCategory2' : $('#prdtCategory2').val(),
+				'prdtSize' : $('#prdtSize').val()},
 			success : function(data){
 				swal({
 					title: "환영합니다",
@@ -406,5 +417,28 @@ $('#couponlistForm_Btn').click(function(){
 	});
 });
 
+
+
+$('.managementModify_btn').click(function(){
+	var index = $('.managementModify_btn').index(this);
+	var prdtQty =  $('.prdtQty:eq('+index+')').val();
+	var prdtCode = $('.prdtCode:eq('+index+')').val();
+	var prdtSize = $('.prdtSize:eq('+index+')').val();
+	
+	
+	$.ajax({
+		type:'post',
+		url:'/abcd_mart/admin/updateQty',
+		data : {'prdtQty' : prdtQty,
+				'prdtCode' : prdtCode,
+				'prdtSize' : prdtSize },
+		success : function(data){
+			alert('수량변경 완료!');
+			location.href = data;
+		}
+	});
+	
+	
+});
 
 
