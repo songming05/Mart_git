@@ -36,4 +36,9 @@ public class CategoryDAOMybatis implements CategoryDAO {
 		return sqlSession.selectList("categorySQL.getShoesList2", category2.toLowerCase()); 
 	}
 	
+	@Override
+	public List<PrdtManagementDTO> categortPage2_hotlist(String category2) {
+		return sqlSession.selectList("categorySQL.categortPage2_hotlist", category2.toLowerCase()); 
+	}
+	
 }

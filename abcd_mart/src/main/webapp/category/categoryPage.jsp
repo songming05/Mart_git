@@ -162,7 +162,7 @@
 						<tr>
 					</c:if>
 					<td class="best_table_td" style="width: 250px; padding: 10px 0px;">
-						<a href="/abcd_mart/product/detail?prdtCode=${shoeslist.prdtCode }"><img src="../image/page/product/${shoeslist.prdtCode }/${shoeslist.prdtCode }_title.jpg" class="best_image01" style="display: block; margin: 0px auto; cursor: pointer;"/></a>
+						<a href="/abcd_mart/product/detail?prdtCode=${shoeslist.prdtCode }" style="text-align: center; width: 250px"><img src="../image/page/product/${shoeslist.prdtCode }/${shoeslist.prdtCode }_title.jpg" class="best_image01" style="display: block; margin: 0px auto; cursor: pointer;"/></a>
 						<p class="best_table_brand_01" style="font-size: 10px; font-weight: bold; color: black;">${shoeslist.prdtBrand }</p>
 						<p class="best_table_name_01" style="font-size: 10px; font-weight: normal;">${shoeslist.prdtMiniName }</p>
 						<p class="best_table_price_01" style="font-size: 10px; font-weight: bold; color: black;">

@@ -215,7 +215,10 @@
 	</section>
 	
 	<section style="margin-top: 50px;">
-		<div style="color: #a4a4a4; font-size: 11px; font-weight:normal; padding-bottom: 10px; border-bottom: 1px solid black;">*총 <span class="" style="color: red; font-weight: bold;">${listCount }</span> 개의 상품이 있습니다</div>
+		<div style="color: #a4a4a4; font-size: 11px; font-weight:normal; padding-bottom: 20px; border-bottom: 1px solid black;">
+			<span style="float: left;">*총 <span class="" style="color: red; font-weight: bold;">${listCount }</span> 개의 상품이 있습니다</span>
+			<span style="float: right;"><a href="/abcd_mart/category/categoryPage2?category1=${category1 }&category2=${category2 }" style="font-weight: bold;">신상품순</a>&nbsp;<a href="/abcd_mart/category/categoryPage2_hotlist?category1=${category1 }&category2=${category2 }" style="font-weight: bold;">인기순</a></span>
+		</div>
 	</section>
 	
 	<div class="list">
@@ -227,7 +230,7 @@
 					<tr>
 				</c:if>
 				<td class="best_table_td" style="width: 250px; padding: 10px 0px;">
-					<img src="../image/page/product/${shoeslist.prdtCode }/${shoeslist.prdtCode }_title.jpg" class="best_image01" style="display: block; margin: 0px auto; cursor: pointer;"/>
+					<a href="/abcd_mart/product/detail?prdtCode=${shoeslist.prdtCode }" style="text-align: center; width: 250px"><img src="../image/page/product/${shoeslist.prdtCode }/${shoeslist.prdtCode }_title.jpg" class="best_image01" style="display: block; margin: 0px auto; cursor: pointer;"/></a>
 					<p class="best_table_brand_01" style="font-size: 10px; font-weight: bold; color: black;">${shoeslist.prdtBrand }</p>
 					<p class="best_table_name_01" style="font-size: 10px; font-weight: normal;">${shoeslist.prdtMiniName }</p>
 					<p class="best_table_price_01" style="font-size: 10px; font-weight: bold; color: black;">

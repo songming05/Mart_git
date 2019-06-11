@@ -67,6 +67,20 @@ public class CategoryController {
 		modelAndView.setViewName("/category/categoryPage2");
 		return modelAndView;
 	}
+	
+	@RequestMapping(value="/category/categoryPage2_hotlist", method=RequestMethod.GET)
+	public ModelAndView categortPage2_list(@RequestParam String category1, @RequestParam String category2) {
+		List<PrdtManagementDTO> shoesList = categoryDAO.categortPage2_hotlist(category2);
+		
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("shoesList", shoesList);
+		modelAndView.addObject("listCount", shoesList.size());
+		modelAndView.addObject("shoesList", shoesList);
+		modelAndView.addObject("category1", category1);
+		modelAndView.addObject("category2", category2);
+		modelAndView.setViewName("/category/categoryPage2");
+		return modelAndView;
+	}
 }
 
 
