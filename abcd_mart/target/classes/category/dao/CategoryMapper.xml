@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="categorySQL">
+	<select id="getSize" parameterType="String" resultType="prdtManagement">
+		select * from prdtManagement where prdtCode=#{prdtcode}
+	</select>
+	
+	<select id="getSoldqty" parameterType="String" resultType="prdtManagement">
+		select distinct prdtmininame, prdtcode, prdtbrand, prdtprice, sum(soldqty) from prdtManagement where prdtcategory1=#{category} group by prdtmininame, prdtcode, prdtprice, prdtbrand order by 5 desc
+	</select>
+	
+	<select id="getShoesList" parameterType="String" resultType="prdtManagement">
+		select distinct prdtmininame, prdtcode, prdtbrand, prdtprice from prdtManagement where prdtcategory1=#{category} group by prdtmininame, prdtcode, prdtprice, prdtbrand
+	</select>
+	
+	<select id="getShoesList2" parameterType="String" resultType="prdtManagement">
+		select distinct prdtmininame, prdtcode, prdtbrand, prdtprice from prdtManagement where prdtcategory2=#{category2} group by prdtmininame, prdtcode, prdtprice, prdtbrand
+	</select>
+</mapper>

@@ -1,0 +1,70 @@
+body {
+	min-width: 1100px;
+	height: 100%;
+}
+
+a:link { text-decoration: none; color: #666666; }
+a:visited { text-decoration: none; color: #666666; }
+a:active { text-decoration: none; color: #666666; }
+a:hover { text-decoration: none; color: green; }
+
+/* all */
+.categoryPage2_div {
+	width: 1100px; margin: 0 auto;
+}
+
+/* top */
+.top {
+	border-bottom: 1px solid #c0c0c0;
+	clear: both;
+}
+
+.top_select {
+	outline: none;
+	font-size: 12px;
+	font-weight: normal;
+	width: 70px;
+	padding: 0px 5px 2px 5px;
+}
+
+.top_select2 {
+	outline: none;
+	font-size: 12px;
+	font-weight: normal;
+	width: 100px;
+	padding: 0px 5px 2px 5px;
+}
+
+.sizelist_tbody td {
+	width: 37px;
+	z-index: 1;
+	    
+}
+
+.table_qty {
+	background-color:#ffffff;
+	z-index: 1;
+	box-sizing: border-box;
+}
+
+.sizelist_div {
+	border: 1px solid black;
+	position: absolute;
+	z-index: 151515;
+	bottom: 172px;
+}
+
+.best_table img {
+	width: 150px;
+	height: 150px;
+}
+
+.best {
+	clear: both;
+}
+
+.best_table p {
+	text-align: center;
+	margin: 3px 0px;
+	cursor: pointer;
+}
