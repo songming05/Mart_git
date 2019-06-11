@@ -22,6 +22,25 @@
 					</td>
 				</tr>
 				
+				<tr>
+					<th align="center" width="130px" height="70px">검색어</th>
+					<td width="700px">
+					<div class="col-xs-3">
+						<select id="statsSalesSelect" name="statsSalesSelect" class="form-control input-sm" >
+							<option value='prdtBrand'>브랜드</option>
+							<option value='prdtCode'>품목(상품코드)</option>
+							<option value='prdtGender'>성별</option>
+							<option value='prdtSize'>사이즈</option>
+							
+						</select>
+					</div>
+					
+					<div class="col-xs-3">
+						<input type="text" class="form-control input-sm" id="statsSalesResult">
+					</div>
+					</td>
+				</tr>
+				
 			</tbody>
 		</table>
 

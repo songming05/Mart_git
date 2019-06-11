@@ -84,13 +84,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			join paymentinfo using(prdtcode)
 		where soldqty <![CDATA[>]]> 0 
 		
-		and
+			and
+			
 		    orderdate <![CDATA[>=]]>  #{fromDate} 
 			
 			 and 
 			
 			 orderdate <![CDATA[<=]]> #{toDate}
 			
+		<if test="statsSalesResult!=''">
+			and
+			
+				${statsSalesSelect} like '%'||#{statsSalesResult}||'%' 
+		</if>
+		
+		
 		
 		order by soldqty desc
 	
