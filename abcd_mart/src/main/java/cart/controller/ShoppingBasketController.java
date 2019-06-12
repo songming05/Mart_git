@@ -30,12 +30,18 @@ public class ShoppingBasketController {
 	
 	//��ٱ��� ����
 	@RequestMapping(value="/order_pay/shoppingBasket", method=RequestMethod.GET)
-	public ModelAndView shoppingBasket() {
+	public ModelAndView shoppingBasket(HttpSession session) {
+		String id = (String) session.getAttribute("memId");
+		
 		List<CartDTO> list = cartDAO.orderAllList();
 		
 		ModelAndView modelAndView = new ModelAndView();
+		if(id==null) {
+			modelAndView.setViewName("/user/loginPage");
+		} else
+			modelAndView.setViewName("/order_pay/shoppingBasket");
 		modelAndView.addObject("list", list);
-		modelAndView.setViewName("/order_pay/shoppingBasket");
+		
 		return modelAndView;
 	}
 
