@@ -285,7 +285,9 @@ $('#statsSales_Btn').click(function(){
 		type:'post',
 		url:'/abcd_mart/admin/statsSales',
 		data : {'fromDate' : $('#fromDate').val() ,
-				'toDate' : $('#toDate').val()	},
+				'toDate' : $('#toDate').val(),
+				'statsSalesSelect' : $('#statsSalesSelect').val(),
+				'statsSalesResult' : $('#statsSalesResult').val()},
 		dataType : 'json',
 		success : function(data){
 			//alert(JSON.stringify(data));
